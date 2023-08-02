@@ -24,10 +24,33 @@ function main() {
 
 function updateLogoAccordingToTheme(isDarkTheme) {
 	const imgSrc = isDarkTheme ? "./img/logo-text-white.png" : "./img/logo-text-black.png";
+	const faviconSrc = isDarkTheme ? "./img/favicon-white.png" : "./img/favicon-black.png";
 
 	const logos = document.getElementsByClassName("Logo");
 
 	for (const logo of logos) {
 		logo.src = imgSrc;
 	}
+
+	changeFavicon(faviconSrc);
+}
+
+
+function changeFavicon(src) {
+	document.head = document.head || document.getElementsByTagName('head')[0];
+
+	const faviconId = "dynamic-favicon";
+
+	const link = document.createElement('link');
+	const oldLink = document.getElementById(faviconId);
+
+	link.id = faviconId;
+	link.rel = 'shortcut icon';
+	link.href = src;
+	
+	if (oldLink) {
+		document.head.removeChild(oldLink);
+	}
+	
+	document.head.appendChild(link);
 }
