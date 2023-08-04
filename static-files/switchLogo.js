@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', main);
 
+window.faviconHost = ".";
+window.logoHost = ".";
+
 function main() {
 	if (!window.matchMedia) {
 		console.warn("This browser seems to not support system-themes, defaulting to dark mode");
@@ -23,8 +26,8 @@ function main() {
 }
 
 function updateLogoAccordingToTheme(isDarkTheme) {
-	const imgSrc = isDarkTheme ? "https://betta.systems/img/logo-text-white.png" : "https://betta.systems/img/logo-text-black.png";
-	const faviconSrc = isDarkTheme ? "https://betta.systems/img/favicon-white.png" : "https://betta.systems/img/favicon-black.png";
+	const imgSrc = isDarkTheme ? `${window.logoHost}/img/logo-text-white.png` : `${window.logoHost}/img/logo-text-black.png`;
+	const faviconSrc = isDarkTheme ? `${window.faviconHost}/img/favicon-white.png` : `${window.faviconHost}/img/favicon-black.png`;
 
 	const logos = document.getElementsByClassName("Logo");
 
@@ -47,10 +50,10 @@ function changeFavicon(src) {
 	link.id = faviconId;
 	link.rel = 'shortcut icon';
 	link.href = src;
-	
+
 	if (oldLink) {
 		document.head.removeChild(oldLink);
 	}
-	
+
 	document.head.appendChild(link);
 }
