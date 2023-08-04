@@ -23,8 +23,8 @@ function main() {
 }
 
 function updateLogoAccordingToTheme(isDarkTheme) {
-	const imgSrc = isDarkTheme ? "./img/logo-text-white.png" : "./img/logo-text-black.png";
-	const faviconSrc = isDarkTheme ? "./img/favicon-white.png" : "./img/favicon-black.png";
+	const imgSrc = isDarkTheme ? "https://betta.systems/img/logo-text-white.png" : "https://betta.systems/img/logo-text-black.png";
+	const faviconSrc = isDarkTheme ? "https://betta.systems/img/favicon-white.png" : "https://betta.systems/img/favicon-black.png";
 
 	const logos = document.getElementsByClassName("Logo");
 
