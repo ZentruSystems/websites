@@ -17,6 +17,8 @@
 	--darkGlassColor: #1a1a1acc;
 	--darkGlassBlurradius: 30px;
 
+	--linkedInColor: #0a66c2;
+
 	line-height: 1em;
 	
 	background-color: var(--backgroundColor);
@@ -38,6 +40,13 @@
 		--foregroundColor: #000;
 		--darkGlassColor: hsla(0, 0%, 70%, 0.508);
 	}
+}
+
+.LinkedInHover {
+	transition: color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.LinkedInHover:hover {
+	color:var(--linkedInColor);
 }
 
 nav {
