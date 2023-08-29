@@ -8,8 +8,11 @@
 	--primaryColor: #0DD8F2;
 	--backgroundColor: #000;
 	--foregroundColor: #fff;
+	
+	--glowColor: var(--primaryColor);
+	--glowTextColor: var(--glowColor);
 
-	--layerColor: #41414159;
+	--layerColor: #b4b4b433;
 
 	--darkGlassColor: #1a1a1acc;
 	--darkGlassBlurradius: 30px;
@@ -50,7 +53,6 @@ nav {
 }
 
 a.Headbar, p.Headbar{
-	--glowColor: var(--primaryColor);
 	transition: text-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1), color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	font-family: 'Readex Pro', sans-serif;
@@ -59,8 +61,8 @@ a.Headbar, p.Headbar{
 	font-weight: 300;
 }
 
-a.Headbar:hover, p.Headbar:hover {
-	color: var(--glowColor);
+a.Headbar:hover, a.Glow:hover, p.Headbar:hover {
+	color: var(--glowTextColor);
 	text-shadow: 0 0 4px var(--glowColor);
 }
 
@@ -84,6 +86,8 @@ p, a {
 	text-decoration: none;
 
 	margin-bottom: 10px;
+
+	transition: text-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1), color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .Headline {
@@ -104,16 +108,46 @@ p.Important, a.Important {
 	font-weight: 600;
 }
 
+a.Important:hover {
+	color: var(--primaryColor);
+}
+@media (prefers-color-scheme: light) {
+	a.Important:hover {
+		color: #212121;
+	}
+}
+
+div.Line {
+	display: flex;
+}
+
+div.Line.Even > * {
+	flex-shrink: 1;
+	flex-grow: 1;
+}
+
+/* div.Center {
+	display: flex;
+}
+
+div.Center > * {
+	align
+} */
+
 div.Box {
 	background-color: var(--layerColor);
 
-	--horizontalOffset: 15px;
+	--horizontalOffset: 10px;
 
 	margin: 20px calc(var(--horizontalOffset) * -1);
 	padding: 13px var(--horizontalOffset);
 	
 	display: inline-block;
 	border-radius: 8px;
+}
+
+div.Box.Stretch {
+	display: block;
 }
 
 div.Box p.Important, div.Box a.Important {
@@ -133,6 +167,8 @@ p.Detail, a.Detail {
 	line-height: 30px;
 
 	font-weight: 300;
+
+	align-self: center;
 }
 
 img.Logo {
