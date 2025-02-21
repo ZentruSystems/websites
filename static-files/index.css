@@ -5,55 +5,66 @@
 }
 
 :root {
-	--primaryColor: #0DD8F2;
-	--backgroundColor: #000;
-	--foregroundColor: #fff;
-	
-	--glowColor: var(--primaryColor);
-	--glowTextColor: var(--glowColor);
+	/* COLORS */
+	--primaryAccentColor: #0DD8F2;
+	--alternativeAccentColor: #53F1A2;
+	--glowAlternativeAccentColor: #9AF1C6;
 
-	--layerColor: #b4b4b433;
+	--backgroundColor: #fff;
+	--l1: #4D4D4D;
+	--l2: #818181;
+	--l3: #D9D9D9;
+	--l4: #F3F3F3;
+	--foregroundColor: #000;
 
-	--darkGlassColor: #1a1a1acc;
-	--darkGlassBlurradius: 30px;
+	--glassColor: #F3F3F399;
+	/* --glassColor: #b3b3b382; darker maybe also viable */
+	--glassBlurradius: 40px;
 
 	--linkedInColor: #0a66c2;
 
-	line-height: 1em;
-	
-	background-color: var(--backgroundColor);
-	color: var(--foregroundColor);
-	
-	--site-padding: 64px;
-	--nav-content-height: 30px;
-	--nav-height: 60px;
 
+	/* PADDINGS */
+	--bigPadding: 60px;
+	--site-padding: var(--bigPadding);
+	--nav-content-height: px;
+	--nav-height: 70px;
+
+	/* FONTS */
 	--normalFontSize: 24px;
 	--largerFontSize: 32px;
 	--largeFontSize: 64px;
 }
 
-@media (prefers-color-scheme: light) {
+:root {
+	line-height: 1em;
+
+	background-color: var(--backgroundColor);
+	color: var(--foregroundColor);
+}
+
+@media (prefers-color-scheme: dark) {
 	:root {
+		--glassColor: #1a1a1acc;
 		--primaryColor: hsl(187, 90%, 40%);
 		--backgroundColor: #fff;
 		--foregroundColor: #000;
-		--darkGlassColor: hsla(0, 0%, 70%, 0.508);
 	}
 }
 
 .LinkedInHover {
 	transition: color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .LinkedInHover:hover {
-	color:var(--linkedInColor);
+	color: var(--linkedInColor);
 }
 
 nav {
 	height: var(--nav-content-height);
-	background-color: var(--darkGlassColor);
-	backdrop-filter: blur(var(--darkGlassBlurradius));
-	
+	background-color: var(--glassColor);
+	backdrop-filter: blur(var(--glassBlurradius));
+
 	padding: calc((var(--nav-height) - var(--nav-content-height)) / 2);
 	padding-left: var(--site-padding);
 
@@ -61,7 +72,8 @@ nav {
 	width: 100%;
 }
 
-a.Headbar, p.Headbar{
+a.Headbar,
+p.Headbar {
 	transition: text-shadow 300ms cubic-bezier(0.165, 0.84, 0.44, 1), color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	font-family: 'Readex Pro', sans-serif;
@@ -70,7 +82,9 @@ a.Headbar, p.Headbar{
 	font-weight: 300;
 }
 
-a.Headbar:hover, a.Glow:hover, p.Headbar:hover {
+a.Headbar:hover,
+a.Glow:hover,
+p.Headbar:hover {
 	color: var(--glowTextColor);
 	text-shadow: 0 0 4px var(--glowColor);
 }
@@ -84,7 +98,8 @@ main>* {
 	padding-right: var(--site-padding);
 }
 
-p, a {
+p,
+a {
 	--size: var(--normalFontSize);
 
 	color: var(--foregroundColor);
@@ -108,7 +123,8 @@ p, a {
 	margin-bottom: 4px;
 }
 
-p.Important, a.Important {
+p.Important,
+a.Important {
 	font-family: 'Readex Pro', sans-serif;
 	--size: var(--largerFontSize);
 
@@ -120,6 +136,7 @@ p.Important, a.Important {
 a.Important:hover {
 	color: var(--primaryColor);
 }
+
 @media (prefers-color-scheme: light) {
 	a.Important:hover {
 		color: #212121;
@@ -130,7 +147,7 @@ div.Line {
 	display: flex;
 }
 
-div.Line.Even > * {
+div.Line.Even>* {
 	flex-shrink: 1;
 	flex-grow: 1;
 }
@@ -150,7 +167,7 @@ div.Box {
 
 	margin: 20px calc(var(--horizontalOffset) * -1);
 	padding: 13px var(--horizontalOffset);
-	
+
 	display: inline-block;
 	border-radius: 8px;
 }
@@ -159,19 +176,22 @@ div.Box.Stretch {
 	display: block;
 }
 
-div.Box p.Important, div.Box a.Important {
+div.Box p.Important,
+div.Box a.Important {
 	margin-bottom: unset;
 }
 
-div.Box p.Detail, div.Box a.Detail {
+div.Box p.Detail,
+div.Box a.Detail {
 	margin-bottom: unset;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-p.Detail, a.Detail {
+p.Detail,
+a.Detail {
 	font-family: 'Readex Pro', sans-serif;
-	
+
 	--size: var(--normalFontSize);
 	line-height: 30px;
 
@@ -180,10 +200,6 @@ p.Detail, a.Detail {
 	align-self: center;
 }
 
-img.Logo {
-	width: 175px;
-	height: 30px;
-}
 
 section {
 	margin-top: var(--site-padding);
@@ -220,7 +236,7 @@ div.Box>img {
 		grid-template-columns: auto 560px;
 	}
 
-	
+
 	div.Box>img {
 		height: 350px;
 	}
@@ -234,7 +250,7 @@ div.Box>img {
 		padding-bottom: 176px;
 	}
 
-	
+
 	div.Box>img {
 		height: 500px;
 	}
@@ -242,19 +258,19 @@ div.Box>img {
 
 /* phone */
 @media screen and (max-width: 786px) {
-:root {
-	--site-padding: 16px;
-	
-	--normalFontSize: 18px;
-	--largerFontSize: 24px;
-	--largeFontSize: 48px;
-}
+	:root {
+		--site-padding: 16px;
+
+		--normalFontSize: 18px;
+		--largerFontSize: 24px;
+		--largeFontSize: 48px;
+	}
 
 	div.Row {
 		padding-bottom: 64px;
 	}
 
-	
+
 	div.Box>img {
 		height: 180px;
 	}
