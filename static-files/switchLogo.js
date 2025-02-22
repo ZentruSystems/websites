@@ -26,7 +26,7 @@ function main() {
 }
 
 function updateLogoAccordingToTheme(isDarkTheme) {
-	const imgSrc = isDarkTheme ? `${window.logoHost}/img/logo-text-white.png` : `${window.logoHost}/img/logo-text-black.png`;
+	const imgSrc = isDarkTheme ? `${window.logoHost}/img/logo-text-white.png` : `${window.logoHost}/img/betta-systems-logo-transparent-1.svg`;
 	const faviconSrc = isDarkTheme ? `${window.faviconHost}/img/favicon-white.png` : `${window.faviconHost}/img/favicon-black.png`;
 
 	const logos = document.getElementsByClassName("Logo");

@@ -14,7 +14,7 @@
 
 	--backgroundColor: hsl(0, 0%, 100%);
 	--l1: hsl(0, 0%, 30%);
-	--l2: hsl(0, 0%, 51%);
+	--l2: hsl(0, 0%, 50%);
 	--l3: hsl(0, 0%, 85%);
 	--l4: hsl(0, 0%, 95%);
 	--foregroundColor: hsl(0, 0%, 0%);
@@ -40,6 +40,9 @@
 	--normalFont: Helvetica Neue, Helvetica, sans-serif;
 	--normalFontSize: 20px;
 	--largerFontSize: 32px;
+
+	/* Values */
+	--borderRadius: 7px;
 
 		--grid-gap: 15px;
 	/* DEFAULT GRID for FULL width
@@ -68,4 +71,9 @@
 		--backgroundColor: #000;
 		--foregroundColor: #fff;
 	}
+}
+
+div.Placeholder {
+	border: 1px solid black;
+	background-color: gray;
 }
