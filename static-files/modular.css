@@ -1,0 +1,169 @@
+.bold {
+	font-weight: bold;
+}
+
+.primaryAccent {
+	color: var(--primaryAccentColor);
+}
+
+.underline {
+	text-decoration: underline solid 1.8px;
+	text-decoration-skip-ink: none;
+}
+
+.bg-l1 {
+	background-color: var(--l1);
+}
+
+.bg-l2 {
+	background-color: var(--l2);
+}
+
+.bg-l3 {
+	background-color: var(--l3);
+}
+
+.bg-l4 {
+	background-color: var(--l4);
+}
+
+.vCenter {
+	align-self: center;
+}
+
+/* .alignStart {
+	ruby-align: ;
+} */
+
+.vBigPad {
+	padding-top: var(--bigPadding);
+	padding-bottom: var(--bigPadding);
+}
+
+.vNormPad {
+	padding-top: var(--normalPadding);
+	padding-bottom: var(--normalPadding);
+}
+
+.vUnitPad {
+	padding-top: var(--paddingUnit);
+	padding-bottom: var(--paddingUnit);
+}
+
+.vAltPad {
+	padding-top: calc(var(--paddingUnit) * 2.5);
+	padding-bottom: calc(var(--paddingUnit) * 2.5);
+}
+
+
+.s0 {
+	grid-column-start: 1;
+}
+
+.s1 {
+	grid-column-start: 2;
+}
+.s2 {
+	grid-column-start: 3;
+}
+.s3 {
+	grid-column-start: 4;
+}
+.s4 {
+	grid-column-start: 5;
+}
+.s5 {
+	grid-column-start: 6;
+}
+.s6 {
+	grid-column-start: 7;
+}
+.s7 {
+	grid-column-start: 8;
+}
+.s8 {
+	grid-column-start: 9;
+}
+.s9 {
+	grid-column-start: 10;
+}
+.s10 {
+	grid-column-start: 11;
+}
+.s11 {
+	grid-column-start: 12;
+}
+.s12 {
+	grid-column-start: 13;
+}
+
+.s13 {
+	grid-column-start: 14;
+}
+
+.e0 {
+	grid-column-end: 2;
+}
+
+.e1 {
+	grid-column-end: 3;
+}
+.e2 {
+	grid-column-end: 4;
+}
+.e3 {
+	grid-column-end: 5;
+}
+.e4 {
+	grid-column-end: 6;
+}
+.e5 {
+	grid-column-end: 7;
+}
+.e6 {
+	grid-column-end: 8;
+}
+.e7 {
+	grid-column-end: 9;
+}
+.e8 {
+	grid-column-end: 10;
+}
+.e9 {
+	grid-column-end: 11;
+}
+.e10 {
+	grid-column-end: 12;
+}
+.e11 {
+	grid-column-end: 13;
+}
+.e12 {
+	grid-column-end: 14;
+}
+
+.e13 {
+	grid-column-end: 15;
+}
+
+.vFill {
+	height: 100%;
+}
+
+.hFill {
+	height: 100%;
+}
+
+.vSpaceing {
+	display: flex;
+	flex-direction: column;
+	/* grid-template-rows: 1fr 1fr 1fr; */
+
+	justify-content: stretch;
+}
+
+.align-bottom {
+	display: inline-flex;
+	flex-direction: column;
+	align-content: end;
+}

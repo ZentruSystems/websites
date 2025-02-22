@@ -1,0 +1,13 @@
+h2 {
+	font-size: var(--largerFontSize);
+	font-weight: 200;
+	line-height: calc(var(--largerFontSize) + 9px);
+	color: var(--foregroundColor);
+}
+
+h4 {
+	font-size: var(--normalFontSize);
+	font-weight: 200;
+	line-height: calc(var(--normalFontSize) + 4px);
+	color: var(--foregroundColor);
+}

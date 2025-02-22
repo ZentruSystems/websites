@@ -2,6 +2,8 @@
 	/* resets */
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	border: none;
 }
 
 :root {
@@ -18,15 +20,19 @@
 	--foregroundColor: hsl(0, 0%, 0%);
 
 	--glassColor: #F3F3F399;
-	/* --glassColor: #b3b3b382; darker maybe also viable */
+	/*! --glassColor: #b3b3b382; */ /* darker maybe also viable */
 	--glassBlurradius: 40px;
 
 	--linkedInColor: #0a66c2;
 
 
 	/* PADDINGS */
-	--bigPadding: 60px;
-	--site-padding: var(--bigPadding);
+	--paddingUnit: 30px;
+	--normalPadding: calc(var(--paddingUnit) * 2);
+	--bigPadding: calc(var(--paddingUnit) * 3);
+	--site-padding: var(--normalPadding);
+
+	/* NAV */
 	--nav-content-height: 43px;
 	--nav-height: 70px;
 
@@ -35,11 +41,13 @@
 	--normalFontSize: 20px;
 	--largerFontSize: 32px;
 
+		--grid-gap: 15px;
 	/* DEFAULT GRID for FULL width
 		display: grid;
-		12 columns
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		column-gap: 15px;
+		1space 12 columns 1space
+		display: grid;
+	column-gap: var(--grid-gap);
+	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
 	 */
 }
 
@@ -60,63 +68,4 @@
 		--backgroundColor: #000;
 		--foregroundColor: #fff;
 	}
-}
-
-/* NOT BASE */
-nav {
-	height: var(--nav-content-height);
-	background-color: var(--glassColor);
-	backdrop-filter: blur(var(--glassBlurradius));
-
-	padding: calc((var(--nav-height) - var(--nav-content-height)) / 2);
-	padding-left: var(--site-padding);
-
-	position: fixed;
-	width: 100%;
-
-	display: grid;
-	/* 12 columns */
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	column-gap: 15px;
-}
-
-nav>div.Refs {
-	grid-column-start: 8;
-	grid-column-end: 12;
-	display: inline-flex;
-	column-gap: 8px;
-	width: max-content;
-}
-
-nav>div.Refs>a {
-	align-self: center;
-	font-size: 24px;
-	color: var(--l1);
-	text-decoration-line: none;
-}
-
-nav>div.Refs>a:hover {
-	color: var(--foregroundColor);
-}
-
-nav div.vertSep {
-	width: 1px;
-	height: 11px;
-	align-self: center;
-	border-left: 1px solid var(--l3);
-}
-
-nav div.vertSepChevronRight {
-	width: 3px;
-	height: 11px;
-	align-self: center;
-	border-left: 1px solid var(--l3);
-}
-
-main {
-	padding-top: var(--nav-height);
-}
-
-img.Logo, nav :has(img.Logo) {
-	height: var(--nav-content-height);
 }
