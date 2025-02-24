@@ -11,9 +11,9 @@ export default function NavLink({
 	props,
 	children,
 }: {
-	props: { name: string, href?: string}
+	props?: { name: string, href?: string}
 	children: string
-}): ReactComponent {
+}) {
 	const pathname = usePathname();
 	const [currentPage, setCurrentPage] = useState<string>("");
 

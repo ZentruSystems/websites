@@ -2,11 +2,9 @@ import Link from "next/link";
 import FooterLayout from "../footerLayout";
 
 export default function EvarFooterLayout({
-	children,
-	content
+	children
 }: {
-	children: React.ReactNode,
-	content?: React.ReactNode,
+	children: React.ReactNode
 }) {
 	return <FooterLayout
 		content={

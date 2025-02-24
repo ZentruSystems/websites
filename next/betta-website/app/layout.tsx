@@ -3,7 +3,7 @@ import './modular.css';
 import './style.css';
 import './text.css';
 
-import NavLink from './nav/navLink';
+import NavLink from './nav/NavLink';
 
 import type { Metadata } from 'next';
 import Link from 'next/link';

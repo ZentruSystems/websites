@@ -1,4 +1,4 @@
-export default function Catalog({ props }) {
+export default function Catalog() {
 	return <main>
 		<section className="vhGrid">
 			<h2 className="s1 e2 tPad">Business Card Management</h2>
