@@ -292,16 +292,35 @@
 .RightFloat.More{
 	left: 20%;
 }
+.RightFloat.More2{
+	left: 25%;
+}
+.RightFloat.More3{
+	left: 30%;
+}
 
-.RightFloat:hover, .RightFloat.ToZero:hover {
+.FloatTrigger:hover .RightFloat, .RightFloat:hover,
+.FloatTrigger:hover .RightFloat.To0, .RightFloat.To0:hover {
 	left: 0%;
 }
-.RightFloat.To5:hover {
+.FloatTrigger:hover .RightFloat.To5, .RightFloat.To5:hover {
 	left: 5%;
 }
-.RightFloat.ToPad:hover {
+.FloatTrigger:hover .RightFloat.ToPad, .RightFloat.ToPad:hover {
 	left: var(--normalPadding);
 }
-.RightFloat.ToUnitPad:hover {
+.FloatTrigger:hover .RightFloat.ToUnitPad, .RightFloat.ToUnitPad:hover {
 	left: var(--paddingUnit);
+}
+
+.abs {
+	position: absolute;
+}
+
+.Container {
+	overflow: hidden;
+}
+
+.Scrollable {
+	overflow: auto;
 }

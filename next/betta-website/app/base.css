@@ -9,6 +9,7 @@
 :root {
 	/* COLORS */
 	--primaryAccentColor: hsl(187, 90%, 50%);
+	--mutedPrimaryAccentColor: hsl(187, 83%, 50%);
 	--alternativeAccentColor: hsl(150, 85%, 64%);
 	--glowAlternativeAccentColor: hsl(150, 76%, 77%);
 
