@@ -15,16 +15,17 @@ export default function NavLink({
 	children: string
 }): ReactComponent {
 	const pathname = usePathname();
-	const [currentPage, setCurrentPage] = useState();
+	const [currentPage, setCurrentPage] = useState<string>("");
 
 	useEffect(() => {
-		setCurrentPage(pathname);
-		console.log(pathname);
-	}, [pathname])
+		const converted = pathname.replace("/", "");
+		setCurrentPage(converted);
+	}, [pathname]);
 
 	const isCurrentPage = currentPage == (props?.name ?? children).toLowerCase();
+	// console.log(isCurrentPage);
 
 	const linkUrl = (props?.href ?? props?.name ?? children).toLowerCase();
 
-	return <Link className={`${isCurrentPage && "current"}`} href={linkUrl}>{children}</Link>
+	return <Link className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{children}</Link>
 }

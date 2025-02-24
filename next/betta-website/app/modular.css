@@ -37,9 +37,21 @@
 	/*! justify-content: end; */
 	align-content: end;
 }
+.layoutVBottom {
+	align-content: end;
+	align-items: end;
+}
 
 .hCenter {
 	justify-self: center;
+}
+.hRight {
+	justify-self: right;
+}
+
+.layoutHCenter {
+	justify-items: center;
+	justify-content: center;
 }
 
 .vBigPad {
@@ -51,6 +63,16 @@
 }
 .bBigPad {
 	padding-bottom: var(--bigPadding);
+}
+.hBigPad {
+	padding-left: var(--bigPadding);
+	padding-right: var(--bigPadding);
+}
+.lBigPad {
+	padding-left: var(--bigPadding);
+}
+.rBigPad {
+	padding-right: var(--bigPadding);
 }
 
 .vPad {
@@ -82,8 +104,14 @@
 	padding-top: var(--paddingUnit);
 	padding-bottom: var(--paddingUnit);
 }
+.tUnitPad {
+	padding-top: var(--paddingUnit);
+}
 .hUnitPad {
 	padding-left: var(--paddingUnit);
+	padding-right: var(--paddingUnit);
+}
+.rUnitPad {
 	padding-right: var(--paddingUnit);
 }
 
@@ -248,6 +276,10 @@
 	display: inline-grid;
 }
 
+.il-flex {
+	display: inline-flex;
+}
+
 .flex {
 	display: flex;
 }
@@ -281,6 +313,10 @@
 .rRound {
 	border-top-right-radius: var(--borderRadius);
 	border-bottom-right-radius: var(--borderRadius);
+}
+
+.allRoundBig {
+	border-radius: var(--borderRadiusBig);
 }
 
 .RightFloat {
@@ -323,4 +359,15 @@
 
 .Scrollable {
 	overflow: auto;
+}
+
+.fg-white-bl a,
+.fg-white-bl p,
+.fg-white-bl h1,
+.fg-white-bl h2,
+.fg-white-bl h3,
+.fg-white-bl h4,
+.fg-white-bl h5,
+.fg-white-bl h6 {
+	color: var(--backgroundColor);
 }

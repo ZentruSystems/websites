@@ -34,7 +34,7 @@ nav>div.Refs>a {
   text-decoration-line: none;
 }
 
-nav .Current {
+nav>div.Refs>a.Current {
   color: var(--mutedPrimaryAccentColor);
 }
 
@@ -73,4 +73,10 @@ section {
   grid-column-start: 1;
   grid-column-end: 15;
   /*! height: max-content; */
+}
+
+footer p {
+	font-size: 16px;
+	font-weight: 200;
+	color: var(--foregroundColor);
 }

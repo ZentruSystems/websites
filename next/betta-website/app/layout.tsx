@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body style={{overflowX: 'hidden', overflowY: 'auto'}}>
+			<body style={{overflowX: 'hidden', overflowY: 'scroll'}}>
 				<nav>
 					<Link className="s1 e2" href="/">
 						<img className="Logo" alt="Betta" src="./img/betta-systems-logo-transparent-1.svg" />
