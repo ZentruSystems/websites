@@ -25,9 +25,9 @@
 
 	--linkedInColor: #0a66c2;
 
-
 	/* PADDINGS */
 	--paddingUnit: 30px;
+	--smallPad: calc(var(var(--paddingUnit)) / 2);
 	--normalPadding: calc(var(--paddingUnit) * 2);
 	--bigPadding: calc(var(--paddingUnit) * 3);
 	--site-padding: var(--normalPadding);
@@ -44,7 +44,14 @@
 	/* Values */
 	--borderRadius: 7px;
 
-		--grid-gap: 15px;
+	--grid-gap: 15px;
+
+
+	/* TRANSITIONS */
+	--liquid: cubic-bezier(.39,.26,.15,.86);
+	--liquidDuration: 0.7s;
+
+
 	/* DEFAULT GRID for FULL width
 		display: grid;
 		1space 12 columns 1space

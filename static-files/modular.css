@@ -42,7 +42,6 @@
 	justify-self: center;
 }
 
-
 .vBigPad {
 	padding-top: var(--bigPadding);
 	padding-bottom: var(--bigPadding);
@@ -65,9 +64,27 @@
 	padding-bottom: var(--normalPadding);
 }
 
+.hPad {
+	padding-left: var(--normalPadding);
+	padding-right: var(--normalPadding);
+}
+.lPad {
+	padding-left: var(--normalPadding);
+}
+.rPad {
+	padding-right: var(--normalPadding);
+}
+.Pad {
+	padding: var(--normalPadding);
+}
+
 .vUnitPad {
 	padding-top: var(--paddingUnit);
 	padding-bottom: var(--paddingUnit);
+}
+.hUnitPad {
+	padding-left: var(--paddingUnit);
+	padding-right: var(--paddingUnit);
 }
 
 .vAltPad {
@@ -264,4 +281,27 @@
 .rRound {
 	border-top-right-radius: var(--borderRadius);
 	border-bottom-right-radius: var(--borderRadius);
+}
+
+.RightFloat {
+	position: relative;
+	left: 15%;
+	transition: left var(--liquid) var(--liquidDuration);
+	z-index: 0;
+}
+.RightFloat.More{
+	left: 20%;
+}
+
+.RightFloat:hover, .RightFloat.ToZero:hover {
+	left: 0%;
+}
+.RightFloat.To5:hover {
+	left: 5%;
+}
+.RightFloat.ToPad:hover {
+	left: var(--normalPadding);
+}
+.RightFloat.ToUnitPad:hover {
+	left: var(--paddingUnit);
 }
