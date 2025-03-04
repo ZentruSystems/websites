@@ -1,7 +1,5 @@
 nav {
   height: var(--nav-height);
-  background-color: var(--glassColor);
-  backdrop-filter: blur(var(--glassBlurradius));
 
   /*! padding-top: calc((var(--nav-height) - var(--nav-content-height)) / 2); */
   /*! padding-bottom: calc((var(--nav-height) - var(--nav-content-height)) / 2); */
@@ -61,7 +59,6 @@ img.Logo {
 }
 
 main {
-  padding-top: var(--nav-height);
   display: grid;
   column-gap: var(--grid-gap);
   grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
@@ -79,4 +76,10 @@ footer p {
 	font-size: 16px;
 	font-weight: 200;
 	color: var(--foregroundColor);
+}
+
+@media (prefers-color-scheme: dark) {
+  .invertIfLightTheme {
+    filter: invert(100%);
+  }
 }

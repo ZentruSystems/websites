@@ -1,0 +1,34 @@
+h2 {
+	font-size: var(--largerFontSize);
+	font-weight: 400;
+	line-height: calc(var(--largerFontSize) + 9px);
+	color: var(--foregroundColor);
+	margin-bottom: 24px;
+}
+
+h4 {
+	font-size: var(--normalFontSize);
+	font-weight: 200;
+	line-height: calc(var(--normalFontSize) + 4px);
+	color: var(--foregroundColor);
+}
+
+p {
+	line-height: 28px;
+	font-size: var(--normalFontSize);
+	font-family: var(--normalFont);
+	font-weight: 200;
+}
+
+p.Quote {
+	line-height: 28px;
+	font-size: var(--normalFontSize);
+	font-family: var(--normalFont);
+	font-weight: 100;
+	font-style: italic;
+	padding-left: calc(100% / 24);
+	hanging-punctuation: first;
+	color: var(--l2);
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
