@@ -18,14 +18,23 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            betta-website-changed:
+              - 'next/betta-website'
           
       - name: Install pnpm
+        if: steps.filter.outputs.betta-website-changed == 'true'
         uses: pnpm/action-setup@v4
         with:
           version: 10
           run_install: false
           
       - name: Install Node.js
+        if: steps.filter.outputs.betta-website-changed == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 23
@@ -33,14 +42,17 @@ jobs:
           cache-dependency-path: ./next/betta-website/
 
       - name: Install dependencies
+        if: steps.filter.outputs.betta-website-changed == 'true'
         working-directory: ./next/betta-website
         run: pnpm install
       
       - name: Static generation of Betta-Website
+        if: steps.filter.outputs.betta-website-changed == 'true'
         working-directory: ./next/betta-website
         run: pnpm run build
           
       - name: Build And Deploy
+        if: steps.filter.outputs.betta-website-changed == 'true'
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
