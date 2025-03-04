@@ -1,4 +1,4 @@
-name: Exar Website
+name: Evar Website
 
 on:
   push:
@@ -46,11 +46,11 @@ jobs:
           run_install: false
 
       - name: Install dependencies
-        working-directory: ./next/exar-website
+        working-directory: ./next/evar-website
         run: pnpm install
       
-      - name: Static generation of Exar-Website
-        working-directory: ./next/exar-website
+      - name: Static generation of Evar-Website
+        working-directory: ./next/evar-website
         run: pnpm run build
 
       - name: Build And Deploy
