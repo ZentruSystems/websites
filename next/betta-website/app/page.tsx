@@ -12,7 +12,7 @@ export default function Page() {
 				<div className="s8 e13 flex">
 					<img className="vCenter vAltPad flex rGap" src="./img/VertSep.svg" />
 					<div className="vCenter vPad vFill hFill il-grid layoutVBottom">
-						<Link href="evar" className="il-grid vUnitPad layoutVBottom layoutHCenter">
+						<Link href="https://evar.space" className="il-grid vUnitPad layoutVBottom layoutHCenter">
 							<img className="invertIfLightTheme" style={{ height: 50, }} src="./img/Evar Text Logo.svg" alt="Evar – Games" />
 						</Link>
 						<h4 className="hCenter vBottom">Check out all our Projects from all our Fields</h4>
