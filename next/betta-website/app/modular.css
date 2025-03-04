@@ -6,6 +6,10 @@
 	color: var(--primaryAccentColor);
 }
 
+.foreground {
+	color: var(--foregroundColor);
+}
+
 .underline {
 	text-decoration: underline solid 1.8px;
 	text-decoration-skip-ink: none;
@@ -115,11 +119,19 @@
 	padding-right: var(--paddingUnit);
 }
 
+.v10Pad {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .vAltPad {
 	padding-top: calc(var(--paddingUnit) * 2.5);
 	padding-bottom: calc(var(--paddingUnit) * 2.5);
 }
 
+.navPad {
+	padding-top: var(--nav-height);
+}
 
 .s0 {
 	grid-column-start: 1;
@@ -370,4 +382,13 @@
 .fg-white-bl h5,
 .fg-white-bl h6 {
 	color: var(--backgroundColor);
+}
+
+.fixed {
+	position: fixed;
+}
+
+.glass {
+	backdrop-filter: blur(var(--glassBlurradius)) saturate(400%);
+	background-color: var(--glassColor);
 }

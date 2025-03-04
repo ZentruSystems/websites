@@ -1,0 +1,394 @@
+.bold {
+	font-weight: bold;
+}
+
+.primaryAccent {
+	color: var(--primaryAccentColor);
+}
+
+.foreground {
+	color: var(--foregroundColor);
+}
+
+.underline {
+	text-decoration: underline solid 1.8px;
+	text-decoration-skip-ink: none;
+}
+
+.bg-l1 {
+	background-color: var(--l1);
+}
+
+.bg-l2 {
+	background-color: var(--l2);
+}
+
+.bg-l3 {
+	background-color: var(--l3);
+}
+
+.bg-l4 {
+	background-color: var(--l4);
+}
+
+.vCenter {
+	align-self: center;
+}
+
+.vBottom {
+	/*! display: inline-flex; */
+	/*! flex-direction: column; */
+	/*! justify-content: end; */
+	align-content: end;
+}
+.layoutVBottom {
+	align-content: end;
+	align-items: end;
+}
+
+.hCenter {
+	justify-self: center;
+}
+.hRight {
+	justify-self: right;
+}
+
+.layoutHCenter {
+	justify-items: center;
+	justify-content: center;
+}
+
+.vBigPad {
+	padding-top: var(--bigPadding);
+	padding-bottom: var(--bigPadding);
+}
+.tBigPad {
+	padding-top: var(--bigPadding);
+}
+.bBigPad {
+	padding-bottom: var(--bigPadding);
+}
+.hBigPad {
+	padding-left: var(--bigPadding);
+	padding-right: var(--bigPadding);
+}
+.lBigPad {
+	padding-left: var(--bigPadding);
+}
+.rBigPad {
+	padding-right: var(--bigPadding);
+}
+
+.vPad {
+	padding-top: var(--normalPadding);
+	padding-bottom: var(--normalPadding);
+}
+.tPad {
+	padding-top: var(--normalPadding);
+}
+.bPad {
+	padding-bottom: var(--normalPadding);
+}
+
+.hPad {
+	padding-left: var(--normalPadding);
+	padding-right: var(--normalPadding);
+}
+.lPad {
+	padding-left: var(--normalPadding);
+}
+.rPad {
+	padding-right: var(--normalPadding);
+}
+.Pad {
+	padding: var(--normalPadding);
+}
+
+.vUnitPad {
+	padding-top: var(--paddingUnit);
+	padding-bottom: var(--paddingUnit);
+}
+.tUnitPad {
+	padding-top: var(--paddingUnit);
+}
+.hUnitPad {
+	padding-left: var(--paddingUnit);
+	padding-right: var(--paddingUnit);
+}
+.rUnitPad {
+	padding-right: var(--paddingUnit);
+}
+
+.v10Pad {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.vAltPad {
+	padding-top: calc(var(--paddingUnit) * 2.5);
+	padding-bottom: calc(var(--paddingUnit) * 2.5);
+}
+
+.navPad {
+	padding-top: var(--nav-height);
+}
+
+.s0 {
+	grid-column-start: 1;
+}
+
+.s1 {
+	grid-column-start: 2;
+}
+
+.s2 {
+	grid-column-start: 3;
+}
+
+.s3 {
+	grid-column-start: 4;
+}
+
+.s4 {
+	grid-column-start: 5;
+}
+
+.s5 {
+	grid-column-start: 6;
+}
+
+.s6 {
+	grid-column-start: 7;
+}
+
+.s7 {
+	grid-column-start: 8;
+}
+
+.s8 {
+	grid-column-start: 9;
+}
+
+.s9 {
+	grid-column-start: 10;
+}
+
+.s10 {
+	grid-column-start: 11;
+}
+
+.s11 {
+	grid-column-start: 12;
+}
+
+.s12 {
+	grid-column-start: 13;
+}
+
+.s13 {
+	grid-column-start: 14;
+}
+
+.e0 {
+	grid-column-end: 2;
+}
+
+.e1 {
+	grid-column-end: 3;
+}
+
+.e2 {
+	grid-column-end: 4;
+}
+
+.e3 {
+	grid-column-end: 5;
+}
+
+.e4 {
+	grid-column-end: 6;
+}
+
+.e5 {
+	grid-column-end: 7;
+}
+
+.e6 {
+	grid-column-end: 8;
+}
+
+.e7 {
+	grid-column-end: 9;
+}
+
+.e8 {
+	grid-column-end: 10;
+}
+
+.e9 {
+	grid-column-end: 11;
+}
+
+.e10 {
+	grid-column-end: 12;
+}
+
+.e11 {
+	grid-column-end: 13;
+}
+
+.e12 {
+	grid-column-end: 14;
+}
+
+.e13 {
+	grid-column-end: 15;
+}
+
+.vFill {
+	height: 100%;
+}
+
+.hFill {
+	width: 100%;
+}
+
+.vSpaceing {
+	display: flex;
+	flex-direction: column;
+	/*! grid-template-rows: 1fr 1fr 1fr; */
+
+	justify-content: space-between;
+}
+
+.light {
+	font-weight: 200;
+}
+
+.regular {
+	font-weight: normal;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+.noMargin {
+	margin-bottom: 0;
+}
+
+.hGrid {
+	display: grid;
+	column-gap: var(--grid-gap);
+	/* 1space 12 columns 1space */
+	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
+}
+
+.il-grid {
+	display: inline-grid;
+}
+
+.il-flex {
+	display: inline-flex;
+}
+
+.flex {
+	display: flex;
+}
+
+.rGap {
+	padding-right: var(--grid-gap);
+}
+
+.vhGrid {
+	display: grid;
+	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
+	grid-auto-rows: auto;
+}
+
+.tlRound {
+	border-top-left-radius: var(--borderRadius);
+}
+.trRound {
+	border-top-right-radius: var(--borderRadius);
+}
+.blRound {
+	border-bottom-left-radius: var(--borderRadius);
+}
+.brRound {
+	border-bottom-right-radius: var(--borderRadius);
+}
+.lRound {
+	border-top-left-radius: var(--borderRadius);
+	border-bottom-left-radius: var(--borderRadius);
+}
+.rRound {
+	border-top-right-radius: var(--borderRadius);
+	border-bottom-right-radius: var(--borderRadius);
+}
+
+.allRoundBig {
+	border-radius: var(--borderRadiusBig);
+}
+
+.RightFloat {
+	position: relative;
+	left: 15%;
+	transition: left var(--liquid) var(--liquidDuration);
+	z-index: 0;
+}
+.RightFloat.More{
+	left: 20%;
+}
+.RightFloat.More2{
+	left: 25%;
+}
+.RightFloat.More3{
+	left: 30%;
+}
+
+.FloatTrigger:hover .RightFloat, .RightFloat:hover,
+.FloatTrigger:hover .RightFloat.To0, .RightFloat.To0:hover {
+	left: 0%;
+}
+.FloatTrigger:hover .RightFloat.To5, .RightFloat.To5:hover {
+	left: 5%;
+}
+.FloatTrigger:hover .RightFloat.ToPad, .RightFloat.ToPad:hover {
+	left: var(--normalPadding);
+}
+.FloatTrigger:hover .RightFloat.ToUnitPad, .RightFloat.ToUnitPad:hover {
+	left: var(--paddingUnit);
+}
+
+.abs {
+	position: absolute;
+}
+
+.Container {
+	overflow: hidden;
+}
+
+.Scrollable {
+	overflow: auto;
+}
+
+.fg-white-bl a,
+.fg-white-bl p,
+.fg-white-bl h1,
+.fg-white-bl h2,
+.fg-white-bl h3,
+.fg-white-bl h4,
+.fg-white-bl h5,
+.fg-white-bl h6 {
+	color: var(--backgroundColor);
+}
+
+.fixed {
+	position: fixed;
+}
+
+.glass {
+	backdrop-filter: blur(var(--glassBlurradius)) saturate(400%);
+	background-color: var(--glassColor);
+}

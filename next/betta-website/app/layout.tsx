@@ -7,18 +7,24 @@ import NavLink from './nav/NavLink';
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ThemedImg from './ThemedImg';
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
+	console.log(children);
+
 	return (
 		<html lang="en">
-			<body style={{overflowX: 'hidden', overflowY: 'scroll'}}>
-				<nav>
+			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
+				<nav className="glass">
 					<Link className="s1 e2" href="/">
-						<img className="Logo" alt="Betta" src="./img/betta-systems-logo-transparent-1.svg" />
+						<ThemedImg className="Logo" alt="Betta"
+							lightSrc="./img/Betta Systems - Logo - Light.svg"
+							darkSrc="./img/Betta Systems - Logo - Dark.svg"
+						/>
 					</Link>
 					<div className="Refs s8 e12">
 						<img className="vertSep" src="./img/vertical-divider.svg" />
@@ -29,13 +35,29 @@ export default function RootLayout({
 						<NavLink>Catalog</NavLink>
 					</div>
 				</nav>
-				{children}
+				<div className='navPad'>
+					{children}
+					<footer className="bg-l3 hGrid">
+						<div className="s1 e3 vPad">
+							<p>Lets meet at</p>
+						</div>
+						<div className="s11 e12 vBottom hRight vPad">
+							<p>We are</p>
+							<Link href="/">
+								<ThemedImg
+									lightSrc="./img/Betta Systems - Logo - Light.svg"
+									darkSrc="./img/Betta Systems - Logo - Dark.svg"
+								/>
+							</Link>
+						</div>
+					</footer>
+				</div>
 			</body>
 		</html>
 	);
 }
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
 	title: "Betta Systems",
 	keywords: [
 		"Apps",

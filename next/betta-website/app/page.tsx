@@ -1,10 +1,8 @@
 import Link from "next/link";
 import DynamicQuote from "./DynamicQuote";
-import FooterLayout from "./footerLayout";
 
 export default function Page() {
-	return <FooterLayout>
-		<main>
+	return <main>
 			<section className="Head bg-l4 hGrid">
 				<div className="vCenter vBigPad s1 e7 vFill vSpaceing">
 					<h2 className="light noMargin">Because we don’t like how Companies treat their Customers.</h2>
@@ -15,7 +13,7 @@ export default function Page() {
 					<img className="vCenter vAltPad flex rGap" src="./img/VertSep.svg" />
 					<div className="vCenter vPad vFill hFill il-grid layoutVBottom">
 						<Link href="evar" className="il-grid vUnitPad layoutVBottom layoutHCenter">
-							<img style={{ height: 50 }} src="./img/Evar Text Logo.svg" alt="Evar – Games" />
+							<img className="invertIfLightTheme" style={{ height: 50, }} src="./img/Evar Text Logo.svg" alt="Evar – Games" />
 						</Link>
 						<h4 className="hCenter vBottom">Check out all our Projects from all our Fields</h4>
 					</div>
@@ -36,5 +34,4 @@ export default function Page() {
 
 			</section>
 		</main>
-	</FooterLayout>;
 }

@@ -28,7 +28,7 @@
 
 	/* PADDINGS */
 	--paddingUnit: 30px;
-	--smallPad: calc(var(var(--paddingUnit)) / 2);
+	--smallPad: calc(var(--paddingUnit) / 2);
 	--normalPadding: calc(var(--paddingUnit) * 2);
 	--bigPadding: calc(var(--paddingUnit) * 3);
 	--site-padding: var(--normalPadding);
@@ -77,7 +77,12 @@
 	:root {
 		--glassColor: #1a1a1acc;
 		--primaryColor: hsl(187, 90%, 40%);
+
 		--backgroundColor: #000;
+		--l1: hsl(0, 0%, 95%);
+		--l2: hsl(0, 0%, 85%);
+		--l3: hsl(0, 0%, 50%);
+		--l4: hsl(0, 0%, 30%);
 		--foregroundColor: #fff;
 	}
 }
