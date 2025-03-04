@@ -30,14 +30,14 @@ jobs:
         with:
           node-version: 23
           cache: 'pnpm'
-          cache-dependency-path: ./next/evar-website/
+          cache-dependency-path: ./next/betta-website/
 
       - name: Install dependencies
-        working-directory: ./next/evar-website
+        working-directory: ./next/betta-website
         run: pnpm install
       
-      - name: Static generation of Evar-Website
-        working-directory: ./next/evar-website
+      - name: Static generation of Betta-Website
+        working-directory: ./next/betta-website
         run: pnpm run build
           
       - name: Build And Deploy
