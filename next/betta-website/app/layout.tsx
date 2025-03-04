@@ -5,7 +5,6 @@ import './text.css';
 
 import NavLink from './nav/NavLink';
 
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import ThemedImg from './ThemedImg';
 
@@ -57,20 +56,20 @@ export default function RootLayout({
 	);
 }
 
-export const metadata: Metadata = {
-	title: "Betta Systems",
-	keywords: [
-		"Apps",
-		"Software",
-		"Quality",
-	],
-	description: "Really Good",
+// export const metadata: Metadata = {
+// 	title: "Betta Systems",
+// 	keywords: [
+// 		"Apps",
+// 		"Software",
+// 		"Quality",
+// 	],
+// 	description: "Really Good",
 
-	openGraph: {
-		title: "Betta Systems",
-		type: 'website',
-		url: "https://betta.systems",
-		description: "Really Good",
-	}
-	// robots: {index: true, follow: true},
-};
+// 	openGraph: {
+// 		title: "Betta Systems",
+// 		type: 'website',
+// 		url: "https://betta.systems",
+// 		description: "Really Good",
+// 	}
+// 	// robots: {index: true, follow: true},
+// };
