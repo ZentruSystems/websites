@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Exar Website
 
 on:
   push:
@@ -32,14 +32,27 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-      - name: Next static build and export with HTML/JS minification
-        # You may pin to the exact commit or the version.
-        # uses: tsg-iitkgp/next-build-export-action@dfcd78a5f9adf56655148bf5b41eda25350574d7
-        uses: tsg-iitkgp/next-build-export-action@v1.2.1
-        env:
-          BUILD_DIR: ./next/evar-website
-          BUILD_ONLY: true
-          OUTPUT_DIR: ./next/evar-website/out
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        working-directory: ./next/exar-website
+        run: pnpm install
+      
+      - name: Static generation of Exar-Website
+        working-directory: ./next/exar-website
+        run: pnpm run build
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
