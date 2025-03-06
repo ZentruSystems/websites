@@ -7,7 +7,7 @@ export default function useTheme() {
 			// dark mode
 			setPrefersLight(!(window.matchMedia('(prefers-color-scheme: dark)').matches ?? false));
 
-			function _handle(event) {
+			function _handle(event: any) {
 				setPrefersLight(!event.matches);
 			}
 			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', _handle);
