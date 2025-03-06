@@ -1,0 +1,21 @@
+/* .RightFloat {
+	animation: RightFloat linear;
+	animation-timeline: view();
+	opacity: 100%;
+}
+
+@keyframes RightFloat {
+	from {
+		/* left: 15%;
+		opacity: 0%;
+	}
+	to {
+		/* left:0%;
+		opacity: 100%;
+	}
+}
+
+.Really {
+	animation: RightFloat linear;
+	animation-timeline: scroll();
+} */

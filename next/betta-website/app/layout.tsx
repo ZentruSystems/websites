@@ -1,10 +1,12 @@
+import './animations.css';
 import './base.css';
 import './modular.css';
 import './style.css';
 import './text.css';
 
-
 import Link from 'next/link';
+import Script from 'next/script';
+import EnableScrollAnimations from './EnableScrollAnimations';
 import ThemedImg from './ThemedImg';
 import Nav from './nav/Nav';
 
@@ -13,10 +15,12 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	return (
+	return (<>
 		<html lang="en">
+			<Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
+			<EnableScrollAnimations/>
 			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
-				<Nav/>
+				<Nav />
 				<div className='navPad'>
 					{children}
 					<footer className="bg-l3 hGrid ph-bNavPad">
@@ -36,6 +40,7 @@ export default function RootLayout({
 				</div>
 			</body>
 		</html>
+	</>
 	);
 }
 
