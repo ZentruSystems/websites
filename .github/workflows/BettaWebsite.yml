@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
+      id-token: write
+      contents: read
       pull-requests: read
     steps:
       - uses: actions/checkout@v3
