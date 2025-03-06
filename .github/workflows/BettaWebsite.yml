@@ -28,7 +28,8 @@ jobs:
         with:
           filters: |
             betta-website-changed:
-              - 'next/betta-website'
+              - 'next/betta-website/**/*'
+              - 'next/betta-website/*'
 
       - name: Install pnpm
         if: steps.filter.outputs.betta-website-changed == 'true'
