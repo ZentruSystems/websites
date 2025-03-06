@@ -23,6 +23,14 @@ jobs:
         with:
           submodules: true
           lfs: false
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            evar-website-changed:
+              - 'next/evar-website'
+          
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
@@ -35,12 +43,14 @@ jobs:
           result-encoding: string
 
       - name: Install pnpm
+        if: steps.filter.outputs.evar-website-changed == 'true'
         uses: pnpm/action-setup@v4
         with:
           version: 10
           run_install: false
 
       - name: Install Node.js
+        if: steps.filter.outputs.evar-website-changed == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 23
@@ -48,14 +58,17 @@ jobs:
           cache-dependency-path: ./next/evar-website/
 
       - name: Install dependencies
+        if: steps.filter.outputs.evar-website-changed == 'true'
         working-directory: ./next/evar-website
         run: pnpm install
 
       - name: Static generation of Evar-Website
+        if: steps.filter.outputs.evar-website-changed == 'true'
         working-directory: ./next/evar-website
         run: pnpm run build
 
       - name: Build And Deploy
+        if: steps.filter.outputs.evar-website-changed == 'true'
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
