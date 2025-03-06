@@ -1,0 +1,14 @@
+.SideBoard {
+	grid-row-start: 1;
+	grid-row-end: 5;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-left: 10px;
+}
+
+@media screen and (max-width: 730px) {
+		.SideBoard {
+			grid-row-start: unset;
+			grid-row-end: unset;
+		}
+}

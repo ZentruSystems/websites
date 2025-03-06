@@ -5,7 +5,7 @@ nav {
   /*! padding-bottom: calc((var(--nav-height) - var(--nav-content-height)) / 2); */
 
   position: fixed;
-  width: 100%;
+  width: 100vw;
 
   display: grid;
   /* 12 columns */
@@ -15,6 +15,8 @@ nav {
   align-items: center;
 
   z-index: 10;
+
+  transition: height var(--liquid) var(--liquidDuration);
 }
 
 nav>div.Refs {
@@ -82,4 +84,13 @@ footer p {
   .invertIfLightTheme {
     filter: invert(100%);
   }
+}
+
+@media screen and (max-width: 730px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+  }
+
+
 }

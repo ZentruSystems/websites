@@ -3,44 +3,27 @@ import './modular.css';
 import './style.css';
 import './text.css';
 
-import NavLink from './nav/NavLink';
 
 import Link from 'next/link';
 import ThemedImg from './ThemedImg';
+import Nav from './nav/Nav';
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	console.log(children);
-
 	return (
 		<html lang="en">
 			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
-				<nav className="glass">
-					<Link className="s1 e2" href="/">
-						<ThemedImg className="Logo" alt="Betta"
-							lightSrc="./img/Betta Systems - Logo - Light.svg"
-							darkSrc="./img/Betta Systems - Logo - Dark.svg"
-						/>
-					</Link>
-					<div className="Refs s8 e12">
-						<img className="vertSep" src="./img/vertical-divider.svg" />
-						<NavLink>Products</NavLink>
-						<img className="vertSepChevronRight" src="./img/vertical-divider-chevron-right.svg" />
-						<NavLink>Fields</NavLink>
-						<img className="vertSep" src="./img/vertical-divider.svg" />
-						<NavLink>Catalog</NavLink>
-					</div>
-				</nav>
+				<Nav/>
 				<div className='navPad'>
 					{children}
-					<footer className="bg-l3 hGrid">
-						<div className="s1 e3 vPad">
+					<footer className="bg-l3 hGrid ph-bNavPad">
+						<div className="s1 e3 ph-e5 vPad">
 							<p>Lets meet at</p>
 						</div>
-						<div className="s11 e12 vBottom hRight vPad">
+						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad">
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg

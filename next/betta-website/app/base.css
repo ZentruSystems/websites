@@ -48,6 +48,8 @@
 
 	--grid-gap: 15px;
 
+	--breakPointToVertical: 730px;
+
 
 	/* TRANSITIONS */
 	--liquid: cubic-bezier(.39,.26,.15,.86);

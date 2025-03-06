@@ -15,6 +15,9 @@
 	text-decoration-skip-ink: none;
 }
 
+.bg-fg {
+	background-color: var(--foregroundColor);
+}
 .bg-l1 {
 	background-color: var(--l1);
 }
@@ -29,6 +32,10 @@
 
 .bg-l4 {
 	background-color: var(--l4);
+}
+
+.bg-bg {
+	background-color: var(--backgroundColor);
 }
 
 .vCenter {
@@ -127,6 +134,10 @@
 .vAltPad {
 	padding-top: calc(var(--paddingUnit) * 2.5);
 	padding-bottom: calc(var(--paddingUnit) * 2.5);
+}
+.vAltMarg {
+	margin-top: calc(var(--paddingUnit) * 2.5);
+	margin-bottom: calc(var(--paddingUnit) * 2.5);
 }
 
 .navPad {
@@ -361,6 +372,13 @@
 	left: var(--paddingUnit);
 }
 
+.liquidPad {
+	transition: padding var(--liquid) var(--liquidDuration);
+}
+.liquidOpacity {
+	transition: opacity var(--liquid) var(--liquidDuration);
+}
+
 .abs {
 	position: absolute;
 }
@@ -391,4 +409,131 @@
 .glass {
 	backdrop-filter: blur(var(--glassBlurradius)) saturate(400%);
 	background-color: var(--glassColor);
+}
+
+@media screen and (max-width: 730px) {
+	:root {
+		--paddingUnit: 20px;
+	}
+
+	.hGrid, .vhGrid {
+		/* change to 5 column layout */
+		grid-template-columns: var(--site-padding) 1fr 1fr 1fr 1fr 1fr var(--site-padding);
+	}
+
+	.s7,.s8,.s9,.s10,.s11,.s12.s13 {
+		grid-column-start: unset;
+	}
+	.e7,.e8,.e9,.e10,.e11,.e12.e13 {
+		grid-column-end: unset;
+	}
+
+	.navPad {
+		padding-top: 0;
+	}
+
+	.ph-bNavPad {
+		padding-bottom: var(--nav-height);
+	}
+
+
+	.ph-s0 {
+		grid-column-start: 1;
+	}
+
+	.ph-s1 {
+		grid-column-start: 2;
+	}
+
+	.ph-s2 {
+		grid-column-start: 3;
+	}
+
+	.ph-s3 {
+		grid-column-start: 4;
+	}
+
+	.ph-s4 {
+		grid-column-start: 5;
+	}
+
+	.ph-s5 {
+		grid-column-start: 6;
+	}
+
+	.ph-s6 {
+		grid-column-start: 7;
+	}
+
+	.ph-e0 {
+		grid-column-end: 2;
+	}
+
+	.ph-e1 {
+		grid-column-end: 3;
+	}
+
+	.ph-e2 {
+		grid-column-end: 4;
+	}
+
+	.ph-e3 {
+		grid-column-end: 5;
+	}
+
+	.ph-e4 {
+		grid-column-end: 6;
+	}
+
+	.ph-e5 {
+		grid-column-end: 7;
+	}
+
+	.ph-e6 {
+		grid-column-end: 8;
+	}
+
+	.ph-flex-vert {
+		flex-direction: column;
+	}
+
+	.ph-vPad {
+		padding-top: var(--normalPadding);
+		padding-bottom: var(--normalPadding);
+	}
+
+	.vAltMarg {
+		margin-top: unset;
+		margin-bottom: unset;
+	}
+
+	.ph-v0Pad {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+
+	.ph-t0Pad {
+		padding-top: 0px;
+	}
+
+	.ph-tUnitPad {
+		padding-top: var(--paddingUnit);
+	}
+
+	.ph-vUnitPad {
+		padding-top: var(--paddingUnit);
+		padding-bottom: var(--paddingUnit);
+	}
+
+	.ph-vCenter {
+		align-self: center;
+	}
+
+	.ph-rGap {
+		padding-right: var(--grid-gap);
+	}
+
+	.ph-hUnset {
+		justify-self: unset;
+	}
 }

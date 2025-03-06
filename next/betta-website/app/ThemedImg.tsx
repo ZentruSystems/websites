@@ -11,5 +11,7 @@ export default function ThemedImg(props: {
 
 	const { lightSrc, darkSrc } = props;
 
-	return <img src={prefersLight ? lightSrc : darkSrc} {...props} />
+	const imgProps = {...props, lightSrc: undefined, darkSrc: undefined};
+
+	return <img src={prefersLight ? lightSrc : darkSrc} {...imgProps} />
 }
