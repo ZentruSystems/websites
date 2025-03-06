@@ -1,7 +1,9 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 export default function useResponsiveSize() {
-	const [currentWidth, setCurrentWidth] = useState(window.innerWidth);
+	const [currentWidth, setCurrentWidth] = useState<number>(0);
 
 	useEffect(() => {
 		function handleResize() {

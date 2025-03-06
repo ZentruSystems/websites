@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from "react";
 
 export default function useTheme() {
@@ -7,7 +9,7 @@ export default function useTheme() {
 			// dark mode
 			setPrefersLight(!(window.matchMedia('(prefers-color-scheme: dark)').matches ?? false));
 
-			function _handle(event: any) {
+			function _handle(event: MediaQueryListEvent) {
 				setPrefersLight(!event.matches);
 			}
 			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', _handle);

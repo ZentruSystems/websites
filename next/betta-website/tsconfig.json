@@ -34,7 +34,6 @@
     "../common/footerLayout.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "../../static-files/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
