@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useResponsiveSize() {
-	const [currentWidth, setCurrentWidth] = useState();
+	const [currentWidth, setCurrentWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
 		function handleResize() {
@@ -9,8 +9,9 @@ export default function useResponsiveSize() {
 		}
 
 		window.addEventListener('resize', handleResize);
+		// handleResize(); // initial update
 		return () => window.removeEventListener('resize', handleResize)
-	});
+	}, []);
 
 	return {
 		isMobile: currentWidth <= 480,

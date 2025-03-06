@@ -41,7 +41,7 @@ export default function useScrollPolyfill(): UseScrollPolyfillResult {
 
 					let animationsToUpgrade: Animation[] = [];
 
-					elements.forEach((el, k) => {
+					elements.forEach((el) => {
 						// Get all animations related to element
 						const animations = el.getAnimations?.() || [];
 						// console.log(`animations found(${k}):`, animations.length);
@@ -69,7 +69,7 @@ export default function useScrollPolyfill(): UseScrollPolyfillResult {
 			// 	CodeBud.captureEvent('Failed to load the ScrollTimeline polyfill', { error, where: 'useScrollTimelinePolyfill hook' });
 			// 	Bugsnag.leaveBreadcrumb('Failed to load the ScrollTimeline polyfill', { error });
 			// 	Bugsnag.notify('useScrollTimelinePolyfill failure');
-			// 	console.error('Failed to load the ScrollTimeline polyfill:', error);
+				console.error('Failed to load the ScrollTimeline polyfill:', error);
 				setStatus('polyfillApplyingFailed');
 				return;
 			}

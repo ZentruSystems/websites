@@ -13,7 +13,7 @@ export default function useTheme() {
 			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', _handle);
 			return window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', _handle);
 		}
-	});
+	}, []);
 
 	return {
 		prefersLight,

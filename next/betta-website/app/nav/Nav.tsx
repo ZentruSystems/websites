@@ -50,8 +50,9 @@ export default function Nav() {
 
 
 	// TODO: TransitionDelay not working!
+	//	transitionDelay: !isBurgerOpen && "150ms"
 	return <nav className="glass vhGrid" style={{ height: `calc(var(--nav-height) + ${burgerExtend}px)` }}>
-		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, transitionDelay: !isBurgerOpen && "150ms", zIndex: -1 }}>
+		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, zIndex: -1 }}>
 			<img className="vertSep" src="./img/vertical-divider.svg" />
 			<NavLink>Products</NavLink>
 			<img className="vertSepChevronRight" src="./img/vertical-divider-chevron-right.svg" />
