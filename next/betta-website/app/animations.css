@@ -1,21 +1,14 @@
 /* .RightFloat {
-	animation: RightFloat linear;
-	animation-timeline: view();
-	opacity: 100%;
+	animation: grow-progress auto linear;
+	animation-timeline: view(y);
+	animation-range-start: 100px;
 }
 
-@keyframes RightFloat {
+@keyframes grow-progress {
 	from {
-		/* left: 15%;
-		opacity: 0%;
+		left: 20%;
 	}
 	to {
-		/* left:0%;
-		opacity: 100%;
+		left:0%;
 	}
-}
-
-.Really {
-	animation: RightFloat linear;
-	animation-timeline: scroll();
 } */
