@@ -6,7 +6,7 @@ export default function EvarPage() {
 				<div style={{maxHeight: "75vh"}}>
 					<img className="hFill allRoundBig" src="./img/debris_screenshot.png" />
 				</div>
-				<div className="tUnitPad Pad fg-white-bl">
+				<div className="tUnitPad Pad fg-white-fix bg-d4-fixed">
 					<h2>Get In — save Mars</h2>
 					<p>
 						After many satellites were sent to orbit, the inevitable mass-crash started, and is spreading like a wildfire.

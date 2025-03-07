@@ -1,0 +1,7 @@
+nav {
+	height: var(--nav-height);
+}
+
+nav img {
+	max-height: var(--nav-content-height);
+}

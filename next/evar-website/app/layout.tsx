@@ -1,8 +1,11 @@
+
+import 'common/theming/base.css';
+import 'common/theming/modular.css';
+import 'common/theming/text.css';
+import 'common/theming/ThemedImg';
+import ThemedImg from 'common/theming/ThemedImg';
 import Link from "next/link";
-import './base.css';
-import './modular.css';
 import './style.css';
-import './text.css';
 
 export default function EvarFooterLayout({
 	children
@@ -13,7 +16,10 @@ export default function EvarFooterLayout({
 		<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
 			<nav className="hGrid fixed glass v10Pad hFill">
 				<Link className="s4 e8 hCenter" href="/">
-					<img className="vertSep" src="./img/Evar Text Logo.svg" />
+					<ThemedImg loading="eager"
+						lightsrc="./img/Evar Text Logo.svg"
+						darksrc="./img/Evar Text Logo Dark.svg"
+					/>
 				</Link>
 			</nav>
 			<div className="navPad">
@@ -26,8 +32,8 @@ export default function EvarFooterLayout({
 				</div>
 				<div className="s11 e12 vBottom hRight vPad">
 					<p>A Field endeavored by</p>
-					<Link href="/">
-						<img src="./img/betta-systems-logo-transparent-1.svg" />
+					<Link href="https://betta.systems">
+						<img src="./img/betta-systems-logo-transparent-1.svg" loading="lazy" />
 					</Link>
 				</div>
 			</footer>

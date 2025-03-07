@@ -1,13 +1,13 @@
+import 'common/theming/base.css';
+import 'common/theming/modular.css';
+import 'common/theming/text.css';
+import ThemedImg from 'common/theming/ThemedImg';
 import Link from 'next/link';
 import Script from 'next/script';
 import './animations.css';
-import './base.css';
 import EnableScrollAnimations from './EnableScrollAnimations';
-import './modular.css';
 import Nav from './nav/Nav';
 import './style.css';
-import './text.css';
-import ThemedImg from './ThemedImg';
 
 
 export default function RootLayout({
@@ -31,8 +31,8 @@ export default function RootLayout({
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg
-									lightSrc="./img/Betta Systems - Logo - Light.svg"
-									darkSrc="./img/Betta Systems - Logo - Dark.svg"
+									lightsrc="./img/Betta Systems - Logo - Light.svg"
+									darksrc="./img/Betta Systems - Logo - Dark.svg"
 								/>
 							</Link>
 						</div>
@@ -45,18 +45,17 @@ export default function RootLayout({
 }
 
 // export const metadata: Metadata = {
-// 	title: "Betta Systems",
+// 	title: "Evar",
 // 	keywords: [
-// 		"Apps",
+// 		"Games",
 // 		"Software",
-// 		"Quality",
 // 	],
-// 	description: "Really Good",
+// 	description: "Debris",
 
 // 	openGraph: {
-// 		title: "Betta Systems",
+// 		title: "Evar",
 // 		type: 'website',
-// 		url: "https://betta.systems",
+// 		url: "https://evar.space",
 // 		description: "Really Good",
 // 	}
 // 	// robots: {index: true, follow: true},

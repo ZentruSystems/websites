@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import ThemedImg from "../ThemedImg";
-import useResponsiveSize from "../useResponsiveSize";
+import ThemedImg from "../../../common/theming/ThemedImg";
+import useResponsiveSize from "../../../common/useResponsiveSize";
 import NavLink from "./NavLink";
 
 export default function Nav() {
@@ -15,8 +15,8 @@ export default function Nav() {
 		return <nav className="glass">
 			<Link className="s1 e2" href="/">
 				<ThemedImg className="Logo" alt="Betta"
-					lightSrc="./img/Betta Systems - Logo - Light.svg"
-					darkSrc="./img/Betta Systems - Logo - Dark.svg"
+					lightsrc="./img/Betta Systems - Logo - Light.svg"
+					darksrc="./img/Betta Systems - Logo - Dark.svg"
 				/>
 			</Link>
 			<div className="Refs s8 e12">
@@ -62,8 +62,8 @@ export default function Nav() {
 		</div>
 		<Link className="s1 e2 liquidPad" href="/" style={{ paddingTop: burgerExtend }}>
 			<ThemedImg className="Logo" alt="Betta"
-				lightSrc="./img/Betta Systems - Logo - Light.svg"
-				darkSrc="./img/Betta Systems - Logo - Dark.svg"
+				lightsrc="./img/Betta Systems - Logo - Light.svg"
+				darksrc="./img/Betta Systems - Logo - Dark.svg"
 			/>
 		</Link>
 		{burger}

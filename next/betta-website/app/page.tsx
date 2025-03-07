@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Separator from "../../common/components/separator/Separator";
 import DynamicQuote from "./DynamicQuote";
-import Separator from "./Separator";
 import SideBoard from "./SideBoard";
 
 export default function Page() {

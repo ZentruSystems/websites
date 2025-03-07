@@ -31,10 +31,12 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "../common/footerLayout.tsx",
+    "../common/*.tsx",
+    "../common/*.ts",
+    "../common/*.css",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "../../static-files/types/**/*.ts"
+    "*.css",
   ],
   "exclude": [
     "node_modules"
