@@ -62,7 +62,7 @@ jobs:
         if: steps.filter.outputs.evar-website-changed == 'true'
         working-directory: ./next/evar-website
         run: pnpm install |
-          cd ../common && pnpm install
+          cd ../common && pnpm install .
 
       - name: Static generation of Evar-Website
         if: steps.filter.outputs.evar-website-changed == 'true'
