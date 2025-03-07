@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   distDir: "../../static-files",
-  transpilePackages: ["common", "../common"],
+  transpilePackages: ["common"],
 };
 
 export default nextConfig;
