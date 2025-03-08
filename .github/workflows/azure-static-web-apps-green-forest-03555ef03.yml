@@ -23,13 +23,13 @@ jobs:
         with:
           submodules: true
 
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            evar-website-changed:
-              - 'next/evar-website/**/*'
-              - 'next/evar-website/*'
+      # - uses: dorny/paths-filter@v3
+      #   id: filter
+      #   with:
+      #     filters: |
+      #       evar-website-changed:
+      #         - 'next/evar-website/**/*'
+      #         - 'next/evar-website/*'
 
       # - name: Install OIDC Client from Core Package
       #   run: npm install @actions/core@1.6.0 @actions/http-client
@@ -42,54 +42,56 @@ jobs:
       #       return await coredemo.getIDToken()
       #     result-encoding: string
 
-      - name: Install pnpm
-        if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-          run_install: false
+      # - name: Install pnpm
+      #   if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
+      #   uses: pnpm/action-setup@v4
+      #   with:
+      #     version: 10
+      #     run_install: false
 
-      - name: Install Node.js
-        if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: 23
-          cache: "pnpm"
-          cache-dependency-path: ./next/evar-website/
+      # - name: Install Node.js
+      #   if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 23
+      #     cache: "pnpm"
+      #     cache-dependency-path: ./next/evar-website/
 
-      - name: Install dependencies
-        if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
-        working-directory: ./next/evar-website
-        run: pnpm install && pnpm install . && cd ../common && pnpm install .
+      # - name: Install dependencies
+      #   if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
+      #   working-directory: ./next
+      #   run: pnpm install
 
-      - name: Static generation of Evar-Website
-        if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
-        working-directory: ./next/evar-website
-        run: pnpm run build
+      # - name: Static generation of Evar-Website
+      #   if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
+      #   working-directory: ./next/evar-website
+      #   run: pnpm run build
 
       - name: Build And Deploy
         if: steps.filter.outputs.evar-website-changed == 'true' ${{ contains(github.event.head_commit.message, '#build') }}
         id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+        uses: azure/static-web-apps-deploy@latest
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_EVAR_WEBSITE }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./next/evar-website" # App source code path
+          app_location: "/next/evar-website" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "out" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: # Add environment variables here
+          IS_STATIC_EXPORT: true
 
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_EVAR_WEBSITE }}
-          action: "close"
+  # close_pull_request_job:
+  #   if: github.event_name == 'pull_request' && github.event.action == 'closed'
+  #   runs-on: ubuntu-latest
+  #   name: Close Pull Request Job
+  #   steps:
+  #     - name: Close Pull Request
+  #       id: closepullrequest
+  #       uses: azure/static-web-apps-deploy@latest
+  #       with:
+  #         azure_static_web_apps_api_token: ${{ secrets.AZURE_EVAR_WEBSITE }}
+  #         action: "close"
