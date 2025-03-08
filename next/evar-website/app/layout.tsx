@@ -60,4 +60,5 @@ export const metadata: Metadata = {
 		url: "https://evar.space",
 		// description: "Really Good",
 	},
+
 };

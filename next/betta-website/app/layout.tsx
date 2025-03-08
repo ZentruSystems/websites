@@ -64,15 +64,15 @@ export const metadata: Metadata = {
 		icon: [
 			{
 				media: '(prefers-color-scheme: dark)',
-				url: '/img/favicon-dark.png',
-				href: '/img/favicon-dark.png',
+				url: '/img/betta-single-dark.png',
+				href: '/img/betta-single-dark.png',
 				rel: "shortcut icon",
 				id: "favDark"
 			} as unknown as Icon,
 			{
 				media: '(prefers-color-scheme: light)',
-				url: '/img/favicon-light.png',
-				href: '/img/favicon-light.png',
+				url: '/img/betta-single-light.png',
+				href: '/img/betta-single-light.png',
 				rel: "shortcut icon",
 				id: "favLight"
 			} as unknown as Icon,
