@@ -1,0 +1,95 @@
+* {
+	/* resets */
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+:root {
+	/* COLORS */
+	--primaryAccentColor: hsl(187, 90%, 50%);
+	--mutedPrimaryAccentColor: hsl(187, 83%, 50%);
+	--alternativeAccentColor: hsl(150, 85%, 64%);
+	--glowAlternativeAccentColor: hsl(150, 76%, 77%);
+
+	--backgroundColor: hsl(0, 0%, 100%);
+	--l1: hsl(0, 0%, 30%);
+	--l2: hsl(0, 0%, 50%);
+	--l3: hsl(0, 0%, 85%);
+	--l4: hsl(0, 0%, 95%);
+	--foregroundColor: hsl(0, 0%, 0%);
+
+	--glassColor: #F3F3F399;
+	/*! --glassColor: #b3b3b382; */ /* darker maybe also viable */
+	--glassBlurradius: 40px;
+
+	--linkedInColor: #0a66c2;
+
+	/* PADDINGS */
+	--paddingUnit: 30px;
+	--smallPad: calc(var(--paddingUnit) / 2);
+	--normalPadding: calc(var(--paddingUnit) * 2);
+	--bigPadding: calc(var(--paddingUnit) * 3);
+	--site-padding: var(--normalPadding);
+
+	/* NAV */
+	--nav-content-height: 43px;
+	--nav-height: 70px;
+
+	/* FONTS */
+	--normalFont: Helvetica Neue, Helvetica, sans-serif;
+	--normalFontSize: 20px;
+	--largerFontSize: 32px;
+
+	/* Values */
+	--borderRadius: 7px;
+	--borderRadiusBig: calc(var(--borderRadius) * 6);
+
+	--grid-gap: 15px;
+
+	--breakPointToVertical: 730px;
+
+
+	/* TRANSITIONS */
+	--liquid: cubic-bezier(.39,.26,.15,.86);
+	--liquidDuration: 0.7s;
+
+
+	/* DEFAULT GRID for FULL width
+		display: grid;
+		1space 12 columns 1space
+		display: grid;
+	column-gap: var(--grid-gap);
+	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
+	 */
+}
+
+:root {
+	line-height: 1em;
+
+	background-color: var(--backgroundColor);
+	color: var(--foregroundColor);
+
+	font-size: var(--normalFontSize);
+	font-family: var(--normalFont);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--glassColor: #1a1a1acc;
+		--primaryColor: hsl(187, 90%, 40%);
+
+		--backgroundColor: #000;
+		--l1: hsl(0, 0%, 95%);
+		--l2: hsl(0, 0%, 85%);
+		--l3: hsl(0, 0%, 50%);
+		--l4: hsl(0, 0%, 30%);
+		--foregroundColor: #fff;
+	}
+}
+
+div.Placeholder {
+	border: 1px solid black;
+	background-color: gray;
+}

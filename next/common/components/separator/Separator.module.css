@@ -1,0 +1,12 @@
+.Separator {
+	width: 1px;
+	flex-shrink: 0px;
+	box-sizing: unset;
+}
+
+@media screen and (max-width: 730px) {
+	.Separator {
+		width: unset;
+		height: 1px;
+	}
+}

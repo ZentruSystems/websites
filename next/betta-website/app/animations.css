@@ -1,0 +1,14 @@
+/* .RightFloat {
+	animation: grow-progress auto linear;
+	animation-timeline: view(y);
+	animation-range-start: 100px;
+}
+
+@keyframes grow-progress {
+	from {
+		left: 20%;
+	}
+	to {
+		left:0%;
+	}
+} */

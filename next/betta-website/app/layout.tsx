@@ -1,51 +1,38 @@
-import './base.css';
-import './modular.css';
-import './style.css';
-import './text.css';
-
-import NavLink from './nav/NavLink';
-
+import 'common/theming/base.css';
+import 'common/theming/modular.css';
+import 'common/theming/text.css';
+import ThemedImg from 'common/theming/ThemedImg';
 import Link from 'next/link';
-import ThemedImg from './ThemedImg';
+import Script from 'next/script';
+import './animations.css';
+import EnableScrollAnimations from './EnableScrollAnimations';
+import Nav from './nav/Nav';
+import './style.css';
+
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	console.log(children);
-
-	return (
-		<html lang="en">
-			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
-				<nav className="glass">
-					<Link className="s1 e2" href="/">
-						<ThemedImg className="Logo" alt="Betta"
-							lightSrc="./img/Betta Systems - Logo - Light.svg"
-							darkSrc="./img/Betta Systems - Logo - Dark.svg"
-						/>
-					</Link>
-					<div className="Refs s8 e12">
-						<img className="vertSep" src="./img/vertical-divider.svg" />
-						<NavLink>Products</NavLink>
-						<img className="vertSepChevronRight" src="./img/vertical-divider-chevron-right.svg" />
-						<NavLink>Fields</NavLink>
-						<img className="vertSep" src="./img/vertical-divider.svg" />
-						<NavLink>Catalog</NavLink>
-					</div>
-				</nav>
+	return (<>
+		<html lang="en" style={{overflowX: "hidden"}}>
+			<Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
+			<EnableScrollAnimations />
+			<body>
+				<Nav />
 				<div className='navPad'>
 					{children}
-					<footer className="bg-l3 hGrid">
-						<div className="s1 e3 vPad">
+					<footer className="bg-l3 hGrid ph-bNavPad">
+						<div className="s1 e3 ph-e5 vPad">
 							<p>Lets meet at</p>
 						</div>
-						<div className="s11 e12 vBottom hRight vPad">
+						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad">
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg
-									lightSrc="./img/Betta Systems - Logo - Light.svg"
-									darkSrc="./img/Betta Systems - Logo - Dark.svg"
+									lightsrc="./img/Betta Systems - Logo - Light.svg"
+									darksrc="./img/Betta Systems - Logo - Dark.svg"
 								/>
 							</Link>
 						</div>
@@ -53,22 +40,22 @@ export default function RootLayout({
 				</div>
 			</body>
 		</html>
+	</>
 	);
 }
 
 // export const metadata: Metadata = {
-// 	title: "Betta Systems",
+// 	title: "Evar",
 // 	keywords: [
-// 		"Apps",
+// 		"Games",
 // 		"Software",
-// 		"Quality",
 // 	],
-// 	description: "Really Good",
+// 	description: "Debris",
 
 // 	openGraph: {
-// 		title: "Betta Systems",
+// 		title: "Evar",
 // 		type: 'website',
-// 		url: "https://betta.systems",
+// 		url: "https://evar.space",
 // 		description: "Really Good",
 // 	}
 // 	// robots: {index: true, follow: true},
