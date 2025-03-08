@@ -5,7 +5,6 @@ nav {
   /*! padding-bottom: calc((var(--nav-height) - var(--nav-content-height)) / 2); */
 
   position: fixed;
-  width: 100vw;
 
   display: grid;
   /* 12 columns */

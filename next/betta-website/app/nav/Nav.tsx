@@ -11,10 +11,9 @@ export default function Nav() {
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
 	if (isDesktop) {
-
-		return <nav className="glass">
+		return <nav className="glass hFill">
 			<Link className="s1 e2" href="/">
-				<ThemedImg className="Logo" alt="Betta"
+				<ThemedImg className="Logo" alt="Betta" loading="eager"
 					lightsrc="./img/Betta Systems - Logo - Light.svg"
 					darksrc="./img/Betta Systems - Logo - Dark.svg"
 				/>

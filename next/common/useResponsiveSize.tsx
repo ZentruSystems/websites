@@ -9,9 +9,9 @@ export default function useResponsiveSize() {
 		function handleResize() {
 			setCurrentWidth(window.innerWidth);
 		}
+		handleResize(); // initial update
 
 		window.addEventListener('resize', handleResize);
-		handleResize(); // initial update
 		return () => window.removeEventListener('resize', handleResize)
 	}, []);
 
