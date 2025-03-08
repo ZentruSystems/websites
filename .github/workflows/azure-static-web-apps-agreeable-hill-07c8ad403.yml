@@ -32,14 +32,14 @@ jobs:
               - 'next/betta-website/*'
 
       - name: Install pnpm
-        if: steps.filter.outputs.betta-website-changed == 'true'
+        if: steps.filter.outputs.betta-website-changed == 'true' || contains('[Deploy]', ${{ github.event.head_commit.message }})
         uses: pnpm/action-setup@v4
         with:
           version: 10
           run_install: false
 
       - name: Install Node.js
-        if: steps.filter.outputs.betta-website-changed == 'true'
+        if: steps.filter.outputs.betta-website-changed == 'true' || contains('[Deploy]', ${{ github.event.head_commit.message }})
         uses: actions/setup-node@v4
         with:
           node-version: 23
@@ -47,17 +47,17 @@ jobs:
           cache-dependency-path: ./next/betta-website/
 
       - name: Install dependencies
-        if: steps.filter.outputs.betta-website-changed == 'true'
+        if: steps.filter.outputs.betta-website-changed == 'true' || contains('[Deploy]', ${{ github.event.head_commit.message }})
         working-directory: ./next/betta-website
         run: pnpm install && pnpm install . && cd ../common && pnpm install .
 
       - name: Static generation of Betta-Website
-        if: steps.filter.outputs.betta-website-changed == 'true'
+        if: steps.filter.outputs.betta-website-changed == 'true' || contains('[Deploy]', ${{ github.event.head_commit.message }})
         working-directory: ./next/betta-website
         run: pnpm run build
 
       - name: Build And Deploy
-        if: steps.filter.outputs.betta-website-changed == 'true'
+        if: steps.filter.outputs.betta-website-changed == 'true' || contains('[Deploy]', ${{ github.event.head_commit.message }})
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
