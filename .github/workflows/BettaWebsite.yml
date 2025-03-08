@@ -49,7 +49,7 @@ jobs:
       - name: Install dependencies
         if: steps.filter.outputs.betta-website-changed == 'true'
         working-directory: ./next/betta-website
-        run: pnpm install && cd ../common && pnpm install .
+        run: pnpm install && pnpm install . && cd ../common && pnpm install .
 
       - name: Static generation of Betta-Website
         if: steps.filter.outputs.betta-website-changed == 'true'
