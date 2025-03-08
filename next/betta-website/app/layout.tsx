@@ -1,11 +1,12 @@
 import 'common/theming/base.css';
+import FixFavicon from 'common/theming/FixFavicon';
 import 'common/theming/modular.css';
 import 'common/theming/text.css';
 import ThemedImg from 'common/theming/ThemedImg';
+import { Metadata } from 'next';
+import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 import Link from 'next/link';
-import Script from 'next/script';
 import './animations.css';
-import EnableScrollAnimations from './EnableScrollAnimations';
 import Nav from './nav/Nav';
 import './style.css';
 
@@ -16,9 +17,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (<>
-		<html lang="en" style={{overflowX: "hidden"}}>
-			<Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
-			<EnableScrollAnimations />
+		<html lang="en" style={{ overflowX: "hidden" }}>
+			{/* <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
+			<EnableScrollAnimations /> */}
+			<FixFavicon />
 			<body>
 				<Nav />
 				<div className='navPad'>
@@ -40,23 +42,40 @@ export default function RootLayout({
 				</div>
 			</body>
 		</html>
-	</>
-	);
+	</>);
 }
 
-// export const metadata: Metadata = {
-// 	title: "Evar",
-// 	keywords: [
-// 		"Games",
-// 		"Software",
-// 	],
-// 	description: "Debris",
-
-// 	openGraph: {
-// 		title: "Evar",
-// 		type: 'website',
-// 		url: "https://evar.space",
-// 		description: "Really Good",
-// 	}
-// 	// robots: {index: true, follow: true},
-// };
+export const metadata: Metadata = {
+	title: "Betta Systems",
+	keywords: [
+		"Apps",
+		"Software",
+		"Quality",
+	],
+	description: "Really Good",
+	robots: { index: true, follow: true },
+	openGraph: {
+		title: "Betta Systems",
+		type: 'website',
+		url: "https://betta.systems",
+		description: "Really Good",
+	},
+	icons: {
+		icon: [
+			{
+				media: '(prefers-color-scheme: dark)',
+				url: '/img/favicon-dark.png',
+				href: '/img/favicon-dark.png',
+				rel: "shortcut icon",
+				id: "favDark"
+			} as unknown as Icon,
+			{
+				media: '(prefers-color-scheme: light)',
+				url: '/img/favicon-light.png',
+				href: '/img/favicon-light.png',
+				rel: "shortcut icon",
+				id: "favLight"
+			} as unknown as Icon,
+		],
+	},
+};

@@ -33,9 +33,8 @@
 .bg-l4 {
 	background-color: var(--l4);
 }
-
-.bg-bg {
-	background-color: var(--backgroundColor);
+.bg-d4-fixed {
+	background-color: var(--dark-l4);
 }
 
 .vCenter {
@@ -391,15 +390,15 @@
 	overflow: auto;
 }
 
-.fg-white-bl a,
-.fg-white-bl p,
-.fg-white-bl h1,
-.fg-white-bl h2,
-.fg-white-bl h3,
-.fg-white-bl h4,
-.fg-white-bl h5,
-.fg-white-bl h6 {
-	color: var(--backgroundColor);
+.fg-white-fix a,
+.fg-white-fix p,
+.fg-white-fix h1,
+.fg-white-fix h2,
+.fg-white-fix h3,
+.fg-white-fix h4,
+.fg-white-fix h5,
+.fg-white-fix h6 {
+	color: white;
 }
 
 .fixed {
