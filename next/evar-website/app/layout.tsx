@@ -1,4 +1,5 @@
 
+import { GoogleAnalytics } from 'common';
 import 'common/theming/base.css';
 import FixFavicon from 'common/theming/FixFavicon';
 import 'common/theming/modular.css';

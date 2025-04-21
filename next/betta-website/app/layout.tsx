@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from 'common';
 import 'common/theming/base.css';
 import FixFavicon from 'common/theming/FixFavicon';
 import 'common/theming/modular.css';
@@ -9,8 +10,6 @@ import Link from 'next/link';
 import './animations.css';
 import Nav from './nav/Nav';
 import './style.css';
-
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 
 export default function RootLayout({
