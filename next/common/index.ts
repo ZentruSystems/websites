@@ -6,4 +6,6 @@ export * from "./theming/Themed";
 export * from "./theming/ThemedImg";
 export * from "./theming/useTheme";
 
+export * from "@next/third-parties/google";
 export * from "./useResponsiveSize";
+

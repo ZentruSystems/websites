@@ -9,7 +9,8 @@ import Link from 'next/link';
 import './animations.css';
 import Nav from './nav/Nav';
 import './style.css';
-import Script from 'next/script';
+
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 
 export default function RootLayout({
@@ -18,16 +19,6 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (<>
-		<!-- Google tag (gtag.js) -->
-		<Script async src="https://www.googletagmanager.com/gtag/js?id=G-QLLJTENKLE"></Script>
-		<Script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-QLLJTENKLE');
-		</Script>
-
 		<html lang="en" style={{ overflowX: "hidden" }}>
 			{/* <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
 			<EnableScrollAnimations /> */}
@@ -52,6 +43,7 @@ export default function RootLayout({
 					</footer>
 				</div>
 			</body>
+			<GoogleAnalytics gaId="G-QLLJTENKLE"/>
 		</html>
 	</>);
 }
