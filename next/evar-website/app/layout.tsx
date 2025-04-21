@@ -15,6 +15,20 @@ export default function EvarLayout({
 	children: React.ReactNode
 }) {
 	return (<>
+		<!-- Google tag (gtag.js) -->
+		<Script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-7D5Y46X9F5"
+		></Script>
+		<Script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+		}
+			gtag("js", new Date());
+
+			gtag("config", "G-7D5Y46X9F5");
+		</Script>
 		<html lang="en">
 			<link key="d" id="favDark" rel="shortcut icon" href="/img/evar-single-dark.png" media="(prefers-color-scheme: dark)" />
 			<link key="l" id="favLight" rel="shortcut icon" href="/img/evar-single-light.png" media="(prefers-color-scheme: light)" />

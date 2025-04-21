@@ -15,7 +15,6 @@ export default function EvarPage() {
 						Experience this multi-level story unravel beneath you and get to know one of the big secrets of the colony’s funding.<br />
 						Many people say things have to change.
 					</p>
-					<img className="hBigPad" src="./img/Horizontal Line.svg" />
 				</div>
 			</div>
 		</div>
