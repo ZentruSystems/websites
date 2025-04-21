@@ -44,7 +44,7 @@ export default function EvarLayout({
 					</footer>
 				</div>
 			</body>
-			<GoogleAnalytics gaId="G-7D5Y46X9F5"/>
+			<GoogleAnalytics gaId="G-GDTQ6JS1HD"/>
 		</html>
 	</>);
 }
