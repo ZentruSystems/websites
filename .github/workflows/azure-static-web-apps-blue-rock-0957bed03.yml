@@ -1,4 +1,4 @@
-name: Betta-Website (Azure Static Web Apps CI/CD)
+name: Zentru (Azure Static Web Apps CI/CD)
 
 on:
   push:
@@ -31,14 +31,14 @@ jobs:
         with:
           node-version: 23
           cache: "pnpm"
-          cache-dependency-path: ./next/betta-website/
+          cache-dependency-path: ./next/zentru/
 
       - name: Install dependencies
         working-directory: ./next
         run: pnpm install
 
-      - name: Static generation of Betta-Website
-        working-directory: ./next/betta-website
+      - name: Static generation of Zentru Website
+        working-directory: ./next/zentru
         run: pnpm run build
 
       - name: Build And Deploy
@@ -50,7 +50,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/next/betta-website/out" # App source code path
+          app_location: "/next/zentru/out" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######

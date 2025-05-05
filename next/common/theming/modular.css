@@ -5,6 +5,21 @@
 .primaryAccent {
 	color: var(--primaryAccentColor);
 }
+.hvPrimaryAccent:hover {
+	color: var(--primaryAccentColor);
+}
+
+.mutedPrimaryAccent {
+	color: var(--mutedPrimaryAccentColor);
+}
+
+.hvMutedPrimaryAccent:hover {
+	color: var(--mutedPrimaryAccentColor);
+}
+
+.darkPrimaryAccent {
+	color: var(--darkPrimaryAccentColor)
+}
 
 .foreground {
 	color: var(--foregroundColor);
@@ -109,6 +124,7 @@
 .Pad {
 	padding: var(--normalPadding);
 }
+
 
 .vUnitPad {
 	padding-top: var(--paddingUnit);
@@ -371,6 +387,18 @@
 	left: var(--paddingUnit);
 }
 
+
+.liquidAll {
+	transition: all var(--liquid) var(--liquidDuration);
+}
+
+.liquidColor {
+	transition: color var(--liquid) var(--liquidDuration);
+}
+.snappyColor {
+	transition: color var(--snappy) var(--snappyDuration);
+}
+
 .liquidPad {
 	transition: padding var(--liquid) var(--liquidDuration);
 }
@@ -428,7 +456,11 @@
 	}
 
 	.navPad {
-		padding-top: 0;
+		padding-top: unset;
+	}
+
+	.ph-navPad {
+		padding-top: var(--nav-height);
 	}
 
 	.ph-bNavPad {
@@ -496,9 +528,33 @@
 		flex-direction: column;
 	}
 
+	.ph-PadResp {
+		padding-top: var(--normalResponsivePadding);
+		padding-bottom: var(--normalResponsivePadding);
+		padding-left: var(--normalResponsivePadding);
+		padding-right: var(--normalResponsivePadding);
+	}
+
+	.ph-tPadResp {
+		padding-top: var(--normalResponsivePadding);
+	}
+
 	.ph-vPad {
 		padding-top: var(--normalPadding);
 		padding-bottom: var(--normalPadding);
+	}
+	.ph-hPad {
+		padding-left: var(--normalPadding);
+		padding-right: var(--normalPadding);
+	}
+
+	.ph-hUnitMarg {
+		margin-left: var(--paddingUnit);
+		margin-right: var(--paddingUnit);
+	}
+
+	.ph-allRoundBigResp {
+		border-radius: var(--borderRadiusBigResponsive);
 	}
 
 	.vAltMarg {

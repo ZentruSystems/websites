@@ -8,10 +8,11 @@
 
 :root {
 	/* COLORS */
-	--primaryAccentColor: hsl(187, 90%, 50%);
-	--mutedPrimaryAccentColor: hsl(187, 83%, 50%);
-	--alternativeAccentColor: hsl(150, 85%, 64%);
-	--glowAlternativeAccentColor: hsl(150, 76%, 77%);
+	--primaryAccentColor: hsl(150, 85%, 64%);
+	--mutedPrimaryAccentColor: hsl(150, 75%, 55%);
+	--darkPrimaryAccentColor: hsl(150, 100%, 26%);
+	--alternativeAccentColor: hsl(187, 90%, 50%);
+	--glowAlternativeAccentColor: hsl(187, 83%, 50%);
 
 	--backgroundColor: hsl(0, 0%, 100%);
 	--l1: hsl(0, 0%, 30%);
@@ -30,6 +31,7 @@
 	--paddingUnit: 30px;
 	--smallPad: calc(var(--paddingUnit) / 2);
 	--normalPadding: calc(var(--paddingUnit) * 2);
+	--normalResponsivePadding: 5%;
 	--bigPadding: calc(var(--paddingUnit) * 3);
 	--site-padding: var(--normalPadding);
 
@@ -45,6 +47,7 @@
 	/* Values */
 	--borderRadius: 7px;
 	--borderRadiusBig: calc(var(--borderRadius) * 6);
+	--borderRadiusBigResponsive: min(8vw, var(--borderRadiusBig));
 
 	--grid-gap: 15px;
 
@@ -54,6 +57,9 @@
 	/* TRANSITIONS */
 	--liquid: cubic-bezier(.39,.26,.15,.86);
 	--liquidDuration: 0.7s;
+
+	--snappy: cubic-bezier(.63,.41,1,.71);
+	--snappyDuration: 0.3s;
 
 
 	/* DEFAULT GRID for FULL width
@@ -79,6 +85,11 @@
 	:root {
 		--glassColor: #1a1a1acc;
 		--primaryColor: hsl(187, 90%, 40%);
+
+		--primaryAccentColor: hsl(150, 85%, 64%);
+		--mutedPrimaryAccentColor: hsl(150, 76%, 77%);
+		--alternativeAccentColor: hsl(187, 90%, 50%);
+		--glowAlternativeAccentColor: hsl(187, 83%, 50%);
 
 		--backgroundColor: #000;
 		--l1: hsl(0, 0%, 95%);
