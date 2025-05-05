@@ -9,7 +9,6 @@ export default function CatalogItem(
 	const isLeftSide = props.isLeftSide || false;
 	const titleSpan = isLeftSide ? "s6 e10" : "s1 e5";
 	const contentSpan = isLeftSide ? "s6 e13" : "s1 e7";
-	const sideSpan = isLeftSide ? "s0 e4" : "s9 e13";
 
 	return <section className="vhGrid">
 		<h2 className={`${titleSpan} tPad`}>{props.title}</h2>
