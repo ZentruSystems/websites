@@ -412,6 +412,7 @@
 
 .Container {
 	overflow: hidden;
+	position: relative;
 }
 
 .Scrollable {
@@ -545,6 +546,14 @@
 	}
 	.ph-hPad {
 		padding-left: var(--normalPadding);
+		padding-right: var(--normalPadding);
+	}
+
+	.ph-lPad {
+		padding-left: var(--normalPadding);
+	}
+
+	.ph-rPad {
 		padding-right: var(--normalPadding);
 	}
 
