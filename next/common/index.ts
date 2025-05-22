@@ -9,3 +9,4 @@ export * from "./theming/useTheme";
 export * from "@next/third-parties/google";
 export * from "./useResponsiveSize";
 
+export * from "./impressum";

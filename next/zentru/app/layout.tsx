@@ -39,6 +39,11 @@ export default function RootLayout({
 								/>
 							</Link>
 						</div>
+						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
+							<Link href="/impressum">
+								<p>Impressum</p>
+							</Link>
+						</div>
 					</footer>
 				</div>
 			</body>

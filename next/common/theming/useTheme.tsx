@@ -6,14 +6,29 @@ export default function useTheme() {
 	const [prefersLight, setPrefersLight] = useState(true);
 	useEffect(() => {
 		if (window.matchMedia) {
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+			console.log(prefersDark);
+
+			if (prefersDark === undefined || prefersDark === null || prefersDark === {}) {
+				setPrefersLight(true); // fallback to lighttheme
+				return;
+			}
+
 			// dark mode
-			setPrefersLight(!(window.matchMedia('(prefers-color-scheme: dark)').matches ?? false));
+			setPrefersLight(!(prefersDark.matches ?? false));
 
 			function _handle(event: MediaQueryListEvent) {
 				setPrefersLight(!event.matches);
 			}
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', _handle);
-			return window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', _handle);
+
+			if (!prefersDark.addEventListener) {
+				// fallback for old browsers
+				prefersDark.addListener(_handle);
+				return prefersDark.removeListener(_handle);
+			}
+
+			prefersDark.addEventListener('change', _handle);
+			return prefersDark.removeEventListener('change', _handle);
 		}
 	}, []);
 

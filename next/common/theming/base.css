@@ -104,3 +104,7 @@ div.Placeholder {
 	border: 1px solid black;
 	background-color: gray;
 }
+
+a {
+	text-decoration-line: none;
+}

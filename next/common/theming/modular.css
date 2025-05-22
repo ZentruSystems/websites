@@ -133,6 +133,9 @@
 .tUnitPad {
 	padding-top: var(--paddingUnit);
 }
+.bUnitPad {
+	padding-bottom: var(--paddingUnit);
+}
 .hUnitPad {
 	padding-left: var(--paddingUnit);
 	padding-right: var(--paddingUnit);
@@ -582,6 +585,9 @@
 
 	.ph-tUnitPad {
 		padding-top: var(--paddingUnit);
+	}
+	.ph-bUnitPad {
+		padding-bottom: var(--paddingUnit);
 	}
 
 	.ph-vUnitPad {
