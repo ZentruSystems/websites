@@ -9,7 +9,7 @@ export default function useTheme() {
 			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 			console.log(prefersDark);
 
-			if (prefersDark === undefined || prefersDark === null || prefersDark === {}) {
+			if (prefersDark === undefined || prefersDark === null) {
 				setPrefersLight(true); // fallback to lighttheme
 				return;
 			}
