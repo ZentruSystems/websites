@@ -14,8 +14,8 @@ export default function Nav() {
 		return <nav className="glass hFill">
 			<Link className="s1 e2" href="/">
 				<ThemedImg className="Logo" alt="Zentru Systems" loading="eager"
-					lightsrc="./img/Zentru Logo/Brightness=Black, Color=Green.svg"
-					darksrc="./img/Zentru Logo/Brightness=White, Color=Blue.svg"
+					lightsrc="./img/ZentruLogo/Brightness=Black,Color=Green.svg"
+					darksrc="./img/ZentruLogo/Brightness=White,Color=Blue.svg"
 					height="10"
 				/>
 			</Link>
@@ -62,8 +62,8 @@ export default function Nav() {
 		</div>
 		<Link className="s1 e2 liquidPad" href="/" style={{ paddingTop: burgerExtend }}>
 			<ThemedImg className="Logo" alt="Zentru"
-				lightsrc="./img/Zentru Logo/Brightness=Dark, Color=Green.svg"
-				darksrc="./img/Zentru Logo/Brightness=Light, Color=Blue.svg"
+				lightsrc="./img/ZentruLogo/Brightness=Dark,Color=Green.svg"
+				darksrc="./img/ZentruLogo/Brightness=Light,Color=Blue.svg"
 			/>
 		</Link>
 		{burger}

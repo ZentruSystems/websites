@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function useTheme() {
-	const [prefersLight, setPrefersLight] = useState(true);
+	const [prefersLight, setPrefersLight] = useState<boolean|undefined>(undefined);
 	useEffect(() => {
 		if (window.matchMedia) {
 			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -22,13 +22,13 @@ export default function useTheme() {
 			}
 
 			if (!prefersDark.addEventListener) {
-				// fallback for old browsers
+				console.warn("useTheme: using fallback for old browsers");
 				prefersDark.addListener(_handle);
-				return prefersDark.removeListener(_handle);
+				return () => prefersDark.removeListener(_handle);
 			}
 
 			prefersDark.addEventListener('change', _handle);
-			return prefersDark.removeEventListener('change', _handle);
+			return () => prefersDark.removeEventListener('change', _handle);
 		}
 	}, []);
 

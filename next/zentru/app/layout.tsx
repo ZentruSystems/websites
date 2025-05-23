@@ -18,24 +18,41 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (<>
+		{/* {/* <head>
+			{/* <link
+          rel='icon'
+          href='/faviconLight/favicon.ico'
+          media='(prefers-color-scheme: dark)'
+        />
+
+			<link
+          rel='icon'
+          href='/faviconDark/favicon.ico'
+          media='(prefers-color-scheme: light)'
+        />
+		</head> */}
 		<html lang="en" style={{ overflowX: "hidden" }}>
 			{/* <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
 			<EnableScrollAnimations /> */}
-			<FixFavicon />
+			<FixFavicon
+				darkSrc="/faviconLight/favicon.ico"
+				lightSrc="/faviconDark/favicon.ico"
+			/>
 			<body>
 				<Nav />
-				<div className='navPad'>
+				<div className='navPad vflex minV100'>
 					{children}
 					<footer className="bg-l3 hGrid ph-bNavPad">
 						<div className="s1 e3 ph-e5 vPad">
 							<p>Lets meet at</p>
+							<Link href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>
 						</div>
 						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad">
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg style={{ height: 25 }}
-									lightsrc="./img/Zentru Logo/Brightness=Dark, Color=Green.svg"
-									darksrc="./img/Zentru Logo/Brightness=White, Color=Blue.svg"
+									lightsrc="./img/ZentruLogo/Brightness=Dark,Color=Green.svg"
+									darksrc="./img/ZentruLogo/Brightness=White,Color=Blue.svg"
 								/>
 							</Link>
 						</div>
@@ -47,7 +64,7 @@ export default function RootLayout({
 					</footer>
 				</div>
 			</body>
-			<GoogleAnalytics gaId="G-QLLJTENKLE" />
+			<GoogleAnalytics gaId="G-31E6P1N02L" />
 		</html>
 	</>);
 }
@@ -70,19 +87,8 @@ export const metadata: Metadata = {
 	icons: {
 		icon: [
 			{
-				media: '(prefers-color-scheme: dark)',
-				url: '/img/Zentru Sign - transparent@0.5.png',
-				href: '/img/Zentru Sign - transparent@0.5.png',
-				rel: "shortcut icon",
-				id: "favDark"
-			} as unknown as Icon,
-			{
-				media: '(prefers-color-scheme: light)',
-				url: '/img/Zentru Sign - dark transparent@0.5.png',
-				href: '/img/Zentru Sign - dark transparent@0.5.png',
-				rel: "shortcut icon",
-				id: "favLight"
-			} as unknown as Icon,
-		],
+				url: '/faviconDark/favicon.ico',
+				id: "favicon"
+			} as unknown as Icon]
 	},
 };

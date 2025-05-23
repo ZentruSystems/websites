@@ -324,6 +324,16 @@
 .flex {
 	display: flex;
 }
+.vflex {
+	display: flex;
+	flex-direction: column;
+}
+.v100 {
+	height: 100vh;
+}
+.minV100{
+	min-height: 100vh;
+}
 
 .rGap {
 	padding-right: var(--grid-gap);

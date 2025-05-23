@@ -7,6 +7,7 @@ import 'common/theming/text.css';
 import 'common/theming/ThemedImg';
 import ThemedImg from 'common/theming/ThemedImg';
 import { Metadata } from 'next';
+import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 import Link from "next/link";
 import './style.css';
 
@@ -17,15 +18,16 @@ export default function EvarLayout({
 }) {
 	return (<>
 		<html lang="en">
-			<link key="d" id="favDark" rel="shortcut icon" href="/img/evar-single-dark.png" media="(prefers-color-scheme: dark)" />
-			<link key="l" id="favLight" rel="shortcut icon" href="/img/evar-single-light.png" media="(prefers-color-scheme: light)" />
-			<FixFavicon />
+			<FixFavicon
+				darkSrc="/faviconLight/favicon.png"
+				lightSrc="/faviconDark/favicon.png"
+			/>
 			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
 				<nav className="hGrid fixed glass v10Pad hFill">
 					<Link className="s1 e12 ph-e5 hCenter" href="/">
 						<ThemedImg
-							lightsrc="./img/Evar Text Logo.svg"
-							darksrc="./img/Evar Text Logo Dark.svg"
+							lightsrc="./img/EvarTextLogo.svg"
+							darksrc="./img/EvarTextLogo-Dark.svg"
 						/>
 					</Link>
 				</nav>
@@ -34,17 +36,24 @@ export default function EvarLayout({
 					<footer className="bg-l3 hGrid">
 						<div className="s1 e3 vPad">
 							<p>Lets meet at</p>
+							<Link className='rUnitPad' href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>
+							<Link className='lUnitPad' href="https://store.steampowered.com/developer/evarspace">Steam</Link>
 						</div>
-						<div className="s11 e12 ph-s4 ph-e5 vBottom hRight vPad">
+						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad tUnitPad">
 							<p>A field of</p>
 							<Link href="https://zentru.systems">
-								<img style={{ height: 25 }} src="./img/Brightness=Dark, Color=Green.svg" loading="lazy" />
+								<img style={{ height: 25 }} src="./img/Brightness=Dark,Color=Green.svg" loading="lazy" />
+							</Link>
+						</div>
+						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
+							<Link href="https://zentru.systems/impressum">
+								<p>Impressum</p>
 							</Link>
 						</div>
 					</footer>
 				</div>
 			</body>
-			<GoogleAnalytics gaId="G-GDTQ6JS1HD" />
+			<GoogleAnalytics gaId="G-0DTTBMWKCQ" />
 		</html>
 	</>);
 }
@@ -62,5 +71,11 @@ export const metadata: Metadata = {
 		url: "https://evar.space",
 		// description: "Really Good",
 	},
-
+	icons: {
+		icon: [
+			{
+				url: '/faviconDark/favicon.png',
+				id: "favicon"
+			} as unknown as Icon]
+	},
 };

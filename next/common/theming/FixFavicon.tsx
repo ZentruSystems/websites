@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import useTheme from "./useTheme";
 
 /**
@@ -17,29 +17,29 @@ import useTheme from "./useTheme";
  *   <link key="l" id="favLight" rel="shortcut icon" href="/img/evar-single-light.png" media="(prefers-color-scheme: light)" />
  * 	 <FixFavicon />
  */
-export default function FixFavicon() {
+export default function FixFavicon(props: {
+	lightSrc: string,
+	darkSrc: string,
+}) {
 	const { prefersLight } = useTheme();
-	const favLight = useRef<HTMLElement>(null);
-	const favDark = useRef<HTMLElement>(null);
 
 	useEffect(() => {
-		if (!favLight.current) favLight.current = document.getElementById("favLight");
-		if (!favDark.current) favDark.current = document.getElementById("favDark");
+		const favicon = document.getElementById("favicon") as HTMLLinkElement;
+
+		console.log("CHECK");
+		if (prefersLight === undefined) return;
 
 		if (prefersLight) {
 			console.log("Change to light theme favicon");
-			document.head.removeChild(favDark.current!);
-			favDark.current!.remove();
-			console.log(`parent of dark${favDark.current!.parentNode}`);
-			document.head.append(favLight.current!);
+			// path is correct, the favicon itself is dark!
+			favicon.href = props.lightSrc;
 		} else {
 			console.log("Change to dark theme favicon");
-			document.head.removeChild(favLight.current!);
-			favLight.current!.remove();
-			console.log(`parent of light ${favLight.current!.parentNode}`);
-			document.head.append(favDark.current!);
+			// path is correct, the favicon itself is light!
+			favicon.href = props.darkSrc;
 		}
-	}, [prefersLight, favLight.current, favDark.current]);
+		console.info("FixFavicon: DONE");
+	}, [prefersLight]);
 
 	return <></>;
 }
