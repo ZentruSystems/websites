@@ -113,3 +113,19 @@ a {
 .navPad>div {
 	flex: 1;
 }
+
+.pulsingShadow {
+	animation: pulsingShadow 4s var(--liquid) infinite;
+}
+
+@keyframes pulsingShadow {
+	from {
+		box-shadow: hsl(from var(--foregroundColor) h s l / 0.33) 0px 0px 45px 0px;
+	}
+	50% {
+		box-shadow: hsl(from var(--foregroundColor) h s l / 0.6) 0px 0px 45px 0px;
+	}
+	to {
+		box-shadow: hsl(from var(--foregroundColor) h s l / 0.33) 0px 0px 45px 0px;
+	}
+}
