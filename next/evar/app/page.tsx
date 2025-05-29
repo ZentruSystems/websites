@@ -21,7 +21,7 @@ export default function EvarPage() {
 						className="Pad"
 						src="https://store.steampowered.com/widget/3732370/?utm_source=evar-homepage&utm_medium=widget"
 						frameBorder="0"
-						style={{ height: "calc(2 * var(--normalPadding) + 190px)", width: "60%" }}></iframe>
+						style={{ height: "calc(2 * var(--normalPadding) + 190px)", width: "60%", minWidtH: "490px" }}></iframe>
 				</div>
 			</div>
 		</div>
