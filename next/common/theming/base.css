@@ -69,9 +69,7 @@
 	column-gap: var(--grid-gap);
 	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
 	 */
-}
 
-:root {
 	line-height: 1em;
 
 	background-color: var(--backgroundColor);
@@ -79,6 +77,13 @@
 
 	font-size: var(--normalFontSize);
 	font-family: var(--normalFont);
+}
+
+@media screen and (max-width: 730px) {
+	:root {
+		--normalFontSize: 16px;
+		--largerFontSize: 28px;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
