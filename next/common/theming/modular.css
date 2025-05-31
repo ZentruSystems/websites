@@ -616,4 +616,8 @@
 	.ph-hUnset {
 		justify-self: unset;
 	}
+
+	.ph-hFill {
+		width: 100%;
+	}
 }
