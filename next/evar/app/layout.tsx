@@ -61,15 +61,16 @@ export default function EvarLayout({
 export const metadata: Metadata = {
 	title: "EVAR",
 	keywords: [
-		"Games"
+		"Games",
+		"debris",
 	],
-	// description: "Really Good",
+	description: "Games for you",
 	robots: { index: true, follow: true },
 	openGraph: {
 		title: "EVAR",
 		type: 'website',
 		url: "https://evar.space",
-		// description: "Really Good",
+		description: "Games for you",
 	},
 	icons: {
 		icon: [

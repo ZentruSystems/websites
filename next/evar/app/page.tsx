@@ -18,6 +18,7 @@ export default function EvarPage() {
 				</div>
 				<div className="flex layoutHCenter">
 					<iframe
+						id="steamWidget"
 						className="Pad ph-hfill"
 						src="https://store.steampowered.com/widget/3732370/?utm_source=evar-homepage&utm_medium=widget"
 						frameBorder="0"
