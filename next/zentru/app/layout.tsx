@@ -83,6 +83,10 @@ export const metadata: Metadata = {
 		type: 'website',
 		url: "https://zentru.systems",
 		description: "Really Good",
+		images: {
+			href: "https://zentru.systems",
+			url: "https://zentru.systems/opengraph-image.png",
+		}
 	},
 	icons: {
 		icon: [

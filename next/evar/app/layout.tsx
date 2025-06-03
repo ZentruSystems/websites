@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 		url: "https://evar.space",
 		description: "Games for you",
 		images: {
-			href: "https://evar.space/opengraph-image.png",
+			href: "https://evar.space",
 			url: "https://evar.space/opengraph-image.png",
 		}
 	},
@@ -83,4 +83,5 @@ export const metadata: Metadata = {
 				id: "favicon"
 			} as unknown as Icon]
 	},
+	metadataBase: new URL('https://evar.space')
 };
