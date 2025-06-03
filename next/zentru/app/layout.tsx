@@ -88,6 +88,15 @@ export const metadata: Metadata = {
 			url: "https://zentru.systems/opengraph-image.png",
 		}
 	},
+	twitter: {
+		card: "summary_large_image",
+		description: "Really Good",
+		title: "Zentru Systems",
+		images: {
+			href: "https://zentru.systems",
+			url: "https://zentru.systems/opengraph-image.png",
+		}
+	}
 	icons: {
 		icon: [
 			{
