@@ -72,7 +72,8 @@ export const metadata: Metadata = {
 		url: "https://evar.space",
 		description: "Games for you",
 		images: {
-			url: "https://evar.space/opengraph-image.png"
+			href: "https://evar.space/opengraph-image.png",
+			url: "https://evar.space/opengraph-image.png",
 		}
 	},
 	icons: {
