@@ -20,7 +20,7 @@ export default function EvarPage() {
 					<iframe
 						id="steamWidget"
 						className="Pad hfill ph-hfill"
-						src="https://store.steampowered.com/widget/3732370/?utm_source=evar-homepage&utm_medium=widget"
+						src="https://store.steampowered.com/widget/3732370/?utm_source=evarhomepage"
 						frameBorder="0"
 						style={{ height: "calc(2 * var(--normalPadding) + 190px)", minWidth: "490px" }}></iframe>
 				</div>

@@ -68,6 +68,8 @@ export const metadata: Metadata = {
 	robots: { index: true, follow: true },
 	openGraph: {
 		title: "EVAR",
+		siteName: "EVAR",
+		countryName: "Austria",
 		type: 'website',
 		url: "https://evar.space",
 		description: "Games for you",
@@ -77,9 +79,10 @@ export const metadata: Metadata = {
 		}
 	},
 	twitter: {
+		title: "Evar",
+		site: "Evar",
 		card: "summary_large_image",
 		description: "Games for you",
-		title: "Evar",
 		images: {
 			href: "https://evar.space",
 			url: "https://evar.space/opengraph-image.png",
