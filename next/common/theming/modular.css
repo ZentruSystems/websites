@@ -36,17 +36,35 @@
 .bg-l1 {
 	background-color: var(--l1);
 }
+.fg-l1 {
+	color: var(--l1);
+}
 
 .bg-l2 {
 	background-color: var(--l2);
+}
+.fg-l2 {
+	color: var(--l2);
+}
+.hover-fg-l2:hover {
+	color: var(--l2);
 }
 
 .bg-l3 {
 	background-color: var(--l3);
 }
+.fg-l3 {
+	color: var(--l3);
+}
+.hover-fg-l3:hover {
+	color: var(--l3);
+}
 
 .bg-l4 {
 	background-color: var(--l4);
+}
+.fg-l4 {
+	color: var(--l4);
 }
 .bg-d4-fixed {
 	background-color: var(--dark-l4);
@@ -439,7 +457,7 @@
 
 .Container {
 	overflow: hidden;
-	position: relative;
+	/* position: relative; */
 }
 
 .Scrollable {
@@ -472,6 +490,10 @@
 
 .hoverZoomMore:hover {
 	scale: 1.1
+}
+
+.hiddenButton:hover {
+	background-color: var(--l1);
 }
 
 @media screen and (max-width: 730px) {
@@ -641,5 +663,9 @@
 
 	.ph-hFill {
 		width: 100%;
+	}
+
+	.ph-hCenter {
+		justify-self: center;
 	}
 }

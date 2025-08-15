@@ -14,8 +14,6 @@ nav img {
 	color: var(--l3) !important;
 }
 
-#pressKit-download:hover {
-	/* border-width: 2px; */
+#steamWidget {
 
-	background-color: var(--l1);
 }

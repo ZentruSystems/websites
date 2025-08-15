@@ -1,4 +1,5 @@
 import dirData from '@/dirData.json';
+import HiddenButton from 'common/components/hiddenButton';
 import { NodeData } from 'react-folder-tree';
 import 'react-folder-tree/dist/style.css';
 import RandomImages from './randomImages';
@@ -16,12 +17,12 @@ export default function PressKit() {
 						node => ({ ...node, checked: 0, isOpen: !node.children?.length })
 					)} />
 				<RandomImages className='s7 e12 ph-s0 ph-e6 ph-tPadResp' />
-				<a
-					id="pressKit-download"
-					style={{ color: "var(--l3)", display: "block" }}
-					className='s0 e6 ph-s1 ph-e5 hShrink vUnitPad hUnitPad tAltMarg allRound ph-allRoundBigRespunded bg-accentColor liquidAll'
+				<HiddenButton
+					className='s0 e6 ph-s1 ph-e5 ph-hCenter hShrink tAltMarg'
+					style={{padding: "15px"}}
 					download="PressKit" href='./PressKit.zip'>
-					Download PressKit</a>
+					Download PressKit
+				</HiddenButton>
 			</div>
 		</div>
 	</main>

@@ -1,3 +1,4 @@
+import HiddenButton from "common/components/hiddenButton";
 
 export default function EvarPage() {
 	return <main className="hGrid bPad">
@@ -22,9 +23,16 @@ export default function EvarPage() {
 						className="Pad hfill ph-hfill"
 						src="https://store.steampowered.com/widget/3732370/?utm_source=evarhomepage"
 						frameBorder="0"
-						style={{ height: "calc(2 * var(--normalPadding) + 190px)", minWidth: "490px" }}></iframe>
+						style={{ height: "calc(2 * var(--normalPadding) + 190px)", minWidth: "440px", width: "min(800px, 100%)" }}></iframe>
 				</div>
-				<a className="hCenter" href="./PressKit">Press Kit</a>
+				<div className="hGrid" style={{paddingBottom: "10px"}}>
+					<HiddenButton
+						className="s1 e12 ph-s1 ph-e5 hShrink hCenter hoverZoom fg-l1 hover-fg-l3"
+						style={{ padding: "max(1%, 8px)", fontSize: "0.8em" }}
+						href="./PressKit">
+						Press Kit
+					</HiddenButton>
+				</div>
 			</div>
 		</div>
 	</main>;
