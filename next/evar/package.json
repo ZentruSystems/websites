@@ -4,15 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node ./genDirData.js && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "genDirData": "node ./genDirData.js"
   },
   "dependencies": {
+    "archiver": "^7.0.1",
     "common": "link:../common",
     "next": "15.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-folder-tree": "^5.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

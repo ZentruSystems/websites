@@ -24,6 +24,7 @@ export default function EvarPage() {
 						frameBorder="0"
 						style={{ height: "calc(2 * var(--normalPadding) + 190px)", minWidth: "490px" }}></iframe>
 				</div>
+				<a className="hCenter" href="./PressKit">Press Kit</a>
 			</div>
 		</div>
 	</main>;

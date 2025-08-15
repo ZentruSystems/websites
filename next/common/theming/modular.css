@@ -153,9 +153,16 @@
 	padding-top: calc(var(--paddingUnit) * 2.5);
 	padding-bottom: calc(var(--paddingUnit) * 2.5);
 }
+.tAltMarg {
+	margin-top: calc(var(--paddingUnit) * 2.5);
+}
 .vAltMarg {
 	margin-top: calc(var(--paddingUnit) * 2.5);
 	margin-bottom: calc(var(--paddingUnit) * 2.5);
+}
+
+.MargResp {
+	margin: var(--normalResponsivePadding);
 }
 
 .navPad {
@@ -278,6 +285,10 @@
 	height: 100%;
 }
 
+.hShrink {
+	width: fit-content;
+}
+
 .hFill {
 	width: 100%;
 }
@@ -365,6 +376,9 @@
 	border-top-right-radius: var(--borderRadius);
 	border-bottom-right-radius: var(--borderRadius);
 }
+.allRound {
+	border-radius: var(--borderRadius);
+}
 
 .allRoundBig {
 	border-radius: var(--borderRadiusBig);
@@ -450,6 +464,14 @@
 .glass {
 	backdrop-filter: blur(var(--glassBlurradius)) saturate(400%);
 	background-color: var(--glassColor);
+}
+
+.hoverZoom:hover {
+	scale: 1.05;
+}
+
+.hoverZoomMore:hover {
+	scale: 1.1
 }
 
 @media screen and (max-width: 730px) {

@@ -87,7 +87,7 @@ export const metadata: Metadata = {
 			href: "https://evar.space",
 			url: "https://evar.space/opengraph-image.png",
 		}
-	}
+	},
 	icons: {
 		icon: [
 			{
