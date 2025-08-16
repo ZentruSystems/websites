@@ -37,10 +37,56 @@
       ]
     },
     {
+      "name": "audioeffects",
+      "children": [
+        {
+          "name": "220189__gameaudio__blip-squeak.wav"
+        },
+        {
+          "name": "243518__copyc4t__static-radio-recording-with-blips.wav"
+        },
+        {
+          "name": "757175__henkonen__blip-1.wav"
+        },
+        {
+          "name": "game - collision 01.mp3"
+        },
+        {
+          "name": "ui - hover.mp3"
+        }
+      ]
+    },
+    {
       "name": "content_1.png"
     },
     {
       "name": "main.png"
+    },
+    {
+      "name": "music",
+      "children": [
+        {
+          "name": "01 Station-3.mp3"
+        },
+        {
+          "name": "02 Sunk.mp3"
+        },
+        {
+          "name": "03 Swirl.mp3"
+        },
+        {
+          "name": "04 Allcover.mp3"
+        },
+        {
+          "name": "05 All Faded Dreams.mp3"
+        },
+        {
+          "name": "06 dumpadum.mp3"
+        },
+        {
+          "name": "07 ding.mp3"
+        }
+      ]
     },
     {
       "name": "orb transparent.png"
