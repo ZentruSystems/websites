@@ -60,6 +60,9 @@ export default function RootLayout({
 							<Link href="/impressum">
 								<p>Impressum</p>
 							</Link>
+							<Link href="/privacy-policy">
+								<p>Privacy Policy</p>
+							</Link>
 						</div>
 					</footer>
 				</div>
@@ -96,7 +99,7 @@ export const metadata: Metadata = {
 			href: "https://zentru.systems",
 			url: "https://zentru.systems/opengraph-image.png",
 		}
-	}
+	},
 	icons: {
 		icon: [
 			{

@@ -49,6 +49,9 @@ export default function EvarLayout({
 							<Link href="https://zentru.systems/impressum">
 								<p>Impressum</p>
 							</Link>
+							<Link href="https://zentru.systems/privacy-policy">
+								<p>Privacy Policy</p>
+							</Link>
 						</div>
 					</footer>
 				</div>
