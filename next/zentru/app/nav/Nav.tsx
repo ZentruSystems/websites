@@ -14,8 +14,8 @@ export default function Nav() {
 		return <nav className="glass hFill">
 			<Link className="s1 e2" href="/">
 				<ThemedImg className="Logo" alt="Zentru Systems" loading="eager"
-					lightsrc="./img/ZentruLogo/Brightness=Black,Color=Green.svg"
-					darksrc="./img/ZentruLogo/Brightness=White,Color=Blue.svg"
+					lightsrc="./img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+					darksrc="./img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
 					height="10"
 				/>
 			</Link>

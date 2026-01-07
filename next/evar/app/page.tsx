@@ -7,14 +7,13 @@ export default function EvarPage() {
 				<div style={{ maxHeight: "75vh" }}>
 					<img className="hFill allRoundBig ph-allRoundBigResp" src="./img/debris_screenshot_01.png" />
 				</div>
-				<div className="tUnitPad Pad ph-PadResp fg-white-fix bg-d4-fixed">
+				<div className="tUnitPad Pad ph-PadResp fg-white-fix bg-d4-fixed" style={{backdropFilter: "saturate(140%) brightness(90%) blur(60px)", borderRadius: "var(--borderRadiusBigResponsive)", marginTop: "calc(-2 * var(--borderRadiusBigResponsive))", zIndex:0}}>
 					<h2>Get In — save Mars</h2>
 					<p>
 						After many satellites were sent to orbit, the inevitable mass-crash started, and is spreading like a wildfire.
 						Malcom has to master many critical situations to stay alive to save the station, himself and probably more.<br />
 						<br />
-						Experience this multi-level story unravel beneath you and get to know the secrets of the colony’s founding.<br />
-						Many people say things have to change.
+						Experience this multi-level story unravel beneath you and get to know the truth behind the commanding voice.
 					</p>
 				</div>
 				<div className="flex layoutHCenter">
@@ -29,7 +28,7 @@ export default function EvarPage() {
 					<HiddenButton
 						className="s1 e12 ph-s1 ph-e5 hShrink hCenter hoverZoom fg-l1 hover-fg-l3"
 						style={{ padding: "max(1%, 8px)", fontSize: "0.8em" }}
-						href="./PressKit">
+						href="https://evar.space/PressKit">
 						Press Kit
 					</HiddenButton>
 				</div>

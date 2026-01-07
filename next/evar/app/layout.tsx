@@ -23,7 +23,7 @@ export default function EvarLayout({
 				lightSrc="/faviconDark/favicon.png"
 			/>
 			<body style={{ overflowX: 'hidden', overflowY: 'scroll' }}>
-				<nav className="hGrid fixed glass v10Pad hFill">
+				<nav className="hGrid fixed glass v10Pad hFill" style={{zIndex: 100}}>
 					<Link className="s1 e12 ph-e5 hCenter" href="/">
 						<ThemedImg
 							lightsrc="./img/EvarTextLogo.svg"
@@ -42,7 +42,10 @@ export default function EvarLayout({
 						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad tUnitPad">
 							<p>A field of</p>
 							<Link href="https://zentru.systems">
-								<img style={{ height: 25 }} src="./img/Brightness=Dark,Color=Green.svg" loading="lazy" />
+								<ThemedImg loading="lazy" style={{ height: 25 }}
+									lightsrc="./img/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									darksrc="./img/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+								/>
 							</Link>
 						</div>
 						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">

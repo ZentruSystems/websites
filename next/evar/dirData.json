@@ -2,13 +2,22 @@
   "name": "PressKit",
   "children": [
     {
+      "name": "01_Screenshot.png"
+    },
+    {
+      "name": "02_Screenshot.png"
+    },
+    {
+      "name": "03_Screenshot.png"
+    },
+    {
       "name": "Background Image.png"
     },
     {
-      "name": "Debris Sign.png"
+      "name": "Debris Sign 2.png"
     },
     {
-      "name": "Frame 7.png"
+      "name": "Debris Sign.png"
     },
     {
       "name": "README.txt"
@@ -17,22 +26,13 @@
       "name": "Youtube Thumbnail",
       "children": [
         {
-          "name": "0 - background.png"
-        },
-        {
           "name": "1 - orb transparent.png"
         },
         {
           "name": "2 - Debris Sign.png"
         },
         {
-          "name": "3 - drone.png"
-        },
-        {
           "name": "4 - Screeneffect.png"
-        },
-        {
-          "name": "Youtube Thumbnail – Complete.png"
         }
       ]
     },
@@ -55,12 +55,6 @@
           "name": "ui - hover.mp3"
         }
       ]
-    },
-    {
-      "name": "content_1.png"
-    },
-    {
-      "name": "main.png"
     },
     {
       "name": "music",
