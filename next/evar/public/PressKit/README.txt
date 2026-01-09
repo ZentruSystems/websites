@@ -26,7 +26,7 @@ Full:
 Debris is an atmospheric science-based survival simulation with an event-driven story in the orbit of Mars.
 You are drifting in a chaotic sea of debris and now you need to find your way through it.
 As you execute repairs for Ground Control, you begin to uncover the truth buried in the wreckage.
-Pilot a remote drone, collect debris for resources and build modules that will allow you to survive and maintain them.
+Pilot a remote drone, collect debris for resources and build modules that will allow you to survive.
 
 
 FACTS
