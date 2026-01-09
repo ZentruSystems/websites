@@ -11,7 +11,24 @@
       "name": "03_Screenshot.png"
     },
     {
-      "name": "Background Image.png"
+      "name": "04_Screenshot.png"
+    },
+    {
+      "name": "05_Screenshot.png"
+    },
+    {
+      "name": "16-9-Wide",
+      "children": [
+        {
+          "name": "01-YourImageHere.txt"
+        },
+        {
+          "name": "02-StaticNoise.png"
+        },
+        {
+          "name": "03-Frame.png"
+        }
+      ]
     },
     {
       "name": "Debris Sign 2.png"
@@ -21,20 +38,6 @@
     },
     {
       "name": "README.txt"
-    },
-    {
-      "name": "Youtube Thumbnail",
-      "children": [
-        {
-          "name": "1 - orb transparent.png"
-        },
-        {
-          "name": "2 - Debris Sign.png"
-        },
-        {
-          "name": "4 - Screeneffect.png"
-        }
-      ]
     },
     {
       "name": "audioeffects",
