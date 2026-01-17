@@ -17,3 +17,18 @@ nav img {
 #steamWidget {
 
 }
+
+.PrivacyPolicyForDebris h3 {
+	padding-top: 1em;
+	padding-bottom: 0.3em;
+}
+
+.PrivacyPolicyForDebris ol,
+.PrivacyPolicyForDebris ul,
+.PrivacyPolicyForDebris li {
+	padding-left: revert;
+}
+
+.PrivacyPolicyForDebris ul {
+	padding-left: 1.025em;
+}
