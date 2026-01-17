@@ -26,8 +26,8 @@ export default function EvarLayout({
 				<nav className="hGrid fixed glass v10Pad hFill" style={{zIndex: 100}}>
 					<Link className="s1 e12 ph-e5 hCenter" href="/">
 						<ThemedImg
-							lightsrc="./img/EvarTextLogo.svg"
-							darksrc="./img/EvarTextLogo-Dark.svg"
+							lightsrc="/img/EvarTextLogo.svg"
+							darksrc="/img/EvarTextLogo-Dark.svg"
 						/>
 					</Link>
 				</nav>
@@ -43,8 +43,8 @@ export default function EvarLayout({
 							<p>A field of</p>
 							<Link href="https://zentru.systems">
 								<ThemedImg loading="lazy" style={{ height: 25 }}
-									lightsrc="./img/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-									darksrc="./img/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									lightsrc="/img/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									darksrc="/img/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
 								/>
 							</Link>
 						</div>

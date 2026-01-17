@@ -15,7 +15,7 @@ export default function Page() {
 					<Separator/>
 					<div className="vCenter vPad ph-tUnitPad vFill hFill il-grid layoutVBottom">
 						<Link href="https://evar.space" className="il-grid vUnitPad layoutVBottom layoutHCenter">
-							<img className="invertIfLightTheme" style={{ height: 50, }} src="./img/EvarTextLogo.svg" alt="Evar – Games" />
+							<img className="invertIfLightTheme" style={{ height: 50, }} src="/img/EvarTextLogo.svg" alt="Evar – Games" />
 						</Link>
 						<h4 className="hCenter vBottom">Check out all our Projects from all our Fields</h4>
 					</div>
@@ -30,7 +30,7 @@ export default function Page() {
 					The undescribable feeling of using a product that is really good.
 				</p>
 				<SideBoard
-					src="./img/OldProducts.svg"
+					src="/img/OldProducts.svg"
 					alt="Thoughtfulness from a lost era"
 				/>
 			</section>

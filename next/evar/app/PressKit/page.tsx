@@ -20,7 +20,7 @@ export default function PressKit() {
 				<HiddenButton
 					className='s0 e6 ph-s1 ph-e5 ph-hCenter hShrink tAltMarg'
 					style={{padding: "15px"}}
-					download="PressKit" href='./PressKit.zip'>
+					download="PressKit" href='/PressKit.zip'>
 					Download PressKit
 				</HiddenButton>
 			</div>

@@ -51,8 +51,8 @@ export default function RootLayout({
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg style={{ height: 25 }}
-									lightsrc="./img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-									darksrc="./img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									lightsrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									darksrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
 								/>
 							</Link>
 						</div>

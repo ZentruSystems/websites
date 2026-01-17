@@ -8,7 +8,7 @@ export default function Catalog() {
 				<img
 					className="More2 RightFloat hUnitPad tPad"
 					style={{ marginLeft: "30%", top: "15%" }}
-					src="./img/Smartphone.svg" alt="Scan Business Cards with your Smartphone" />
+					src="/img/Smartphone.svg" alt="Scan Business Cards with your Smartphone" />
 			</>}
 		>
 			Because it can be a real hassle to organize your tasks, deadlines and events.<br />
