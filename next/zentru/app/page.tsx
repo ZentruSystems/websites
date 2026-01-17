@@ -1,5 +1,5 @@
+import VerticalDivider from "common/components/verticalDivider/VerticalDivider";
 import Link from "next/link";
-import Separator from "../../common/components/separator/Separator";
 import DynamicQuote from "./DynamicQuote";
 import SideBoard from "./SideBoard";
 
@@ -12,7 +12,7 @@ export default function Page() {
 					<h2 className="light noMargin">Because we <a ><span className="bold mutedPrimaryAccent">love</span> really good.</a></h2>
 				</div>
 				<div className="s8 e13 flex ph-s1 ph-e5 ph-flex-vert">
-					<Separator/>
+					<VerticalDivider className="vAltPad rGap lGap"/>
 					<div className="vCenter vPad ph-tUnitPad vFill hFill il-grid layoutVBottom">
 						<Link href="https://evar.space" className="il-grid vUnitPad layoutVBottom layoutHCenter">
 							<img className="invertIfLightTheme" style={{ height: 50, }} src="/img/EvarTextLogo.svg" alt="Evar – Games" />

@@ -1,5 +1,5 @@
 export default function PrivacyPolicy() {
-	return <div className="center Pad" >
+	return <div className="Pad" >
 		<h2>Privacy-Policy</h2>
 		<div>
 			<h3>Datenschutzerklärung</h3>

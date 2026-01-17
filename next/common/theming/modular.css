@@ -1,27 +1,42 @@
 .bold {
 	font-weight: bold;
 }
+.normal {
+	font-weight: 400;
+}
+.light {
+	font-weight: 300;
+}
+.thin {
+	font-weight: 100;
+}
 
 .primaryAccent {
+	--currentForeground: var(--primaryAccentColor);
 	color: var(--primaryAccentColor);
 }
 .hvPrimaryAccent:hover {
+	--currentForeground: var(--primaryAccentColor);
 	color: var(--primaryAccentColor);
 }
 
 .mutedPrimaryAccent {
+	--currentForeground: var(--mutedPrimaryAccentColor);
 	color: var(--mutedPrimaryAccentColor);
 }
 
 .hvMutedPrimaryAccent:hover {
+	--currentForeground: var(--mutedPrimaryAccentColor);
 	color: var(--mutedPrimaryAccentColor);
 }
 
 .darkPrimaryAccent {
+	--currentForeground: var(--darkPrimaryAccentColor);
 	color: var(--darkPrimaryAccentColor)
 }
 
 .foreground {
+	--currentForeground: var(--foregroundColor);
 	color: var(--foregroundColor);
 }
 
@@ -30,6 +45,9 @@
 	text-decoration-skip-ink: none;
 }
 
+.bg-bg {
+	background-color: var(--backgroundColor);
+}
 .bg-fg {
 	background-color: var(--foregroundColor);
 }
@@ -37,37 +55,87 @@
 	background-color: var(--l1);
 }
 .fg-l1 {
+	--currentForeground: var(--l1);
 	color: var(--l1);
 }
 
 .bg-l2 {
 	background-color: var(--l2);
 }
+
+.hover-fg:hover {
+	--currentForeground: var(--foregroundColor);
+	color: var(--foregroundColor);
+}
+
 .fg-l2 {
+	--currentForeground: var(--l2);
 	color: var(--l2);
 }
 .hover-fg-l2:hover {
+	--currentForeground: var(--l2);
 	color: var(--l2);
+}
+
+.hoverUnderlineAnimation {
+	position: relative;
+}
+
+.hoverUnderlineAnimation::after {
+	content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px; /* Thickness of the underline */
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--decorationColor); /* Underline color */
+	transform-origin: bottom right;
+
+	transform: scaleX(0);
+	transition: transform 0.4s cubic-bezier(.77,0,.18,1);
+}
+.bold.hoverUnderlineAnimation::after {
+	height: 2px;
+}
+
+.hoverUnderlineAnimation:hover::after {
+	/* Final state: full width */
+  transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 .bg-l3 {
 	background-color: var(--l3);
 }
 .fg-l3 {
-	color: var(--l3);
+	--currentForeground: var(--l3);
+	color: var(--currentForeground);
 }
 .hover-fg-l3:hover {
+	--currentForeground: var(--l3);
 	color: var(--l3);
+}
+.decorationC-l3 {
+	--decorationColor: var(--l3);
+}
+.decorationC-fg {
+	--decorationColor: var(--currentForeground);
 }
 
 .bg-l4 {
+
 	background-color: var(--l4);
 }
 .fg-l4 {
+	--currentForeground: var(--l4);
 	color: var(--l4);
 }
 .bg-d4-fixed {
 	background-color: var(--dark-l4);
+}
+.decorationC-l4 {
+	--decorationColor: var(--l4);
 }
 
 .vCenter {
@@ -303,6 +371,10 @@
 	height: 100%;
 }
 
+.vFillView {
+	height: calc(100vh - var(--nav-height));
+}
+
 .hShrink {
 	width: fit-content;
 }
@@ -340,6 +412,11 @@
 	column-gap: var(--grid-gap);
 	/* 1space 12 columns 1space */
 	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
+}
+
+.hGrid2 {
+	grid-auto-flow: column;
+	grid-template-columns: 1fr 1fr;
 }
 
 .il-grid {
@@ -504,6 +581,16 @@
 	.hGrid, .vhGrid {
 		/* change to 5 column layout */
 		grid-template-columns: var(--site-padding) 1fr 1fr 1fr 1fr 1fr var(--site-padding);
+	}
+
+	.ph-hGrid1 {
+		grid-auto-flow: unset;
+		grid-template-columns: 1fr;
+		grid-auto-rows: 1fr;
+	}
+	.ph-hGrid2 {
+		grid-auto-flow: column;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.s7,.s8,.s9,.s10,.s11,.s12.s13 {

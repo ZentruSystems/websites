@@ -1,5 +1,9 @@
-import Custom404 from "common/components/404";
-
 export default function Page() {
-	return <Custom404 />
+	return <section className="Pad vFillView hCenter vCenter flex">
+		<div className="vCenter">
+			<h1 className="light">We are currently working on our first product</h1>
+			<br/>
+			<p>For consultation and projects, email us via <a href="mailto:service@zentru.systems" className="hover-fg fg-l2 decorationC-l3 hoverUnderlineAnimation">service@zentru.systems</a></p>
+		</div>
+	</section>;
 }

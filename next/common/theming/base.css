@@ -116,7 +116,7 @@ a {
 	color: unset;
 }
 
-.navPad>div {
+.navPad>div:not(.HorizontalDivider):not(.VerticalDivider) {
 	flex: 1;
 }
 

@@ -1,0 +1,19 @@
+.Separator {
+	height: 1px;
+	flex-shrink: 0px;
+	box-sizing: unset;
+}
+
+.Separator>* {
+	height: 100px;
+	color: pink;
+	background: pink;
+	width: 100px;
+}
+
+@media screen and (max-width: 730px) {
+	.Separator {
+		width: unset;
+		height: 1px;
+	}
+}

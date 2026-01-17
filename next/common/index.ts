@@ -1,7 +1,8 @@
 
 export * from "./components/404";
 export * from "./components/hiddenButton";
-export * from "./components/separator";
+export * from "./components/horizontalDivider";
+export * from "./components/verticalDivider";
 
 export * from "./theming/FixFavicon";
 export * from "./theming/Themed";

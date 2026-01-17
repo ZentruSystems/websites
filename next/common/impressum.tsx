@@ -1,5 +1,5 @@
 export default function Impressum() {
-	return <div className="center Pad" >
+	return <div className="Pad" >
 		{/* style={{minHeight: "calc(100vh - var(--nav-height) - 234px)"}} */}
 		<p>Impressum according to austrian law: <a href="https://firmen.wko.at/zentru-systems-eu-zentru-systems/wien/?firmaid=e12f437a-4607-49b6-9d83-08be1c6b117e">WKO</a></p>
 
