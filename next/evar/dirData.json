@@ -11,19 +11,28 @@
       "name": "03_Screenshot.png"
     },
     {
+      "name": "04_.png"
+    },
+    {
       "name": "04_Screenshot.png"
     },
     {
-      "name": "05_Screenshot.png"
+      "name": "06_Screenshot.png"
+    },
+    {
+      "name": "09_Screenshot.png"
+    },
+    {
+      "name": "12_Screenshot.png"
     },
     {
       "name": "16-9-Wide",
       "children": [
         {
-          "name": "01-YourImageHere.txt"
+          "name": "01-StaticNoise.png"
         },
         {
-          "name": "02-StaticNoise.png"
+          "name": "02-YourImageHere.txt"
         },
         {
           "name": "03-Frame.png"
@@ -87,6 +96,14 @@
     },
     {
       "name": "orb transparent.png"
+    },
+    {
+      "name": "video",
+      "children": [
+        {
+          "name": "editing the drone.mov"
+        }
+      ]
     }
   ]
 }
