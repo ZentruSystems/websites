@@ -19,13 +19,13 @@ export default function Nav() {
 					height="10"
 				/>
 			</Link>
-			<div className="Refs s8 e12">
+			<div className="Refs s9 e12">
 				<img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink>Products</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 				<NavLink>Fields</NavLink>
-				<img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink>Catalog</NavLink>
+				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
+				<NavLink>About</NavLink> */}
 			</div>
 		</nav>
 	}
@@ -57,8 +57,8 @@ export default function Nav() {
 			<NavLink>Products</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 			<NavLink>Fields</NavLink>
-			<img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink>Catalog</NavLink>
+			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
+			<NavLink>About</NavLink> */}
 		</div>
 		<Link className="s1 e2 liquidPad" href="/" style={{ paddingTop: burgerExtend }}>
 			<ThemedImg className="Logo" alt="Zentru"

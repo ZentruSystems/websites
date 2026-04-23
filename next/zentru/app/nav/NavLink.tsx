@@ -25,7 +25,7 @@ export default function NavLink({
 	const isCurrentPage = currentPage == (props?.name ?? children).toLowerCase();
 	// console.log(isCurrentPage);
 
-	const linkUrl = (props?.href ?? props?.name ?? children).toLowerCase();
+	const linkUrl = (props?.href ?? props?.name ?? ("/" + children)).toLowerCase();
 
 	return <Link className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{children}</Link>
 }

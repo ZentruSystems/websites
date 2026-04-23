@@ -19,6 +19,7 @@
 	--l2: hsl(0, 0%, 50%);
 	--l3: hsl(0, 0%, 85%);
 	--l4: hsl(0, 0%, 95%);
+	--l5: hsl(0, 0%, 97.5%);
 	--dark-l4:hsl(0, 0%, 30%);
 	--foregroundColor: hsl(0, 0%, 0%);
 
@@ -59,8 +60,11 @@
 	--liquid: cubic-bezier(.39,.26,.15,.86);
 	--liquidDuration: 0.7s;
 
-	--snappy: cubic-bezier(.63,.41,1,.71);
-	--snappyDuration: 0.3s;
+	--fastLiquid: cubic-bezier(.63,.41,1,.71);
+	--fastLiquidDuration: 0.3s;
+
+	--snappy: cubic-bezier(.62,.29,.82,.24);
+	--snappyDuration: 0.125s;
 
 
 	/* DEFAULT GRID for FULL width

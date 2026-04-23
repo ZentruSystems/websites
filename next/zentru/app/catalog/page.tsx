@@ -1,8 +1,8 @@
-import CatalogItem from "./CatalogItem";
+import Section from "../Section";
 
 export default function Catalog() {
 	return <main>
-		<CatalogItem
+		<Section
 			title="Calendar + Todos"
 			aside={<>
 				<img
@@ -15,6 +15,6 @@ export default function Catalog() {
 			You probably use multiple apps already.<br />
 			It shouldn't be this hard, we combine a really good calendar with a really good tasks manager.
 			For both your projects as well as your personal tasks. For your meetings and birthdays.
-		</CatalogItem>
+		</Section>
 	</main>;
 }

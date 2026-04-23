@@ -1,17 +1,29 @@
-export default function CatalogItem(
+import Link from "next/link";
+
+/**
+ * Section, that has a title, an aside on the left or right side, content and an associated link on it
+ *
+ * @param props
+ * @returns
+ */
+export default function Section(
 	props: {
 		title: string,
 		aside?: React.ReactNode
 		isLeftSide?: boolean,
 		children: React.ReactNode
+		link?: string,
 	}
 ) {
 	const isLeftSide = props.isLeftSide || false;
 	const titleSpan = isLeftSide ? "s6 e13 ph-s2 ph-e5 ph-lPad" : "s1 e5 ph-e4 ph-rPad";
 	const contentSpan = isLeftSide ? "s6 e13 ph-s2 ph-e5 ph-lPad" : "s1 e7 ph-e4 ph-rPad";
+	const link = props.link ?? props.title;
 
-	return <section className="vhGrid">
-		<h2 className={`${titleSpan} tPad`}>{props.title}</h2>
+	console.log(props.link);
+
+	const visualContent = <section className="vhGrid">
+		<h2 className={`${titleSpan} tPad hover-fg-l2 decorationC-l3 hoverUnderlineAnimation`}>{props.title}</h2>
 		<p className={`${contentSpan} bPad`}>
 			{props.children}
 		</p>
@@ -30,4 +42,10 @@ export default function CatalogItem(
 			</div>
 		}
 	</section>
+
+	if (link == null) return visualContent;
+
+	return <Link href={link}>
+		{visualContent}
+	</Link>
 }

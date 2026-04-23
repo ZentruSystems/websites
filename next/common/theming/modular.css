@@ -79,6 +79,7 @@
 
 .hoverUnderlineAnimation {
 	position: relative;
+	width: min-content;
 }
 
 .hoverUnderlineAnimation::after {
@@ -447,6 +448,7 @@
 
 .vhGrid {
 	display: grid;
+	column-gap: var(--grid-gap);
 	grid-template-columns: calc(var(--site-padding) - var(--grid-gap)) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(var(--site-padding) - var(--grid-gap));
 	grid-auto-rows: auto;
 }
@@ -518,7 +520,7 @@
 	transition: color var(--liquid) var(--liquidDuration);
 }
 .snappyColor {
-	transition: color var(--snappy) var(--snappyDuration);
+	transition: color var(--fastLiquid) var(--fastLiquidDuration);
 }
 
 .liquidPad {
@@ -571,6 +573,58 @@
 
 .hiddenButton:hover {
 	background-color: var(--l1);
+}
+
+/* Outline version */
+button.secondary, .buttonSecondary {
+	border-radius: 2px;
+	border-color: var(--currentForeground);
+	background-color: var(--foregroundColor);
+	color: var(--backgroundColor);
+	line-height: 1em;
+	padding: 10px;
+	font-size: 1em;
+	font-weight: 200;
+	/* TODO: not done, tested or used */
+}
+
+button.primary, .buttonPrimary {
+	border-radius: 2px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--foregroundColor);
+
+	background-color: var(--foregroundColor);
+	color: var(--backgroundColor);
+	line-height: 1em;
+	padding: 10px;
+	font-size: 1em;
+	font-weight: 200;
+}
+
+button.primary.hover, .buttonPrimary.hover, button.secondary.hover, .buttonSecondary.hover {
+	transition: color var(--snappyDuration) var(--snappy), background-color var(--snappyDuration) var(--snappy);
+}
+
+button.primary.hover:hover, .buttonPrimary.hover:hover {
+	color: var(--foregroundColor);
+	background-color: var(--backgroundColor);
+}
+
+button.secondary.hover:hover, .buttonSecondary.hover:hover {
+	background-color: var(--foregroundColor);
+	color: var(--backgroundColor);;
+}
+
+.hover-highlight:hover {
+	background-color: var(--l5);
+}
+h2.hover-highlight {
+	text-shadow: -1px -1px 0 #00000000, 1px -1px 0 #00000000, -1px 1px 0 #00000000, 1px 1px 0 #00000000;
+}
+h2.hover-highlight:hover {
+	color: var(--l2);
+	background-color: revert;
 }
 
 @media screen and (max-width: 730px) {
