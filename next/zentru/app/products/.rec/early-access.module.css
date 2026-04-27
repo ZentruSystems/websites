@@ -1,0 +1,104 @@
+.recHeadSection {
+	grid-template-areas:
+		"text . neut"
+		"text title neut"
+		"rec  btn neut"
+	;
+
+	grid-template-columns: 1fr auto 1fr;
+	grid-template-rows: 1fr 1fr 2fr;
+
+	height: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+	overflow: clip;
+
+	position: relative;
+	max-height: 800px;
+}
+
+.recImage {
+	grid-area: rec;
+	position: absolute;
+	/* top: 57%; */
+
+	--imageHeight: 600px;
+	--sectionHeight: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+
+	/* --intrusion: min(80px + 20%, 260px); */
+	/* clip-path: rect(0 100% calc(var(--intrusion) * 2) 0); */
+	/* mask-clip: clip-box; */
+	/* top: calc(var(--sectionHeight) - var(--intrusion)); */
+	/* top: 50px; */
+	/* bottom: max(calc(600px), -300px); */
+	left: calc(5vw - 20px);
+	/* margin-bottom: -50%; */
+	/* bottom: calc(100% - 680px); */
+	bottom: min(calc(80% - 550px), -280px);
+	z-index: -1;
+}
+
+.neutralImage {
+	z-index: -1;
+	justify-self: center;
+}
+
+.text {
+	margin-left: calc(5vw - 20px);
+}
+
+/* .recHeadBackground {
+	display: grid;
+	grid-template-rows: minmax(70px, 3fr) 1fr minmax(10%, 0.3fr);
+	height: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+
+	grid-template-areas:
+		"text  .   neut"
+		". title neut"
+		"rec   . neut";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 15vh 1fr;
+	overflow: clip;
+} */
+
+@media screen and (max-width: 730px) {
+	.recHeadSection {
+		grid-template-areas:
+			"text neut"
+			"title neut"
+			"btn neut"
+			"rec neut"
+		;
+
+		grid-template-columns: auto 100px;
+		grid-template-rows: min-content 100px auto 1fr;
+	}
+
+	.recImage {
+		padding-top: var(--paddingUnit);
+		/* top: 37%; */
+		/* left: min(5vw, 7vw - 10%); */
+		left: unset;
+		right: calc(7vw - 65px);
+		/* left: unset; */
+		/* justify-self: end; */
+	}
+
+	.text {
+		margin-left: calc(5vw);
+	}
+
+	.neutralImage {
+		justify-self: start;
+	}
+
+	/* .recHeadBackground {
+		grid-template-areas:
+		"text  .   neut"
+		"title title neut"
+		"rec   btn neut";
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	} */
+}

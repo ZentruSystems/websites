@@ -7,11 +7,8 @@ import { useEffect, useState } from 'react';
 /**
  * Renders a single link for use inside the nav-bar, that indicates if the current page is where this is going.
  */
-export default function NavLink({
-	props,
-	children,
-}: {
-	props?: { name: string, href?: string}
+export default function NavLink(props: {
+	name?: string, href?: string,
 	children: string
 }) {
 	const pathname = usePathname();
@@ -22,10 +19,11 @@ export default function NavLink({
 		setCurrentPage(converted);
 	}, [pathname]);
 
-	const isCurrentPage = currentPage == (props?.name ?? children).toLowerCase();
+	const isCurrentPage = currentPage == (props?.name ?? props.children).toLowerCase();
 	// console.log(isCurrentPage);
 
-	const linkUrl = (props?.href ?? props?.name ?? ("/" + children)).toLowerCase();
+	const linkUrl = (props?.href ?? props?.name ?? ("/" + props.children)).toLowerCase();
+	console.log(`NavLink: ${linkUrl}`);
 
-	return <Link className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{children}</Link>
+	return <Link className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{props.children}</Link>
 }

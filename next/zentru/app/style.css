@@ -45,14 +45,14 @@ nav div.vertSep {
   width: 1px;
   height: 11px;
   align-self: center;
-  border-left: 1px solid var(--l3);
+  border-left: 1px solid var(--l4);
 }
 
 nav div.vertSepChevronRight {
   width: 3px;
   height: 11px;
   align-self: center;
-  border-left: 1px solid var(--l3);
+  border-left: 1px solid var(--l4);
 }
 
 img.Logo {

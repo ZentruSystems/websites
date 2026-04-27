@@ -1,12 +1,15 @@
 .bold {
 	font-weight: bold;
 }
+
 .normal {
 	font-weight: 400;
 }
+
 .light {
 	font-weight: 300;
 }
+
 .thin {
 	font-weight: 100;
 }
@@ -15,6 +18,7 @@
 	--currentForeground: var(--primaryAccentColor);
 	color: var(--primaryAccentColor);
 }
+
 .hvPrimaryAccent:hover {
 	--currentForeground: var(--primaryAccentColor);
 	color: var(--primaryAccentColor);
@@ -48,19 +52,38 @@
 .bg-bg {
 	background-color: var(--backgroundColor);
 }
+
 .bg-fg {
 	background-color: var(--foregroundColor);
 }
+
 .bg-l1 {
 	background-color: var(--l1);
 }
+
 .fg-l1 {
 	--currentForeground: var(--l1);
 	color: var(--l1);
 }
 
+.fg-error {
+	color: var(--errorColor);
+}
+
 .bg-l2 {
 	background-color: var(--l2);
+}
+
+.bg-error {
+	background-color: var(--errorColor);
+}
+
+.border-error {
+	border-color: var(--errorColor);
+}
+
+.border-errory {
+	border-color: var(--erroryColor);
 }
 
 .hover-fg:hover {
@@ -68,10 +91,16 @@
 	color: var(--foregroundColor);
 }
 
+.hover-bg:hover {
+	--currentForeground: var(--backgroundColor);
+	color: var(--backgroundColor);
+}
+
 .fg-l2 {
 	--currentForeground: var(--l2);
 	color: var(--l2);
 }
+
 .hover-fg-l2:hover {
 	--currentForeground: var(--l2);
 	color: var(--l2);
@@ -79,64 +108,73 @@
 
 .hoverUnderlineAnimation {
 	position: relative;
-	width: min-content;
+	width: fit-content;
 }
 
 .hoverUnderlineAnimation::after {
 	content: '';
-  position: absolute;
-  width: 100%;
-  height: 1px; /* Thickness of the underline */
-  bottom: 0;
-  left: 0;
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	/* Thickness of the underline */
+	bottom: 0;
+	left: 0;
 
-  background-color: var(--decorationColor); /* Underline color */
+	background-color: var(--decorationColor);
+	/* Underline color */
 	transform-origin: bottom right;
 
 	transform: scaleX(0);
-	transition: transform 0.4s cubic-bezier(.77,0,.18,1);
+	transition: transform 0.4s cubic-bezier(.77, 0, .18, 1);
 }
+
 .bold.hoverUnderlineAnimation::after {
 	height: 2px;
 }
 
 .hoverUnderlineAnimation:hover::after {
 	/* Final state: full width */
-  transform: scaleX(1);
+	transform: scaleX(1);
 	transform-origin: bottom left;
 }
 
-.bg-l3 {
-	background-color: var(--l3);
+.bg-l4 {
+	background-color: var(--l4);
 }
-.fg-l3 {
-	--currentForeground: var(--l3);
+
+.fg-l4 {
+	--currentForeground: var(--l4);
 	color: var(--currentForeground);
 }
-.hover-fg-l3:hover {
-	--currentForeground: var(--l3);
-	color: var(--l3);
+
+.hover-fg-l4:hover {
+	--currentForeground: var(--l4);
+	color: var(--l4);
 }
-.decorationC-l3 {
-	--decorationColor: var(--l3);
+
+.decorationC-l4 {
+	--decorationColor: var(--l4);
 }
+
 .decorationC-fg {
 	--decorationColor: var(--currentForeground);
 }
 
-.bg-l4 {
+.bg-l5 {
+	background-color: var(--l5);
+}
 
-	background-color: var(--l4);
+.fg-l5 {
+	--currentForeground: var(--l5);
+	color: var(--l5);
 }
-.fg-l4 {
-	--currentForeground: var(--l4);
-	color: var(--l4);
+
+.bg-d5-fixed {
+	background-color: var(--dark-l5);
 }
-.bg-d4-fixed {
-	background-color: var(--dark-l4);
-}
-.decorationC-l4 {
-	--decorationColor: var(--l4);
+
+.decorationC-l5 {
+	--decorationColor: var(--l5);
 }
 
 .vCenter {
@@ -149,6 +187,7 @@
 	/*! justify-content: end; */
 	align-content: end;
 }
+
 .layoutVBottom {
 	align-content: end;
 	align-items: end;
@@ -157,6 +196,7 @@
 .hCenter {
 	justify-self: center;
 }
+
 .hRight {
 	justify-self: right;
 }
@@ -170,19 +210,24 @@
 	padding-top: var(--bigPadding);
 	padding-bottom: var(--bigPadding);
 }
+
 .tBigPad {
 	padding-top: var(--bigPadding);
 }
+
 .bBigPad {
 	padding-bottom: var(--bigPadding);
 }
+
 .hBigPad {
 	padding-left: var(--bigPadding);
 	padding-right: var(--bigPadding);
 }
+
 .lBigPad {
 	padding-left: var(--bigPadding);
 }
+
 .rBigPad {
 	padding-right: var(--bigPadding);
 }
@@ -191,9 +236,11 @@
 	padding-top: var(--normalPadding);
 	padding-bottom: var(--normalPadding);
 }
+
 .tPad {
 	padding-top: var(--normalPadding);
 }
+
 .bPad {
 	padding-bottom: var(--normalPadding);
 }
@@ -202,12 +249,15 @@
 	padding-left: var(--normalPadding);
 	padding-right: var(--normalPadding);
 }
+
 .lPad {
 	padding-left: var(--normalPadding);
 }
+
 .rPad {
 	padding-right: var(--normalPadding);
 }
+
 .Pad {
 	padding: var(--normalPadding);
 }
@@ -217,18 +267,26 @@
 	padding-top: var(--paddingUnit);
 	padding-bottom: var(--paddingUnit);
 }
+
 .tUnitPad {
 	padding-top: var(--paddingUnit);
 }
+
 .bUnitPad {
 	padding-bottom: var(--paddingUnit);
 }
+
 .hUnitPad {
 	padding-left: var(--paddingUnit);
 	padding-right: var(--paddingUnit);
 }
+
 .rUnitPad {
 	padding-right: var(--paddingUnit);
+}
+
+.lUnitPad {
+	padding-left: var(--paddingUnit);
 }
 
 .v10Pad {
@@ -240,9 +298,11 @@
 	padding-top: calc(var(--paddingUnit) * 2.5);
 	padding-bottom: calc(var(--paddingUnit) * 2.5);
 }
+
 .tAltMarg {
 	margin-top: calc(var(--paddingUnit) * 2.5);
 }
+
 .vAltMarg {
 	margin-top: calc(var(--paddingUnit) * 2.5);
 	margin-bottom: calc(var(--paddingUnit) * 2.5);
@@ -368,6 +428,46 @@
 	grid-column-end: 15;
 }
 
+.gr-s1 {
+	grid-row-start: 1;
+}
+
+.gr-s2 {
+	grid-row-start: 2;
+}
+
+.gr-s3 {
+	grid-row-start: 3;
+}
+
+.gr-s4 {
+	grid-row-start: 4;
+}
+
+.gr-s5 {
+	grid-row-start: 5;
+}
+
+.gr-e1 {
+	grid-row-end: 1;
+}
+
+.gr-e2 {
+	grid-row-end: 2;
+}
+
+.gr-e3 {
+	grid-row-end: 3;
+}
+
+.gr-e4 {
+	grid-row-end: 4;
+}
+
+.gr-e5 {
+	grid-row-end: 5;
+}
+
 .vFill {
 	height: 100%;
 }
@@ -431,14 +531,17 @@
 .flex {
 	display: flex;
 }
+
 .vflex {
 	display: flex;
 	flex-direction: column;
 }
+
 .v100 {
 	height: 100vh;
 }
-.minV100{
+
+.minV100 {
 	min-height: 100vh;
 }
 
@@ -456,23 +559,29 @@
 .tlRound {
 	border-top-left-radius: var(--borderRadius);
 }
+
 .trRound {
 	border-top-right-radius: var(--borderRadius);
 }
+
 .blRound {
 	border-bottom-left-radius: var(--borderRadius);
 }
+
 .brRound {
 	border-bottom-right-radius: var(--borderRadius);
 }
+
 .lRound {
 	border-top-left-radius: var(--borderRadius);
 	border-bottom-left-radius: var(--borderRadius);
 }
+
 .rRound {
 	border-top-right-radius: var(--borderRadius);
 	border-bottom-right-radius: var(--borderRadius);
 }
+
 .allRound {
 	border-radius: var(--borderRadius);
 }
@@ -487,27 +596,58 @@
 	transition: left var(--liquid) var(--liquidDuration);
 	z-index: 0;
 }
-.RightFloat.More{
+
+.RightFloat.More {
 	left: 20%;
 }
-.RightFloat.More2{
+
+.RightFloat.More2 {
 	left: 25%;
 }
-.RightFloat.More3{
+
+.RightFloat.More3 {
 	left: 30%;
 }
 
-.FloatTrigger:hover .RightFloat, .RightFloat:hover,
-.FloatTrigger:hover .RightFloat.To0, .RightFloat.To0:hover {
+.RightFloat.From0 {
 	left: 0%;
 }
-.FloatTrigger:hover .RightFloat.To5, .RightFloat.To5:hover {
+
+.RightFloat.From15vw {
+	left: 15vw;
+}
+
+.RightFloat.From10 {
+	left: 10%;
+}
+
+.RightFloat.From50 {
+	left: 50%;
+}
+
+.RightFloat.From75 {
+	left: 75%;
+}
+
+.FloatTrigger:hover .RightFloat,
+.RightFloat:hover,
+.FloatTrigger:hover .RightFloat.To0,
+.RightFloat.To0:hover {
+	left: 0%;
+}
+
+.FloatTrigger:hover .RightFloat.To5,
+.RightFloat.To5:hover {
 	left: 5%;
 }
-.FloatTrigger:hover .RightFloat.ToPad, .RightFloat.ToPad:hover {
+
+.FloatTrigger:hover .RightFloat.ToPad,
+.RightFloat.ToPad:hover {
 	left: var(--normalPadding);
 }
-.FloatTrigger:hover .RightFloat.ToUnitPad, .RightFloat.ToUnitPad:hover {
+
+.FloatTrigger:hover .RightFloat.ToUnitPad,
+.RightFloat.ToUnitPad:hover {
 	left: var(--paddingUnit);
 }
 
@@ -519,6 +659,7 @@
 .liquidColor {
 	transition: color var(--liquid) var(--liquidDuration);
 }
+
 .snappyColor {
 	transition: color var(--fastLiquid) var(--fastLiquidDuration);
 }
@@ -526,6 +667,10 @@
 .liquidPad {
 	transition: padding var(--liquid) var(--liquidDuration);
 }
+.liquidMarg {
+	transition: margin var(--liquid) var(--liquidDuration);
+}
+
 .liquidOpacity {
 	transition: opacity var(--liquid) var(--liquidDuration);
 }
@@ -575,53 +720,83 @@
 	background-color: var(--l1);
 }
 
-/* Outline version */
-button.secondary, .buttonSecondary {
-	border-radius: 2px;
-	border-color: var(--currentForeground);
-	background-color: var(--foregroundColor);
-	color: var(--backgroundColor);
-	line-height: 1em;
-	padding: 10px;
-	font-size: 1em;
-	font-weight: 200;
-	/* TODO: not done, tested or used */
-}
-
-button.primary, .buttonPrimary {
+button.primary,
+.buttonPrimary {
 	border-radius: 2px;
 	border-width: 2px;
 	border-style: solid;
-	border-color: var(--foregroundColor);
 
-	background-color: var(--foregroundColor);
-	color: var(--backgroundColor);
+	border-color: var(--l1);
+	background-color: var(--l1);
+	color: var(--l6);
 	line-height: 1em;
 	padding: 10px;
 	font-size: 1em;
 	font-weight: 200;
 }
 
-button.primary.hover, .buttonPrimary.hover, button.secondary.hover, .buttonSecondary.hover {
-	transition: color var(--snappyDuration) var(--snappy), background-color var(--snappyDuration) var(--snappy);
+button.primary.hover,
+.buttonPrimary.hover,
+button.secondary.hover,
+.buttonSecondary.hover {
+	transition:
+		color var(--snappyDuration) var(--snappy),
+		background-color var(--snappyDuration) var(--snappy),
+		border-color var(--snappyDuration) var(--snappy),
+	;
 }
 
-button.primary.hover:hover, .buttonPrimary.hover:hover {
+button.primary.invalid {
+	border-color: var(--l2);
+	background-color: transparent;
+	color: var(--l2);
+}
+
+button.primary.invalid.hover:hover {
+	color: var(--l3);
+	border-color: var(--l3);
+}
+
+button.primary.hover:hover,
+.buttonPrimary.hover:hover {
 	color: var(--foregroundColor);
 	background-color: var(--backgroundColor);
 }
 
-button.secondary.hover:hover, .buttonSecondary.hover:hover {
-	background-color: var(--foregroundColor);
-	color: var(--backgroundColor);;
+/* Outline version */
+button.secondary,
+.buttonSecondary {
+	border-radius: 2px;
+	border-width: 2px;
+	border-style: solid;
+
+	line-height: 1em;
+	padding-block: 10px;
+	padding-inline: 13px;
+	font-size: 1em;
+	font-weight: 200;
+
+	color: var(--l1);
+	border-color: var(--l1);
+	background-color: rgb(from var(--backgroundColor) r g b / 0.8);
+	backdrop-filter: blur(20px);
+}
+
+button.secondary.hover:hover,
+.buttonSecondary.hover:hover {
+	border-color: var(--l1);
+	background-color: var(--l1);
+	color: var(--l6);
 }
 
 .hover-highlight:hover {
-	background-color: var(--l5);
+	background-color: var(--l6);
 }
+
 h2.hover-highlight {
 	text-shadow: -1px -1px 0 #00000000, 1px -1px 0 #00000000, -1px 1px 0 #00000000, 1px 1px 0 #00000000;
 }
+
 h2.hover-highlight:hover {
 	color: var(--l2);
 	background-color: revert;
@@ -632,7 +807,17 @@ h2.hover-highlight:hover {
 		--paddingUnit: 20px;
 	}
 
-	.hGrid, .vhGrid {
+	button.secondary, .buttonSecondary, button.primary, .buttonPrimary {
+		/* text-size-adjust: 100%; */
+		font-size: 1.15em;
+	}
+
+	.ph-block {
+		display: block;
+	}
+
+	.hGrid,
+	.vhGrid {
 		/* change to 5 column layout */
 		grid-template-columns: var(--site-padding) 1fr 1fr 1fr 1fr 1fr var(--site-padding);
 	}
@@ -642,15 +827,27 @@ h2.hover-highlight:hover {
 		grid-template-columns: 1fr;
 		grid-auto-rows: 1fr;
 	}
+
 	.ph-hGrid2 {
 		grid-auto-flow: column;
 		grid-template-columns: 1fr 1fr;
 	}
 
-	.s7,.s8,.s9,.s10,.s11,.s12.s13 {
+	.s7,
+	.s8,
+	.s9,
+	.s10,
+	.s11,
+	.s12.s13 {
 		grid-column-start: unset;
 	}
-	.e7,.e8,.e9,.e10,.e11,.e12.e13 {
+
+	.e7,
+	.e8,
+	.e9,
+	.e10,
+	.e11,
+	.e12.e13 {
 		grid-column-end: unset;
 	}
 
@@ -664,6 +861,10 @@ h2.hover-highlight:hover {
 
 	.ph-bNavPad {
 		padding-bottom: var(--nav-height);
+	}
+
+	.ph-NoFloat {
+		position: unset;
 	}
 
 
@@ -723,6 +924,30 @@ h2.hover-highlight:hover {
 		grid-column-end: 8;
 	}
 
+	.ph-gr-s1 {
+		grid-row-start: 1;
+	}
+
+	.ph-gr-s2 {
+		grid-row-start: 2;
+	}
+
+	.ph-gr-s3 {
+		grid-row-start: 3;
+	}
+
+	.ph-gr-s4 {
+		grid-row-start: 4;
+	}
+
+	.ph-gr-s5 {
+		grid-row-start: 5;
+	}
+
+	.ph-gr-e5 {
+		grid-row-end: 5;
+	}
+
 	.ph-flex-vert {
 		flex-direction: column;
 	}
@@ -742,6 +967,7 @@ h2.hover-highlight:hover {
 		padding-top: var(--normalPadding);
 		padding-bottom: var(--normalPadding);
 	}
+
 	.ph-hPad {
 		padding-left: var(--normalPadding);
 		padding-right: var(--normalPadding);
@@ -753,6 +979,10 @@ h2.hover-highlight:hover {
 
 	.ph-rPad {
 		padding-right: var(--normalPadding);
+	}
+
+	.ph-rNoPad {
+		padding-right: 0;
 	}
 
 	.ph-hUnitMarg {
@@ -781,6 +1011,7 @@ h2.hover-highlight:hover {
 	.ph-tUnitPad {
 		padding-top: var(--paddingUnit);
 	}
+
 	.ph-bUnitPad {
 		padding-bottom: var(--paddingUnit);
 	}

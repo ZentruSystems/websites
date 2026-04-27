@@ -14,14 +14,14 @@ export default function Nav() {
 		return <nav className="glass hFill">
 			<Link className="s1 e2" href="/">
 				<ThemedImg className="Logo" alt="Zentru Systems" loading="eager"
-					lightsrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-					darksrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+					lightSrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+					darkSrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
 					height="10"
 				/>
 			</Link>
 			<div className="Refs s9 e12">
 				<img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink>Products</NavLink>
+				<NavLink href="/products">Products</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 				<NavLink>Fields</NavLink>
 				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
@@ -54,16 +54,16 @@ export default function Nav() {
 	return <nav className="glass vhGrid hFill" style={{ height: `calc(var(--nav-height) + ${burgerExtend}px)` }}>
 		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, zIndex: -1 }}>
 			<img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink>Products</NavLink>
+			<NavLink href="/products">Products</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 			<NavLink>Fields</NavLink>
 			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 			<NavLink>About</NavLink> */}
 		</div>
-		<Link className="s1 e2 liquidPad" href="/" style={{ paddingTop: burgerExtend }}>
+		<Link className="s1 e4 liquidMarg" href="/" style={{ marginTop: burgerExtend, width: "fit-content" }}>
 			<ThemedImg className="Logo" alt="Zentru"
-				lightsrc="/img/ZentruLogo/Brightness=Dark,Color=Green.svg"
-				darksrc="/img/ZentruLogo/Brightness=Light,Color=Blue.svg"
+				lightSrc="/img/ZentruLogo/Brightness=Dark,Color=Green.svg"
+				darkSrc="/img/ZentruLogo/Brightness=Light,Color=Blue.svg"
 			/>
 		</Link>
 		{burger}

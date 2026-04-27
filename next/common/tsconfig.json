@@ -36,7 +36,7 @@
 	"include": [
 		"./**/*.ts",
 		"./**/*.tsx",
-		"./*.css", "eslintconfig.mjs",
+		"./*.css", "eslintconfig.mjs", "../zentru/app/ThemedImage.tsx",
 	],
 	"exclude": [
 		"node_modules"

@@ -2,20 +2,23 @@
 
 import useTheme from "./useTheme";
 
-export type ThemedImgPropsType = {
-	lightsrc: string;
-	darksrc: string;
-} & Exclude<React.ImgHTMLAttributes<HTMLImageElement>, { src: string }>;
+type AdditionalProps = {
+	lightSrc: string;
+	darkSrc: string;
+}
+
+export type ThemedImgPropsType = AdditionalProps & Exclude<React.ImgHTMLAttributes<HTMLImageElement>, { src: string }>;
 
 export default function ThemedImg(props: ThemedImgPropsType) {
 	const { prefersLight } = useTheme();
 
-	const { lightsrc, darksrc } = props;
+	const { lightSrc, darkSrc } = props;
 
-	const imgProps = { ...props, lightsrc: undefined, darksrc: undefined };
+	const imgProps = { ...props, lightSrc: undefined, darkSrc: undefined };
+	delete imgProps.lightSrc;
+	delete imgProps.darkSrc;
 
 	// for better performance:
 	// https://stackoverflow.com/questions/71313889/how-can-i-present-a-different-next-image-based-on-the-users-preferred-color-sch
-
-	return <img src={prefersLight ? lightsrc : darksrc} {...imgProps} />
+	return <img src={prefersLight ? lightSrc : darkSrc} {...imgProps} />
 }

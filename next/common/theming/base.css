@@ -14,13 +14,17 @@
 	--alternativeAccentColor: hsl(187, 90%, 50%);
 	--glowAlternativeAccentColor: hsl(187, 83%, 50%);
 
+	--errorColor: hsl(0, 76%, 55%);
+	--erroryColor: hsl(6, 75%, 77%);
+
 	--backgroundColor: hsl(0, 0%, 100%);
 	--l1: hsl(0, 0%, 30%);
 	--l2: hsl(0, 0%, 50%);
-	--l3: hsl(0, 0%, 85%);
-	--l4: hsl(0, 0%, 95%);
-	--l5: hsl(0, 0%, 97.5%);
-	--dark-l4:hsl(0, 0%, 30%);
+	--l3: hsl(0, 0%, 60%);
+	--l4: hsl(0, 0%, 85%);
+	--l5: hsl(0, 0%, 95%);
+	--l6: hsl(0, 0%, 97.5%);
+	--dark-l5:hsl(0, 0%, 30%);
 	--foregroundColor: hsl(0, 0%, 0%);
 
 	--glassColor: #F3F3F399;
@@ -101,11 +105,15 @@
 		--alternativeAccentColor: hsl(187, 90%, 50%);
 		--glowAlternativeAccentColor: hsl(187, 83%, 50%);
 
+		--errorColor: hsl(0, 64%, 46%);
+
 		--backgroundColor: #000;
 		--l1: hsl(0, 0%, 95%);
 		--l2: hsl(0, 0%, 65%);
-		--l3: hsl(0, 0%, 45%);
-		--l4: var(--dark-l4);
+		--l3: hsl(0, 0%, 55%);
+		--l4: hsl(0, 0%, 45%);
+		--l5: var(--dark-l5);
+		--l6: hsl(0, 0%, 25%);
 		--foregroundColor: #fff;
 	}
 }
@@ -118,6 +126,28 @@ div.Placeholder {
 a {
 	text-decoration-line: none;
 	color: unset;
+}
+
+label {
+	font-size: 0.7em;
+	font-weight: 300;
+	display: inline-block;
+	margin-right: 10px;
+}
+input {
+	display: inline-block;
+	border-radius: 2px;
+	border-width: 1px;
+	border-style: solid;
+
+	border-color: var(--l3);
+	/* background-color: var(--l1); */
+
+	font-size: 0.8rem;
+	padding-inline: calc(0.8em * 0.75);
+	padding-block: calc(0.8em * 0.5);
+
+	outline: none;
 }
 
 .navPad>div:not(.HorizontalDivider):not(.VerticalDivider) {

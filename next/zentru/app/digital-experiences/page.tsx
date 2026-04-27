@@ -20,7 +20,7 @@ export default function DigitalExperiences() {
 			<p>Physical soul for the digital world.</p>
 			<p>Many things we love are in the physical world, we want to provide that character and sould we all love in digital things as well</p>
 		</section>
-		<HorizontalDivider color="var(--l3)" />
+		<HorizontalDivider color="var(--l4)" />
 		<section className="vBigPad hBigPad">
 			<h2 className="normal foreground">User interfaces</h2>
 			<p>Apps, Websites and Game interfaces, designed to solve problems, designed to be an experience.</p>

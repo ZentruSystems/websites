@@ -42,7 +42,7 @@ export default function RootLayout({
 				<Nav />
 				<div className='navPad vflex minV100'>
 					{children}
-					<footer className="bg-l3 hGrid ph-bNavPad">
+					<footer className="bg-l4 hGrid ph-bNavPad">
 						<div className="s1 e3 ph-e5 vPad">
 							<p>Lets meet at</p>
 							<Link href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>
@@ -51,8 +51,8 @@ export default function RootLayout({
 							<p>We are</p>
 							<Link href="/">
 								<ThemedImg style={{ height: 25 }}
-									lightsrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-									darksrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									lightSrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
+									darkSrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
 								/>
 							</Link>
 						</div>

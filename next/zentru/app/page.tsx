@@ -5,7 +5,7 @@ import SideBoard from "./SideBoard";
 
 export default function Page() {
 	return <main>
-			<section className="Head bg-l4 hGrid">
+			<section className="Head bg-l5 hGrid">
 				<div className="vCenter vBigPad ph-vPad s1 e7 ph-e5 vFill vSpaceing">
 					<h2 className="light noMargin">Because we don’t like how Companies treat their Customers.</h2>
 					<h2 className="light noMargin">Because we don’t like bad design.</h2>
@@ -25,9 +25,9 @@ export default function Page() {
 				<h2 className="s1 e5 ph-e5 tPad">Really Good</h2>
 				<DynamicQuote/>
 				<p className="s1 e8 ph-e3 bPad ph-vUnitPad ph-rGap UnitPad ph-vCenter">
-					We focus on what you feel, not how we deliver that feeling just making sure you get more of it.<br />
+					We focus on what you feel, not how we deliver that feeling, just making sure you get more of it.<br />
 					<br/>
-					The undescribable feeling of using a product that is really good.
+					The undescribable feeling of using a product that is <i>really good</i>.
 				</p>
 				<SideBoard
 					src="/img/OldProducts.svg"

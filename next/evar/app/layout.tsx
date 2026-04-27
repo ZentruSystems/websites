@@ -33,7 +33,7 @@ export default function EvarLayout({
 				</nav>
 				<div className="navPad ph-navPad">
 					{children}
-					<footer className="bg-l3 hGrid">
+					<footer className="bg-l4 hGrid">
 						<div className="s1 e3 vPad">
 							<p>Lets meet at</p>
 							<Link className='rUnitPad' href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>

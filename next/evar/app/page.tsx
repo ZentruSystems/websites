@@ -26,7 +26,7 @@ export default function EvarPage() {
 				</div>
 				<div className="hGrid" style={{paddingBottom: "10px"}}>
 					<HiddenButton
-						className="s1 e12 ph-s1 ph-e5 hShrink hCenter hoverZoom fg-l1 hover-fg-l3"
+						className="s1 e12 ph-s1 ph-e5 hShrink hCenter hoverZoom fg-l1 hover-fg-l4"
 						style={{ padding: "max(1%, 8px)", fontSize: "0.8em" }}
 						href="https://evar.space/PressKit">
 						Press Kit

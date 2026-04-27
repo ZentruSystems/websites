@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Page() {
 	return <>
 		<section className="vFillView hGrid2 ph-hGrid1">
-			<div className="vCenter vPad vFill hFill il-grid ph-tUnitPad bg-l4" style={{ gridAutoRows: "1fr 1fr 1fr" }}>
+			<div className="vCenter vPad vFill hFill il-grid ph-tUnitPad bg-l5" style={{ gridAutoRows: "1fr 1fr 1fr" }}>
 				<div />
 				<Link href="https://evar.space" className="il-grid vUnitPad vCenter hCenter layoutHCenter">
 					<img className="invertIfLightTheme" style={{ height: 50, }} src="./img/EvarTextLogo.svg" alt="Evar – Games" />

@@ -15,7 +15,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -37,8 +37,11 @@
     "../common/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "out/types/**/*.ts"
-, "../common/eslintconfig.mjs"  ],
+    "out/types/**/*.ts",
+    "../common/eslintconfig.mjs",
+    ".next/dev/types/**/*.ts",
+    "out/dev/types/**/*.ts"
+, "app/api/products/.rec/early-access/route.ts"  ],
   "exclude": [
     "node_modules"
   ]
