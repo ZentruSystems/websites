@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/functions": "^3.4.4",
+    "@vercel/speed-insights": "^2.0.0",
     "common": "link:../common",
     "cross-env": "^10.1.0",
     "mongodb": "^7.2.0",

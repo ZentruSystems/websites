@@ -9,6 +9,7 @@ import NavLink from "./NavLink";
 export default function Nav() {
 	const { isDesktop } = useResponsiveSize();
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+	const stagingBadge = <p style={{position: "fixed", left: 0, top: "var(--navHeight)"}}>{process.env.DEPLOYMENT_ENVIRONMENT.toUpperCase()}</p>
 
 	if (isDesktop) {
 		return <nav className="glass hFill">
@@ -26,6 +27,7 @@ export default function Nav() {
 				<NavLink>Fields</NavLink>
 				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink>About</NavLink> */}
+				{process.env.DEPLOYMENT_ENVIRONMENT != "production" && stagingBadge}
 			</div>
 		</nav>
 	}
@@ -66,6 +68,7 @@ export default function Nav() {
 				darkSrc="/img/ZentruLogo/Brightness=Light,Color=Blue.svg"
 			/>
 		</Link>
+		{process.env.DEPLOYMENT_ENVIRONMENT != "production" && stagingBadge}
 		{burger}
 	</nav>
 }

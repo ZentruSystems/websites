@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { GoogleAnalytics } from 'common';
 import 'common/theming/base.css';
 import FixFavicon from 'common/theming/FixFavicon';
@@ -68,6 +70,8 @@ export default function RootLayout({
 				</div>
 			</body>
 			<GoogleAnalytics gaId="G-31E6P1N02L" />
+			<Analytics/>
+			<SpeedInsights/>
 		</html>
 	</>);
 }
