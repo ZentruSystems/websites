@@ -9,9 +9,9 @@ import NavLink from "./NavLink";
 export default function Nav() {
 	const { isDesktop } = useResponsiveSize();
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-	const stagingBadge = <p style={{position: "fixed", left: 0, top: "var(--navHeight)"}}>{process.env.DEPLOYMENT_ENVIRONMENT?.toUpperCase()}</p>
+	const stagingBadge = <p style={{position: "fixed", left: 0, top: "var(--navHeight)"}}>{process.env.NEXT_PUBLIC_VERCEL_ENV?.toUpperCase()}</p>
 
-	console.log(`ENV: '${process.env.DEPLOYMENT_ENVIRONMENT}'`);
+	console.log(`ENV: '${JSON.stringify(process.env)}'`);
 
 	if (isDesktop) {
 		return <nav className="glass hFill">
@@ -29,7 +29,7 @@ export default function Nav() {
 				<NavLink>Fields</NavLink>
 				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink>About</NavLink> */}
-				{process.env.DEPLOYMENT_ENVIRONMENT != "production" && stagingBadge}
+				{process.env.NEXT_PUBLIC_VERCEL_ENV != "production" && stagingBadge}
 			</div>
 		</nav>
 	}
@@ -70,7 +70,7 @@ export default function Nav() {
 				darkSrc="/img/ZentruLogo/Brightness=Light,Color=Blue.svg"
 			/>
 		</Link>
-		{process.env.DEPLOYMENT_ENVIRONMENT != "production" && stagingBadge}
+		{process.env.NEXT_PUBLIC_VERCEL_ENV != "production" && stagingBadge}
 		{burger}
 	</nav>
 }
