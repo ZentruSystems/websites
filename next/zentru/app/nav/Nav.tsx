@@ -9,7 +9,9 @@ import NavLink from "./NavLink";
 export default function Nav() {
 	const { isDesktop } = useResponsiveSize();
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-	const stagingBadge = <p style={{position: "fixed", left: 0, top: "var(--navHeight)"}}>{process.env.DEPLOYMENT_ENVIRONMENT.toUpperCase()}</p>
+	const stagingBadge = <p style={{position: "fixed", left: 0, top: "var(--navHeight)"}}>{process.env.DEPLOYMENT_ENVIRONMENT?.toUpperCase()}</p>
+
+	console.log(`ENV: '${process.env.DEPLOYMENT_ENVIRONMENT}'`);
 
 	if (isDesktop) {
 		return <nav className="glass hFill">
