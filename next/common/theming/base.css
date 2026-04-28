@@ -88,13 +88,6 @@
 	font-family: var(--normalFont);
 }
 
-@media screen and (max-width: 730px) {
-	:root {
-		--normalFontSize: 16px;
-		--largerFontSize: 28px;
-	}
-}
-
 @media (prefers-color-scheme: dark) {
 	:root {
 		--glassColor: #1a1a1acc;
@@ -144,6 +137,7 @@ input {
 	/* background-color: var(--l1); */
 
 	font-size: 0.8rem;
+	font-weight: 300;
 	padding-inline: calc(0.8em * 0.75);
 	padding-block: calc(0.8em * 0.5);
 
@@ -167,5 +161,16 @@ input {
 	}
 	to {
 		box-shadow: hsl(from var(--foregroundColor) h s l / 0.33) 0px 0px 45px 0px;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	:root {
+		--normalFontSize: 16px;
+		--largerFontSize: 28px;
+	}
+
+	input {
+		font-size: 1rem;
 	}
 }

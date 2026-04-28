@@ -2,6 +2,8 @@
 export * from "./components/404";
 export * from "./components/hiddenButton";
 export * from "./components/horizontalDivider";
+export * from "./components/socialLinks";
+export * from "./components/spinner";
 export * from "./components/verticalDivider";
 
 export * from "./theming/FixFavicon";

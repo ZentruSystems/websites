@@ -1,0 +1,17 @@
+.Spinner {
+  display: inline-block;
+  place-self: center;
+  --thickness: 4px;
+  --size: 25px;
+  border: var(--thickness) solid #f3f3f3; /* Light grey */
+  border-top: var(--thickness) solid var(--l1); /* Blue */
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

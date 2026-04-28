@@ -8,7 +8,6 @@ import isEmail from "validator/lib/isEmail";
 export async function PUT(request: NextRequest) {
 	await mongoDbConnect();
 
-
 	const json = await request.json();
 	log(json);
 

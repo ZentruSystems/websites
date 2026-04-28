@@ -731,8 +731,10 @@ button.primary,
 	color: var(--l6);
 	line-height: 1em;
 	padding: 10px;
-	font-size: 1em;
+	font-size: 0.9em;
 	font-weight: 200;
+
+	cursor: pointer;
 }
 
 button.primary.hover,
@@ -740,9 +742,9 @@ button.primary.hover,
 button.secondary.hover,
 .buttonSecondary.hover {
 	transition:
-		color var(--snappyDuration) var(--snappy),
-		background-color var(--snappyDuration) var(--snappy),
-		border-color var(--snappyDuration) var(--snappy),
+	color var(--snappyDuration) var(--snappy),
+	background-color var(--snappyDuration) var(--snappy),
+	border-color var(--snappyDuration) var(--snappy),
 	;
 }
 
@@ -763,6 +765,13 @@ button.primary.hover:hover,
 	background-color: var(--backgroundColor);
 }
 
+button.primary.hover:active,
+.buttonPrimary.hover:active {
+	border-color: var(--l2);
+	background-color: var(--l2);
+	color: var(--l6);
+}
+
 /* Outline version */
 button.secondary,
 .buttonSecondary {
@@ -773,19 +782,28 @@ button.secondary,
 	line-height: 1em;
 	padding-block: 10px;
 	padding-inline: 13px;
-	font-size: 1em;
+	font-size: 0.9em;
 	font-weight: 200;
 
 	color: var(--l1);
 	border-color: var(--l1);
 	background-color: rgb(from var(--backgroundColor) r g b / 0.8);
 	backdrop-filter: blur(20px);
+
+	cursor: pointer;
 }
 
 button.secondary.hover:hover,
 .buttonSecondary.hover:hover {
 	border-color: var(--l1);
 	background-color: var(--l1);
+	color: var(--l6);
+}
+
+button.secondary.hover:active,
+.buttonSecondary.hover:active {
+	border-color: var(--l2);;
+	background-color: var(--l2);
 	color: var(--l6);
 }
 

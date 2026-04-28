@@ -41,7 +41,7 @@
     "../common/eslintconfig.mjs",
     ".next/dev/types/**/*.ts",
     "out/dev/types/**/*.ts"
-, "app/api/products/.rec/early-access/route.ts"  ],
+, "app/api/products/.rec/early-access/route.ts", "../common/components/spinner.tsx"  ],
   "exclude": [
     "node_modules"
   ]

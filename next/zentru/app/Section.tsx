@@ -17,6 +17,7 @@ export default function Section(
 		isLeftSide?: boolean,
 		children: React.ReactNode
 		link?: string | null,
+		className?: string,
 	}
 ) {
 	const isLeftSide = props.isLeftSide || false;
@@ -24,6 +25,7 @@ export default function Section(
 	const contentSpan = props.aside ? isLeftSide ? "s6 e13 ph-s1 ph-e5 ph-lNoPad" : "s1 e7 ph-e5 ph-rNoPad" : "s1 e12 ph-e5";
 	const link = props.link == null ? null : props.link ?? props.title;
 	const hasLink = props.link != null;
+	const className = props.className;
 
 	const OptionalLink = (props: {className: string, children: React.ReactElement, href: String | null, style?: CSSProperties}) => {
 		if (hasLink) return <Link {...props as any} />
@@ -34,7 +36,7 @@ export default function Section(
 	const isStringAsChild = typeof(val) == typeof ("");
 	// console.log(typeof (props.children[0]) == typeof (""))
 
-	const visualContent = <section className="flex" style={{ justifyContent: "center", ...props.style }}>
+	const visualContent = <section className={`flex ${className}`} style={{ justifyContent: "center", ...props.style }}>
 		<div className="vhGrid hFill" style={props.inSectionStyle}>
 			{
 				link ?
