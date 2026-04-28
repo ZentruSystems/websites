@@ -6,8 +6,6 @@ import { NextRequest, NextResponse } from "next/server";
 import isEmail from "validator/lib/isEmail";
 
 export async function PUT(request: NextRequest) {
-	log(process.env);
-
 	await mongoDbConnect();
 
 

@@ -8,9 +8,10 @@ if (!MONGODB_URI) {
 }
 
 const connectionString = new URL(MONGODB_URI!);
-connectionString.pathname += process.env.NODE_ENV;
+connectionString.pathname += process.env.VERCEL_TARGET_ENV;
 
-log(`ENV: '${process.env.NODE_ENV}'`);
+log(`VERCEL_TARGET_ENV: '${process.env.VERCEL_TARGET_ENV}'`);
+log(process.env);
 
 export const mongoDbConnect = async () => await mongoose.connect(connectionString.toString());
 await mongoose.connect(connectionString.toString())
