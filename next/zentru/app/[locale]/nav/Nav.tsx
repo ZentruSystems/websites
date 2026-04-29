@@ -2,6 +2,7 @@
 
 import ThemedImg from "common/theming/ThemedImg";
 import useResponsiveSize from "common/useResponsiveSize";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavLink";
@@ -9,6 +10,7 @@ import NavLink from "./NavLink";
 export default function Nav() {
 	const { isDesktop } = useResponsiveSize();
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+	const tAlways = useTranslations("Always");
 
 	const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_TARGET_ENV;
 
@@ -25,11 +27,11 @@ export default function Nav() {
 			</Link>
 			<div className="Refs s9 e12">
 				<img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink href="/products">Products</NavLink>
+				<NavLink href="/products">{tAlways("products")}</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-				<NavLink>Fields</NavLink>
+				<NavLink href="/fields">{tAlways("fields")}</NavLink>
 				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink>About</NavLink> */}
+				<NavLink>{tAlways("about")}</NavLink> */}
 				{vercelEnv != "production" && stagingBadge}
 			</div>
 		</nav>
@@ -53,17 +55,14 @@ export default function Nav() {
 		</div>
 	</div>
 
-
-	// TODO: TransitionDelay not working!
-	//	transitionDelay: !isBurgerOpen && "150ms"
 	return <nav className="glass vhGrid hFill" style={{ height: `calc(var(--nav-height) + ${burgerExtend}px)` }}>
 		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, zIndex: -1 }}>
 			<img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink href="/products">Products</NavLink>
+			<NavLink href="/products">{tAlways("products") ?? "Products"}</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-			<NavLink>Fields</NavLink>
+			<NavLink href="/fields">{tAlways("fields")}</NavLink>
 			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink>About</NavLink> */}
+			<NavLink>{tAlways("about")}</NavLink> */}
 		</div>
 		<Link className="s1 e4 liquidMarg" href="/" style={{ marginTop: burgerExtend, width: "fit-content" }}>
 			<ThemedImg className="Logo" alt="Zentru"

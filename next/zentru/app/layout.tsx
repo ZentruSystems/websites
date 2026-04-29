@@ -1,79 +1,39 @@
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GoogleAnalytics } from 'common';
-import 'common/theming/base.css';
-import FixFavicon from 'common/theming/FixFavicon';
-import 'common/theming/modular.css';
-import 'common/theming/text.css';
-import ThemedImg from 'common/theming/ThemedImg';
-import { Metadata } from 'next';
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
-import Link from 'next/link';
-import './animations.css';
-import Nav from './nav/Nav';
-import './style.css';
+import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "common";
+import FixFavicon from "common/theming/FixFavicon";
+import { Metadata } from "next";
+import { Locale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode
-}) {
-	return (<>
-		{/* {/* <head>
-			{/* <link
-          rel='icon'
-          href='/faviconLight/favicon.ico'
-          media='(prefers-color-scheme: dark)'
-        />
+export default async function RootLayout(props: LayoutProps<"/">) {
+	return <InternationalizationLayout {...props} locale='en' />
+}
 
-			<link
-          rel='icon'
-          href='/faviconDark/favicon.ico'
-          media='(prefers-color-scheme: light)'
-        />
-		</head> */}
-		<html lang="en" style={{ overflowX: "hidden" }}>
-			{/* <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
-			<EnableScrollAnimations /> */}
-			<FixFavicon
-				darkSrc="/faviconLight/favicon.ico"
-				lightSrc="/faviconDark/favicon.ico"
-			/>
-			<body>
-				<Nav />
-				<div className='navPad vflex minV100'>
+export function InternationalizationLayout({ children, locale }: LayoutProps<"/"> & { locale: Locale }) {
+	// Enable static rendering
+	setRequestLocale(locale);
+
+	return <NextIntlClientProvider>
+			<html style={{ overflowX: "hidden" }}>
+				<FixFavicon
+					darkSrc="/faviconLight/favicon.ico"
+					lightSrc="/faviconDark/favicon.ico"
+				/>
+				<body>
 					{children}
-					<footer className="bg-l4 hGrid ph-bNavPad">
-						<div className="s1 e3 ph-e5 vPad">
-							<p>Lets meet at</p>
-							<Link href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>
-						</div>
-						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad">
-							<p>We are</p>
-							<Link href="/">
-								<ThemedImg style={{ height: 25 }}
-									lightSrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-									darkSrc="/img/ZentruLogo/Color=White,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
-								/>
-							</Link>
-						</div>
-						<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
-							<Link href="/impressum">
-								<p>Impressum</p>
-							</Link>
-							<Link href="/privacy-policy">
-								<p>Privacy Policy</p>
-							</Link>
-						</div>
-					</footer>
-				</div>
-			</body>
-			<GoogleAnalytics gaId="G-31E6P1N02L" />
-			<Analytics/>
-			<SpeedInsights/>
-		</html>
-	</>);
+					<GoogleAnalytics gaId="G-31E6P1N02L" />
+					<Analytics />
+					<SpeedInsights />
+				</body>
+			</html>
+		</NextIntlClientProvider>;
 }
 
 export const metadata: Metadata = {

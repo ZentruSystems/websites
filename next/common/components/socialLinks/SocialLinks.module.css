@@ -2,7 +2,7 @@
   display: flex;
   /* grid-auto-columns: 1fr;
   grid-template-rows: 1fr; */
-  align-content: center;
+  place-content: center;
 }
 
 .Link {

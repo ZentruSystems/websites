@@ -5,7 +5,7 @@ export default function EvarPage() {
 		<div className="s0 e13 ph-e6 tPad ph-tPadResp hGrid hFill">
 			<div id="debris-card" className="s1 e12 ph-s0 ph-e6 ph-hUnitMarg allRoundBig ph-allRoundBigResp bg-l2 Container pulsingShadow" style={{ boxShadow: "#ffffff3d 0px 0px 45px 0px" }}>
 				<div style={{ maxHeight: "75vh" }}>
-					<img className="hFill allRoundBig ph-allRoundBigResp" src="./img/debris_screenshot_01.png" />
+					<img className="hFill allRoundBig ph-allRoundBigResp" src="/img/debris_screenshot_01.png" />
 				</div>
 				<div className="tUnitPad Pad ph-PadResp fg-white-fix bg-d4-fixed" style={{backdropFilter: "saturate(140%) brightness(90%) blur(60px)", borderRadius: "var(--borderRadiusBigResponsive)", marginTop: "calc(-2 * var(--borderRadiusBigResponsive))", zIndex:0}}>
 					<h2>Get In — save Mars</h2>

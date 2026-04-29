@@ -4,8 +4,8 @@ export default function PrivacyPolicy() {
 		<div>
 			<h3>Datenschutzerklärung</h3>
 			<p>
-				Wir weisen darauf hin, dass zum Zweck der Webseitenoptimierung, sowie Darstellung von Inhalten mittels Dritten (Valve Corporation/Steam, Google)
-				im Rahmen von Cookies verschiedene teilweise Personenbezogene Daten wie IP-Asdresse des Anschlussinhabers gespeichert werden,
+				Wir weisen darauf hin, dass zum Zweck der Webseitenoptimierung, sowie Darstellung von Inhalten mittels Dritten (Valve Corporation/Steam, Google, Vercel)
+				im Rahmen von Cookies verschiedene teilweise Personenbezogene Daten wie IP-Adresse des Anschlussinhabers gespeichert werden,
 				ebenso wie Datum und Uhrzeit des Besuchs der Website, sowie nennenswerte Aktionen.
 			</p>
 			<br />
@@ -16,10 +16,13 @@ export default function PrivacyPolicy() {
 			<p>
 				Im Falle von Google werden Daten nicht länger als 14 Monate gespeichert.
 			</p>
+			{/* <p>
+				Im Falle von Vercel werden Daten nicht länger als 12 Monate gespeichert.
+			</p> */}
 			<br />
 			<p>
 				Die Datenverarbeitung erfolgt auf Basis der gesetzlichen Bestimmung des § 165 Abs 3 TKG 2021
-				sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder b (notwendig zur Vertragserfüllung)sowie des Art 6 Abs 1 lit c DSGVO.
+				sowie des Art 6 Abs 1 lit a (Einwilligung) und/oder b (notwendig zur Vertragserfüllung) sowie des Art 6 Abs 1 lit c DSGVO.
 			</p>
 			<br />
 			<br />
@@ -63,10 +66,11 @@ export default function PrivacyPolicy() {
 
 		<div>
 			<h3>Privacy Policy</h3>
-			<p>We point out that this website uses services from third parties (Valve Corporation/Steam, Google).</p>
-			<p>These services might collect personal data like IP-Adresses, times of specific actions and store them locally or on their servers.</p>
-			<p>We do not share any data with other third parties, if not required, the mentioned other parties are required to be able to present you certain contents and optimize the website.</p>
-			<br/>
+			<p>We point out that this website uses services from third parties (Valve Corporation/Steam, Google, Vercel).</p>
+			<p>These services might collect personal data like IP-Addresses, times of specific actions and store them locally on your device or on their servers.</p>
+			<p>We do not share any data with other third parties, if not required.</p>
+			<p>The mentioned other parties are required to be able to present you certain contents and optimize the website.</p>
+			<br />
 			<p>If you have any questions reach out to use via: service@zentru.systems</p>
 		</div>
 	</div >;
