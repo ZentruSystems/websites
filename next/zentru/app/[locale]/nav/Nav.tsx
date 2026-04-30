@@ -40,6 +40,9 @@ export default function Nav() {
 	function _toggleOpenClose() {
 		setIsBurgerOpen(!isBurgerOpen);
 	}
+	function closeBurger() {
+		setIsBurgerOpen(false);
+	}
 
 	const burgerExtend = isBurgerOpen ? 45 : 0;
 	const burgerOpacity = isBurgerOpen ? 100 : 0;
@@ -58,9 +61,9 @@ export default function Nav() {
 	return <nav className="glass vhGrid hFill" style={{ height: `calc(var(--nav-height) + ${burgerExtend}px)` }}>
 		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, zIndex: -1 }}>
 			<img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink href="/products">{tAlways("products") ?? "Products"}</NavLink>
+			<NavLink onNavigate={e => closeBurger()} href="/products">{tAlways("products") ?? "Products"}</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-			<NavLink href="/fields">{tAlways("fields")}</NavLink>
+			<NavLink onNavigate={e => closeBurger()} href="/fields">{tAlways("fields")}</NavLink>
 			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 			<NavLink>{tAlways("about")}</NavLink> */}
 		</div>

@@ -18,6 +18,10 @@ export default function ThemedImg(props: ThemedImgPropsType) {
 	delete imgProps.lightSrc;
 	delete imgProps.darkSrc;
 
+	if (prefersLight == undefined) {
+		return <img src={lightSrc} {...imgProps} />
+	}
+
 	// for better performance:
 	// https://stackoverflow.com/questions/71313889/how-can-i-present-a-different-next-image-based-on-the-users-preferred-color-sch
 	return <img src={prefersLight ? lightSrc : darkSrc} {...imgProps} />

@@ -12,7 +12,7 @@
 	overflow: clip;
 
 	position: relative;
-	max-height: 800px;
+	max-height: 700px;
 }
 
 .recImage {
@@ -22,6 +22,9 @@
 
 	--imageHeight: 600px;
 	--sectionHeight: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+
+	max-height: 600px;
+	max-width: 350px;
 
 	/* --intrusion: min(80px + 20%, 260px); */
 	/* clip-path: rect(0 100% calc(var(--intrusion) * 2) 0); */
@@ -39,6 +42,8 @@
 .neutralImage {
 	z-index: -1;
 	justify-self: center;
+	max-height: 600px;
+	max-width: 350px;
 }
 
 .text {

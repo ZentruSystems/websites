@@ -1,9 +1,12 @@
 'use client';
-
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 export default function useTheme() {
-	const [prefersLight, setPrefersLight] = useState<boolean|undefined>(undefined);
+	const [prefersLight, setPrefersLight, removePrefersLight] = useLocalStorage("prefersLight", undefined, {
+		deserializer: v => v === "true"
+	});
+
 	useEffect(() => {
 		if (window.matchMedia) {
 			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');

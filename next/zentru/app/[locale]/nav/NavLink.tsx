@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 export default function NavLink(props: {
 	href: string,
 	children: string
+	onNavigate?: (event: {preventDefault: () => void}) => void;
 }) {
 	const pathname = usePathname();
 	const [currentPage, setCurrentPage] = useState<string>("");
@@ -25,5 +26,5 @@ export default function NavLink(props: {
 	const linkUrl = props.href.toLowerCase();
 	// console.log(`NavLink: ${linkUrl}`);
 
-	return <Link className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{props.children}</Link>
+	return <Link onNavigate={props.onNavigate} className={`${isCurrentPage ? "Current" : null}`} href={linkUrl}>{props.children}</Link>
 }

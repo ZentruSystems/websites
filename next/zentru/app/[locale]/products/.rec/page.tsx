@@ -10,6 +10,9 @@ import ProjectViewImageRecordingAudio from "@/public/img/rec/ProjectView - recor
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 
+const DarkProjectViewImageNeutralPath = "/img/rec/ProjectView - neutral - iPhone - dark.svg";
+const ProjectViewImageNeutralPath = "/img/rec/ProjectView - neutral - iPhone.svg";
+
 export default async function RecPage() {
 	const tRec = await getTranslations("Products.rec");
 
@@ -31,38 +34,32 @@ export default async function RecPage() {
 	const signupButton = <Link
 		className="vCenter hCenter buttonSecondary hover"
 		href={"./.rec/early-access"}
-		style={{gridArea: "btn"}}
+		style={{ gridArea: "btn" }}
 	>
 		Early Access
 	</Link>
 
 	const recordingImage = <ThemedImage
+		loading="eager"
 		lightSrc={ProjectViewImageRecordingAudio}
 		darkSrc={DarkProjectViewImageRecordingAudio}
-		width="350" height="600"
-		alt=""
+		width="750" height="1000"
+		alt="project view of rec while an audio track is recording"
 		className={style.recImage}
-		style={{
-			gridArea: "rec",
-		}}
+		style={{gridArea: "rec"}}
 	/>;
 	const neutralImage = <ThemedImage
+		loading="eager"
 		lightSrc={ProjectViewImageNeutral}
 		darkSrc={DarkProjectViewImageNeutral}
-		width="350" height="600"
-		alt=""
+		width="750" height="1000"
+		alt="project view of rec"
 		className={style.neutralImage}
 		style={{
 			gridArea: "neut",
 			zIndex: -1,
-			// maxHeight: "min(600px, 75%)",
-			// right: "10px",
 			right: "7vw",
 			position: "relative",
-			// justifySelf: "center",
-			// placeSelf: "center",
-			// top: "min(5vw, 65px)",
-
 		}}
 	/>;
 
@@ -84,6 +81,7 @@ export async function RecSection() {
 		title=".rec"
 		aside={<>
 			<ThemedImage
+				loading="eager"
 				className="ph-NoFloat RightFloat From15vw To0 hUnitPad"
 				style={{ marginBlock: 10, height: "500px" }}
 				lightSrc={ProjectViewImageNeutral}
