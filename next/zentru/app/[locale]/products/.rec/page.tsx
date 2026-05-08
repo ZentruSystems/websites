@@ -24,10 +24,10 @@ export default async function RecPage() {
 
 	const text = <div className={style.text} style={{ gridArea: "text", maxWidth: "400px" }}>
 		<p className="tBigPad lUnitPad" style={{}}>
-			{tRec("whatItIs")}
+			{tRec("headsection.whatItIs")}
 		</p>
 		<p className="tPad lUnitPad" style={{}}>
-			{tRec("reason")}
+			{tRec("headsection.reason")}
 		</p>
 	</div>;
 
@@ -46,7 +46,7 @@ export default async function RecPage() {
 		width="750" height="1000"
 		alt="project view of rec while an audio track is recording"
 		className={style.recImage}
-		style={{gridArea: "rec"}}
+		style={{ gridArea: "rec" }}
 	/>;
 	const neutralImage = <ThemedImage
 		loading="eager"
@@ -58,19 +58,26 @@ export default async function RecPage() {
 		style={{
 			gridArea: "neut",
 			zIndex: -1,
-			right: "7vw",
-			position: "relative",
+			// right: "7vw",
+			// position: "relative",
 		}}
 	/>;
 
 
-	return <section className={style.recHeadSection}>
-		{text}
-		{recTitle}
-		{signupButton}
-		{recordingImage}
-		{neutralImage}
-	</section>
+	return <>
+		<section className={style.recHeadSection} style={{maxWidth: "min(calc(500px + 40vw), 100vw)", width: "100%", alignSelf: "center"}}>
+			{text}
+			{recTitle}
+			{signupButton}
+			{recordingImage}
+			{neutralImage}
+		</section>
+		<Section title={tRec("section2.title")}
+			className="bg-l5"
+		>
+			{tRec.rich("section2.content", defaultHtml)}
+		</Section>
+	</>
 }
 
 export async function RecSection() {

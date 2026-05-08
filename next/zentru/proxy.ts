@@ -28,6 +28,9 @@ export const config = {
     '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
 
     // Match all pathnames within `{/:locale}/products` (not as part of the api)
-    '/((?!api)[\\w-]+)?/products',
+    '/((?!api)[\\w-]+)?/products(.*)',
+    // '/products/\.rec',
+    // '/([\\w-]+)/products(.*)',
+    // '/en/products/\.rec',
   ]
 }

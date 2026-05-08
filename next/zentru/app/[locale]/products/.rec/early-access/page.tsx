@@ -11,7 +11,7 @@ interface RecEarlyAccessState {
 }
 
 export default function RecEarlyAccess() {
-	const tRec = useTranslations("Products.rec");
+	const tRec = useTranslations("Products.rec.earlyAccess");
 	const tAlways = useTranslations("Always");
 
 	const [state, setState] = useState<RecEarlyAccessState>({
@@ -41,7 +41,9 @@ export default function RecEarlyAccess() {
 			</section>;
 		}
 		return <section className="vFillView">
-			{base}
+			<div className="vCenter hCenter">
+				{base}
+			</div>
 		</section>;
 	}
 

@@ -3,14 +3,27 @@ export default {
 	"Products": {
 		"rec": {
 			"sectionSummary": `Never forget another melody in your head.
-				<br></br>
-				Like your trusty voice-recorder, but supercharged.<br></br>
-				Record your melody, add bass, drums and maybe some pads.
-				There – you got yourself a songstarter, now jump into the DAW, drag over the stems and you are ready to start the song.`,
-			"whatItIs": "Music creation for you.",
-			"reason": "Never miss a line in your head, while driving on the road or taking a walk in the park.",
-			"getEarlyAccess": "Get early access to .rec",
-			"signupEarlyAccess-action": "Sign up for the early access",
+			<br></br>
+			Like your trusty voice-recorder, but supercharged.<br></br>
+			Record your melody, add bass, drums and maybe some pads.<br></br>
+			There – you got yourself a songstarter, now jump into the DAW, drag over the stems and you are ready to start the song.`,
+			"headsection": {
+				"whatItIs": "Music creation for you.",
+				"reason": "Never miss a line in your head, while driving on the road or taking a walk in the park.",
+			},
+			"earlyAccess": {
+				"getEarlyAccess": "Get early access to .rec",
+				"signupEarlyAccess-action": "Sign up for the early access",
+			},
+			"section2": {
+				"title": "Why .rec?",
+					"content": `So you never lose that melody or song you have in your head. You record it,
+						only to realize later that you have no idea how you imagined the harmonies, the bass, the drums... to be.<br></br>
+						<br></br>
+						Believe us, this happens to everyone – all the time. We know this pain, and that's exactly why we built .rec.<br></br>
+						<br></br>
+						Who is .rec for? – Anyone! Everyone who thinks supercharged voice-memos sound pretty great!`
+			},
 		},
 	},
 	"Main": {
@@ -51,7 +64,7 @@ export default {
 						<p>Many things we love are in the physical world, we want to provide that character and soul for digital things as well</p>`,
 			"ui": {
 				"headline": "User Interfaces",
-				"text":`<p>Apps, Websites and Game interfaces, designed to solve problems, designed to be an experience.</p>`,
+				"text": `<p>Apps, Websites and Game interfaces, designed to solve problems, designed to be an experience.</p>`,
 			},
 			"sonicDesign": {
 				"headline": "Sonic design",

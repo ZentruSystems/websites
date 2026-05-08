@@ -5,12 +5,25 @@ export default {
 			"sectionSummary": `Vergiss keine weitere Melodie.
 				<br></br>
 				Wie dein vertrauter voice-recorder, nur supercharged.<br></br>
-				Nimm deine Melodie auf, füge Bass, Drums und vielleicht ein Pad hinzu.
+				Nimm deine Melodie auf, füge Bass, Drums und vielleicht ein Pad hinzu.<br></br>
 				Da – so schnell baust du dir einen Songstarter, jetzt die DAW öffnen, Spuren hineinziehen und du bist bereit loszulegen.`,
-			"whatItIs": "Musik für dich.",
-			"reason": "Verliere keine Melodie mehr während du unterwegs bist oder einen Spaziergang im Park machst.",
-			"getEarlyAccess": "Hol dir deinen Vorabzugang",
-			"signupEarlyAccess-action": "Für Vorabzugang anmelden",
+			"headsection": {
+				"whatItIs": "Musik für dich.",
+				"reason": "Verliere keine Melodie mehr während du unterwegs bist oder einen Spaziergang im Park machst.",
+			},
+			"earlyAccess": {
+				"getEarlyAccess": "Hol dir deinen Vorabzugang",
+				"signupEarlyAccess-action": "Für Vorabzugang anmelden",
+			},
+			"section2": {
+				"title": "Warum .rec?",
+				"content": `Damit du nie wieder eine Melodie oder einen Song im Kopf hast, es aufnimmst,
+					nur um später festzustellen, dass du keine Ahnung mehr hast, wie du dir die Harmonien, den Bass, die Drums...vorgestellt hast.<br></br>
+					<br></br>
+					Glaub uns, soetwas passiert allen – die ganze Zeit, wir kennen diesen Schmerz, das ist der Grund, warum wir .rec machen.<br></br>
+					<br></br>
+					Für wen .rec ist? – Na für jeden! Jeder der supercharged voice-memos praktisch findet!`
+			},
 		},
 	},
 	"Main": {
@@ -51,7 +64,7 @@ export default {
 						<p>Viele Dinge, die wir lieben sind in der realen Welt, wir möchten diesen Charakter und dieses Gefühl auch für digitale Dinge erreichen.</p>`,
 			"ui": {
 				"headline": "User Interfaces",
-				"text":`<p>Apps, Websiten und Spiel Interfaces, designt Probleme zu lösen, designt ein Erlebnis zu sein.</p>`,
+				"text": `<p>Apps, Websiten und Spiel Interfaces, designt Probleme zu lösen, designt ein Erlebnis zu sein.</p>`,
 			},
 			"sonicDesign": {
 				"headline": "Sonic design",

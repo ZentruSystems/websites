@@ -8,7 +8,7 @@ if (!MONGODB_URI) {
 }
 
 const connectionString = new URL(MONGODB_URI!);
-connectionString.pathname += process.env.VERCEL_TARGET_ENV;
+connectionString.pathname += process.env.VERCEL_TARGET_ENV ?? "dev";
 
 log(`VERCEL_TARGET_ENV: '${process.env.VERCEL_TARGET_ENV}'`);
 
