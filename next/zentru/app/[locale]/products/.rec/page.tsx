@@ -73,9 +73,15 @@ export default async function RecPage() {
 			{neutralImage}
 		</section>
 		<Section title={tRec("section2.title")}
-			className="bg-l5"
+			className="bg-l5 paragraphSpaceLarger"
 		>
 			{tRec.rich("section2.content", defaultHtml)}
+		</Section>
+		<Section title={tRec("section3.title")}
+			className="bg-l6 paragraphSpaceLarger"
+			isStringAsChild={false}
+		>
+			{tRec.rich("section3.content", defaultHtml)}
 		</Section>
 	</>
 }

@@ -18,6 +18,7 @@ export default function Section(
 		children: React.ReactNode
 		link?: string | null,
 		className?: string,
+		isStringAsChild?: boolean,
 	}
 ) {
 	const isLeftSide = props.isLeftSide || false;
@@ -33,7 +34,7 @@ export default function Section(
 	}
 
 	const val = (props.children as any)[0];
-	const isStringAsChild = typeof(val) == typeof ("");
+	const isStringAsChild = props.isStringAsChild ?? typeof(val) == typeof ("");
 	// console.log(typeof (props.children[0]) == typeof (""))
 
 	const visualContent = <section className={`flex ${className}`} style={{ justifyContent: "center", ...props.style }}>

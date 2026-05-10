@@ -17,12 +17,22 @@ export default {
 			},
 			"section2": {
 				"title": "Why .rec?",
-					"content": `So you never lose that melody or song you have in your head. You record it,
-						only to realize later that you have no idea how you imagined the harmonies, the bass, the drums... to be.<br></br>
-						<br></br>
-						Believe us, this happens to everyone – all the time. We know this pain, and that's exactly why we built .rec.<br></br>
-						<br></br>
-						Who is .rec for? – Anyone! Everyone who thinks supercharged voice-memos sound pretty great!`
+					"content": `<maxWidth>So you never lose that melody or song you have in your head. You record it,
+						only to realize later that you have no idea how you imagined the harmonies, the bass, the drums... to be.<br></br></maxWidth>
+						<maxWidth>Believe us, this happens to everyone – all the time. We know this pain, and that's exactly why we built .rec.<br></br></maxWidth>
+						<maxWidth>Who is .rec for? – Anyone! Everyone who thinks supercharged voice-memos sound pretty great!</maxWidth>`
+			},
+			"section3": {
+				"title": "Features",
+				"content": `<maxWidth>
+					.rec is as fast and simple to use as your trusted voice-memos. Just hit record and start.<br></br>
+					.rec is built for beginners, amateurs and professionals, housing features for everyone:
+					</maxWidth>
+					<ul>
+					<li><maxWidth>You won't even recognize features that would otherwise just get into your way.</maxWidth></li>
+					<li><maxWidth>MIDI and audio tracks can be exported individually to use them in your DAW.</maxWidth></li>
+					<li><maxWidth>EQ and reverb, can be added with minimal options, to keep you in your creative flow.</maxWidth></li>
+					</ul>`
 			},
 		},
 	},

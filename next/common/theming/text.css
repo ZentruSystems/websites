@@ -14,7 +14,8 @@ h4 {
 }
 
 p {
-	line-height: 28px;
+	--p-line-height-factor: 1.4;
+	line-height: calc(var(--normalFontSize) * var(--p-line-height-factor)); /* 28px; */
 	font-size: var(--normalFontSize);
 	font-family: var(--normalFont);
 	font-weight: 200;

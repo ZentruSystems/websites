@@ -14,6 +14,14 @@
 	font-weight: 100;
 }
 
+.lineSpaceLarger, .lineSpaceLarger p {
+	line-height: 1.6rem;
+}
+
+.paragraphSpaceLarger p:not(:last-child) {
+	margin-bottom: 1.6rem;
+}
+
 .primaryAccent {
 	--currentForeground: var(--primaryAccentColor);
 	color: var(--primaryAccentColor);
@@ -823,6 +831,10 @@ h2.hover-highlight:hover {
 @media screen and (max-width: 730px) {
 	:root {
 		--paddingUnit: 20px;
+	}
+
+	p {
+
 	}
 
 	button.secondary, .buttonSecondary, button.primary, .buttonPrimary {

@@ -144,6 +144,17 @@ input {
 	outline: none;
 }
 
+ul {
+	margin-top: 17px;
+}
+
+li {
+	margin-left: 26px;
+}
+li:not(:last-child) {
+	margin-bottom: calc(var(--normalFontSize) * 0.4);
+}
+
 .navPad>div:not(.HorizontalDivider):not(.VerticalDivider) {
 	flex: 1;
 }
@@ -166,8 +177,9 @@ input {
 
 @media screen and (max-width: 730px) {
 	:root {
-		--normalFontSize: 16px;
+		--normalFontSize: 17.35px;
 		--largerFontSize: 28px;
+		--p-line-height-factor: 1.5 !important;
 	}
 
 	input {

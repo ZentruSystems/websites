@@ -17,12 +17,22 @@ export default {
 			},
 			"section2": {
 				"title": "Warum .rec?",
-				"content": `Damit du nie wieder eine Melodie oder einen Song im Kopf hast, es aufnimmst,
-					nur um später festzustellen, dass du keine Ahnung mehr hast, wie du dir die Harmonien, den Bass, die Drums...vorgestellt hast.<br></br>
-					<br></br>
-					Glaub uns, soetwas passiert allen – die ganze Zeit, wir kennen diesen Schmerz, das ist der Grund, warum wir .rec machen.<br></br>
-					<br></br>
-					Für wen .rec ist? – Na für jeden! Jeder der supercharged voice-memos praktisch findet!`
+				"content": `<maxWidth>Damit du nie wieder eine Melodie oder einen Song im Kopf hast, es aufnimmst,
+					nur um später festzustellen, dass du keine Ahnung mehr hast, wie du dir die Harmonien, den Bass, die Drums...vorgestellt hast.</maxWidth>
+					<maxWidth>Glaub uns, soetwas passiert allen – die ganze Zeit, wir kennen diesen Schmerz, das ist der Grund, warum wir .rec machen.</maxWidth>
+					<maxWidth>Für wen .rec ist? – Na für jeden! Jeder der supercharged voice-memos praktisch findet!</maxWidth>`
+			},
+			"section3": {
+				"title": "Features",
+				"content": `<maxWidth>
+					.rec ist genauso schnell und einfach zu bedienen wie deine geliebten Voice-Memos. Drücke "Record" und los geht's.<br></br>
+					.rec ist für Anfänger, Amateure und Profis gebaut – mit Features für jeden.
+					</maxWidth>
+					<ul>
+					<li><maxWidth>Du wirst Features nur dann bemerken, wenn du bereit für sie bist.</maxWidth></li>
+					<li><maxWidth>Exportiere MIDI und Audio-Spuren einzeln um sie in deiner DAW weiter zu verarbeiten.</maxWidth></li>
+					<li><maxWidth>Nutze EQ und Reverb schnell und unkompliziert – ohne 100 Einstellungen, die du sowieso nicht verwendest, damit du in deinem kreativen Flow bleibst.</maxWidth></li>
+					</ul>`
 			},
 		},
 	},
