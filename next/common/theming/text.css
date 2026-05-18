@@ -34,3 +34,8 @@ p.Quote {
 	padding-bottom: 25px;
 	letter-spacing: 1.5px;
 }
+
+.code {
+	font-family: var(--monoFont);
+	font-weight: 200;
+}

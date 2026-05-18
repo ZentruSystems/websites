@@ -1,8 +1,10 @@
 import { RecSection } from "./.rec/page";
+import { ToolsSection } from "./tools/page";
 
 export default function Page() {
 	return <>
 	<RecSection/>
+	<ToolsSection/>
 	{/* <section className="Pad vFillView hCenter vCenter flex">
 		<div className="vCenter">
 			<h1 className="light">We are currently working on our first product</h1>

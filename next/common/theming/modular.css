@@ -14,6 +14,16 @@
 	font-weight: 100;
 }
 
+.field {
+	--fieldPad: 2px;
+	--fieldRadius: 3px;
+	padding: var(--fieldPad);
+	padding-inline: calc(var(--fieldPad) * 2);
+	border-radius: var(--fieldRadius);
+
+	background-color: var(--l5);
+}
+
 .lineSpaceLarger, .lineSpaceLarger p {
 	line-height: 1.6rem;
 }
@@ -77,6 +87,9 @@
 .fg-error {
 	color: var(--errorColor);
 }
+.fg-success {
+	color: var(--successColor);
+}
 
 .bg-l2 {
 	background-color: var(--l2);
@@ -84,6 +97,9 @@
 
 .bg-error {
 	background-color: var(--errorColor);
+}
+.bg-success {
+	background-color: var(--successColor);
 }
 
 .border-error {
@@ -268,6 +284,21 @@
 
 .Pad {
 	padding: var(--normalPadding);
+}
+
+.tMarg {
+	margin-top: var(--normalPadding);
+}
+.bMarg {
+	margin-bottom: var(--normalPadding);
+}
+.vMarg {
+	margin-top: var(--normalPadding);
+	margin-bottom: var(--normalPadding);
+}
+.hMarg {
+	margin-left: var(--normalPadding);
+	margin-right: var(--normalPadding);
 }
 
 
@@ -1023,6 +1054,7 @@ h2.hover-highlight:hover {
 	.ph-allRoundBigResp {
 		border-radius: var(--borderRadiusBigResponsive);
 	}
+
 
 	.vAltMarg {
 		margin-top: unset;

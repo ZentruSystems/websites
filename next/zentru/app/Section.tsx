@@ -19,6 +19,7 @@ export default function Section(
 		link?: string | null,
 		className?: string,
 		isStringAsChild?: boolean,
+		keepSized?: boolean,
 	}
 ) {
 	const isLeftSide = props.isLeftSide || false;
@@ -27,17 +28,18 @@ export default function Section(
 	const link = props.link == null ? null : props.link ?? props.title;
 	const hasLink = props.link != null;
 	const className = props.className;
+	const keepSizedStyle = props.keepSized ? { maxWidth: "min(calc(500px + 40vw), 100vw)", width: "100%", alignSelf: "center" } : {};
 
-	const OptionalLink = (props: {className: string, children: React.ReactElement, href: String | null, style?: CSSProperties}) => {
+	const OptionalLink = (props: { className: string, children: React.ReactElement, href: String | null, style?: CSSProperties }) => {
 		if (hasLink) return <Link {...props as any} />
 		return props.children;
 	}
 
 	const val = (props.children as any)[0];
-	const isStringAsChild = props.isStringAsChild ?? typeof(val) == typeof ("");
+	const isStringAsChild = props.isStringAsChild ?? typeof (val) == typeof ("");
 	// console.log(typeof (props.children[0]) == typeof (""))
 
-	const visualContent = <section className={`flex ${className}`} style={{ justifyContent: "center", ...props.style }}>
+	const visualContent = <section className={`flex ${className}`} style={{ justifyContent: "center", ...keepSizedStyle, ...props.style }}>
 		<div className="vhGrid hFill" style={props.inSectionStyle}>
 			{
 				link ?

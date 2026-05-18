@@ -7,13 +7,16 @@ import { Metadata } from "next";
 import { Locale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
+import { Geist_Mono } from 'next/font/google';
+
+export const geistMono = Geist_Mono({});
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout(props: LayoutProps<"/">) {
-	return <InternationalizationLayout {...props} locale='en' />
+	return <InternationalizationLayout {...props} locale='en'/>
 }
 
 export function InternationalizationLayout({ children, locale }: LayoutProps<"/"> & { locale: Locale }) {
