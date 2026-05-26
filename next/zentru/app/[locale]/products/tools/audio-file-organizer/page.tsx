@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { detectBpm, detectKey, generatePitchMap, goertzelMagnitude } from './analyze';
 
 type WebAudioBeatDetectorType = {
-	default: typeof import("/Users/trufelix/repos/zentru-website/next/node_modules/.pnpm/web-audio-beat-detector@8.2.36/node_modules/web-audio-beat-detector/build/es2019/module");
+	default: any;
 	guess: (...args: any) => Promise<{
 		bpm: number;
 		offset: number;
