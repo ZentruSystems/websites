@@ -21,10 +21,10 @@
     "mongodb": "^7.2.0",
     "mongoose": "^9.5.0",
     "music-metadata": "^11.12.3",
-    "next": "15.1.7",
+    "next": "^16.2.6",
     "next-intl": "^4.9.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "validator": "^13.15.35",
     "web-audio-beat-detector": "^8.2.36"
   },
