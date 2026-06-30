@@ -9,6 +9,7 @@ import { CSSProperties } from "react";
  */
 export default function Section(
 	props: {
+		noPadAside?: boolean
 		asideContainerStyle?: CSSProperties,
 		inSectionStyle?: CSSProperties,
 		style?: CSSProperties,
@@ -58,7 +59,7 @@ export default function Section(
 			{!isLeftSide && props.aside &&
 				<OptionalLink
 					className="s9 e13 ph-s1 ph-e6 bg-l5 gr-s1 gr-e4 ph-gr-s3 lRound" href={link}
-					style={{ height: "calc(100% - 8px - 8px)", marginTop: 8, marginBottom: 8, paddingLeft: 10, ...props.asideContainerStyle }}
+					style={{ height: "calc(100% - 8px - 8px)", marginTop: 8, marginBottom: 8, paddingLeft: props.noPadAside ? 0 : 10, ...props.asideContainerStyle }}
 				>
 					<div className="flex FloatTrigger vFill Container" style={props.asideContainerStyle}>
 						{props.aside}
@@ -67,7 +68,7 @@ export default function Section(
 			}
 			{isLeftSide && props.aside &&
 				<OptionalLink className="s0 e4 ph-e5 bg-l5 gr-s1 gr-e4 ph-gr-s3 rRound" href={link}
-					style={{ height: "calc(100% - 8px - 8px)", marginTop: 8, marginBottom: 8, paddingLeft: 10, ...props.asideContainerStyle }}
+					style={{ height: "calc(100% - 8px - 8px)", marginTop: 8, marginBottom: 8, paddingLeft: props.noPadAside ? 0 : 10, ...props.asideContainerStyle }}
 				>
 					<div className="flex FloatTrigger vFill Container" style={props.asideContainerStyle}>
 						{props.aside}

@@ -1,8 +1,10 @@
 import { RecSection } from "./.rec/page";
+import { DialAppSection } from "./DialApp/page";
 import { ToolsSection } from "./tools/page";
 
 export default function Page() {
 	return <>
+	<DialAppSection/>
 	<RecSection/>
 	<ToolsSection/>
 	{/* <section className="Pad vFillView hCenter vCenter flex">

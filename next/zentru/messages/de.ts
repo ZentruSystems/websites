@@ -35,17 +35,52 @@ export default {
 					</ul>`
 			},
 		},
+		"DialApp": {
+			"sectionSummary": `Behalte deine Fenster auf macOS im Griff.
+			<br></br>
+			Wechsle die Fenster wie Tony.<br></br>
+			Drücke den Shortcut, bewege die Maus, loslassen, Fenster gewechselt!.`,
+			// TODO: Get the gaming aspect in there, "Windowswitching like gaming", "switch windows with like Tony Stark"
+			"headsection": {
+				"whatItIs": "Fenster wechseln, produktiv mit Emotionen",
+				"reason": "Keine leeren Fahrten mit deinem Cursor, das Menü ist immer dort, wo du bist.",
+			},
+			"earlyAccess": {
+				"getEarlyAccess": "Hol dir deinen Vorabzugang",
+				"signupEarlyAccess-action": "Für Vorabzugang anmelden",
+			},
+			"section2": {
+				"title": "Warum DialApp?",
+				"content": `<maxWidth>Dein Cursor bleibt in der Mitte des Bildschirms, bereit für das nächste Fenster, ohne ihn an den Rand oder sogar auf einen anderen Bildschirm bewegen zu müssen,
+						nur damit das Dock versteckt bleibt, bis es für eine Sekunde auftaucht, bevor es dich erneut im Stich lässt. Spare deine Energie für das, was du wirklich tun möchtest.<br></br></maxWidth>
+						<maxWidth>DialApp löst dieses Problem, indem es ein radialesMenü anzeigt, wie in Science-Fiction und Spielen zu sehen, das alle deine offenen Fenster anzeigt.<br></br></maxWidth>
+						<maxWidth>„Ha, das kann ich schon mit Cmd+Tab!" magst du sagen, aber versuche zwischen mehreren Finder-Fenstern zu wechseln...DialApp kann das<br></br></maxWidth>
+						<maxWidth>Für wen ist DialApp? – Für jeden, der mit einem Mac arbeitet und sich einen besseren Weg wünscht, Fenster zu wechseln, als sie zu stapeln.</maxWidth>`
+				// TODO: Add gif/video of DialApp showing multiple Finder windows.
+			},
+			"section3": {
+				"title": "Features",
+				"content": `<maxWidth>
+					DialApp ist schnell, einfach und ist in zwei Minuten eingerichtet.<br></br>
+					</maxWidth>
+					<ul>
+					<li><maxWidth>Anpassbarer globaler Shortcut.</maxWidth></li>
+					<li><maxWidth>Ressourceneffizient, dein Mac wird durch DialApp nicht langsamer, egal wie alt er ist.</maxWidth></li>
+					<li><maxWidth>Spaßig zu bedienen, anpassbar nach deinen Wünschen.</maxWidth></li>
+					</ul>`
+			},
+		},
 	},
 	"Main": {
-		"because1": "Because we don’t like how Companies treat their Customers.",
-		"because2": "Because we don’t like bad design.",
-		"because3": "Because we <span>love</span> really good.",
+		"because1": "Weil uns nicht gefällt, wie Unternehmen ihre Kunden behandeln.",
+		"because2": "Weil uns schlechtes Design nicht gefällt.",
+		"because3": "Weil wir <span>lieben</span> richtig gut.",
 
-		"weBelieve": `We believe that whatever we do, we should do it really good.<br></br>
-			We believe this, because we strive for the thoughtfulness and sustainable design of the past.<br></br>
+		"weBelieve": `Wir glauben, dass alles, was wir tun, wirklich gut sein sollte.<br></br>
+			Wir glauben das, weil wir nach der Achtsamkeit und nachhaltigem Design der Vergangenheit streben.<br></br>
 			<br></br>
-			Just think of all the timeless designs we got – that’s what we love.<br></br>
-			<span>As {quoteer} put it</span>`,
+			Denk nur an all die zeitlosen Designs, die wir haben – das ist es, was wir lieben.<br></br>
+			<span>Wie {quoteer} es sagte</span>`,
 		"timelessStark": "Zeitloses Design ist das einzige Design das nachhaltig sein kann und das einzige Design auf das wir uns fokusieren sollten.",
 		"timelessWe": "Keine unnötigen Funktionen, keine Kompromisse—einfach gut gemachte Systeme, die genau das tun, was sie sollen, nicht mehr, nicht weniger.",
 
@@ -77,7 +112,7 @@ export default {
 				"text": `<p>Apps, Websiten und Spiel Interfaces, designt Probleme zu lösen, designt ein Erlebnis zu sein.</p>`,
 			},
 			"sonicDesign": {
-				"headline": "Sonic design",
+				"headline": "Sonic Design",
 				"text":
 					`<p>Wir machen Soundeffekte, Klanglandschaften und Musik in Harmonie, um die richtigen Gefühle zu übertragen.
 						<br></br>
@@ -102,6 +137,14 @@ export default {
 		"imprint": "Impressum",
 		"privacyPolicy": "Datenschutzerklärung",
 		"email": "E-Mail",
+		"valid": "valide",
+		"invalid": "ungültig",
+	},
+	//
+	"Signup": {
+		"share": "Teile, was du gefunden hast?",
+		"noticed": "Du wirst so bald wie möglich von uns hören.",
+		"multipleNotice": "Wir werden dir nicht zwei E-Mails senden, aber wir haben uns deine Begeisterung vorgemerkt!",
 	},
 	//
 	"createdBy": "Designed und gebaut von Zentru Systems mit 🫀 ❤️"

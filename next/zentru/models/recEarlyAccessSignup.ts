@@ -1,24 +1,6 @@
 import mongoose from "mongoose";
-import isEmail from 'validator/lib/isEmail';
+import BaseSignupSchema from "./baseSignup";
 
-const recEarlyAccessSignupSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    trim: true,
-    lowercase: true,
-    unique: true,
-    required: 'Email address is required',
-    validate: [isEmail, 'Please fill a valid email address'],
-  },
-  count: {
-    type: Number,
-    required: true,
-  }
-} as any,
-  {
-    timestamps: true,
-    strict: true,
-  },
-);
+const recEarlyAccessSignupSchema = BaseSignupSchema
 
 export default mongoose.models.recEarlyAccessSignup || mongoose.model("recEarlyAccessSignup", recEarlyAccessSignupSchema);

@@ -1,8 +1,9 @@
 import Section from "@/app/Section";
-import style from "./dot-rec.module.css";
+import style from "./dialApp.module.css";
 
 import ThemedImage from "@/app/ThemedImage";
 import { defaultHtml } from "@/lib/localization";
+import DialAppRadialMenu from "@/public/img/DialApp/Dial.png";
 import DarkProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone - dark.svg";
 import ProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone.svg";
 import DarkProjectViewImageRecordingAudio from "@/public/img/rec/ProjectView - recording audio - iPhone - dark.svg";
@@ -14,26 +15,27 @@ const DarkProjectViewImageNeutralPath = "/img/rec/ProjectView - neutral - iPhone
 const ProjectViewImageNeutralPath = "/img/rec/ProjectView - neutral - iPhone.svg";
 
 export default async function RecPage() {
-	const tRec = await getTranslations("Products.rec");
+	const tDialApp = await getTranslations("Products.DialApp");
 
-	const recTitle = <h1 className="light vCenter hCenter" style={{
-		gridArea: "title",
-		// width: "100%",
-		// textAlign: "center"
-	}}>.rec</h1>;
+	const dialAppTitle = <div className="vCenter hCenter" style={{gridArea: "title", position:"relative"}}>
+		<h1 className="light" style={{lineHeight: 1}}>
+			DialApp
+		</h1>
+		<img src={DialAppRadialMenu.src}/>
+	</div>;
 
 	const text = <div className={style.text} style={{ gridArea: "text", maxWidth: "400px" }}>
-		<p className="tBigPad lUnitPad" style={{}}>
-			{tRec("headsection.whatItIs")}
+		<p>
+			{tDialApp("headsection.whatItIs")}
 		</p>
-		<p className="tPad lUnitPad" style={{}}>
-			{tRec("headsection.reason")}
+		<p className="tPad bUnitPad" style={{}}>
+			{tDialApp("headsection.reason")}
 		</p>
 	</div>;
 
 	const signupButton = <Link
 		className="vCenter hCenter buttonSecondary hover"
-		href={"./.rec/early-access"}
+		href={"./DialApp/early-access"}
 		style={{ gridArea: "btn" }}
 	>
 		Early Access
@@ -65,44 +67,45 @@ export default async function RecPage() {
 
 
 	return <>
-		<section className={style.recHeadSection} style={{maxWidth: "min(calc(500px + 40vw), 100vw)", width: "100%", alignSelf: "center"}}>
+		<section className={style.headSection} style={{ maxWidth: "min(calc(500px + 40vw), 100vw)", width: "100%", alignSelf: "center" }}>
+				{dialAppTitle}
+				{signupButton}
+			{/* {recordingImage}
+			{neutralImage} */}
 			{text}
-			{recTitle}
-			{signupButton}
-			{recordingImage}
-			{neutralImage}
 		</section>
-		<Section title={tRec("section2.title")}
+		<Section title={tDialApp("section2.title")}
 			className="bg-l5 paragraphSpaceLarger"
 		>
-			{tRec.rich("section2.content", defaultHtml)}
+			{tDialApp.rich("section2.content", defaultHtml)}
 		</Section>
-		<Section title={tRec("section3.title")}
+		<Section title={tDialApp("section3.title")}
 			className="bg-l6 paragraphSpaceLarger"
 			isStringAsChild={false}
 		>
-			{tRec.rich("section3.content", defaultHtml)}
+			{tDialApp.rich("section3.content", defaultHtml)}
 		</Section>
 	</>
 }
 
-export async function RecSection() {
-	const tRec = await getTranslations("Products.rec");
+export async function DialAppSection() {
+	const tDialApp = await getTranslations("Products.DialApp");
 
 	return <Section
+		noPadAside
 		asideContainerStyle={{ placeContent: "center" }}
-		title=".rec"
+		title="DialApp"
 		aside={<>
 			<ThemedImage
 				loading="eager"
-				className="ph-NoFloat RightFloat From15vw To0 hUnitPad"
-				style={{ marginBlock: 10, height: "500px" }}
-				lightSrc={ProjectViewImageNeutral}
-				darkSrc={DarkProjectViewImageNeutral}
-				alt="no friction recording" />
+				className="ph-NoFloat RightFloat From15vw To0"
+				style={{ marginBlock: 10, height: "400px", width: "400px", aspectRatio: 1 }}
+				lightSrc={DialAppRadialMenu}
+				darkSrc={DialAppRadialMenu}
+				alt="no friction window switching on macOS" />
 		</>}
-		link="products/.rec"
+		link="products/DialApp"
 	>
-		{tRec.rich("sectionSummary", defaultHtml)}
+		{tDialApp.rich("sectionSummary", defaultHtml)}
 	</Section>;
 }

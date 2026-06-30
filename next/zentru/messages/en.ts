@@ -17,7 +17,7 @@ export default {
 			},
 			"section2": {
 				"title": "Why .rec?",
-					"content": `<maxWidth>So you never lose that melody or song you have in your head. You record it,
+				"content": `<maxWidth>So you never lose that melody or song you have in your head. You record it,
 						only to realize later that you have no idea how you imagined the harmonies, the bass, the drums... to be.<br></br></maxWidth>
 						<maxWidth>Believe us, this happens to everyone – all the time. We know this pain, and that's exactly why we built .rec.<br></br></maxWidth>
 						<maxWidth>Who is .rec for? – Anyone! Everyone who thinks supercharged voice-memos sound pretty great!</maxWidth>`
@@ -32,6 +32,41 @@ export default {
 					<li><maxWidth>You won't even recognize features that would otherwise just get into your way.</maxWidth></li>
 					<li><maxWidth>MIDI and audio tracks can be exported individually to use them in your DAW.</maxWidth></li>
 					<li><maxWidth>EQ and reverb, can be added with minimal options, to keep you in your creative flow.</maxWidth></li>
+					</ul>`
+			},
+		},
+		"DialApp": {
+			"sectionSummary": `Get a hold of your windows on macOS.
+			<br></br>
+			Switch the windows like Tony.<br></br>
+			Press the shortcut, move the mouse, let go, window switched!.`,
+			// TODO: Get the gaming aspect in there, "Windowswitching like gaming", "switch windows with like Tony Stark"
+			"headsection": {
+				"whatItIs": "Window switching, productive with emotions",
+				"reason": "No empty travels with your cursor, the menu is always where you are.",
+			},
+			"earlyAccess": {
+				"getEarlyAccess": "Get early access to DialApp",
+				"signupEarlyAccess-action": "Sign up for the early access",
+			},
+			"section2": {
+				"title": "Why DialApp?",
+				"content": `<maxWidth>Your cursor stays at the middle of the screen, ready for the next window, without having to move it to the edge or even another screen,
+						only for the dock to stay hidden until it pops up for a second, before giving up on you again. Save your energy for what you really want to do.<br></br></maxWidth>
+						<maxWidth>DialApp solves this issue by showing a radial menu, as seen in Sci-Fi and Games, showing all your open windows.<br></br></maxWidth>
+						<maxWidth>"Ha I can do that with Cmd+Tab already!" you might say, but try switching between multiple Finder windows...DialApp can do that<br></br></maxWidth>
+						<maxWidth>Who is DialApp for? – Anyone working with a Mac and wishing it had a better way to switch windows than to stack them.</maxWidth>`
+				// TODO: Add gif/video of DialApp showing multiple Finder windows.
+			},
+			"section3": {
+				"title": "Features",
+				"content": `<maxWidth>
+					DialApp is fast, it is simple and is set up in two minutes.<br></br>
+					</maxWidth>
+					<ul>
+					<li><maxWidth>Customizable global keyboard shortcut.</maxWidth></li>
+					<li><maxWidth>Resource efficient, it won't slow your Mac down, no matter how old.</maxWidth></li>
+					<li><maxWidth>Satisfying to use, customizable to your liking.</maxWidth></li>
 					</ul>`
 			},
 		},
@@ -102,6 +137,14 @@ export default {
 		"imprint": "Imprint",
 		"privacyPolicy": "Privacy Policy",
 		"email": "E-Mail",
+		"valid": "valid",
+		"invalid": "invalid",
+	},
+	//
+	"Signup": {
+		"share": "Share what you found?",
+		"noticed": "You will hear back from us as soon as possible.",
+		"multipleNotice": "We won't send you two emails, but we registered your eagerness!",
 	},
 	//
 	"createdBy": "Designed and built by Zentru Systems 🫀 ❤️"
