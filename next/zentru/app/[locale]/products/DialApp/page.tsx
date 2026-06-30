@@ -3,7 +3,7 @@ import style from "./dialApp.module.css";
 
 import ThemedImage from "@/app/ThemedImage";
 import { defaultHtml } from "@/lib/localization";
-import DialAppRadialMenu from "@/public/img/DialApp/Dial2.png";
+import DialAppRadialMenu from "@/public/img/DialApp/Dial.svg";
 import DarkProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone - dark.svg";
 import ProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone.svg";
 import DarkProjectViewImageRecordingAudio from "@/public/img/rec/ProjectView - recording audio - iPhone - dark.svg";
