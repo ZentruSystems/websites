@@ -6,6 +6,8 @@ export const defaultHtml = {
 	i: (chunks) => <i>{chunks}</i>,
 	p: (chunks) => <p>{chunks}</p>,
 	b: (chunks) => <b>{chunks}</b>,
+    em: (chunks) => <em>{chunks}</em>,
+    mailLink: (chunks) => <a href={`mailto:${String(chunks)}`}>{chunks}</a>,
 	strong: (chunks) => <strong>{chunks}</strong>,
 	maxWidth: (chunks) => <p style={{maxWidth: "min(max(800px, 50%), 1200px)", width: "100%", placeSelf: "center", }}>{chunks}</p>,
 	ul: (chunks) => <ul>{chunks}</ul>,
