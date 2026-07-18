@@ -8,6 +8,8 @@ type AdditionalProps = {
 	lightSrc: String | any;
 	/** Path or imported image */
 	darkSrc: String | any;
+	onMouseEnter?: MouseEventHandler<T> | undefined;
+	onMouseLeave?: MouseEventHandler<T> | undefined;
 }
 type ThemedImagePropsType = AdditionalProps & Omit<ImageProps, "src">;
 
