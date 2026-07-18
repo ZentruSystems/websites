@@ -5,10 +5,10 @@ import style from "./dialApp.module.css";
 
 import ThemedImage from "@/app/ThemedImage";
 import { defaultHtml } from "@/lib/localization";
-import DialAppRadialMenuDark from "@/public/img/DialApp/Dial-Dark-currentWindow.png";
-import DialAppRadialMenuDarkSelected from "@/public/img/DialApp/Dial-Dark-selected.png";
-import DialAppRadialMenuLight from "@/public/img/DialApp/Dial-Light-currentWindow.png";
-import DialAppRadialMenuLightSelected from "@/public/img/DialApp/Dial-Light-selected.png";
+import DialAppRadialMenuDark from "@/public/img/DialApp/Dial-Dark-currentWindow.not.svg";
+import DialAppRadialMenuDarkSelected from "@/public/img/DialApp/Dial-Dark-selected.not.svg";
+import DialAppRadialMenuLight from "@/public/img/DialApp/Dial-Light-currentWindow.not.svg";
+import DialAppRadialMenuLightSelected from "@/public/img/DialApp/Dial-Light-selected.not.svg";
 import DarkProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone - dark.svg";
 import ProjectViewImageNeutral from "@/public/img/rec/ProjectView - neutral - iPhone.svg";
 import DarkProjectViewImageRecordingAudio from "@/public/img/rec/ProjectView - recording audio - iPhone - dark.svg";

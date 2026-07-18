@@ -21,6 +21,11 @@ export interface BaseSignupProps {
 	notice?: ReactNode | undefined;
 	multipleNotice?: ReactNode | undefined;
 	share?: ReactNode | undefined;
+	//
+	onSuccess?: () => void;
+
+	/** Visible on success, CTAs, like download or additionals */
+	successActions?: ReactNode | undefined;
 }
 
 export default function Signup({
@@ -30,6 +35,8 @@ export default function Signup({
 	signupButtonText,
 	share,
 	apiPath,
+	onSuccess,
+	successActions
 }: BaseSignupProps) {
 	// TODO: USE
 	const tSignup = useTranslations("Signup");
@@ -49,6 +56,7 @@ export default function Signup({
 		const socialLinks = <SocialLinks linkedIn instagram reddit monochrome onlyIcons />
 		const base = <>
 			<h2 className="light">{notice ?? tSignup("noticed")}</h2>
+			{successActions && <div style={{marginBlock: 35}}>{successActions}</div>}
 			<p style={{ textAlign: "center" }}>{share ?? tSignup("share")}</p>
 			{socialLinks}
 		</>
@@ -67,7 +75,7 @@ export default function Signup({
 			</div>
 		</section>;
 	}
-	const _handleSubmit = async (e: {preventDefault: () => void | Promise<void>}) => {
+	const _handleSubmit = async (e: { preventDefault: () => void | Promise<void> }) => {
 
 		if (!formRef.current?.checkValidity()) return;
 		if (!state.emailValid) return;
@@ -100,6 +108,9 @@ export default function Signup({
 			}
 
 			setResult({ error: false, ...(await res.json()) });
+			if (onSuccess) {
+				onSuccess();
+			}
 		} catch (err) {
 			console.error(err);
 		}
