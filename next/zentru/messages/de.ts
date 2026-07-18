@@ -69,6 +69,83 @@ export default {
 					<li><maxWidth>Spaßig zu bedienen, anpassbar nach deinen Wünschen.</maxWidth></li>
 					</ul>`
 			},
+			"terms": {
+				"headline": "Terms and Conditions",
+				"lastUpdate": "Last updated: July 18, 2026",
+				"terms": `
+					<p>Welcome to DialApp. These Terms and Conditions ("Terms") govern your use of our macOS application (the "App") and our associated web checkout services (the "Service"), operated by <b>Zentru Systems e.U.</b> ("us", "we", or "our").</p>
+					
+					<p>By accessing or using our App and Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
+
+					<hr></hr>
+
+					<br></br>
+					<h3>1. Eligibility and Account</h3>
+					<p>To use our Service, you must be at least 16 years old (or the minimum age of digital consent in your jurisdiction). If you are under the legal age to form a binding contract, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+					<p>You are responsible for maintaining the confidentiality of any account credentials used to access the Service and for restricting access to your macOS device.</p>
+					
+					<br></br>
+					<h3>2. Subscriptions, Fees, and Payments</h3>
+					<p>Our Service offers premium features via paid subscriptions or one-time purchases ("Paid Services").</p>
+					<ul>
+							<li><p><strong>Billing Engine:</strong> Payments are processed via our third-party billing provider, RevenueCat Billing (utilizing Stripe as the underlying gateway). By initiating a purchase, you agree to provide accurate payment information and authorize recurring charges if applicable.</p></li>
+							<li><p><strong>Automatic Renewal:</strong> Subscription plans automatically renew at the end of each billing cycle unless cancelled before the renewal date through your customer portal.</p></li>
+							<li><p><strong>Price Changes:</strong> We reserve the right to modify subscription fees. Any price changes will be communicated in advance, giving you the opportunity to cancel before the change takes effect.</p></li>
+					</ul>
+					
+					<br></br>
+					<h3>3. EU Right of Withdrawal (Compliance Statement)</h3>
+					<p>If you are a consumer residing in the European Union or European Economic Area (EEA), you generally have the right to withdraw from a digital purchase within 14 days without giving a reason under EU consumer law.</p>
+					<p><strong>Explicit Consent and Waiver:</strong> By purchasing a digital product or subscription through our Service and requesting immediate activation of the App’s premium features, you explicitly request the immediate performance of the contract. You acknowledge and agree that <strong>you lose your 14-day right of withdrawal</strong> once the digital content access is provisioned to your account via the RevenueCat system.</p>
+					
+					<br></br>
+					<h3>4. License and Intellectual Property</h3>
+					<p>We grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App on compatible macOS devices strictly in accordance with these Terms.</p>
+					<p>All intellectual property rights in the App, including but not limited to source code, user interface designs, visual designs, assets, and logos, are the exclusive property of <b>Zentru Systems e.U.</b>. You may not reverse engineer, decompile, or modify the App.</p>
+					
+					<br></br>
+					<h3>5. Acceptable Use</h3>
+					<p>You agree not to use the App or Service for any unlawful purpose, to disrupt the security or performance of our systems, or to attempt unauthorized access to our billing data or other users' profiles.</p>
+					
+					<br></br>
+					<h3>6. Privacy and Data Protection</h3>
+					<p>Your privacy is important to us. Our collection and processing of your personal data—including transaction identifiers processed via RevenueCat Billing—are governed strictly by our <strong>Privacy Policy</strong>, which complies with the General Data Protection Regulation (GDPR). Please review our Privacy Policy to understand your rights regarding data access, erasure, and portability.</p>
+					
+					<br></br>
+					<h3>7. Disclaimer of Warranties</h3>
+					<p>The App and Service are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the App will be completely error-free or uninterrupted.</p>
+					
+					<br></br>
+					<h3>8. Limitation of Liability</h3>
+					<p>To the maximum extent permitted by applicable law, <b>Zentru Systems e.U.</b> shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising out of your use or inability to use the App.</p>
+					
+					<br></br>
+					<h3>9. Termination</h3>
+					<p>We reserve the right to terminate or suspend your access to the Paid Services or the App immediately, without prior notice or liability, if you breach these Terms.</p>
+					
+					<br></br>
+					<h3>10. Governing Law and Jurisdiction</h3>
+					<p>These Terms shall be governed and construed in accordance with the laws of Austria, without regard to its conflict of law provisions.</p>
+					<p>Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts located in Klagenfurt, Austria.</p>
+					
+					<br></br>
+					<h3>11. Contact Us</h3>
+					<p>If you have any questions about these Terms, please contact us at:</p>
+					<p>Email: <mailLink>service@zentru.systems</mailLink></p>`,
+			},
+			"privacyPolicy": {
+				"headline": "Datenschutzregelung",
+				"policy": `<p>
+				Datenschutzrechtlich verantwortlich: Zentru Systems e.U.
+				Wenn Sie Fragen haben, kontaktieren Sie uns unter: service@zentru.systems.
+				Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich das Recht auf Auskunft,
+				Richtigstellung, Einschränkung, Widerruf und Widerspruch zu einer Datenverarbeitung sowie Löschung und
+				Übertragbarkeit Ihrer Daten zu.
+
+				Wenn Sie glauben, dass wir gegen datenschutzrechtliche Vorschriften verstoßen,
+				können Sie sich bei uns service@zentru.systems oder bei einer Datenschutzbehörde beschweren.
+			</p>`
+			}
 		},
 	},
 	"Main": {
