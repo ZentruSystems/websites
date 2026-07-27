@@ -183,16 +183,19 @@ async function PermissionSection() {
 async function PrivacySection() {
 	const t = await getTranslations("Products.transmission.privacy");
 
-	return <Section title={t("title")} className="bg-l6" isStringAsChild={false}>
+	const inlineLink = "hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline";
+
+	return <Section title={t("title")} className="bg-l6 paragraphSpaceLarger" isStringAsChild={false}>
+		<p>{t("intro")}</p>
 		<p>
-			{t("bodyBeforeLink")}
-			<Link
-				className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
-				href="https://aptabase.com"
-			>
-				{t("linkLabel")}
-			</Link>
-			{t("bodyAfterLink")}
+			{t("analyticsBeforeLink")}
+			<Link className={inlineLink} href="https://aptabase.com">{t("analyticsLinkLabel")}</Link>
+			{t("analyticsAfterLink")}
+		</p>
+		<p>
+			{t("controlBeforeLink")}
+			<Link className={inlineLink} href="/privacy-policy">{t("controlLinkLabel")}</Link>
+			{t("controlAfterLink")}
 		</p>
 	</Section>;
 }
@@ -203,6 +206,9 @@ async function PricingSection() {
 	return <section className="vhGrid vPad bg-l5">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("pricing.title", productValues)}</h2>
 		<div className={`s1 e7 ph-s1 ph-e5 ${style.priceBox}`}>
+			<p className={style.priceAnchor}>
+				{t("pricing.anchor", { regular: transmission.regularPrice })}
+			</p>
 			<ul className={style.priceList}>
 				<li>{t("pricing.items.trial", productValues)}</li>
 				<li>{t("pricing.items.platforms", productValues)}</li>

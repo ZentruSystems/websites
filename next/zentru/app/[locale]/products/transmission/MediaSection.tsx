@@ -24,7 +24,7 @@ export default function MediaSection(props: {
 		<div className={`${textSpan} ph-s1 ph-e5 gr-s2 paragraphSpaceLarger`}>
 			{props.children}
 		</div>
-		<div className={`${mediaSpan} ph-s1 ph-e5 gr-s1 gr-e3 ph-gr-s3 vCenter ${style.sectionMedia}`}>
+		<div className={`${mediaSpan} ph-s1 ph-e5 gr-s1 gr-e3 ph-gr-s3 ${style.sectionMedia}`}>
 			{props.media}
 		</div>
 	</section>;

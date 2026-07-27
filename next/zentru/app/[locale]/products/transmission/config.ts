@@ -13,6 +13,8 @@ export const transmission = {
 
 	/** Formatted per locale by the messages that use it – "€9.99" in English, "9,99 €" in German */
 	price: 9.99,
+	/** What the price is anchored against: the introductory price is what people actually pay */
+	regularPrice: 14,
 	/** Usage days, not calendar days: only days the app is actually used count down */
 	trialDays: 30,
 	/** TODO: confirm – placeholder from the handoff */

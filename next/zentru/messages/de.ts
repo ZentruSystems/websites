@@ -214,14 +214,19 @@ export default {
 				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem Transmission.",
 			},
 			"privacy": {
-				"title": "Was wir erfassen",
-				// Um den einen Link im Satz herum aufgeteilt
-				"bodyBeforeLink": "Anonyme Produktanalyse über ",
-				"linkLabel": "Aptabase",
-				"bodyAfterLink": ` – App-Starts, ob die Kupplung tatsächlich benutzt wurde, welche Einstellungen geändert
+				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
+				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und Transmission ist keine Ausnahme. Es beobachtet
+					Mausbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
+					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
+				// Die zwei Sätze mit Link, um den Link herum aufgeteilt
+				"analyticsBeforeLink": "Was wir erheben, ist eine anonyme Produktanalyse über ",
+				"analyticsLinkLabel": "Aptabase",
+				"analyticsAfterLink": ` – App-Starts, ob die Kupplung tatsächlich benutzt wurde, welche Einstellungen geändert
 					werden. Kein Konto, keine personenbezogenen Daten, kein Geräte-Fingerabdruck, kein Tracking über Seiten
-					hinweg. Es sagt uns, ob die App für Menschen funktioniert, und sonst nichts. Du kannst es in den
-					Einstellungen abschalten.`,
+					hinweg. Es sagt uns, ob die App für Menschen funktioniert, und sonst nichts.`,
+				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alles Weitere steht in unserer ",
+				"controlLinkLabel": "Datenschutzerklärung",
+				"controlAfterLink": ".",
 			},
 			"pricing": {
 				"title": "{price, number, ::currency/EUR}. Einmal.",
@@ -232,8 +237,9 @@ export default {
 					"updates": "Kostenlose Updates",
 					"refund": "{days} Tage Rückgaberecht, eine E-Mail genügt",
 				},
+				"anchor": "Einführungspreis. Der reguläre Preis ist {regular, number, ::currency/EUR precision-integer}.",
 				"note": `Wenn du das wegen eines Tremors oder aus motorischen Gründen brauchst und {price, number, ::currency/EUR} eine Hürde sind,
-					schreib uns – wir schicken dir eine Lizenz. Ohne Rückfragen.`,
+					schreib uns – wir schicken dir eine Lizenz.`,
 			},
 			"faq": {
 				"title": "Fragen",
@@ -247,8 +253,11 @@ export default {
 					"dpiButton": {
 						"question": "Macht das nicht der DPI-Knopf einer Gaming-Maus?",
 						"answer": `Dieselbe Idee, aber er hängt an einem Gerät, er ist ein Modus, aus dem du wieder
-							herausschalten musst, und für Trackpad oder Stifttablett tut er nichts. Transmission wirkt nur im
-							Moment, arbeitet softwareseitig und funktioniert mit dem, was du ohnehin benutzt.`,
+							herausschalten musst, und für Trackpad oder Stifttablett tut er nichts. Gegen die
+							Mausbeschleunigung tut er ebenfalls nichts: Dein System streckt eine schnelle Bewegung weiterhin
+							und staucht eine langsame, dieselbe Handbewegung legt also nicht zuverlässig dieselbe Strecke
+							zurück – egal, welche DPI-Stufe du gewählt hast. Transmission wirkt nur im Moment, arbeitet
+							softwareseitig und funktioniert mit dem, was du ohnehin benutzt.`,
 					},
 					"tablet": {
 						"question": "Funktioniert es mit einem Grafiktablett?",
@@ -277,9 +286,18 @@ export default {
 					},
 					"linux": {
 						"question": "Linux?",
-						"answer": "Noch nicht.",
+						"answer": `Noch nicht – ob es dazu kommt, hängt davon ab, wie viele es wollen. Trag dich ein und wir
+							sagen dir Bescheid, wenn es soweit ist.`,
 					},
 				},
+			},
+			// Eintragen für eine Linux-Version, in der FAQ-Antwort, die sagt, dass es noch keine gibt
+			"linuxInterest": {
+				"pitch": "Ich hätte Interesse an einer Linux-Version für {price, number, ::currency/EUR}",
+				"action": "Trag mich ein",
+				"success": "Notiert. Wir melden uns, wenn es eine Linux-Version gibt.",
+				"alreadySignedUp": "Du standst schon auf der Liste – trotzdem notiert.",
+				"error": "Das hat nicht geklappt. Versuch es gleich nochmal.",
 			},
 			"finalCta": {
 				"title": "Hör auf, nur zum Greifen reinzuzoomen.",

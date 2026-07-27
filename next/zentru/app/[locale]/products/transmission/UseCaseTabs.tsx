@@ -67,7 +67,7 @@ export default function UseCaseTabs() {
 			{t.rich(`${selected}.solves`, solvesHtml)}
 		</div>
 
-		<div className={`s7 e12 ph-s1 ph-e5 gr-s3 ph-gr-s4 vCenter ${style.mediaStack}`}>
+		<div className={`s7 e12 ph-s1 ph-e5 gr-s3 ph-gr-s4 ${style.mediaStack}`}>
 			<DemoMedia
 				{...mediaFor(`usecase-${selected}-demo`)}
 				description={t(`${selected}.demo`)}

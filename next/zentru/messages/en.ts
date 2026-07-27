@@ -209,13 +209,19 @@ export default {
 				"screenshot": "System Settings → Privacy & Security → Accessibility, with Transmission enabled.",
 			},
 			"privacy": {
-				"title": "What we collect",
-				// Split around the one link in the sentence
-				"bodyBeforeLink": "Anonymous product analytics, through ",
-				"linkLabel": "Aptabase",
-				"bodyAfterLink": ` — app launches, whether the clutch actually got used, which settings people change. No
+				"title": "We value privacy — so we protect yours",
+				"intro": `That is how every Zentru Systems product is built, and Transmission is no exception. It watches
+					mouse movement to do its job and that is where it ends: it does not read what you type, does not record
+					your screen, and does not send your input anywhere.`,
+				// The two sentences that carry a link, split around it
+				"analyticsBeforeLink": "What we do collect is anonymous product analytics, through ",
+				"analyticsLinkLabel": "Aptabase",
+				"analyticsAfterLink": ` — app launches, whether the clutch actually got used, which settings people change. No
 					account, no personal data, no device fingerprint, no tracking across sites. It tells us whether the app is
-					working for people, and nothing else. You can turn it off in Settings.`,
+					working for people, and nothing else.`,
+				"controlBeforeLink": "You can turn it off completely in Settings. The full detail is in our ",
+				"controlLinkLabel": "privacy policy",
+				"controlAfterLink": ".",
 			},
 			"pricing": {
 				"title": "{price, number, ::currency/EUR}. Once.",
@@ -226,8 +232,9 @@ export default {
 					"updates": "Free updates",
 					"refund": "{days}-day refund, just email",
 				},
+				"anchor": "Introductory price. The regular price is {regular, number, ::currency/EUR precision-integer}.",
 				"note": `If you need this for a tremor or motor-control reason and {price, number, ::currency/EUR} is a barrier, email us and we'll send
-					you a licence. No questions asked.`,
+					you a licence.`,
 			},
 			"faq": {
 				"title": "Questions",
@@ -241,8 +248,10 @@ export default {
 					"dpiButton": {
 						"question": "Isn't this what the DPI button on a gaming mouse does?",
 						"answer": `Same idea, but it's tied to one device, it's a mode you have to remember to switch back out
-							of, and it does nothing for a trackpad or a pen tablet. Transmission is momentary, software-side,
-							and works with whatever you already use.`,
+							of, and it does nothing for a trackpad or a pen tablet. It also does nothing about mouse
+							acceleration: your system still stretches a quick movement and compresses a slow one, so the same
+							hand movement doesn't reliably cover the same distance no matter which DPI step you picked.
+							Transmission is momentary, software-side, and works with whatever you already use.`,
 					},
 					"tablet": {
 						"question": "Does it work with a drawing tablet?",
@@ -271,9 +280,18 @@ export default {
 					},
 					"linux": {
 						"question": "Linux?",
-						"answer": "Not yet.",
+						"answer": `Not yet — whether it happens depends on how many people want it. Put your name down and
+							we'll let you know if it does.`,
 					},
 				},
+			},
+			// Signing up for a Linux version, inside the FAQ answer that says there isn't one
+			"linuxInterest": {
+				"pitch": "I'd be interested in a Linux version for {price, number, ::currency/EUR}",
+				"action": "Put me down",
+				"success": "Noted. We'll email you if a Linux version happens.",
+				"alreadySignedUp": "You were already on the list — noted again anyway.",
+				"error": "That didn't go through. Try again in a moment.",
 			},
 			"finalCta": {
 				"title": "Stop zooming in just to grab things.",

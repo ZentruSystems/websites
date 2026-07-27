@@ -109,6 +109,20 @@
 	width: 100%;
 	max-width: 520px;
 	justify-self: center;
+	align-self: center;
+}
+
+/*
+	Centring only reads as deliberate while the media is roughly as tall as the text beside it.
+	As the viewport narrows the text grows and the media does not, so centring turns into a gap
+	above it – from here on it sits at the top of its column instead.
+*/
+@media screen and (max-width: 1100px) {
+
+	.sectionMedia,
+	.mediaStack {
+		align-self: start;
+	}
 }
 
 .mediaStack {
@@ -274,6 +288,12 @@
 	margin-top: var(--paddingUnit);
 }
 
+.priceAnchor {
+	font-size: 0.8em;
+	color: var(--l2);
+	margin-bottom: var(--paddingUnit);
+}
+
 /* FAQ */
 
 .faqItem {
@@ -313,6 +333,36 @@
 .faqAnswer {
 	padding-bottom: calc(var(--paddingUnit) / 1.5);
 	max-width: 68ch;
+}
+
+/* Linux interest signup, inside the FAQ answer */
+
+.interest,
+.interestDone {
+	padding-bottom: calc(var(--paddingUnit) / 1.5);
+	max-width: 68ch;
+}
+
+.interestDone {
+	color: var(--l2);
+}
+
+.interestForm {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--smallPad);
+	margin-top: calc(var(--paddingUnit) / 2);
+}
+
+.interestForm input {
+	flex: 1 1 220px;
+	min-width: 0;
+}
+
+.interestForm button {
+	display: flex;
+	align-items: center;
 }
 
 /* Sticky download bar, appears once the hero is gone */
@@ -356,6 +406,14 @@
 }
 
 @media screen and (max-width: 730px) {
+
+	/* Stacked under the text now, so it needs the gap the column gave it before */
+	.sectionMedia,
+	.mediaStack {
+		max-width: none;
+		margin-top: var(--normalPadding);
+	}
+
 	.heroMedia {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr;
