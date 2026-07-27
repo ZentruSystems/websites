@@ -1,10 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { readSource } from "../products/transmission/acquisitionSource";
 import { track } from "../products/transmission/analytics";
 import { Platform, transmission } from "../products/transmission/config";
-import copy from "../products/transmission/copy";
+import { welcomeStepKeys } from "../products/transmission/content";
 import pageStyle from "../products/transmission/transmission.module.css";
 import style from "./welcome.module.css";
 
@@ -19,6 +20,7 @@ export default function WelcomeClient({ platform, appVersion }: {
 	platform: Platform | null,
 	appVersion: string | null,
 }) {
+	const t = useTranslations("Products.transmission.welcome");
 	const [claimHref, setClaimHref] = useState<string | null>(null);
 	const hasClaimed = useRef(false);
 
@@ -40,33 +42,32 @@ export default function WelcomeClient({ platform, appVersion }: {
 
 	// Without a platform we show the macOS path: it is the one with a permission prompt waiting.
 	const isWindows = platform == "windows";
-	const steps = isWindows ? copy.welcome.steps.windows : copy.welcome.steps.macos;
-	const intro = isWindows ? copy.welcome.intro.windows : copy.welcome.intro.macos;
+	const steps = isWindows ? welcomeStepKeys.windows : welcomeStepKeys.macos;
 
 	return <section className="vhGrid vPad minV100">
 		<div className="s1 e9 ph-s1 ph-e5 vCenter">
 			<p className={pageStyle.eyebrow}>{transmission.name}</p>
-			<h1 className={`light ${style.title}`}>{copy.welcome.title}</h1>
-			<p className={`${style.intro} bMarg`}>{intro}</p>
+			<h1 className={`light ${style.title}`}>{t("title")}</h1>
+			<p className={`${style.intro} bMarg`}>{t(isWindows ? "intro.windows" : "intro.macos")}</p>
 
 			<ol className={style.steps}>
-				{steps.map(step => <li key={step.title}>
+				{steps.map(key => <li key={key}>
 					<div>
-						<h2 className={style.stepTitle}>{step.title}</h2>
-						<p>{step.text}</p>
+						<h2 className={style.stepTitle}>{t(`steps.${key}.title`)}</h2>
+						<p>{t(`steps.${key}.text`)}</p>
 					</div>
 				</li>)}
 			</ol>
 
-			<p className={`${style.note} tMarg`}>{copy.welcome.reassurance}</p>
-			<p className={style.note}>{copy.welcome.trialNote}</p>
+			<p className={`${style.note} tMarg`}>{t("reassurance")}</p>
+			<p className={style.note}>{t("trialNote", { days: `${transmission.trialDays}` })}</p>
 
 			{claimHref && <p className={`${style.note} tMarg`}>
 				<a
 					className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
 					href={claimHref}
 				>
-					{copy.welcome.manualClaim}
+					{t("manualClaim")}
 				</a>
 			</p>}
 		</div>

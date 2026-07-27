@@ -8,7 +8,7 @@ Route: `/products/transmission`. The onboarding page the app opens on first laun
 | File | What it holds |
 |---|---|
 | `page.tsx` | The page. One section per function, top to bottom in the order they render. |
-| `copy.ts` | Every string on the page, plus the four use cases. |
+| `content.ts` | Which items exist and in which order — the message keys, not the text. |
 | `config.ts` | Prices, platforms, URLs — everything that is a decision rather than a fact. **Contains the open TODOs.** |
 | `media.ts` | Where the clips and stills go. The only file to touch when footage lands. |
 | `MediaSection.tsx` | Section with text on one side, media on the other. |
@@ -19,6 +19,21 @@ Route: `/products/transmission`. The onboarding page the app opens on first laun
 | `SourceCapture.tsx` | Persists `?src=` on arrival. Renders nothing. |
 | `acquisitionSource.ts` | Sanitise / store / read / forward the `src` token. |
 | `analytics.ts` | The three events, sent through the site's existing Google Analytics tag. |
+
+## Copy
+
+All text lives in `messages/en.ts` and `messages/de.ts` under `Products.transmission`, like
+the rest of the site. English and German are both complete.
+
+- Multi-paragraph text and the "what it solves" lists are single rich strings with `<p>` and
+  `<ul>` tags, rendered through `t.rich(…, defaultHtml)` — the convention `.rec` already uses.
+- Lists that render as cards or tabs are keyed objects, not arrays. `content.ts` holds the
+  key order, so adding a feature, mode, FAQ entry or use case means adding it to both message
+  files and listing its key there.
+- The price is a number in `config.ts`, formatted per locale by the messages that use it:
+  `€9.99` in English, `9,99 €` in German.
+- German mode names stay English — `Hold`, `Toggle`, `Inverted` — because that is what the
+  app's own settings call them.
 
 ## Adding the clips and stills
 
@@ -64,6 +79,3 @@ agree or attribution silently returns nothing.
 - **Not linked from anywhere.** Adding it to the products overview is one import and one
   line in `app/[locale]/products/page.tsx`; `page.tsx` already exports `TransmissionSection`
   for exactly that. Left undone because that file was out of scope.
-- **English only.** The rest of the site keeps its copy in `messages/{en,de}.ts` via
-  next-intl. `copy.ts` is shaped like those files, so lifting it over is a move plus
-  swapping the `copy.x.y` reads for `t("x.y")` — and a German translation.

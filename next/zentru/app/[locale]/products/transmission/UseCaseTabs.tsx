@@ -1,8 +1,10 @@
 "use client";
 
+import { defaultHtml } from "@/lib/localization";
+import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import DemoMedia from "./DemoMedia";
-import { useCases } from "./copy";
+import { useCaseIds } from "./content";
 import { mediaFor } from "./media";
 import style from "./transmission.module.css";
 
@@ -13,13 +15,15 @@ import style from "./transmission.module.css";
  * site grid: row 1 belongs to the section intro, row 2 is the tab list, row 3 the panel.
  */
 export default function UseCaseTabs() {
+	const t = useTranslations("Products.transmission.useCases");
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-	const selected = useCases[selectedIndex];
+	const selected = useCaseIds[selectedIndex];
+	const solvesHtml = { ...defaultHtml, ul: (chunks: React.ReactNode) => <ul className={style.solvesList}>{chunks}</ul> };
 
 	function selectRelative(offset: number) {
-		const next = (selectedIndex + offset + useCases.length) % useCases.length;
+		const next = (selectedIndex + offset + useCaseIds.length) % useCaseIds.length;
 		setSelectedIndex(next);
 		tabRefs.current[next]?.focus();
 	}
@@ -27,7 +31,7 @@ export default function UseCaseTabs() {
 	return <>
 		<div
 			role="tablist"
-			aria-label="Use cases"
+			aria-label={t("tabsLabel")}
 			className={`s1 e12 ph-s1 ph-e5 gr-s2 ${style.tabList}`}
 			onKeyDown={event => {
 				if (event.key == "ArrowRight") selectRelative(1);
@@ -37,44 +41,42 @@ export default function UseCaseTabs() {
 				event.preventDefault();
 			}}
 		>
-			{useCases.map((useCase, index) => <button
-				key={useCase.id}
+			{useCaseIds.map((id, index) => <button
+				key={id}
 				ref={element => { tabRefs.current[index] = element; }}
 				role="tab"
-				id={`usecase-tab-${useCase.id}`}
+				id={`usecase-tab-${id}`}
 				aria-selected={index == selectedIndex}
-				aria-controls={`usecase-panel-${useCase.id}`}
+				aria-controls={`usecase-panel-${id}`}
 				tabIndex={index == selectedIndex ? 0 : -1}
 				className={`${style.tab} ${index == selectedIndex ? style.tabSelected : ""}`}
 				onClick={() => setSelectedIndex(index)}
 			>
-				{useCase.label}
+				{t(`${id}.label`)}
 			</button>)}
 		</div>
 
 		<div
 			role="tabpanel"
-			id={`usecase-panel-${selected.id}`}
-			aria-labelledby={`usecase-tab-${selected.id}`}
+			id={`usecase-panel-${selected}`}
+			aria-labelledby={`usecase-tab-${selected}`}
 			className="s1 e6 ph-s1 ph-e5 gr-s3 paragraphSpaceLarger"
 		>
-			<h3 className={style.subHeadline}>{selected.headline}</h3>
-			{selected.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-			<ul className={style.solvesList}>
-				{selected.solves.map(item => <li key={item}>{item}</li>)}
-			</ul>
+			<h3 className={style.subHeadline}>{t(`${selected}.headline`)}</h3>
+			{t.rich(`${selected}.body`, defaultHtml)}
+			{t.rich(`${selected}.solves`, solvesHtml)}
 		</div>
 
 		<div className={`s7 e12 ph-s1 ph-e5 gr-s3 ph-gr-s4 vCenter ${style.mediaStack}`}>
 			<DemoMedia
-				{...mediaFor(`usecase-${selected.id}-demo`)}
-				description={selected.demo}
+				{...mediaFor(`usecase-${selected}-demo`)}
+				description={t(`${selected}.demo`)}
 			/>
 			<DemoMedia
-				{...mediaFor(`usecase-${selected.id}-still`)}
-				description={selected.still}
+				{...mediaFor(`usecase-${selected}-still`)}
+				description={t(`${selected}.still`)}
 				aspectRatio="16 / 10"
-				placeholderLabel="Still — coming soon"
+				kind="still"
 			/>
 		</div>
 	</>;

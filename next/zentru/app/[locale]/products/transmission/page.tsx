@@ -1,5 +1,7 @@
 import Section from "@/app/Section";
+import { defaultHtml } from "@/lib/localization";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import DemoMedia from "./DemoMedia";
 import DownloadCta from "./DownloadCta";
@@ -8,8 +10,8 @@ import MediaSection from "./MediaSection";
 import SourceCapture from "./SourceCapture";
 import StickyCta from "./StickyCta";
 import UseCaseTabs from "./UseCaseTabs";
-import copy from "./copy";
 import { transmission } from "./config";
+import { featureKeys, modeKeys } from "./content";
 import { mediaFor } from "./media";
 import style from "./transmission.module.css";
 
@@ -17,31 +19,37 @@ import style from "./transmission.module.css";
 const heroId = "transmission-hero";
 const finalCtaId = "transmission-final-cta";
 
-export const metadata: Metadata = {
-	title: transmission.brandPair,
-	description: copy.hero.sub,
-	keywords: [
-		"cursor precision",
-		"mouse sensitivity",
-		"video editing",
-		"CAD",
-		"pen tablet",
-	],
-	robots: { index: true, follow: true },
-	openGraph: {
-		title: transmission.brandPair,
-		type: "website",
-		url: `${transmission.siteUrl}${transmission.path}`,
-		description: copy.hero.sub,
-		images: { url: `${transmission.siteUrl}${transmission.ogImage}` },
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: transmission.brandPair,
-		description: copy.hero.sub,
-		images: { url: `${transmission.siteUrl}${transmission.ogImage}` },
-	},
+/** Trial length, price and platforms appear in several messages */
+const productValues = {
+	days: `${transmission.trialDays}`,
+	price: transmission.price,
+	macOs: transmission.minMacOs,
+	windows: transmission.minWindows,
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations("Products.transmission");
+
+	const title = t("meta.title");
+	const description = t("hero.sub");
+	const url = `${transmission.siteUrl}${transmission.path}`;
+	const images = { url: `${transmission.siteUrl}${transmission.ogImage}` };
+
+	return {
+		title,
+		description,
+		keywords: [
+			"cursor precision",
+			"mouse sensitivity",
+			"video editing",
+			"CAD",
+			"pen tablet",
+		],
+		robots: { index: true, follow: true },
+		openGraph: { title, description, type: "website", url, images },
+		twitter: { card: "summary_large_image", title, description, images },
+	};
+}
 
 export default function TransmissionPage() {
 	return <>
@@ -62,81 +70,93 @@ export default function TransmissionPage() {
 }
 
 /** The two clips run behind the headline: the round trip on the left, one pass on the right. */
-function Hero() {
+async function Hero() {
+	const t = await getTranslations("Products.transmission");
+
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
 			<div className={style.heroPane}>
-				<DemoMedia fill {...mediaFor("hero-round-trip")} description={copy.hero.demoLeft} />
+				<DemoMedia fill {...mediaFor("hero-round-trip")} description={t("hero.demoLeft")} />
 			</div>
 			<div className={style.heroPane}>
-				<DemoMedia fill {...mediaFor("hero-one-pass")} description={copy.hero.demoRight} />
+				<DemoMedia fill {...mediaFor("hero-one-pass")} description={t("hero.demoRight")} />
 			</div>
 			<div className={style.heroScrim} />
 		</div>
 		<div className={`s1 e12 ph-s1 ph-e5 vPad ${style.heroContent}`}>
-			<p className={style.eyebrow}>{transmission.brandPair}</p>
-			<h1 className={`light ${style.heroHeadline}`}>{copy.hero.headline}</h1>
-			<p className={`${style.heroSub} bMarg`}>{copy.hero.sub}</p>
-			<DownloadCta placement="hero" full note={copy.hero.micro} />
+			<p className={style.eyebrow}>{t("meta.title")}</p>
+			<h1 className={`light ${style.heroHeadline}`}>{t("hero.headline")}</h1>
+			<p className={`${style.heroSub} bMarg`}>{t("hero.sub")}</p>
+			<DownloadCta placement="hero" full note={t("hero.micro", productValues)} />
 		</div>
 	</section>;
 }
 
-function UseCasesSection() {
+async function UseCasesSection() {
+	const t = await getTranslations("Products.transmission.useCases");
+
 	return <section className="vhGrid vPad bg-l5">
 		<div className="s1 e12 ph-s1 ph-e5 gr-s1 bMarg">
-			<h2>{copy.useCases.title}</h2>
-			<p className={style.heroSub}>{copy.useCases.intro}</p>
+			<h2>{t("title")}</h2>
+			<p className={style.heroSub}>{t("intro")}</p>
 		</div>
 		<UseCaseTabs />
 	</section>;
 }
 
-function ProblemSection() {
+async function ProblemSection() {
+	const t = await getTranslations("Products.transmission.problem");
+
 	return <MediaSection
-		title={copy.problem.title}
-		media={<DemoMedia {...mediaFor("problem")} description={copy.problem.demo} />}
+		title={t("title")}
+		media={<DemoMedia {...mediaFor("problem")} description={t("demo")} />}
 	>
-		{copy.problem.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+		{t.rich("body", defaultHtml)}
 	</MediaSection>;
 }
 
-function HowItWorksSection() {
+async function HowItWorksSection() {
+	const t = await getTranslations("Products.transmission.howItWorks");
+
 	return <section className="vhGrid vPad bg-l6">
-		<h2 className="s1 e12 ph-s1 ph-e5">{copy.howItWorks.title}</h2>
+		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
 		<div className="s1 e7 ph-s1 ph-e5 paragraphSpaceLarger bMarg">
-			{copy.howItWorks.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+			{t.rich("body", defaultHtml)}
 		</div>
 		<div className={`s1 e12 ph-s1 ph-e5 ${style.cards}`}>
-			{copy.howItWorks.modes.map(mode => <div key={mode.name} className={`${style.card} bg-l5`}>
-				<h3 className={style.subHeadline}>{mode.name}</h3>
-				<p>{mode.text}</p>
+			{modeKeys.map(key => <div key={key} className={`${style.card} bg-l5`}>
+				<h3 className={style.subHeadline}>{t(`modes.${key}.name`)}</h3>
+				<p>{t(`modes.${key}.text`)}</p>
 			</div>)}
 		</div>
-		<p className="s1 e12 ph-s1 ph-e5 tMarg fg-l2">{copy.howItWorks.keyLine}</p>
+		<p className="s1 e12 ph-s1 ph-e5 tMarg fg-l2">{t("keyLine")}</p>
 	</section>;
 }
 
-function FeaturesSection() {
+async function FeaturesSection() {
+	const t = await getTranslations("Products.transmission.features");
+
 	return <section className="vhGrid vPad">
-		<h2 className="s1 e12 ph-s1 ph-e5">{copy.features.title}</h2>
+		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
 		<div className={`s1 e12 ph-s1 ph-e5 ${style.cards} ${style.cardsWide}`}>
-			{copy.features.items.map(feature => <div key={feature.title} className={`${style.card} bg-l6`}>
-				<h3 className={style.subHeadline}>{feature.title}</h3>
-				<p>{feature.text}</p>
+			{featureKeys.map(key => <div key={key} className={`${style.card} bg-l6`}>
+				<h3 className={style.subHeadline}>{t(`items.${key}.title`)}</h3>
+				<p>{t(`items.${key}.text`)}</p>
 			</div>)}
 		</div>
 	</section>;
 }
 
-function PenSection() {
+async function PenSection() {
+	const t = await getTranslations("Products.transmission.pen");
+
 	return <MediaSection
-		title={copy.pen.title}
+		title={t("title")}
 		isMediaLeft
 		className="bg-l5"
-		media={<DemoMedia {...mediaFor("pen")} description={copy.pen.demo} />}
+		media={<DemoMedia {...mediaFor("pen")} description={t("demo")} />}
 	>
-		{copy.pen.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+		{t.rich("body", defaultHtml)}
 	</MediaSection>;
 }
 
@@ -144,46 +164,56 @@ function PenSection() {
  * Deliberately given the weight of a full section: the permission prompt is where people
  * who already installed the app get spooked and quit.
  */
-function PermissionSection() {
+async function PermissionSection() {
+	const t = await getTranslations("Products.transmission.permission");
+
 	return <MediaSection
-		title={copy.permission.title}
+		title={t("title")}
 		media={<DemoMedia
 			{...mediaFor("accessibility-permission")}
-			description={copy.permission.screenshot}
+			description={t("screenshot")}
 			aspectRatio="4 / 3"
-			placeholderLabel="Screenshot — coming soon"
+			kind="screenshot"
 		/>}
 	>
-		{copy.permission.body.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+		{t.rich("body", defaultHtml)}
 	</MediaSection>;
 }
 
-function PrivacySection() {
-	return <Section title={copy.privacy.title} className="bg-l6" isStringAsChild={false}>
+async function PrivacySection() {
+	const t = await getTranslations("Products.transmission.privacy");
+
+	return <Section title={t("title")} className="bg-l6" isStringAsChild={false}>
 		<p>
-			{copy.privacy.bodyBeforeLink}
+			{t("bodyBeforeLink")}
 			<Link
 				className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
-				href={copy.privacy.linkUrl}
+				href="https://aptabase.com"
 			>
-				{copy.privacy.linkLabel}
+				{t("linkLabel")}
 			</Link>
-			{copy.privacy.bodyAfterLink}
+			{t("bodyAfterLink")}
 		</p>
 	</Section>;
 }
 
-function PricingSection() {
+async function PricingSection() {
+	const t = await getTranslations("Products.transmission");
+
 	return <section className="vhGrid vPad bg-l5">
-		<h2 className="s1 e12 ph-s1 ph-e5">{copy.pricing.title}</h2>
+		<h2 className="s1 e12 ph-s1 ph-e5">{t("pricing.title", productValues)}</h2>
 		<div className={`s1 e7 ph-s1 ph-e5 ${style.priceBox}`}>
 			<ul className={style.priceList}>
-				{copy.pricing.items.map(item => <li key={item}>{item}</li>)}
+				<li>{t("pricing.items.trial", productValues)}</li>
+				<li>{t("pricing.items.platforms", productValues)}</li>
+				<li>{t("pricing.items.machines", { machines: `${transmission.machines}` })}</li>
+				<li>{t("pricing.items.updates")}</li>
+				<li>{t("pricing.items.refund", { days: `${transmission.refundDays}` })}</li>
 			</ul>
-			<DownloadCta placement="pricing" full note={copy.hero.micro} />
+			<DownloadCta placement="pricing" full note={t("hero.micro", productValues)} />
 		</div>
 		<p className={`s1 e7 ph-s1 ph-e5 ${style.priceNote}`}>
-			{copy.pricing.note}
+			{t("pricing.note", productValues)}
 			{" "}
 			<Link
 				className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
@@ -195,20 +225,24 @@ function PricingSection() {
 	</section>;
 }
 
-function FaqSection() {
+async function FaqSection() {
+	const t = await getTranslations("Products.transmission.faq");
+
 	return <section className="vhGrid vPad">
-		<h2 className="s1 e12 ph-s1 ph-e5">{copy.faq.title}</h2>
+		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
 		<div className="s1 e12 ph-s1 ph-e5">
 			<Faq />
 		</div>
 	</section>;
 }
 
-function FinalCtaSection() {
+async function FinalCtaSection() {
+	const t = await getTranslations("Products.transmission.finalCta");
+
 	return <section id={finalCtaId} className="vhGrid vPad bg-l6">
 		<div className="s1 e12 ph-s1 ph-e5">
-			<h2>{copy.finalCta.title}</h2>
-			<DownloadCta placement="final" full note={copy.finalCta.micro} />
+			<h2>{t("title")}</h2>
+			<DownloadCta placement="final" full note={t("micro", productValues)} />
 		</div>
 	</section>;
 }
@@ -217,16 +251,15 @@ function FinalCtaSection() {
  * Entry for the products overview – mirrors RecSection / ToolsSection.
  * Not wired up yet, see README.md.
  */
-export function TransmissionSection() {
+export async function TransmissionSection() {
+	const t = await getTranslations("Products.transmission");
+
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
 		title={transmission.name}
-		aside={<DemoMedia
-			description={copy.hero.demoRight}
-			placeholderLabel="Demo clip — coming soon"
-		/>}
+		aside={<DemoMedia description={t("hero.demoRight")} />}
 		link={transmission.path}
 	>
-		{copy.hero.headline}
+		{t("hero.headline")}
 	</Section>;
 }

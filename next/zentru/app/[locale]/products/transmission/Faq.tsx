@@ -1,11 +1,14 @@
-import copy from "./copy";
+import { getTranslations } from "next-intl/server";
+import { faqKeys } from "./content";
 import style from "./transmission.module.css";
 
-export default function Faq() {
+export default async function Faq() {
+	const t = await getTranslations("Products.transmission.faq.items");
+
 	return <>
-		{copy.faq.items.map(item => <details key={item.question} className={style.faqItem}>
-			<summary className={style.faqQuestion}>{item.question}</summary>
-			<p className={style.faqAnswer}>{item.answer}</p>
+		{faqKeys.map(key => <details key={key} className={style.faqItem}>
+			<summary className={style.faqQuestion}>{t(`${key}.question`)}</summary>
+			<p className={style.faqAnswer}>{t(`${key}.answer`)}</p>
 		</details>)}
 	</>;
 }

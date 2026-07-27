@@ -9,10 +9,10 @@ export const transmission = {
 	/** TODO: confirm – the app's bundle ID (systems.zentru.transmission) suggests this one */
 	siteUrl: "https://zentru.systems",
 	path: "/products/transmission",
-	/** Used in <title> and OG tags, so the page is findable next to the BitTorrent client of the same name */
-	brandPair: "Transmission — mouse gearing",
+	// The brand-paired title is translated: messages/{en,de}.ts, Products.transmission.meta.title
 
-	price: "€9.99",
+	/** Formatted per locale by the messages that use it – "€9.99" in English, "9,99 €" in German */
+	price: 9.99,
 	/** TODO: confirm – placeholder from the handoff */
 	trialDays: 14,
 	/** TODO: confirm – placeholder from the handoff */

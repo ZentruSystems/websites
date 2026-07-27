@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { readSource, withSource } from "./acquisitionSource";
 import { track } from "./analytics";
@@ -32,6 +33,7 @@ function detectPlatform(): Platform | null {
  * underneath, because detection is a convenience and not a gate.
  */
 export default function DownloadCta({ placement, full = false, note, compact = false }: DownloadCtaProps) {
+	const t = useTranslations("Products.transmission.cta");
 	const [platform, setPlatform] = useState<Platform | null>(null);
 	const [source, setSource] = useState<string | null>(null);
 
@@ -60,7 +62,7 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 		href={downloadHref(secondary)}
 		onClick={() => onDownload(secondary)}
 	>
-		Also for {platformLabels[secondary]}
+		{t("alsoFor", { platform: platformLabels[secondary] })}
 	</a>;
 
 	return <div>
@@ -70,14 +72,16 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 				href={downloadHref(primary)}
 				onClick={() => onDownload(primary)}
 			>
-				Download free trial{platform && ` — for ${platformLabels[primary]}`}
+				{platform
+					? t("downloadFor", { platform: platformLabels[primary] })
+					: t("download")}
 			</a>
 			{full && <a
 				className="buttonSecondary hover"
 				href={checkoutHref}
 				onClick={() => track("buy_click", { src: source, source: placement })}
 			>
-				Buy — {transmission.price}, one-time
+				{t("buy", { price: transmission.price })}
 			</a>}
 			{compact && <span className={style.ctaNote}>{otherPlatformLink}</span>}
 		</div>

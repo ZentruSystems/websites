@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import style from "./transmission.module.css";
 
@@ -16,8 +17,8 @@ type DemoMediaProps = {
 	aspectRatio?: string;
 	/** Fill the positioned parent instead of reserving an aspect ratio – used by the hero panes */
 	fill?: boolean;
-	/** Headline of the placeholder, for slots that are a still rather than a clip */
-	placeholderLabel?: string;
+	/** What the slot will hold, which is what the placeholder announces */
+	kind?: "clip" | "still" | "screenshot";
 };
 
 /**
@@ -33,8 +34,9 @@ export default function DemoMedia({
 	description,
 	aspectRatio = "16 / 9",
 	fill = false,
-	placeholderLabel = "Demo clip — coming soon",
+	kind = "clip",
 }: DemoMediaProps) {
+	const t = useTranslations("Products.transmission.media");
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -62,7 +64,7 @@ export default function DemoMedia({
 	if (!src) {
 		return <div className={className} style={sizing}>
 			<div className={style.placeholder}>
-				<span className={style.placeholderLabel}>{placeholderLabel}</span>
+				<span className={style.placeholderLabel}>{t(kind)}</span>
 				<p className={style.placeholderCaption}>{description}</p>
 			</div>
 		</div>;

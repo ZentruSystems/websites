@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { Platform, transmission } from "../products/transmission/config";
+import { getTranslations } from "next-intl/server";
+import { Platform } from "../products/transmission/config";
 import WelcomeClient from "./WelcomeClient";
 
 /**
@@ -8,12 +9,16 @@ import WelcomeClient from "./WelcomeClient";
  * Both parameters come from outside the site, so neither is trusted: the platform is
  * matched against the two we know and the version against a conservative pattern.
  */
-export const metadata: Metadata = {
-	title: `Welcome — ${transmission.brandPair}`,
-	description: "Getting started with Transmission, and why it asks for Accessibility permission.",
-	// The app links here, nobody should reach it from a search result
-	robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations("Products.transmission.welcome");
+
+	return {
+		title: t("metaTitle"),
+		description: t("metaDescription"),
+		// The app links here, nobody should reach it from a search result
+		robots: { index: false, follow: false },
+	};
+}
 
 function firstValue(value: string | string[] | undefined): string | undefined {
 	return Array.isArray(value) ? value[0] : value;
