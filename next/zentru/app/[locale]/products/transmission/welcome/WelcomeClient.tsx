@@ -2,11 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import { readSource } from "../products/transmission/acquisitionSource";
-import { track } from "../products/transmission/analytics";
-import { Platform, transmission } from "../products/transmission/config";
-import { welcomeStepKeys } from "../products/transmission/content";
-import pageStyle from "../products/transmission/transmission.module.css";
+import { readSource } from "../acquisitionSource";
+import { track } from "../analytics";
+import { Platform, transmission } from "../config";
+import { welcomeStepKeys } from "../content";
+import pageStyle from "../transmission.module.css";
 import style from "./welcome.module.css";
 
 /** Version of the claim contract. The app repo's handoff pins this to 1 – both halves must agree. */

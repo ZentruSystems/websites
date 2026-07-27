@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Platform } from "../products/transmission/config";
+import { Platform } from "../config";
 import WelcomeClient from "./WelcomeClient";
 
 /**
