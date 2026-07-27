@@ -199,6 +199,7 @@ export default {
 					unlike a mouse user, you can't buy your way out of this with a DPI button.</p>`,
 				"demo": "Pen on a tablet: the same small target, at full speed and in low gear.",
 			},
+			// Shown on /welcome, right before macOS puts the prompt in front of them
 			"permission": {
 				"title": "Why it asks for Accessibility permission",
 				"body": `<p>Transmission works by watching mouse movement at the system level and scaling it while your clutch

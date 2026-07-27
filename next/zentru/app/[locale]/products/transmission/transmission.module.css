@@ -104,6 +104,14 @@
 	a 16/9 box that wide ends up taller than the text beside it. Cap the width and let the
 	column keep the layout; the cap only bites above roughly 1100px.
 */
+/*
+	The media spans the title row and the text row. Without a fixed first row, the height it
+	needs is shared between them and the spare space opens up under the title.
+*/
+.mediaSectionGrid {
+	grid-template-rows: min-content auto;
+}
+
 .sectionMedia,
 .mediaStack {
 	width: 100%;

@@ -204,6 +204,7 @@ export default {
 					brauchst. Und anders als mit der Maus kannst du dich hier nicht mit einem DPI-Knopf freikaufen.</p>`,
 				"demo": "Stift auf dem Tablett: dasselbe kleine Ziel, bei voller Geschwindigkeit und im kleinen Gang.",
 			},
+			// Steht auf /welcome, kurz bevor macOS die Abfrage anzeigt
 			"permission": {
 				"title": "Warum es die Bedienungshilfen braucht",
 				"body": `<p>Transmission beobachtet Mausbewegungen auf Systemebene und skaliert sie, solange deine

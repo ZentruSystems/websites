@@ -60,7 +60,6 @@ export default function TransmissionPage() {
 		<HowItWorksSection />
 		<FeaturesSection />
 		<PenSection />
-		<PermissionSection />
 		<PrivacySection />
 		<PricingSection />
 		<FaqSection />
@@ -160,32 +159,13 @@ async function PenSection() {
 	</MediaSection>;
 }
 
-/**
- * Deliberately given the weight of a full section: the permission prompt is where people
- * who already installed the app get spooked and quit.
- */
-async function PermissionSection() {
-	const t = await getTranslations("Products.transmission.permission");
-
-	return <MediaSection
-		title={t("title")}
-		media={<DemoMedia
-			{...mediaFor("accessibility-permission")}
-			description={t("screenshot")}
-			aspectRatio="4 / 3"
-			kind="screenshot"
-		/>}
-	>
-		{t.rich("body", defaultHtml)}
-	</MediaSection>;
-}
-
 async function PrivacySection() {
 	const t = await getTranslations("Products.transmission.privacy");
 
 	const inlineLink = "hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline";
 
-	return <Section title={t("title")} className="bg-l6 paragraphSpaceLarger" isStringAsChild={false}>
+	// Untinted: with the permission section moved to /welcome, this keeps the sections alternating
+	return <Section title={t("title")} className="paragraphSpaceLarger" isStringAsChild={false}>
 		<p>{t("intro")}</p>
 		<p>
 			{t("analyticsBeforeLink")}
