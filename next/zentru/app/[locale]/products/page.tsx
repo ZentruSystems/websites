@@ -1,8 +1,10 @@
 import { RecSection } from "./.rec/page";
 import { ToolsSection } from "./tools/page";
+import { TransmissionSection } from "./transmission/page";
 
 export default function Page() {
 	return <>
+	<TransmissionSection/>
 	<RecSection/>
 	<ToolsSection/>
 	{/* <section className="Pad vFillView hCenter vCenter flex">

@@ -3,14 +3,14 @@
 import { defaultHtml } from "@/lib/localization";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import DemoMedia from "../products/transmission/DemoMedia";
-import MediaSection from "../products/transmission/MediaSection";
-import { readSource } from "../products/transmission/acquisitionSource";
-import { track } from "../products/transmission/analytics";
-import { Platform, transmission } from "../products/transmission/config";
-import { welcomeStepKeys } from "../products/transmission/content";
-import { mediaFor } from "../products/transmission/media";
-import pageStyle from "../products/transmission/transmission.module.css";
+import DemoMedia from "../DemoMedia";
+import MediaSection from "../MediaSection";
+import { readSource } from "../acquisitionSource";
+import { track } from "../analytics";
+import { Platform, transmission } from "../config";
+import { welcomeStepKeys } from "../content";
+import { mediaFor } from "../media";
+import pageStyle from "../transmission.module.css";
 import style from "./welcome.module.css";
 
 /** Version of the claim contract. The app repo's handoff pins this to 1 – both halves must agree. */
