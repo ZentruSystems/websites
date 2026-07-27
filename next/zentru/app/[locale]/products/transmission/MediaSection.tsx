@@ -19,7 +19,7 @@ export default function MediaSection(props: {
 	const textSpan = props.isMediaLeft ? "s7 e12" : "s1 e6";
 	const mediaSpan = props.isMediaLeft ? "s1 e6" : "s7 e12";
 
-	return <section className={`vhGrid vPad ${props.className ?? ""}`} style={props.style}>
+	return <section className={`vhGrid vPad ${style.mediaSectionGrid} ${props.className ?? ""}`} style={props.style}>
 		<h2 className={`${textSpan} ph-s1 ph-e5 gr-s1`}>{props.title}</h2>
 		<div className={`${textSpan} ph-s1 ph-e5 gr-s2 paragraphSpaceLarger`}>
 			{props.children}

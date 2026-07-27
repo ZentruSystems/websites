@@ -1,11 +1,15 @@
 "use client";
 
+import { defaultHtml } from "@/lib/localization";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import DemoMedia from "../products/transmission/DemoMedia";
+import MediaSection from "../products/transmission/MediaSection";
 import { readSource } from "../products/transmission/acquisitionSource";
 import { track } from "../products/transmission/analytics";
 import { Platform, transmission } from "../products/transmission/config";
 import { welcomeStepKeys } from "../products/transmission/content";
+import { mediaFor } from "../products/transmission/media";
 import pageStyle from "../products/transmission/transmission.module.css";
 import style from "./welcome.module.css";
 
@@ -21,6 +25,7 @@ export default function WelcomeClient({ platform, appVersion }: {
 	appVersion: string | null,
 }) {
 	const t = useTranslations("Products.transmission.welcome");
+	const tPermission = useTranslations("Products.transmission.permission");
 	const [claimHref, setClaimHref] = useState<string | null>(null);
 	const hasClaimed = useRef(false);
 
@@ -44,32 +49,53 @@ export default function WelcomeClient({ platform, appVersion }: {
 	const isWindows = platform == "windows";
 	const steps = isWindows ? welcomeStepKeys.windows : welcomeStepKeys.macos;
 
-	return <section className="vhGrid vPad minV100">
-		<div className="s1 e9 ph-s1 ph-e5 vCenter">
-			<p className={pageStyle.eyebrow}>{transmission.name}</p>
-			<h1 className={`light ${style.title}`}>{t("title")}</h1>
-			<p className={`${style.intro} bMarg`}>{t(isWindows ? "intro.windows" : "intro.macos")}</p>
+	return <>
+		<section className="vhGrid vPad">
+			<div className="s1 e9 ph-s1 ph-e5 vCenter">
+				<p className={pageStyle.eyebrow}>{transmission.name}</p>
+				<h1 className={`light ${style.title}`}>{t("title")}</h1>
+				<p className={`${style.intro} bMarg`}>{t(isWindows ? "intro.windows" : "intro.macos")}</p>
 
-			<ol className={style.steps}>
-				{steps.map(key => <li key={key}>
-					<div>
-						<h2 className={style.stepTitle}>{t(`steps.${key}.title`)}</h2>
-						<p>{t(`steps.${key}.text`)}</p>
-					</div>
-				</li>)}
-			</ol>
+				<ol className={style.steps}>
+					{steps.map(key => <li key={key}>
+						<div>
+							<h2 className={style.stepTitle}>{t(`steps.${key}.title`)}</h2>
+							<p>{t(`steps.${key}.text`)}</p>
+						</div>
+					</li>)}
+				</ol>
 
-			<p className={`${style.note} tMarg`}>{t("reassurance")}</p>
-			<p className={style.note}>{t("trialNote", { days: `${transmission.trialDays}` })}</p>
+				{/* On macOS the permission section below says this at length, so it would only repeat */}
+				{isWindows && <p className={`${style.note} tMarg`}>{t("reassurance")}</p>}
+				<p className={`${style.note} tMarg`}>{t("trialNote", { days: `${transmission.trialDays}` })}</p>
 
-			{claimHref && <p className={`${style.note} tMarg`}>
-				<a
-					className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
-					href={claimHref}
-				>
-					{t("manualClaim")}
-				</a>
-			</p>}
-		</div>
-	</section>;
+				{claimHref && <p className={`${style.note} tMarg`}>
+					<a
+						className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
+						href={claimHref}
+					>
+						{t("manualClaim")}
+					</a>
+				</p>}
+			</div>
+		</section>
+
+		{/*
+			The long version of step one, with the screenshot. It belongs here rather than on the
+			landing page: this is the last thing people read before macOS puts the prompt in front
+			of them. Windows has no such prompt, so it does not get the section.
+		*/}
+		{!isWindows && <MediaSection
+			className="bg-l5"
+			title={tPermission("title")}
+			media={<DemoMedia
+				{...mediaFor("accessibility-permission")}
+				description={tPermission("screenshot")}
+				aspectRatio="4 / 3"
+				kind="screenshot"
+			/>}
+		>
+			{tPermission.rich("body", defaultHtml)}
+		</MediaSection>}
+	</>;
 }
