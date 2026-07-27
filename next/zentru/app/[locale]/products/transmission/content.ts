@@ -23,6 +23,7 @@ export const faqKeys = [
 	"fineAdjust",
 	"dpiButton",
 	"tablet",
+	"usageDays",
 	"apps",
 	"games",
 	"appStore",

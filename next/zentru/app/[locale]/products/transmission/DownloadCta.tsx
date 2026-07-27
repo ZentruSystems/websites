@@ -7,6 +7,13 @@ import { track } from "./analytics";
 import { Platform, platformLabels, transmission } from "./config";
 import style from "./transmission.module.css";
 
+declare global {
+	interface Navigator {
+		/** Chromium only, and not in the DOM lib yet */
+		userAgentData?: { platform?: string };
+	}
+}
+
 type DownloadCtaProps = {
 	/** Where on the page this CTA sits – reported as `source` on the analytics event */
 	placement: string;
@@ -18,11 +25,18 @@ type DownloadCtaProps = {
 	compact?: boolean;
 };
 
+/**
+ * Which installer to lead with.
+ *
+ * `userAgentData.platform` is the accurate answer where it exists (Chromium); everywhere
+ * else the user agent string still carries the OS. Anything we don't recognise – Linux, a
+ * phone, a locked-down browser – returns null and both platforms stay equally available.
+ */
 function detectPlatform(): Platform | null {
-	const agent = navigator.userAgent;
+	const platformHint = navigator.userAgentData?.platform ?? navigator.userAgent;
 
-	if (/Mac/i.test(agent)) return "macos";
-	if (/Win/i.test(agent)) return "windows";
+	if (/mac/i.test(platformHint)) return "macos";
+	if (/win/i.test(platformHint)) return "windows";
 	return null;
 }
 

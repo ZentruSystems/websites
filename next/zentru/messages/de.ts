@@ -45,7 +45,7 @@ export default {
 				"sub": `Halte eine Taste. Dein Cursor schaltet in den kleinen Gang – jede Handbewegung legt nur noch ein
 					Viertel der Strecke zurück. Triff genau den Clip, genau den Griff, genau den Snap-Punkt, mit der ganzen
 					Timeline im Blick.`,
-				"micro": "{days} Tage, volle Version. Kein Konto, keine Karte.",
+				"micro": "{days} Nutzungstage, volle Version. Kein Konto, keine Karte.",
 				"demoLeft": "Links: reinzoomen, schieben, wieder rauszoomen. Der ganze Umweg.",
 				"demoRight": "Rechts: Taste halten, greifen, fertig.",
 			},
@@ -226,7 +226,7 @@ export default {
 			"pricing": {
 				"title": "{price, number, ::currency/EUR}. Einmal.",
 				"items": {
-					"trial": "{days} Tage testen – volle Version, keine Karte, kein Konto",
+					"trial": "{days} Nutzungstage – es zählen nur Tage, an denen du es benutzt, volle Version, keine Karte, kein Konto",
 					"platforms": "{macOs}+ und {windows}+ in einer Lizenz",
 					"machines": "Bis zu {machines} Geräte",
 					"updates": "Kostenlose Updates",
@@ -254,6 +254,12 @@ export default {
 						"question": "Funktioniert es mit einem Grafiktablett?",
 						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – Transmission ist die fehlende Hälfte.",
 					},
+					"usageDays": {
+						"question": "Wie läuft der Test ab?",
+						"answer": `In Nutzungstagen, nicht in Kalendertagen. Ein Tag zählt erst, wenn du es tatsächlich benutzt –
+							lässt du es eine Woche liegen, bleibt der Test stehen. Du bekommst also Tage echter Arbeit und keinen
+							Countdown, der abläuft, während du mit etwas anderem beschäftigt bist.`,
+					},
 					"apps": {
 						"question": "In welchen Apps funktioniert es?",
 						"answer": `In allen. Es arbeitet unterhalb der Anwendungsebene und muss deshalb nichts über die Software
@@ -277,7 +283,7 @@ export default {
 			},
 			"finalCta": {
 				"title": "Hör auf, nur zum Greifen reinzuzoomen.",
-				"micro": "{days} Tage, volle Version. {macOs}+ und {windows}+.",
+				"micro": "{days} Nutzungstage, volle Version. {macOs}+ und {windows}+.",
 			},
 			// Wird von der App beim ersten Start geöffnet, bevor macOS nach der Berechtigung fragt
 			"welcome": {
@@ -312,7 +318,7 @@ export default {
 				},
 				"reassurance": `Transmission liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine
 					Eingaben nirgendwohin.`,
-				"trialNote": "Dein Test über {days} Tage läuft – volle Version, kein Konto, keine Karte.",
+				"trialNote": "Dein Test läuft – {days} Nutzungstage, volle Version, kein Konto, keine Karte.",
 				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? Transmission öffnen",
 			},
 		},

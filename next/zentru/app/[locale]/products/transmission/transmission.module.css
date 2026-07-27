@@ -99,6 +99,18 @@
 	object-fit: cover;
 }
 
+/*
+	Media columns are six of twelve, which on a wide screen is far more than a demo clip needs –
+	a 16/9 box that wide ends up taller than the text beside it. Cap the width and let the
+	column keep the layout; the cap only bites above roughly 1100px.
+*/
+.sectionMedia,
+.mediaStack {
+	width: 100%;
+	max-width: 520px;
+	justify-self: center;
+}
+
 .mediaStack {
 	display: grid;
 	gap: var(--grid-gap);

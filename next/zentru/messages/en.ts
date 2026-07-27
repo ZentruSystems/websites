@@ -44,7 +44,7 @@ export default {
 				"headline": "Like zooming in. Without losing the bigger picture.",
 				"sub": `Hold a key. Your cursor drops into low gear — every hand movement covers a quarter of the distance.
 					Land the exact clip, the exact handle, the exact snap point, with your whole timeline still on screen.`,
-				"micro": "{days} days, full version. No account, no card.",
+				"micro": "{days} usage days, full version. No account, no card.",
 				"demoLeft": "Left: zoom in, nudge, zoom back out. The round trip.",
 				"demoRight": "Right: hold the key, grab it, done.",
 			},
@@ -220,7 +220,7 @@ export default {
 			"pricing": {
 				"title": "{price, number, ::currency/EUR}. Once.",
 				"items": {
-					"trial": "{days}-day trial — full version, no card, no account",
+					"trial": "{days} usage days — only the days you use it count, full version, no card, no account",
 					"platforms": "{macOs}+ and {windows}+ in a single licence",
 					"machines": "Up to {machines} machines",
 					"updates": "Free updates",
@@ -248,6 +248,12 @@ export default {
 						"question": "Does it work with a drawing tablet?",
 						"answer": "Yes. A pen is direct but not precise — Transmission is the missing half.",
 					},
+					"usageDays": {
+						"question": "How does the trial count down?",
+						"answer": `In usage days, not calendar days. A day only counts once you actually use it — leave it
+							untouched for a week and the trial doesn't move. What you get is days of real work, not a countdown
+							that runs out while you're busy with something else.`,
+					},
 					"apps": {
 						"question": "Which apps does it work in?",
 						"answer": `All of them. It operates below the application layer, so it doesn't need to know anything
@@ -271,7 +277,7 @@ export default {
 			},
 			"finalCta": {
 				"title": "Stop zooming in just to grab things.",
-				"micro": "{days} days, full version. {macOs}+ and {windows}+.",
+				"micro": "{days} usage days, full version. {macOs}+ and {windows}+.",
 			},
 			// Opened by the app on first launch, before macOS shows the permission prompt
 			"welcome": {
@@ -306,7 +312,7 @@ export default {
 				},
 				"reassurance": `Transmission does not read what you type, does not record your screen, and does not send your
 					input anywhere.`,
-				"trialNote": "Your {days}-day trial is running — full version, no account, no card.",
+				"trialNote": "Your trial is running — {days} usage days, full version, no account, no card.",
 				"manualClaim": "Didn't the app come back to the front? Open Transmission",
 			},
 		},

@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import style from "./transmission.module.css";
 
 /**
  * A section with its text on one side and a clip or still on the other.
@@ -23,7 +24,7 @@ export default function MediaSection(props: {
 		<div className={`${textSpan} ph-s1 ph-e5 gr-s2 paragraphSpaceLarger`}>
 			{props.children}
 		</div>
-		<div className={`${mediaSpan} ph-s1 ph-e5 gr-s1 gr-e3 ph-gr-s3 vCenter`}>
+		<div className={`${mediaSpan} ph-s1 ph-e5 gr-s1 gr-e3 ph-gr-s3 vCenter ${style.sectionMedia}`}>
 			{props.media}
 		</div>
 	</section>;
