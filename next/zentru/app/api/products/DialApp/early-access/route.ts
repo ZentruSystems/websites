@@ -1,9 +1,9 @@
 // import { recEarlyAccessSignups } from "@/lib/mongodb";
-import recEarlyAccessSignup from "@/models/recEarlyAccessSignup";
+import dialAppEarlyAccessSignup from "@/models/dialAppEarlyAccessSignup";
 import { NextRequest } from "next/server";
 import buildSignupHandler from "../../baseSignup";
 
-const signupHandler = buildSignupHandler(recEarlyAccessSignup);
+const signupHandler = buildSignupHandler(dialAppEarlyAccessSignup);
 
 export async function PUT(request: NextRequest) {
 	return await signupHandler(request);

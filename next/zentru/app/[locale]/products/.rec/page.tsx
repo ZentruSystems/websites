@@ -1,5 +1,5 @@
 import Section from "@/app/Section";
-import style from "./early-access.module.css";
+import style from "./dot-rec.module.css";
 
 import ThemedImage from "@/app/ThemedImage";
 import { defaultHtml } from "@/lib/localization";
