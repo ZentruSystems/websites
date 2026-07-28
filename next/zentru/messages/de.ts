@@ -340,6 +340,7 @@ export default {
 				"trialNote": "Dein Test läuft – {days} Nutzungstage, volle Version, kein Konto, keine Karte.",
 				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? Transmission öffnen",
 			},
+		},
 		"DialApp": {
 			"sectionSummary": `Behalte deine Fenster auf macOS im Griff.
 			<br></br>

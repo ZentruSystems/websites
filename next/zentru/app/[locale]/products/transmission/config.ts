@@ -29,8 +29,8 @@ export const transmission = {
 
 	/** TODO: replace with the signed installers once they are hosted */
 	downloads: {
-		macos: "/downloads/transmission-macos.dmg",
-		windows: "/downloads/transmission-windows.exe",
+		macos: "/download/Transmission-macOS.zip",
+		windows: "/download/Transmission-Windows.zip",
 	},
 
 	/** TODO: replace with the checkout link once the payment provider is chosen (Lemon Squeezy / Paddle) */

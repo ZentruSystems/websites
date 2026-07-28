@@ -334,6 +334,7 @@ export default {
 				"trialNote": "Your trial is running — {days} usage days, full version, no account, no card.",
 				"manualClaim": "Didn't the app come back to the front? Open Transmission",
 			},
+		},
 		"DialApp": {
 			"sectionSummary": `Get a hold of your windows on macOS.
 			<br></br>
