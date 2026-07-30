@@ -1,11 +1,11 @@
 import { RecSection } from "./.rec/page";
 import { DialAppSection } from "./DialApp/page";
 import { ToolsSection } from "./tools/page";
-import { TransmissionSection } from "./transmission/page";
+import { ShiftDownSection } from "./shiftdown/page";
 
 export default function Page() {
 	return <>
-	<TransmissionSection/>
+	<ShiftDownSection/>
 	<DialAppSection/>
 	<RecSection/>
 	<ToolsSection/>

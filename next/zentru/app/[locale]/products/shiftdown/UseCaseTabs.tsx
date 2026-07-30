@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import DemoMedia from "./DemoMedia";
 import { useCaseIds } from "./content";
 import { mediaFor } from "./media";
-import style from "./transmission.module.css";
+import style from "./shiftdown.module.css";
 
 /**
  * The use case selector.
@@ -15,7 +15,7 @@ import style from "./transmission.module.css";
  * site grid: row 1 belongs to the section intro, row 2 is the tab list, row 3 the panel.
  */
 export default function UseCaseTabs() {
-	const t = useTranslations("Products.transmission.useCases");
+	const t = useTranslations("Products.shiftdown.useCases");
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 

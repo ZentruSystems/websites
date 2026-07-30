@@ -2,11 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import style from "./transmission.module.css";
+import style from "./shiftdown.module.css";
 
 type DemoMediaProps = {
 	/**
-	 * Path to the clip, e.g. "/img/transmission/hero.mp4".
+	 * Path to the clip, e.g. "/img/shiftdown/hero.mp4".
 	 * While it is undefined a reserved-space placeholder is rendered instead – see README.md.
 	 */
 	src?: string;
@@ -36,7 +36,7 @@ export default function DemoMedia({
 	fill = false,
 	kind = "clip",
 }: DemoMediaProps) {
-	const t = useTranslations("Products.transmission.media");
+	const t = useTranslations("Products.shiftdown.media");
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 

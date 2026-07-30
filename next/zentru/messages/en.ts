@@ -35,10 +35,10 @@ export default {
 					</ul>`
 			},
 		},
-		"transmission": {
+		"shiftdown": {
 			"meta": {
-				// Always brand-paired: "Transmission" alone belongs to the BitTorrent client
-				"title": "Transmission — mouse gearing",
+				// The name says what it does but not what it is for, so the title carries the category
+				"title": "ShiftDown — mouse gearing",
 			},
 			"hero": {
 				"headline": "Like zooming in. Without losing the bigger picture.",
@@ -143,7 +143,7 @@ export default {
 			},
 			"howItWorks": {
 				"title": "A gearbox for your cursor.",
-				"body": `<p>Hold your clutch key and Transmission scales your movement down — four times finer by default,
+				"body": `<p>Hold your clutch key and ShiftDown gears your movement down — four times finer by default,
 					adjustable from a crawl to barely damped. The pixels don't move. Your hand just covers fewer of them. Every
 					hover zone is effectively four times further apart, and your zoom level never changes.</p>
 					<p>Let go, and you're back to full speed.</p>`,
@@ -195,23 +195,23 @@ export default {
 				"body": `<p>A pen is direct, not precise. It puts the cursor exactly where you point — but “where you point” is
 					bounded by your hand, and by how much screen each millimetre of tablet covers. At 100% zoom, that isn't
 					enough to land on the right pixel.</p>
-					<p>Transmission trades the one thing you don't need in that moment — directness — for the one you do. And
+					<p>ShiftDown trades the one thing you don't need in that moment — directness — for the one you do. And
 					unlike a mouse user, you can't buy your way out of this with a DPI button.</p>`,
 				"demo": "Pen on a tablet: the same small target, at full speed and in low gear.",
 			},
 			// Shown on /welcome, right before macOS puts the prompt in front of them
 			"permission": {
 				"title": "Why it asks for Accessibility permission",
-				"body": `<p>Transmission works by watching mouse movement at the system level and scaling it while your clutch
+				"body": `<p>ShiftDown works by watching mouse movement at the system level and scaling it while your clutch
 					key is held. On macOS, that requires Accessibility permission — the same one any window manager or shortcut
 					utility needs. You grant it once, in System Settings.</p>
-					<p>Transmission does not read what you type, does not record your screen, and does not send your input
+					<p>ShiftDown does not read what you type, does not record your screen, and does not send your input
 					anywhere.</p>`,
-				"screenshot": "System Settings → Privacy & Security → Accessibility, with Transmission enabled.",
+				"screenshot": "System Settings → Privacy & Security → Accessibility, with ShiftDown enabled.",
 			},
 			"privacy": {
 				"title": "We value privacy — so we protect yours",
-				"intro": `That is how every Zentru Systems product is built, and Transmission is no exception. It watches
+				"intro": `That is how every Zentru Systems product is built, and ShiftDown is no exception. It watches
 					mouse movement to do its job and that is where it ends: it does not read what you type, does not record
 					your screen, and does not send your input anywhere.`,
 				// The two sentences that carry a link, split around it
@@ -243,7 +243,7 @@ export default {
 					"fineAdjust": {
 						"question": "Doesn't my editor already have a fine-adjust modifier?",
 						"answer": `Modifier keys refine a value once you've already grabbed something. They don't help you grab
-							the right thing in the first place. Transmission works before the click, in every app — including
+							the right thing in the first place. ShiftDown works before the click, in every app — including
 							plugin interfaces that never implemented a fine mode at all.`,
 					},
 					"dpiButton": {
@@ -252,11 +252,11 @@ export default {
 							of, and it does nothing for a trackpad or a pen tablet. It also does nothing about mouse
 							acceleration: your system still stretches a quick movement and compresses a slow one, so the same
 							hand movement doesn't reliably cover the same distance no matter which DPI step you picked.
-							Transmission is momentary, software-side, and works with whatever you already use.`,
+							ShiftDown is momentary, software-side, and works with whatever you already use.`,
 					},
 					"tablet": {
 						"question": "Does it work with a drawing tablet?",
-						"answer": "Yes. A pen is direct but not precise — Transmission is the missing half.",
+						"answer": "Yes. A pen is direct but not precise — ShiftDown is the missing half.",
 					},
 					"usageDays": {
 						"question": "How does the trial count down?",
@@ -271,12 +271,12 @@ export default {
 					},
 					"games": {
 						"question": "Can I use it in games?",
-						"answer": `We don't recommend it. Anti-cheat systems can flag low-level input software. Transmission is
+						"answer": `We don't recommend it. Anti-cheat systems can flag low-level input software. ShiftDown is
 							built for editing tools.`,
 					},
 					"appStore": {
 						"question": "Is it on the Mac App Store?",
-						"answer": `No. The Accessibility permission Transmission needs isn't available to sandboxed App Store
+						"answer": `No. The Accessibility permission ShiftDown needs isn't available to sandboxed App Store
 							apps, so it's sold directly.`,
 					},
 					"linux": {
@@ -300,9 +300,9 @@ export default {
 			},
 			// Opened by the app on first launch, before macOS shows the permission prompt
 			"welcome": {
-				"metaTitle": "Welcome to Transmission",
-				"metaDescription": "Getting started with Transmission, and why it asks for Accessibility permission.",
-				"title": "Transmission is installed.",
+				"metaTitle": "Welcome to ShiftDown",
+				"metaDescription": "Getting started with ShiftDown, and why it asks for Accessibility permission.",
+				"title": "ShiftDown is installed.",
 				"intro": {
 					"macos": "One permission and you're set. Here's what macOS is about to ask you, and why.",
 					"windows": "You're set. Here's how to try it.",
@@ -310,13 +310,13 @@ export default {
 				"steps": {
 					"permission": {
 						"title": "macOS will ask for Accessibility permission",
-						"text": `Transmission scales mouse movement while your clutch key is held, which means watching that
+						"text": `ShiftDown scales mouse movement while your clutch key is held, which means watching that
 							movement at the system level. macOS gates that behind Accessibility — the same permission any window
 							manager or shortcut utility asks for.`,
 					},
 					"grant": {
 						"title": "Grant it once, in System Settings",
-						"text": `System Settings → Privacy & Security → Accessibility, then switch Transmission on. Nothing else
+						"text": `System Settings → Privacy & Security → Accessibility, then switch ShiftDown on. Nothing else
 							to configure.`,
 					},
 					"tryIt": {
@@ -329,10 +329,10 @@ export default {
 						"text": "The clutch key, the speed factor and the mode — Hold, Toggle or Inverted — are all in Settings.",
 					},
 				},
-				"reassurance": `Transmission does not read what you type, does not record your screen, and does not send your
+				"reassurance": `ShiftDown does not read what you type, does not record your screen, and does not send your
 					input anywhere.`,
 				"trialNote": "Your trial is running — {days} usage days, full version, no account, no card.",
-				"manualClaim": "Didn't the app come back to the front? Open Transmission",
+				"manualClaim": "Didn't the app come back to the front? Open ShiftDown",
 			},
 		},
 		"DialApp": {

@@ -7,25 +7,25 @@ import DemoMedia from "../DemoMedia";
 import MediaSection from "../MediaSection";
 import { readSource } from "../acquisitionSource";
 import { track } from "../analytics";
-import { Platform, transmission } from "../config";
+import { Platform, shiftDown } from "../config";
 import { welcomeStepKeys } from "../content";
 import { mediaFor } from "../media";
-import pageStyle from "../transmission.module.css";
+import pageStyle from "../shiftdown.module.css";
 import style from "./welcome.module.css";
 
 /** Version of the claim contract. The app repo's handoff pins this to 1 – both halves must agree. */
 const claimContractVersion = "1";
 
 function claimUrl(source: string) {
-	return `transmission://claim?src=${encodeURIComponent(source)}&v=${claimContractVersion}`;
+	return `shiftdown://claim?src=${encodeURIComponent(source)}&v=${claimContractVersion}`;
 }
 
 export default function WelcomeClient({ platform, appVersion }: {
 	platform: Platform | null,
 	appVersion: string | null,
 }) {
-	const t = useTranslations("Products.transmission.welcome");
-	const tPermission = useTranslations("Products.transmission.permission");
+	const t = useTranslations("Products.shiftdown.welcome");
+	const tPermission = useTranslations("Products.shiftdown.permission");
 	const [claimHref, setClaimHref] = useState<string | null>(null);
 	const hasClaimed = useRef(false);
 
@@ -52,7 +52,7 @@ export default function WelcomeClient({ platform, appVersion }: {
 	return <>
 		<section className="vhGrid vPad">
 			<div className="s1 e9 ph-s1 ph-e5 vCenter">
-				<p className={pageStyle.eyebrow}>{transmission.name}</p>
+				<p className={pageStyle.eyebrow}>{shiftDown.name}</p>
 				<h1 className={`light ${style.title}`}>{t("title")}</h1>
 				<p className={`${style.intro} bMarg`}>{t(isWindows ? "intro.windows" : "intro.macos")}</p>
 
@@ -67,7 +67,7 @@ export default function WelcomeClient({ platform, appVersion }: {
 
 				{/* On macOS the permission section below says this at length, so it would only repeat */}
 				{isWindows && <p className={`${style.note} tMarg`}>{t("reassurance")}</p>}
-				<p className={`${style.note} tMarg`}>{t("trialNote", { days: `${transmission.trialDays}` })}</p>
+				<p className={`${style.note} tMarg`}>{t("trialNote", { days: `${shiftDown.trialDays}` })}</p>
 
 				{claimHref && <p className={`${style.note} tMarg`}>
 					<a

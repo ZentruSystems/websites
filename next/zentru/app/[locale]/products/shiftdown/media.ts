@@ -4,15 +4,15 @@
  * None of them have been shot yet. Every slot below renders a reserved-space placeholder
  * until it has a `src`, so adding a file is a two step job and never touches layout:
  *
- *   1. drop the file into `public/img/transmission/` (see the README there)
+ *   1. drop the file into `public/img/shiftdown/` (see the README there)
  *   2. fill in the path – and a poster frame for clips – on the matching slot
  *
  * Clips are silent, looping and muted; the poster is what reduced-motion visitors see.
  */
 export type MediaSource = {
-	/** Path under /public, e.g. "/img/transmission/hero-round-trip.mp4" */
+	/** Path under /public, e.g. "/img/shiftdown/hero-round-trip.mp4" */
 	src?: string;
-	/** Poster frame, e.g. "/img/transmission/hero-round-trip.jpg" */
+	/** Poster frame, e.g. "/img/shiftdown/hero-round-trip.jpg" */
 	poster?: string;
 };
 

@@ -1,7 +1,7 @@
-# Transmission media
+# ShiftDown media
 
 Drop clips and stills here, then fill in the path on the matching slot in
-`app/[locale]/products/transmission/media.ts`. Until then each slot renders a placeholder
+`app/[locale]/products/shiftdown/media.ts`. Until then each slot renders a placeholder
 that already reserves its aspect ratio, so nothing on the page shifts when a file arrives.
 
 Clips are silent and loop: MP4 (H.264) or WebM, roughly 15 seconds, plus a poster frame as
@@ -13,7 +13,7 @@ JPG or PNG. The poster is what visitors who asked for reduced motion see.
 | `hero-one-pass` | `hero-one-pass.mp4` | Same edit: hold the key, grab it, done. Same timer. |
 | `problem` | `problem.mp4` | The same edit done both ways, side by side. |
 | `pen` | `pen.mp4` | Pen on a tablet, same small target at full speed and in low gear. |
-| `accessibility-permission` | `accessibility-permission.png` | System Settings → Privacy & Security → Accessibility, Transmission switched on. |
+| `accessibility-permission` | `accessibility-permission.png` | System Settings → Privacy & Security → Accessibility, ShiftDown switched on. |
 | `usecase-general-demo` | `usecase-general.mp4` | Grabbing a window resize edge and a panel divider. |
 | `usecase-general-still` | `usecase-general.png` | A panel divider under the cursor, hover state armed. |
 | `usecase-video-music-demo` | `usecase-video-music.mp4` | A tight cut in an NLE: trim handle versus move zone. |

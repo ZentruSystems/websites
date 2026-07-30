@@ -1,7 +1,7 @@
-# Transmission landing page
+# ShiftDown landing page
 
-Route: `/products/transmission`. The onboarding page the app opens on first launch lives at
-`app/[locale]/welcome`.
+Route: `/products/shiftdown`. The onboarding page the app opens on first launch lives at
+`app/[locale]/products/shiftdown/welcome`.
 
 ## Files
 
@@ -22,7 +22,7 @@ Route: `/products/transmission`. The onboarding page the app opens on first laun
 
 ## Copy
 
-All text lives in `messages/en.ts` and `messages/de.ts` under `Products.transmission`, like
+All text lives in `messages/en.ts` and `messages/de.ts` under `Products.shiftdown`, like
 the rest of the site. English and German are both complete.
 
 - Multi-paragraph text and the "what it solves" lists are single rich strings with `<p>` and
@@ -40,7 +40,7 @@ the rest of the site. English and German are both complete.
 None of them have been shot. Every slot renders a neutral placeholder that reserves its
 aspect ratio, so the page does not move when a file lands.
 
-1. Drop the file into `public/img/transmission/` (that folder's README lists the slots).
+1. Drop the file into `public/img/shiftdown/` (that folder's README lists the slots).
 2. Fill in `src` — and `poster` for clips — on the matching slot in `media.ts`.
 
 That is the whole job: no component or layout change. Clips are rendered
@@ -65,7 +65,7 @@ analytics tool was added.
 `?src=reddit-davinci` → sanitised to lowercase `[a-z0-9_-]`, max 64 chars → `localStorage`
 (not `sessionStorage`: the install often happens after the tab is closed) → appended to the
 download and checkout URLs → read back on `/welcome`, which fires `install_confirmed` and
-redirects to `transmission://claim?src=<token>&v=1`.
+redirects to `shiftdown://claim?src=<token>&v=1`.
 
 `direct` means no token was ever stored. The app uses `unknown` for "no claim arrived" —
 keeping the two apart is how you tell whether the bridge works at all. The app side of this
@@ -76,6 +76,21 @@ agree or attribution silently returns nothing.
 
 - **`config.ts` TODOs** — download URLs, checkout provider, domain, OG image, and the
   trial / machine count / refund / minimum OS placeholders.
-- **Not linked from anywhere.** Adding it to the products overview is one import and one
-  line in `app/[locale]/products/page.tsx`; `page.tsx` already exports `TransmissionSection`
-  for exactly that. Left undone because that file was out of scope.
+- **The clips and stills.** Every slot in `media.ts` is still a placeholder.
+- **The app side of the rename.** The product was called Transmission until this page was
+  renamed, and three of the names above are contracts the app has to match — see below.
+
+## What the rename to ShiftDown needs from the app
+
+Renaming the page cannot move these on its own. Until the app ships a build that agrees with
+them, the bridge between the two halves is broken:
+
+| Here | The app must |
+|---|---|
+| `shiftdown://claim?src=…&v=1` in `welcome/WelcomeClient.tsx` | Register `shiftdown://` as its URL scheme. Until it does, the claim redirect goes nowhere and `install_confirmed` is the only signal that survives. |
+| `/products/shiftdown/welcome` | Open that URL on first launch instead of the `transmission` one. |
+| `systems.zentru.shiftdown` (the bundle ID in `config.ts`) | Confirm it — the comment there assumes the app was renamed too. |
+
+Nothing already in the wild breaks: the page has not shipped, so no browser holds a
+`transmission.src` token and no installed build is looking for the old scheme. Doing the
+rename before launch is what keeps it that way.

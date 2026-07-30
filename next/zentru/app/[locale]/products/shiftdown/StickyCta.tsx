@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DownloadCta from "./DownloadCta";
-import style from "./transmission.module.css";
+import style from "./shiftdown.module.css";
 
 /**
  * Download bar for the long middle of the page.

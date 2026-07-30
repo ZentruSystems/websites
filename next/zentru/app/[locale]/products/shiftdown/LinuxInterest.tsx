@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import isEmail from "validator/lib/isEmail";
 import { readSource } from "./acquisitionSource";
-import { transmission } from "./config";
-import style from "./transmission.module.css";
+import { shiftDown } from "./config";
+import style from "./shiftdown.module.css";
 
 type SignupState = "idle" | "sending" | "signedUp" | "alreadySignedUp" | "failed";
 
@@ -15,7 +15,7 @@ type SignupState = "idle" | "sending" | "signedUp" | "alreadySignedUp" | "failed
  * Lives inside the FAQ answer that says there isn't one yet.
  */
 export default function LinuxInterest() {
-	const t = useTranslations("Products.transmission.linuxInterest");
+	const t = useTranslations("Products.shiftdown.linuxInterest");
 	const tAlways = useTranslations("Always");
 
 	const [email, setEmail] = useState("");
@@ -28,7 +28,7 @@ export default function LinuxInterest() {
 
 		setState("sending");
 		try {
-			const response = await fetch("/api/products/transmission/linux-interest", {
+			const response = await fetch("/api/products/shiftdown/linux-interest", {
 				method: "PUT",
 				body: JSON.stringify({ email, src: readSource() }),
 			});
@@ -52,7 +52,7 @@ export default function LinuxInterest() {
 	}
 
 	return <div className={style.interest}>
-		<p>{t("pitch", { price: transmission.price })}</p>
+		<p>{t("pitch", { price: shiftDown.price })}</p>
 		<form
 			className={style.interestForm}
 			onSubmit={event => {

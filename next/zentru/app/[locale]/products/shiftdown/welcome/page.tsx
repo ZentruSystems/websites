@@ -10,7 +10,7 @@ import WelcomeClient from "./WelcomeClient";
  * matched against the two we know and the version against a conservative pattern.
  */
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("Products.transmission.welcome");
+	const t = await getTranslations("Products.shiftdown.welcome");
 
 	return {
 		title: t("metaTitle"),

@@ -10,30 +10,30 @@ import MediaSection from "./MediaSection";
 import SourceCapture from "./SourceCapture";
 import StickyCta from "./StickyCta";
 import UseCaseTabs from "./UseCaseTabs";
-import { transmission } from "./config";
+import { shiftDown } from "./config";
 import { featureKeys, modeKeys } from "./content";
 import { mediaFor } from "./media";
-import style from "./transmission.module.css";
+import style from "./shiftdown.module.css";
 
 /** The sticky download bar keeps out of the way while either of these is on screen */
-const heroId = "transmission-hero";
-const finalCtaId = "transmission-final-cta";
+const heroId = "shiftdown-hero";
+const finalCtaId = "shiftdown-final-cta";
 
 /** Trial length, price and platforms appear in several messages */
 const productValues = {
-	days: `${transmission.trialDays}`,
-	price: transmission.price,
-	macOs: transmission.minMacOs,
-	windows: transmission.minWindows,
+	days: `${shiftDown.trialDays}`,
+	price: shiftDown.price,
+	macOs: shiftDown.minMacOs,
+	windows: shiftDown.minWindows,
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("Products.transmission");
+	const t = await getTranslations("Products.shiftdown");
 
 	const title = t("meta.title");
 	const description = t("hero.sub");
-	const url = `${transmission.siteUrl}${transmission.path}`;
-	const images = { url: `${transmission.siteUrl}${transmission.ogImage}` };
+	const url = `${shiftDown.siteUrl}${shiftDown.path}`;
+	const images = { url: `${shiftDown.siteUrl}${shiftDown.ogImage}` };
 
 	return {
 		title,
@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export default function TransmissionPage() {
+export default function ShiftDownPage() {
 	return <>
 		<SourceCapture />
 		<Hero />
@@ -70,7 +70,7 @@ export default function TransmissionPage() {
 
 /** The two clips run behind the headline: the round trip on the left, one pass on the right. */
 async function Hero() {
-	const t = await getTranslations("Products.transmission");
+	const t = await getTranslations("Products.shiftdown");
 
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
@@ -92,7 +92,7 @@ async function Hero() {
 }
 
 async function UseCasesSection() {
-	const t = await getTranslations("Products.transmission.useCases");
+	const t = await getTranslations("Products.shiftdown.useCases");
 
 	return <section className="vhGrid vPad bg-l5">
 		<div className="s1 e12 ph-s1 ph-e5 gr-s1 bMarg">
@@ -104,7 +104,7 @@ async function UseCasesSection() {
 }
 
 async function ProblemSection() {
-	const t = await getTranslations("Products.transmission.problem");
+	const t = await getTranslations("Products.shiftdown.problem");
 
 	return <MediaSection
 		title={t("title")}
@@ -115,7 +115,7 @@ async function ProblemSection() {
 }
 
 async function HowItWorksSection() {
-	const t = await getTranslations("Products.transmission.howItWorks");
+	const t = await getTranslations("Products.shiftdown.howItWorks");
 
 	return <section className="vhGrid vPad bg-l6">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -133,7 +133,7 @@ async function HowItWorksSection() {
 }
 
 async function FeaturesSection() {
-	const t = await getTranslations("Products.transmission.features");
+	const t = await getTranslations("Products.shiftdown.features");
 
 	return <section className="vhGrid vPad">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -147,7 +147,7 @@ async function FeaturesSection() {
 }
 
 async function PenSection() {
-	const t = await getTranslations("Products.transmission.pen");
+	const t = await getTranslations("Products.shiftdown.pen");
 
 	return <MediaSection
 		title={t("title")}
@@ -160,7 +160,7 @@ async function PenSection() {
 }
 
 async function PrivacySection() {
-	const t = await getTranslations("Products.transmission.privacy");
+	const t = await getTranslations("Products.shiftdown.privacy");
 
 	const inlineLink = "hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline";
 
@@ -181,20 +181,20 @@ async function PrivacySection() {
 }
 
 async function PricingSection() {
-	const t = await getTranslations("Products.transmission");
+	const t = await getTranslations("Products.shiftdown");
 
 	return <section className="vhGrid vPad bg-l5">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("pricing.title", productValues)}</h2>
 		<div className={`s1 e7 ph-s1 ph-e5 ${style.priceBox}`}>
 			<p className={style.priceAnchor}>
-				{t("pricing.anchor", { regular: transmission.regularPrice })}
+				{t("pricing.anchor", { regular: shiftDown.regularPrice })}
 			</p>
 			<ul className={style.priceList}>
 				<li>{t("pricing.items.trial", productValues)}</li>
 				<li>{t("pricing.items.platforms", productValues)}</li>
-				<li>{t("pricing.items.machines", { machines: `${transmission.machines}` })}</li>
+				<li>{t("pricing.items.machines", { machines: `${shiftDown.machines}` })}</li>
 				<li>{t("pricing.items.updates")}</li>
-				<li>{t("pricing.items.refund", { days: `${transmission.refundDays}` })}</li>
+				<li>{t("pricing.items.refund", { days: `${shiftDown.refundDays}` })}</li>
 			</ul>
 			<DownloadCta placement="pricing" full note={t("hero.micro", productValues)} />
 		</div>
@@ -203,16 +203,16 @@ async function PricingSection() {
 			{" "}
 			<Link
 				className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
-				href={`mailto:${transmission.supportEmail}`}
+				href={`mailto:${shiftDown.supportEmail}`}
 			>
-				{transmission.supportEmail}
+				{shiftDown.supportEmail}
 			</Link>
 		</p>
 	</section>;
 }
 
 async function FaqSection() {
-	const t = await getTranslations("Products.transmission.faq");
+	const t = await getTranslations("Products.shiftdown.faq");
 
 	return <section className="vhGrid vPad">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -223,7 +223,7 @@ async function FaqSection() {
 }
 
 async function FinalCtaSection() {
-	const t = await getTranslations("Products.transmission.finalCta");
+	const t = await getTranslations("Products.shiftdown.finalCta");
 
 	return <section id={finalCtaId} className="vhGrid vPad bg-l6">
 		<div className="s1 e12 ph-s1 ph-e5">
@@ -237,14 +237,14 @@ async function FinalCtaSection() {
  * Entry for the products overview – mirrors RecSection / ToolsSection.
  * Not wired up yet, see README.md.
  */
-export async function TransmissionSection() {
-	const t = await getTranslations("Products.transmission");
+export async function ShiftDownSection() {
+	const t = await getTranslations("Products.shiftdown");
 
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
-		title={transmission.name}
+		title={shiftDown.name}
 		aside={<DemoMedia description={t("hero.demoRight")} />}
-		link={transmission.path}
+		link={shiftDown.path}
 	>
 		{t("hero.headline")}
 	</Section>;

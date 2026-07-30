@@ -1,5 +1,5 @@
 import { mongoDbConnect } from "@/lib/mongodb";
-import transmissionLinuxInterest from "@/models/transmissionLinuxInterest";
+import shiftDownLinuxInterest from "@/models/shiftDownLinuxInterest";
 import { NextRequest, NextResponse } from "next/server";
 import isEmail from "validator/lib/isEmail";
 
@@ -27,7 +27,7 @@ export async function PUT(request: NextRequest) {
 	}
 
 	const src = sanitizeSource(json.src);
-	const res = await transmissionLinuxInterest.updateMany({
+	const res = await shiftDownLinuxInterest.updateMany({
 		email: json.email,
 	}, {
 		$set: { email: json.email, ...(src ? { src } : {}) },

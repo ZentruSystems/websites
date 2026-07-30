@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import isEmail from 'validator/lib/isEmail';
 
-const transmissionLinuxInterestSchema = new mongoose.Schema({
+const shiftDownLinuxInterestSchema = new mongoose.Schema({
 	email: {
 		type: String,
 		trim: true,
@@ -26,5 +26,5 @@ const transmissionLinuxInterestSchema = new mongoose.Schema({
 	},
 );
 
-export default mongoose.models.transmissionLinuxInterest
-	|| mongoose.model("transmissionLinuxInterest", transmissionLinuxInterestSchema);
+export default mongoose.models.shiftDownLinuxInterest
+	|| mongoose.model("shiftDownLinuxInterest", shiftDownLinuxInterestSchema);

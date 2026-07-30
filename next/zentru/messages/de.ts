@@ -35,10 +35,10 @@ export default {
 					</ul>`
 			},
 		},
-		"transmission": {
+		"shiftdown": {
 			"meta": {
-				// Immer mit Zusatz: "Transmission" allein gehört dem BitTorrent-Client
-				"title": "Transmission — Mausgetriebe",
+				// Der Name sagt, was es tut, aber nicht wofür – die Kategorie steht deshalb im Titel
+				"title": "ShiftDown — Mausgetriebe",
 			},
 			"hero": {
 				"headline": "Wie reinzoomen. Ohne den Überblick zu verlieren.",
@@ -146,7 +146,7 @@ export default {
 			},
 			"howItWorks": {
 				"title": "Ein Getriebe für deinen Cursor.",
-				"body": `<p>Halte deine Kupplungstaste und Transmission skaliert deine Bewegung herunter – standardmäßig viermal
+				"body": `<p>Halte deine Kupplungstaste und ShiftDown skaliert deine Bewegung herunter – standardmäßig viermal
 					feiner, einstellbar von Kriechtempo bis kaum gedämpft. Die Pixel bewegen sich nicht. Deine Hand deckt nur
 					weniger davon ab. Jede Hover-Zone liegt effektiv viermal weiter auseinander, und dein Zoom-Level ändert sich
 					nie.</p>
@@ -200,23 +200,23 @@ export default {
 				"body": `<p>Ein Stift ist direkt, nicht präzise. Er setzt den Cursor genau dorthin, wo du hinzeigst – aber „wo du
 					hinzeigst“ ist begrenzt durch deine Hand und dadurch, wie viel Bildschirm jeder Millimeter Tablett abdeckt.
 					Bei 100 % Zoom reicht das nicht, um das richtige Pixel zu treffen.</p>
-					<p>Transmission tauscht das eine, das du in diesem Moment nicht brauchst – Direktheit – gegen das, was du
+					<p>ShiftDown tauscht das eine, das du in diesem Moment nicht brauchst – Direktheit – gegen das, was du
 					brauchst. Und anders als mit der Maus kannst du dich hier nicht mit einem DPI-Knopf freikaufen.</p>`,
 				"demo": "Stift auf dem Tablett: dasselbe kleine Ziel, bei voller Geschwindigkeit und im kleinen Gang.",
 			},
 			// Steht auf /welcome, kurz bevor macOS die Abfrage anzeigt
 			"permission": {
 				"title": "Warum es die Bedienungshilfen braucht",
-				"body": `<p>Transmission beobachtet Mausbewegungen auf Systemebene und skaliert sie, solange deine
+				"body": `<p>ShiftDown beobachtet Mausbewegungen auf Systemebene und skaliert sie, solange deine
 					Kupplungstaste gehalten wird. Unter macOS erfordert das die Berechtigung „Bedienungshilfen“ – dieselbe, die
 					jeder Fenstermanager und jedes Shortcut-Tool braucht. Du erteilst sie einmal in den Systemeinstellungen.</p>
-					<p>Transmission liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine Eingaben
+					<p>ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine Eingaben
 					nirgendwohin.</p>`,
-				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem Transmission.",
+				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem ShiftDown.",
 			},
 			"privacy": {
 				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
-				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und Transmission ist keine Ausnahme. Es beobachtet
+				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und ShiftDown ist keine Ausnahme. Es beobachtet
 					Mausbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
 					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
 				// Die zwei Sätze mit Link, um den Link herum aufgeteilt
@@ -248,7 +248,7 @@ export default {
 					"fineAdjust": {
 						"question": "Hat mein Editor nicht längst eine Feinjustierung?",
 						"answer": `Modifier-Tasten verfeinern einen Wert, nachdem du etwas gegriffen hast. Sie helfen dir nicht
-							dabei, überhaupt das Richtige zu greifen. Transmission wirkt vor dem Klick, in jeder App – auch in
+							dabei, überhaupt das Richtige zu greifen. ShiftDown wirkt vor dem Klick, in jeder App – auch in
 							Plugin-Oberflächen, die nie einen Feinmodus bekommen haben.`,
 					},
 					"dpiButton": {
@@ -257,12 +257,12 @@ export default {
 							herausschalten musst, und für Trackpad oder Stifttablett tut er nichts. Gegen die
 							Mausbeschleunigung tut er ebenfalls nichts: Dein System streckt eine schnelle Bewegung weiterhin
 							und staucht eine langsame, dieselbe Handbewegung legt also nicht zuverlässig dieselbe Strecke
-							zurück – egal, welche DPI-Stufe du gewählt hast. Transmission wirkt nur im Moment, arbeitet
+							zurück – egal, welche DPI-Stufe du gewählt hast. ShiftDown wirkt nur im Moment, arbeitet
 							softwareseitig und funktioniert mit dem, was du ohnehin benutzt.`,
 					},
 					"tablet": {
 						"question": "Funktioniert es mit einem Grafiktablett?",
-						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – Transmission ist die fehlende Hälfte.",
+						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – ShiftDown ist die fehlende Hälfte.",
 					},
 					"usageDays": {
 						"question": "Wie läuft der Test ab?",
@@ -278,11 +278,11 @@ export default {
 					"games": {
 						"question": "Kann ich es in Spielen benutzen?",
 						"answer": `Wir raten davon ab. Anti-Cheat-Systeme können systemnahe Eingabe-Software melden.
-							Transmission ist für Werkzeuge zum Arbeiten gebaut.`,
+							ShiftDown ist für Werkzeuge zum Arbeiten gebaut.`,
 					},
 					"appStore": {
 						"question": "Gibt es das im Mac App Store?",
-						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die Transmission braucht, steht Apps aus dem App
+						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die ShiftDown braucht, steht Apps aus dem App
 							Store nicht zur Verfügung. Deshalb verkaufen wir direkt.`,
 					},
 					"linux": {
@@ -306,9 +306,9 @@ export default {
 			},
 			// Wird von der App beim ersten Start geöffnet, bevor macOS nach der Berechtigung fragt
 			"welcome": {
-				"metaTitle": "Willkommen bei Transmission",
-				"metaDescription": "Der Einstieg in Transmission – und warum es die Bedienungshilfen braucht.",
-				"title": "Transmission ist installiert.",
+				"metaTitle": "Willkommen bei ShiftDown",
+				"metaDescription": "Der Einstieg in ShiftDown – und warum es die Bedienungshilfen braucht.",
+				"title": "ShiftDown ist installiert.",
 				"intro": {
 					"macos": "Eine Berechtigung, dann bist du startklar. Hier ist, was macOS dich gleich fragt – und warum.",
 					"windows": "Du bist startklar. So probierst du es aus.",
@@ -316,13 +316,13 @@ export default {
 				"steps": {
 					"permission": {
 						"title": "macOS fragt nach den Bedienungshilfen",
-						"text": `Transmission skaliert Mausbewegungen, solange deine Kupplungstaste gehalten wird – dafür muss
+						"text": `ShiftDown skaliert Mausbewegungen, solange deine Kupplungstaste gehalten wird – dafür muss
 							es diese Bewegung auf Systemebene beobachten. macOS schützt das über die Bedienungshilfen, dieselbe
 							Berechtigung, nach der jeder Fenstermanager und jedes Shortcut-Tool fragt.`,
 					},
 					"grant": {
 						"title": "Einmal erteilen, in den Systemeinstellungen",
-						"text": `Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, dann Transmission
+						"text": `Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, dann ShiftDown
 							einschalten. Mehr ist nicht einzurichten.`,
 					},
 					"tryIt": {
@@ -335,10 +335,10 @@ export default {
 						"text": "Kupplungstaste, Übersetzung und Modus – Hold, Toggle oder Inverted – findest du in den Einstellungen.",
 					},
 				},
-				"reassurance": `Transmission liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine
+				"reassurance": `ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine
 					Eingaben nirgendwohin.`,
 				"trialNote": "Dein Test läuft – {days} Nutzungstage, volle Version, kein Konto, keine Karte.",
-				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? Transmission öffnen",
+				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? ShiftDown öffnen",
 			},
 		},
 		"DialApp": {

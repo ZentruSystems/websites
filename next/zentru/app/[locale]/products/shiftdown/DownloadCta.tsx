@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { readSource, withSource } from "./acquisitionSource";
 import { track } from "./analytics";
-import { Platform, platformLabels, transmission } from "./config";
-import style from "./transmission.module.css";
+import { Platform, platformLabels, shiftDown } from "./config";
+import style from "./shiftdown.module.css";
 
 declare global {
 	interface Navigator {
@@ -47,7 +47,7 @@ function detectPlatform(): Platform | null {
  * underneath, because detection is a convenience and not a gate.
  */
 export default function DownloadCta({ placement, full = false, note, compact = false }: DownloadCtaProps) {
-	const t = useTranslations("Products.transmission.cta");
+	const t = useTranslations("Products.shiftdown.cta");
 	const [platform, setPlatform] = useState<Platform | null>(null);
 	const [source, setSource] = useState<string | null>(null);
 
@@ -61,7 +61,7 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 	const secondary: Platform = primary == "macos" ? "windows" : "macos";
 
 	function downloadHref(target: Platform) {
-		const url = transmission.downloads[target];
+		const url = shiftDown.downloads[target];
 		return source == null ? url : withSource(url, source);
 	}
 
@@ -69,7 +69,7 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 		track("download_click", { platform: target, src: source, source: placement });
 	}
 
-	const checkoutHref = source == null ? transmission.checkoutUrl : withSource(transmission.checkoutUrl, source);
+	const checkoutHref = source == null ? shiftDown.checkoutUrl : withSource(shiftDown.checkoutUrl, source);
 
 	const otherPlatformLink = <a
 		className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
@@ -95,7 +95,7 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 				href={checkoutHref}
 				onClick={() => track("buy_click", { src: source, source: placement })}
 			>
-				{t("buy", { price: transmission.price })}
+				{t("buy", { price: shiftDown.price })}
 			</a>}
 			{compact && <span className={style.ctaNote}>{otherPlatformLink}</span>}
 		</div>

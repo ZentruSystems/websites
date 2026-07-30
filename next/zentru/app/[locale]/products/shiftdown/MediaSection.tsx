@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import style from "./transmission.module.css";
+import style from "./shiftdown.module.css";
 
 /**
  * A section with its text on one side and a clip or still on the other.

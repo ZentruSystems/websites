@@ -10,7 +10,7 @@
  * both halves have to agree or attribution silently returns nothing.
  */
 
-const STORAGE_KEY = "transmission.src";
+const STORAGE_KEY = "shiftdown.src";
 const MAX_LENGTH = 64;
 
 /** Absent token. Distinct from the app's "unknown", which means no claim ever arrived. */
