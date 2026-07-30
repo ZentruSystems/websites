@@ -2,52 +2,31 @@
 
 import Spinner from "common/components/spinner/Spinner";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
-import isEmail from "validator/lib/isEmail";
+import { useSignup } from "../baseSignup";
 import { readSource } from "./acquisitionSource";
 import { shiftDown } from "./config";
 import style from "./shiftdown.module.css";
 
-type SignupState = "idle" | "sending" | "signedUp" | "alreadySignedUp" | "failed";
-
 /**
  * Interest in a Linux version, which is how the demand for one gets measured.
  * Lives inside the FAQ answer that says there isn't one yet.
+ *
+ * Shares `useSignup` with the early access pages but not their layout: those are a whole
+ * centred viewport, and this has to fit inside an open FAQ answer.
  */
 export default function LinuxInterest() {
 	const t = useTranslations("Products.shiftdown.linuxInterest");
 	const tAlways = useTranslations("Always");
 
-	const [email, setEmail] = useState("");
-	const [state, setState] = useState<SignupState>("idle");
+	const { email, setEmail, isEmailValid, sending, result, submit } = useSignup({
+		apiPath: "/api/products/shiftdown/linux-interest",
+		// Read at submit time: the token is only in localStorage, not in this component's state
+		extraFields: () => ({ src: readSource() }),
+	});
 
-	const isValid = isEmail(email);
-
-	async function signUp() {
-		if (!isValid || state == "sending") return;
-
-		setState("sending");
-		try {
-			const response = await fetch("/api/products/shiftdown/linux-interest", {
-				method: "PUT",
-				body: JSON.stringify({ email, src: readSource() }),
-			});
-
-			if (!response.ok) {
-				setState("failed");
-				return;
-			}
-
-			const { alreadySignedUp } = await response.json();
-			setState(alreadySignedUp ? "alreadySignedUp" : "signedUp");
-		} catch {
-			setState("failed");
-		}
-	}
-
-	if (state == "signedUp" || state == "alreadySignedUp") {
+	if (result?.error == false) {
 		return <p className={style.interestDone}>
-			{t(state == "signedUp" ? "success" : "alreadySignedUp")}
+			{t(result.alreadySignedUp ? "alreadySignedUp" : "success")}
 		</p>;
 	}
 
@@ -57,7 +36,7 @@ export default function LinuxInterest() {
 			className={style.interestForm}
 			onSubmit={event => {
 				event.preventDefault();
-				signUp();
+				submit();
 			}}
 		>
 			<label htmlFor="linux-interest-email">{tAlways("email")}</label>
@@ -69,11 +48,11 @@ export default function LinuxInterest() {
 				value={email}
 				onChange={event => setEmail(event.currentTarget.value)}
 			/>
-			<button type="submit" className={`primary hover ${isValid ? "" : "invalid"}`}>
-				{state == "sending" && <Spinner style={{ marginRight: 8 }} />}
+			<button type="submit" className={`primary hover ${isEmailValid ? "" : "invalid"}`}>
+				{sending && <Spinner style={{ marginRight: 8 }} />}
 				{t("action")}
 			</button>
 		</form>
-		{state == "failed" && <p className="fg-error">{t("error")}</p>}
+		{result?.error && <p className="fg-error">{t("error")}</p>}
 	</div>;
 }

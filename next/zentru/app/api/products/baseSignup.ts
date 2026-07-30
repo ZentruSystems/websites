@@ -6,7 +6,15 @@ import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 import isEmail from "validator/lib/isEmail";
 
-export default function buildSignupHandler(model: mongoose.Model<any>) {
+export default function buildSignupHandler(
+	model: mongoose.Model<any>,
+	/**
+	 * Fields to store besides the email, for signups that carry more than one.
+	 * Whatever this returns is what gets written – anything else in the body is dropped,
+	 * so a caller cannot set a field just by naming it in the request.
+	 */
+	extraFields?: (json: Record<string, unknown>) => Record<string, unknown>,
+) {
 	return async function PUT(request: NextRequest) {
 		await mongoDbConnect();
 
@@ -23,7 +31,7 @@ export default function buildSignupHandler(model: mongoose.Model<any>) {
 			email: json.email,
 			// count: { $exists: true }
 		}, {
-			$set: { ...json, },
+			$set: { email: json.email, ...(extraFields?.(json) ?? {}) },
 			$inc: { 'count': 1 }
 		}, { upsert: true });
 

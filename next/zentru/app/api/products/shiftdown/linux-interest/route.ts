@@ -1,7 +1,6 @@
-import { mongoDbConnect } from "@/lib/mongodb";
 import shiftDownLinuxInterest from "@/models/shiftDownLinuxInterest";
-import { NextRequest, NextResponse } from "next/server";
-import isEmail from "validator/lib/isEmail";
+import { NextRequest } from "next/server";
+import buildSignupHandler from "../../baseSignup";
 
 /** Same token rules as the landing page: lowercase [a-z0-9_-], 64 characters at most */
 function sanitizeSource(raw: unknown): string | undefined {
@@ -15,28 +14,11 @@ function sanitizeSource(raw: unknown): string | undefined {
  * "I would use a Linux version" – how the demand for one gets measured.
  * Signing up twice is not an error, it just counts again.
  */
-export async function PUT(request: NextRequest) {
-	await mongoDbConnect();
-
-	const json = await request.json();
-
-	if (!isEmail(json.email)) {
-		return NextResponse.json("invalid email", {
-			status: 400,
-		});
-	}
-
+const signupHandler = buildSignupHandler(shiftDownLinuxInterest, json => {
 	const src = sanitizeSource(json.src);
-	const res = await shiftDownLinuxInterest.updateMany({
-		email: json.email,
-	}, {
-		$set: { email: json.email, ...(src ? { src } : {}) },
-		$inc: { 'count': 1 }
-	}, { upsert: true });
+	return src ? { src } : {};
+});
 
-	return NextResponse.json({
-		alreadySignedUp: res.matchedCount > 0,
-	}, {
-		status: 200,
-	});
+export async function PUT(request: NextRequest) {
+	return await signupHandler(request);
 }
