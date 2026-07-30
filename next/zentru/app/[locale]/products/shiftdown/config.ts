@@ -34,12 +34,11 @@ export const shiftDown = {
 	 * user-visible place the old name survives.
 	 */
 	downloads: {
-		macos: "/download/Transmission-macOS.zip",
-		windows: "/download/Transmission-Windows.zip",
+		macos: "/download/ShiftDown-macOS.zip",
+		windows: "/download/ShiftDown-Windows.zip",
 	},
 
-	/** TODO: replace with the checkout link once the payment provider is chosen (Lemon Squeezy / Paddle) */
-	checkoutUrl: "https://zentru.systems/products/shiftdown",
+	checkoutUrl: "https://zentrusystems.lemonsqueezy.com/checkout/buy/79624aff-0cfc-4ebe-8064-a87aec2192c9?enabled=1944236",
 
 	/** TODO: replace with a ShiftDown specific OG image – this is the site wide one */
 	ogImage: "/opengraph-image.png",
