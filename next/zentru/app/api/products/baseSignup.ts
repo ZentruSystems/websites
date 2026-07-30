@@ -13,7 +13,7 @@ export default function buildSignupHandler(
 	 * Whatever this returns is what gets written – anything else in the body is dropped,
 	 * so a caller cannot set a field just by naming it in the request.
 	 */
-	extraFields?: (json: Record<string, unknown>) => Record<string, unknown>,
+	mapper?: (json: Record<string, unknown>) => Record<string, unknown>,
 ) {
 	return async function PUT(request: NextRequest) {
 		await mongoDbConnect();
@@ -31,7 +31,7 @@ export default function buildSignupHandler(
 			email: json.email,
 			// count: { $exists: true }
 		}, {
-			$set: { email: json.email, ...(extraFields?.(json) ?? {}) },
+			$set: { email: json.email, ...(mapper?.(json) ?? {}) },
 			$inc: { 'count': 1 }
 		}, { upsert: true });
 
