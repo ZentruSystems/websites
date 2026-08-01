@@ -27,12 +27,7 @@ export const shiftDown = {
 	/** TODO: verify against the shipped build */
 	minWindows: "Windows 10",
 
-	/**
-	 * TODO: rename once the app ships a build called ShiftDown. These are the real binaries in
-	 * `public/download/`, so the names stay as the build produced them – pointing at a
-	 * ShiftDown-named file that does not exist would only break the download. It is the last
-	 * user-visible place the old name survives.
-	 */
+	/** The real binaries, in `public/download/` */
 	downloads: {
 		macos: "/download/ShiftDown-macOS.zip",
 		windows: "/download/ShiftDown-Windows.zip",
