@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ShiftDownPage() {
-	return <>
+	return <div className="underNav">
 		<SourceCapture />
 		<Hero />
 		<UseCasesSection />
@@ -65,7 +65,7 @@ export default function ShiftDownPage() {
 		<FaqSection />
 		<FinalCtaSection />
 		<StickyCta hideWhileVisible={[heroId, finalCtaId]} />
-	</>;
+	</div>;
 }
 
 /** The two clips run behind the headline: the round trip on the left, one pass on the right. */
@@ -75,10 +75,7 @@ async function Hero() {
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
 			<div className={style.heroPane}>
-				<DemoMedia fill {...mediaFor("hero-round-trip")} description={t("hero.demoLeft")} />
-			</div>
-			<div className={style.heroPane}>
-				<DemoMedia fill {...mediaFor("hero-one-pass")} description={t("hero.demoRight")} />
+				<DemoMedia fill {...mediaFor("hero-comparison")} description={t("hero.demo")} />
 			</div>
 			<div className={style.heroScrim} />
 		</div>

@@ -38,7 +38,7 @@ export default {
 		"shiftdown": {
 			"meta": {
 				// Der Name sagt, was es tut, aber nicht wofür – die Kategorie steht deshalb im Titel
-				"title": "ShiftDown — Mausgetriebe",
+				"title": "ShiftDown — Mausübersetzung",
 			},
 			"hero": {
 				"headline": "Wie reinzoomen. Ohne den Überblick zu verlieren.",
@@ -46,6 +46,7 @@ export default {
 					Viertel der Strecke zurück. Triff genau den Clip, genau den Griff, genau den Snap-Punkt, mit der ganzen
 					Timeline im Blick.`,
 				"micro": "{days} Nutzungstage, volle Version. Kein Konto, keine Karte.",
+				"demo": "Links: reinzoomen, bewegen, wieder rauszoomen. Viel Weg für nichts. Rechts: Taste halten, bewegen, fertig.",
 				"demoLeft": "Links: reinzoomen, schieben, wieder rauszoomen. Der ganze Umweg.",
 				"demoRight": "Rechts: Taste halten, greifen, fertig.",
 			},

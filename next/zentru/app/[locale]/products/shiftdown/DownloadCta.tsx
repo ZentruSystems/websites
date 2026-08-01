@@ -72,7 +72,7 @@ export default function DownloadCta({ placement, full = false, note, compact = f
 	const checkoutHref = source == null ? shiftDown.checkoutUrl : withSource(shiftDown.checkoutUrl, source);
 
 	const otherPlatformLink = <a
-		className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
+		className="hover-fg fg-l1 l4 hoverUnderlineAnimation underline"
 		href={downloadHref(secondary)}
 		onClick={() => onDownload(secondary)}
 	>

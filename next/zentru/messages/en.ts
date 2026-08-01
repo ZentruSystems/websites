@@ -45,7 +45,8 @@ export default {
 				"sub": `Hold a key. Your cursor drops into low gear — every hand movement covers a quarter of the distance.
 					Land the exact clip, the exact handle, the exact snap point, with your whole timeline still on screen.`,
 				"micro": "{days} usage days, full version. No account, no card.",
-				"demoLeft": "Left: zoom in, nudge, zoom back out. The round trip.",
+				"demo": "Left: zoom in, nudge, zoom back out. A round trip. Right: hold the key, grab it, done.",
+				"demoLeft": "Left: zoom in, nudge, zoom back out. A round trip.",
 				"demoRight": "Right: hold the key, grab it, done.",
 			},
 			"cta": {

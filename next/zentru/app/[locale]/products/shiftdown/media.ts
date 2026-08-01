@@ -22,6 +22,10 @@ const mediaSources: Record<string, MediaSource> = {
 	// Hero, right pane: hold the key, grab it, done. Same edit, timer on both
 	"hero-one-pass": {},
 
+	"hero-comparison": {
+		src: "/img/shiftdown/ShiftDown.Horizontal.Logic.mp4",
+	},
+
 	"problem": {},
 	"pen": {},
 	// A screenshot rather than a clip: System Settings → Privacy & Security → Accessibility
