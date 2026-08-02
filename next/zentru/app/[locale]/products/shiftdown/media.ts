@@ -22,9 +22,7 @@ const mediaSources: Record<string, MediaSource> = {
 	// Hero, right pane: hold the key, grab it, done. Same edit, timer on both
 	"hero-one-pass": {},
 
-	"hero-comparison": {
-		src: "/img/shiftdown/ShiftDown.Horizontal.Logic.mp4",
-	},
+	"hero-comparison": { src: "/img/shiftdown/ShiftDown.Horizontal.Logic.mp4" },
 
 	"problem": {},
 	"pen": {},
@@ -33,9 +31,9 @@ const mediaSources: Record<string, MediaSource> = {
 
 	"usecase-general-demo": {},
 	"usecase-general-still": {},
-	"usecase-video-music-demo": {},
+	"usecase-video-music-demo": { src: "/img/shiftdown/ShiftDown.Horizontal.Logic.mp4" },
 	"usecase-video-music-still": {},
-	"usecase-graphics-demo": {},
+	"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
 	"usecase-graphics-still": {},
 	"usecase-cad-3d-demo": {},
 	"usecase-cad-3d-still": {},
