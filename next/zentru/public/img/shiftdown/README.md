@@ -7,6 +7,30 @@ that already reserves its aspect ratio, so nothing on the page shifts when a fil
 Clips are silent and loop, roughly 15 seconds, each with a poster frame. The poster is what
 visitors who asked for reduced motion see, so pick a frame that still makes the point.
 
+## One clip or several
+
+A slot takes either a single source or a list of them:
+
+```ts
+"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
+
+"usecase-video-music-demo": [
+    { src: "/img/shiftdown/ShiftDown.Horizontal.SBS.Logic.mp4" },
+    { src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },
+],
+```
+
+A list plays one clip after another and starts over at the end. By default that is the order
+written above; pass `order="random"` to the `DemoMedia` that renders the slot to shuffle
+instead, reshuffling each time round and never repeating a clip back to back.
+
+A single clip keeps the `loop` attribute. A list cannot — `ended` never fires on a looping
+video, so it would sit on the first clip forever.
+
+Each clip carries its own `poster`, which is what shows during the moment the next one loads.
+Only the playing clip is in the DOM, so a list costs no more bandwidth up front than a single
+clip does — but the switch is not seamless, and a poster makes that gap look deliberate.
+
 ## Format
 
 **H.264 in MP4, and only that.** `DemoMedia` renders a single `<video src>`, not a list of

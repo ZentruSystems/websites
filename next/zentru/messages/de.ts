@@ -47,8 +47,6 @@ export default {
 					Timeline im Blick.`,
 				"micro": "{days} Nutzungstage, volle Version. Kein Konto, keine Karte.",
 				"demo": "Links: reinzoomen, bewegen, wieder rauszoomen. Viel Weg für nichts. Rechts: Taste halten, bewegen, fertig.",
-				"demoLeft": "Links: reinzoomen, schieben, wieder rauszoomen. Der ganze Umweg.",
-				"demoRight": "Rechts: Taste halten, greifen, fertig.",
 			},
 			"cta": {
 				"download": "Testversion herunterladen",

@@ -69,11 +69,11 @@ export default function UseCaseTabs() {
 
 		<div className={`s7 e12 ph-s1 ph-e5 gr-s3 ph-gr-s4 ${style.mediaStack}`}>
 			<DemoMedia
-				{...mediaFor(`usecase-${selected}-demo`)}
+				media={mediaFor(`usecase-${selected}-demo`)}
 				description={t(`${selected}.demo`)}
 			/>
 			<DemoMedia
-				{...mediaFor(`usecase-${selected}-still`)}
+				media={mediaFor(`usecase-${selected}-still`)}
 				description={t(`${selected}.still`)}
 				aspectRatio="16 / 10"
 				kind="still"

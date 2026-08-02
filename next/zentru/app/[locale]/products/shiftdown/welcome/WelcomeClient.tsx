@@ -89,7 +89,7 @@ export default function WelcomeClient({ platform, appVersion }: {
 			className="bg-l5"
 			title={tPermission("title")}
 			media={<DemoMedia
-				{...mediaFor("accessibility-permission")}
+				media={mediaFor("accessibility-permission")}
 				description={tPermission("screenshot")}
 				aspectRatio="4 / 3"
 				kind="screenshot"

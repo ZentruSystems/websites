@@ -68,14 +68,14 @@ export default function ShiftDownPage() {
 	</div>;
 }
 
-/** The two clips run behind the headline: the round trip on the left, one pass on the right. */
+/** One wide clip runs behind the headline, under a scrim that keeps the type readable. */
 async function Hero() {
 	const t = await getTranslations("Products.shiftdown");
 
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
 			<div className={style.heroPane}>
-				<DemoMedia fill {...mediaFor("hero-comparison")} description={t("hero.demo")} />
+				<DemoMedia fill media={mediaFor("hero-comparison")} description={t("hero.demo")} />
 			</div>
 			<div className={style.heroScrim} />
 		</div>
@@ -105,7 +105,7 @@ async function ProblemSection() {
 
 	return <MediaSection
 		title={t("title")}
-		media={<DemoMedia {...mediaFor("problem")} description={t("demo")} />}
+		media={<DemoMedia media={mediaFor("problem")} description={t("demo")} />}
 	>
 		{t.rich("body", defaultHtml)}
 	</MediaSection>;
@@ -150,7 +150,7 @@ async function PenSection() {
 		title={t("title")}
 		isMediaLeft
 		className="bg-l5"
-		media={<DemoMedia {...mediaFor("pen")} description={t("demo")} />}
+		media={<DemoMedia media={mediaFor("pen")} description={t("demo")} />}
 	>
 		{t.rich("body", defaultHtml)}
 	</MediaSection>;
@@ -240,7 +240,7 @@ export async function ShiftDownSection() {
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
 		title={shiftDown.name}
-		aside={<DemoMedia description={t("hero.demoRight")} />}
+		aside={<DemoMedia description={t("hero.demo")} />}
 		link={shiftDown.path}
 	>
 		{t("hero.headline")}

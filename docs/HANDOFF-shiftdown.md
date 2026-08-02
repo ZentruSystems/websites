@@ -138,17 +138,24 @@ The full format and sizing spec, with the measurements behind it, is in
 
 ### Slot status
 
+A slot holds **one source or a list of them**. A list plays through and starts over, in the
+order written; `order="random"` on the `DemoMedia` shuffles instead. A single clip keeps the
+`loop` attribute, a list cannot — `ended` never fires on a looping video.
+
 Filled:
 
-| Slot | File |
+| Slot | File(s) |
 |---|---|
-| `hero-comparison` | `ShiftDown.Horizontal.Logic.mp4` (5.1 MB) |
-| `usecase-video-music-demo` | `ShiftDown.Horizontal.Logic.mp4` — same file as the hero |
+| `hero-comparison` | `ShiftDown.Horizontal.SBS.LowRes.Logic.mp4` (2.0 MB) |
+| `usecase-video-music-demo` | `ShiftDown.Horizontal.SBS.Logic.mp4` (5.1 MB) then `ShiftDown.Fast.Resolve.mp4` (7.3 MB) |
 | `usecase-graphics-demo` | `ShiftDown.Fast.Figma.mp4` (2.3 MB) |
 
 Still placeholders, and they render as honest empty slots until filled: `problem`, `pen`,
 `accessibility-permission`, `usecase-general-demo`, `usecase-cad-3d-demo`, and all four
 `usecase-*-still` slots.
+
+None of the clips has a `poster` yet. That is what reduced-motion visitors see, and on a
+playlist it is what covers the moment between one clip ending and the next loading.
 
 ---
 
@@ -164,24 +171,17 @@ Still placeholders, and they render as honest empty slots until filled: `problem
 
 ### Rough edges left by the switch to a single hero video
 
-None of these break anything; they are dead weight that will confuse the next reader.
-
-- `media.ts` still declares `hero-round-trip` and `hero-one-pass`. Nothing references them.
-- `messages/{en,de}.ts` still carry `hero.demoLeft` and `hero.demoRight`. Only `hero.demo`
-  is used now.
-- `shiftdown.module.css`: `.heroMedia` is still a two-column grid with a 1 px hairline gap
-  and an `--l4` background, all of which only made sense with two panes. `.heroPane` has its
-  `position: relative` commented out rather than removed — it works because `.mediaFill`
-  resolves against `.heroMedia` instead, but that is incidental, not intended.
-- The hero comment still says "two clips side by side".
+`shiftdown.module.css`: `.heroMedia` is still a two-column grid with a 1 px hairline gap and
+an `--l4` background, all of which only made sense with two panes. `.heroPane` has its
+`position: relative` commented out rather than removed — it works because `.mediaFill`
+resolves against `.heroMedia` instead, but that is incidental, not intended. Neither breaks
+anything; both will confuse the next reader.
 
 ### Worth a look
 
-- **The hero video is 5.1 MB and autoplays on load.** That is the single largest thing on the
-  page and it is behind an 0.8 scrim with a 3 px blur, so most of that detail never reaches
-  the viewer. A smaller encode would cost nothing visible.
-- **The same file is used for the hero and the video/music use case.** Deliberate or
-  temporary is unclear from the commit.
+- **`ShiftDown.Fast.Resolve.mp4` is 7.3 MB**, the largest file on the page. It is the second
+  clip of the video/music playlist, so it downloads when the first one ends. The hero has
+  already been through a low-res pass — this one has not.
 - The German meta title was changed to "Mausübersetzung" (was "Mausgetriebe"); the rest of
   the German copy still uses the gearbox metaphor ("kleiner Gang", "Getriebe").
 
