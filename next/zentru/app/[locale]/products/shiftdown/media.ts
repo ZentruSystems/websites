@@ -16,7 +16,7 @@ export type MediaSource = {
 	poster?: string;
 };
 
-const mediaSources: Record<string, MediaSource> = {
+const mediaSources: Record<string, MediaSource | MediaSource[]> = {
 	// Hero, left pane: zoom in → nudge → zoom out, the round trip
 	"hero-round-trip": {},
 	// Hero, right pane: hold the key, grab it, done. Same edit, timer on both
@@ -31,7 +31,10 @@ const mediaSources: Record<string, MediaSource> = {
 
 	"usecase-general-demo": {},
 	"usecase-general-still": {},
-	"usecase-video-music-demo": { src: "/img/shiftdown/ShiftDown.Horizontal.Logic.mp4" },
+	"usecase-video-music-demo":
+		{ src: "/img/shiftdown/ShiftDown.Horizontal.SBS.Logic.mp4" },
+		// { src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },
+	// ],
 	"usecase-video-music-still": {},
 	"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
 	"usecase-graphics-still": {},
@@ -40,6 +43,6 @@ const mediaSources: Record<string, MediaSource> = {
 };
 
 /** An unknown or unfilled slot renders as a placeholder, which is the point. */
-export function mediaFor(slot: string): MediaSource {
+export function mediaFor(slot: string): MediaSource | MediaSource[] {
 	return mediaSources[slot] ?? {};
 }
