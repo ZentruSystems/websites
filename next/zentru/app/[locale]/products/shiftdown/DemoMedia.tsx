@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import { Media, toMediaSources } from "./media";
 import style from "./shiftdown.module.css";
 
@@ -15,6 +15,13 @@ type DemoMediaProps = {
 	description: string;
 	/** Reserved before anything loads, so the page never shifts */
 	aspectRatio?: string;
+	/**
+	 * The same box on a phone, where a 16/9 clip is only about 160px tall and a screen
+	 * recording inside it is unreadable. Squarer means taller, and `object-fit: cover` takes
+	 * the crop off the sides. Defaults to square; screenshots keep their own shape, since
+	 * cropping the width off a settings window removes the thing it is pointing at.
+	 */
+	phoneAspectRatio?: string;
 	/** Fill the positioned parent instead of reserving an aspect ratio – used by the hero */
 	fill?: boolean;
 	/** What the slot will hold, which is what the placeholder announces */
@@ -47,6 +54,7 @@ export default function DemoMedia({
 	media,
 	description,
 	aspectRatio = "16 / 9",
+	phoneAspectRatio,
 	fill = false,
 	kind = "clip",
 	order = "defined",
@@ -111,7 +119,12 @@ export default function DemoMedia({
 	}
 
 	const className = `${style.media} ${fill ? style.mediaFill : ""}`;
-	const sizing = fill ? undefined : { aspectRatio };
+	// Custom properties rather than `aspect-ratio` directly: an inline style cannot be
+	// overridden by a media query, and the phone box is a different shape.
+	const sizing = fill ? undefined : {
+		"--demoAspect": aspectRatio,
+		"--demoAspectPhone": phoneAspectRatio ?? (kind == "screenshot" ? aspectRatio : "1 / 1"),
+	} as CSSProperties;
 
 	if (!src) {
 		return <div className={className} style={sizing}>

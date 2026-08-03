@@ -79,6 +79,8 @@
 .media {
 	position: relative;
 	width: 100%;
+	/* Set by DemoMedia; absent on the hero, which is sized by its parent instead */
+	aspect-ratio: var(--demoAspect, auto);
 	overflow: hidden;
 	border-radius: var(--borderRadius);
 	background-color: var(--l5);
@@ -419,6 +421,15 @@
 	.mediaStack {
 		max-width: none;
 		margin-top: var(--normalPadding);
+	}
+
+	/*
+		A 16/9 box is about 160px tall on a phone, and a screen recording inside one is
+		unreadable. Square is nearly twice the height for the same width; `object-fit: cover`
+		takes the difference off the sides.
+	*/
+	.media {
+		aspect-ratio: var(--demoAspectPhone, var(--demoAspect, auto));
 	}
 
 	.heroMedia {
