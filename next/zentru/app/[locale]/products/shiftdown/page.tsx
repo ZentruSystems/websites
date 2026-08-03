@@ -52,20 +52,28 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ShiftDownPage() {
-	return <div className="underNav">
-		<SourceCapture />
-		<Hero />
-		<UseCasesSection />
-		<ProblemSection />
-		<HowItWorksSection />
-		<FeaturesSection />
-		<PenSection />
-		<PrivacySection />
-		<PricingSection />
-		<FaqSection />
-		<FinalCtaSection />
+	return <>
+		<div className="underNav">
+			<SourceCapture />
+			<Hero />
+			<UseCasesSection />
+			<ProblemSection />
+			<HowItWorksSection />
+			<FeaturesSection />
+			<PenSection />
+			<PrivacySection />
+			<PricingSection />
+			<FaqSection />
+			<FinalCtaSection />
+		</div>
+		{/*
+			Deliberately outside `.underNav`. That wrapper sets `--nav-height: 0` on its children
+			so the hero can run behind the nav – but the sticky bar needs the real height to sit
+			clear of the nav, which is along the bottom on a phone. It is `position: fixed`, so
+			where it sits in the DOM changes nothing else.
+		*/}
 		<StickyCta hideWhileVisible={[heroId, finalCtaId]} />
-	</div>;
+	</>;
 }
 
 /** One wide clip runs behind the headline, under a scrim that keeps the type readable. */

@@ -169,6 +169,22 @@ playlist it is what covers the moment between one clip ending and the next loadi
 - **The app-side contracts in §2.**
 - **Currency** — EUR vs USD, see §4.
 
+### `.underNav` zeroes `--nav-height` for everything inside it
+
+The page is wrapped in `.underNav` (`common/theming/modular.css`) so the hero can run behind
+the navigation bar. It does that by pulling the wrapper up by the nav height **and setting
+`--nav-height: 0px` on its children**, so nothing inside reserves space for a bar it now sits
+under.
+
+The catch: anything `position: fixed` inside that wrapper also sees `0px`. The sticky download
+tray positions itself with `bottom: calc(var(--nav-height) + var(--grid-gap))` and on a phone
+the nav is along the bottom — inside the wrapper that resolved to 15px and the tray landed on
+top of the nav. It is rendered **outside** `.underNav` for that reason; it is fixed, so its
+place in the DOM costs nothing.
+
+Anything fixed or sticky added to this page later needs the same treatment, or its own
+un-zeroed value.
+
 ### Rough edges left by the switch to a single hero video
 
 `shiftdown.module.css`: `.heroMedia` is still a two-column grid with a 1 px hairline gap and
