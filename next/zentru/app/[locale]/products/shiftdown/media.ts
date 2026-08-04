@@ -39,7 +39,7 @@ const mediaSources: Record<string, Media> = {
 	"usecase-video-music-still": {},
 	"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
 	"usecase-graphics-still": {},
-	"usecase-cad-3d-demo": {},
+	"usecase-cad-3d-demo": { src: "/img/shiftdown/ShiftDown.Fast.Blender.mp4" },
 	"usecase-cad-3d-still": {},
 };
 
