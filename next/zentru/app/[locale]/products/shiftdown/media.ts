@@ -25,11 +25,10 @@ export type Media = MediaSource | MediaSource[];
 const mediaSources: Record<string, Media> = {
 	"hero-comparison": { src: "/img/shiftdown/ShiftDown.Horizontal.SBS.LowRes.Logic.mp4" },
 
-	"problem": {},
+	"problem": { src: "/img/shiftdown/ShiftDown.Sequential.SBS.Figma.mp4" },
 	"pen": {},
 	// A screenshot rather than a clip: System Settings → Privacy & Security → Accessibility
 	"accessibility-permission": {},
-
 	"usecase-general-demo": [
 		{ src: "/img/shiftdown/ShiftDown.Fast.Powerpoint.mp4" },
 	],
