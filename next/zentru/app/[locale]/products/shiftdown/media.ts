@@ -30,7 +30,9 @@ const mediaSources: Record<string, Media> = {
 	// A screenshot rather than a clip: System Settings → Privacy & Security → Accessibility
 	"accessibility-permission": {},
 
-	"usecase-general-demo": {},
+	"usecase-general-demo": [
+		{ src: "/img/shiftdown/ShiftDown.Fast.Powerpoint.mp4" },
+	],
 	"usecase-general-still": {},
 	"usecase-video-music-demo": [
 		{ src: "/img/shiftdown/ShiftDown.Horizontal.SBS.Logic.mp4" },
