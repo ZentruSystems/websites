@@ -45,6 +45,7 @@ export default function LinuxInterest() {
 				name="email"
 				type="email"
 				required
+				style={{padding: 10}}
 				value={email}
 				onChange={event => setEmail(event.currentTarget.value)}
 			/>

@@ -243,7 +243,7 @@ export default {
 						"question": "Doesn't my editor already have a fine-adjust modifier?",
 						"answer": `Modifier keys refine a value once you've already grabbed something. They don't help you grab
 							the right thing in the first place. ShiftDown works before the click, in every app — including
-							plugin interfaces that never implemented a fine mode at all.`,
+							UIs that never implemented a fine mode at all.`,
 					},
 					"dpiButton": {
 						"question": "Isn't this what the DPI button on a gaming mouse does?",

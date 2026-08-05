@@ -248,7 +248,7 @@ export default {
 						"question": "Hat mein Editor nicht längst eine Feinjustierung?",
 						"answer": `Modifier-Tasten verfeinern einen Wert, nachdem du etwas gegriffen hast. Sie helfen dir nicht
 							dabei, überhaupt das Richtige zu greifen. ShiftDown wirkt vor dem Klick, in jeder App – auch in
-							Plugin-Oberflächen, die nie einen Feinmodus bekommen haben.`,
+							Oberflächen, die nie einen Feinmodus bekommen haben.`,
 					},
 					"dpiButton": {
 						"question": "Macht das nicht der DPI-Knopf einer Gaming-Maus?",
