@@ -60,7 +60,7 @@ export default function ShiftDownPage() {
 			<ProblemSection />
 			<HowItWorksSection />
 			<FeaturesSection />
-			<PenSection />
+			{/* <PenSection /> */}
 			<PrivacySection />
 			<PricingSection />
 			<FaqSection />

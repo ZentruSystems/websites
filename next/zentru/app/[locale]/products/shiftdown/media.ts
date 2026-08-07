@@ -34,7 +34,7 @@ const mediaSources: Record<string, Media> = {
 	],
 	"usecase-general-still": {},
 	"usecase-video-music-demo": [
-		{ src: "/img/shiftdown/ShiftDown.Horizontal.SBS.Logic.mp4" },
+		{ src: "/img/shiftdown/ShiftDown.Vertical.SBS.Logic.mp4" },
 		{ src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },
 	],
 	"usecase-video-music-still": {},
