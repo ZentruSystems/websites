@@ -6,9 +6,57 @@ import { useTranslations } from "next-intl";
 import { ReactNode, useRef, useState } from "react";
 import isEmail from "validator/lib/isEmail";
 
-export interface SignupState {
-	email: string;
-	emailValid?: boolean;
+export interface SignupResult {
+	error?: Object | false;
+	alreadySignedUp?: boolean;
+}
+
+/**
+ * The submit half of a signup: the email, whether it is valid, and what came back.
+ *
+ * Split out of the component below so a signup that cannot use that full page layout –
+ * ShiftDown's Linux interest form sits inside a FAQ answer – still shares one definition
+ * of how a signup is sent and what "already signed up" means.
+ */
+export function useSignup({ apiPath, extraFields, onSuccess }: {
+	apiPath: string,
+	/** Anything to send besides the email. Read at submit time, not at render time. */
+	extraFields?: () => Record<string, unknown>,
+	onSuccess?: () => void,
+}) {
+	const [email, setEmail] = useState("");
+	const [sending, setSending] = useState(false);
+	const [result, setResult] = useState<SignupResult>();
+
+	const isEmailValid = isEmail(email);
+
+	async function submit() {
+		if (!isEmailValid || sending) return;
+
+		setSending(true);
+		try {
+			const res = await fetch(apiPath, {
+				method: "PUT",
+				body: JSON.stringify({ email, ...(extraFields?.() ?? {}) }),
+			});
+
+			if (!res.ok) {
+				setResult({ error: await res.json().catch(() => ({})) });
+				return;
+			}
+
+			setResult({ error: false, ...(await res.json()) });
+			onSuccess?.();
+		} catch (err) {
+			console.error(err);
+			setResult({ error: {} });
+		} finally {
+			// In a finally: a network error used to leave the spinner running for good
+			setSending(false);
+		}
+	}
+
+	return { email, setEmail, isEmailValid, sending, result, submit };
 }
 
 export interface BaseSignupProps {
@@ -42,14 +90,7 @@ export default function Signup({
 	const tSignup = useTranslations("Signup");
 	const tAlways = useTranslations("Always");
 
-	const [state, setState] = useState<SignupState>({
-		email: "",
-	});
-	const [sending, setSending] = useState<boolean>(false);
-	const [result, setResult] = useState<{
-		error?: Object | false,
-		alreadySignedUp?: boolean,
-	}>();
+	const { email, setEmail, isEmailValid, sending, result, submit } = useSignup({ apiPath, onSuccess });
 	const formRef = useRef<HTMLFormElement>(undefined as any);
 
 	if (result?.error == false) {
@@ -78,42 +119,13 @@ export default function Signup({
 	const _handleSubmit = async (e: { preventDefault: () => void | Promise<void> }) => {
 
 		if (!formRef.current?.checkValidity()) return;
-		if (!state.emailValid) return;
+		if (!isEmailValid) return;
 
 		// only prevent after validation:
 		//	if it's wrong it will show the default browser warnings
-		await e.preventDefault(); // we are inside a form, but we don't want the page to reload
-		e.preventDefault();
-		e.preventDefault();
-		e.preventDefault();
-		e.preventDefault();
-		e.preventDefault();
+		e.preventDefault(); // we are inside a form, but we don't want the page to reload
 
-		try {
-
-
-			setSending(true);
-			const res = await fetch(apiPath, {
-				method: "PUT",
-				body: JSON.stringify({
-					email: state.email,
-				}),
-			});
-			setSending(false);
-
-			if (!res.ok) {
-				// alert("Something went wrong, please try again later");
-				setResult({ error: await res.json() });
-				return;
-			}
-
-			setResult({ error: false, ...(await res.json()) });
-			if (onSuccess) {
-				onSuccess();
-			}
-		} catch (err) {
-			console.error(err);
-		}
+		await submit();
 	}
 
 	return <section
@@ -130,13 +142,13 @@ export default function Signup({
 						name="email"
 						required
 						type="email"
-						value={state.email}
-						className={`hFill ${state.emailValid ? "" : "border-errory"}`}
-						onChange={e => setState({ ...state, email: e.currentTarget.value, emailValid: isEmail(e.currentTarget.value) })} />
+						value={email}
+						className={`hFill ${isEmailValid ? "" : "border-errory"}`}
+						onChange={e => setEmail(e.currentTarget.value)} />
 				</div>
 				<button
 					type="submit"
-					className={`${state.emailValid ? tAlways("valid") : tAlways("invalid")} primary hover hCenter hFill`}
+					className={`${isEmailValid ? tAlways("valid") : tAlways("invalid")} primary hover hCenter hFill`}
 					onClick={_handleSubmit}>
 					<div style={{ position: "relative", height: "80%", display: "inline-block" }}>
 						{sending && <Spinner style={{ position: "absolute", right: 10, bottom: -4, "--thickness": "2px", "--size": "20px" } as any} />}

@@ -1,0 +1,450 @@
+/* Hero: two clips side by side, everything else sits on top of them */
+.hero {
+	position: relative;
+	min-height: calc(100vh - var(--nav-height));
+	align-content: center;
+	overflow: clip;
+}
+
+.heroMedia {
+	position: absolute;
+	inset: 0;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* The gap shows the layer underneath, which is the hairline between the two clips */
+	gap: 1px;
+	background-color: var(--l4);
+}
+
+.heroPane {
+	/* position: relative; */
+	overflow: hidden;
+	background-color: var(--l5);
+}
+
+/* Keeps the headline readable over whatever ends up in the clips, in both themes */
+.heroScrim {
+	position: absolute;
+	inset: 0;
+	background-color: rgb(from var(--backgroundColor) r g b / 0.8);
+	backdrop-filter: blur(3px);
+}
+
+.heroContent {
+	position: relative;
+}
+
+.eyebrow {
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--l2);
+	margin-bottom: var(--smallPad);
+}
+
+.heroHeadline {
+	font-size: min(calc(var(--largerFontSize) * 1.7), 11vw);
+	line-height: 1.08em;
+	margin-bottom: var(--paddingUnit);
+}
+
+/* Section headings one level below h2, which text.css does not style */
+.subHeadline {
+	font-size: var(--normalFontSize);
+	font-weight: 400;
+	line-height: calc(var(--normalFontSize) + 4px);
+	margin-bottom: calc(var(--paddingUnit) / 2);
+}
+
+.heroSub {
+	max-width: 620px;
+}
+
+.ctaRow {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--smallPad);
+}
+
+.ctaNote {
+	font-size: 0.8em;
+	color: var(--l2);
+}
+
+/* Media – reserved space, so nothing shifts when the real clips land */
+
+.media {
+	position: relative;
+	width: 100%;
+	/* Set by DemoMedia; absent on the hero, which is sized by its parent instead */
+	aspect-ratio: var(--demoAspect, auto);
+	overflow: hidden;
+	border-radius: var(--borderRadius);
+	background-color: var(--l5);
+}
+
+.mediaFill {
+	position: absolute;
+	inset: 0;
+	border-radius: 0;
+}
+
+.media video,
+.media img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*
+	Media columns are six of twelve, which on a wide screen is far more than a demo clip needs –
+	a 16/9 box that wide ends up taller than the text beside it. Cap the width and let the
+	column keep the layout; the cap only bites above roughly 1100px.
+*/
+/*
+	The media spans the title row and the text row. Without a fixed first row, the height it
+	needs is shared between them and the spare space opens up under the title.
+*/
+.mediaSectionGrid {
+	grid-template-rows: min-content auto;
+}
+
+.sectionMedia,
+.mediaStack {
+	width: 100%;
+	max-width: 520px;
+	justify-self: center;
+	align-self: center;
+}
+
+/*
+	Centring only reads as deliberate while the media is roughly as tall as the text beside it.
+	As the viewport narrows the text grows and the media does not, so centring turns into a gap
+	above it – from here on it sits at the top of its column instead.
+*/
+@media screen and (max-width: 1100px) {
+
+	.sectionMedia,
+	.mediaStack {
+		align-self: start;
+	}
+}
+
+.mediaStack {
+	display: grid;
+	gap: var(--grid-gap);
+}
+
+.placeholder {
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	gap: calc(var(--paddingUnit) / 3);
+
+	width: 100%;
+	height: 100%;
+	padding: var(--paddingUnit);
+
+	text-align: center;
+	color: var(--l2);
+	/* Transparent, so the slot reads as reserved space on whatever the section behind it is */
+	border: 1px solid var(--l4);
+	border-radius: var(--borderRadius);
+	background-image: repeating-linear-gradient(45deg,
+			transparent 0 14px,
+			rgb(from var(--l4) r g b / 0.3) 14px 15px);
+}
+
+/* In the hero the caption sits at the bottom, clear of the headline it runs behind */
+.mediaFill .placeholder {
+	align-content: end;
+	border: none;
+	border-radius: 0;
+}
+
+.placeholderLabel {
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.placeholderCaption {
+	font-size: 0.8em;
+	max-width: 34ch;
+}
+
+/* Cards: the three modes, and the feature list */
+
+/* min(…, 100%) so the track minimum never outgrows a narrow screen */
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+	gap: var(--grid-gap);
+}
+
+/* Six items, so a wider minimum keeps them in two rows of three rather than five and an orphan */
+.cardsWide {
+	grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+}
+
+.card {
+	padding: var(--paddingUnit);
+	border-radius: var(--borderRadius);
+	background-color: var(--l6);
+}
+
+.cardTitle {
+	margin-bottom: calc(var(--paddingUnit) / 3);
+}
+
+/* Use case selector */
+
+.tabList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--smallPad);
+	margin-bottom: var(--paddingUnit);
+}
+
+.tab {
+	border-radius: 2px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--l4);
+
+	padding-block: 10px;
+	padding-inline: 13px;
+	font-size: 0.9em;
+	font-weight: 200;
+	line-height: 1em;
+
+	color: var(--l2);
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.tab:hover {
+	color: var(--foregroundColor);
+	border-color: var(--l2);
+}
+
+.tabSelected,
+.tabSelected:hover {
+	color: var(--l6);
+	border-color: var(--l1);
+	background-color: var(--l1);
+}
+
+.solvesList {
+	list-style: none;
+	margin-top: var(--paddingUnit);
+}
+
+.solvesList li {
+	margin-left: 0;
+	padding-left: 1.4em;
+	position: relative;
+	font-weight: 200;
+	line-height: calc(var(--normalFontSize) * 1.4);
+}
+
+.solvesList li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: calc(var(--normalFontSize) * 0.6);
+
+	width: 0.7em;
+	height: 2px;
+	background-color: var(--primaryAccentColor);
+}
+
+/* Pricing */
+
+.priceBox {
+	padding: var(--normalPadding);
+	border-radius: var(--borderRadius);
+	background-color: var(--l6);
+	max-width: 620px;
+}
+
+.priceList {
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: var(--paddingUnit);
+}
+
+.priceList li {
+	margin-left: 0;
+	font-weight: 200;
+	line-height: calc(var(--normalFontSize) * 1.6);
+	border-bottom: 1px solid var(--l5);
+}
+
+.priceList li:last-child {
+	border-bottom: none;
+}
+
+.priceNote {
+	font-size: 0.8em;
+	color: var(--l2);
+	max-width: 620px;
+	margin-top: var(--paddingUnit);
+}
+
+.priceAnchor {
+	font-size: 0.8em;
+	color: var(--l2);
+	margin-bottom: var(--paddingUnit);
+}
+
+/* FAQ */
+
+.faqItem {
+	border-top: 1px solid var(--l4);
+	max-width: 800px;
+}
+
+.faqItem:last-of-type {
+	border-bottom: 1px solid var(--l4);
+}
+
+.faqQuestion {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--paddingUnit);
+	align-items: baseline;
+
+	padding-block: calc(var(--paddingUnit) / 1.5);
+	font-weight: 400;
+	cursor: pointer;
+	list-style: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+	display: none;
+}
+
+.faqQuestion::after {
+	content: "+";
+	color: var(--l2);
+}
+
+.faqItem[open] .faqQuestion::after {
+	content: "–";
+}
+
+.faqAnswer {
+	padding-bottom: calc(var(--paddingUnit) / 1.5);
+	max-width: 68ch;
+}
+
+/* Linux interest signup, inside the FAQ answer */
+
+.interest,
+.interestDone {
+	padding-bottom: calc(var(--paddingUnit) / 1.5);
+	max-width: 68ch;
+}
+
+.interestDone {
+	color: var(--l2);
+}
+
+.interestForm {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--smallPad);
+	margin-top: calc(var(--paddingUnit) / 2);
+}
+
+.interestForm input {
+	flex: 1 1 220px;
+	min-width: 0;
+}
+
+.interestForm button {
+	display: flex;
+	align-items: center;
+}
+
+/* Sticky download bar, appears once the hero is gone */
+
+.stickyBar {
+	position: fixed;
+	right: var(--paddingUnit);
+	bottom: var(--paddingUnit);
+	z-index: 9;
+
+	display: flex;
+	align-items: center;
+	gap: var(--smallPad);
+
+	padding: calc(var(--paddingUnit) / 2);
+	border-radius: var(--borderRadius);
+
+	opacity: 0;
+	transform: translateY(20px);
+	pointer-events: none;
+	transition:
+		opacity var(--fastLiquidDuration) var(--fastLiquid),
+		transform var(--fastLiquidDuration) var(--fastLiquid);
+}
+
+.stickyBarVisible {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.stickyBar {
+		transition: none;
+		transform: none;
+	}
+
+	.stickyBarVisible {
+		transform: none;
+	}
+}
+
+@media screen and (max-width: 730px) {
+
+	/* Stacked under the text now, so it needs the gap the column gave it before */
+	.sectionMedia,
+	.mediaStack {
+		max-width: none;
+		margin-top: var(--normalPadding);
+	}
+
+	/*
+		A 16/9 box is about 160px tall on a phone, and a screen recording inside one is
+		unreadable. Square is nearly twice the height for the same width; `object-fit: cover`
+		takes the difference off the sides.
+	*/
+	.media {
+		aspect-ratio: var(--demoAspectPhone, var(--demoAspect, auto));
+	}
+
+	.heroMedia {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.heroHeadline {
+		font-size: calc(var(--largerFontSize) * 1.15);
+	}
+
+	.stickyBar {
+		right: var(--grid-gap);
+		left: var(--grid-gap);
+		bottom: calc(var(--nav-height) + var(--grid-gap));
+		justify-content: center;
+	}
+}
