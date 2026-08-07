@@ -128,13 +128,13 @@ export default function DemoMedia({
 
 	if (!src) {
 		
-		// return <> </>;
-		return <div className={className} style={sizing}>
-			<div className={style.placeholder}>
-				<span className={style.placeholderLabel}>{t(kind)}</span>
-				<p className={style.placeholderCaption}>{description}</p>
-			</div>
-		</div>;
+		return <> </>;
+		// return <div className={className} style={sizing}>
+		// 	<div className={style.placeholder}>
+		// 		<span className={style.placeholderLabel}>{t(kind)}</span>
+		// 		<p className={style.placeholderCaption}>{description}</p>
+		// 	</div>
+		// </div>;
 	}
 
 	// Most slots are clips, but the Accessibility one is a screenshot
