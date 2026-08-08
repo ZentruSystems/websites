@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import { Media, toMediaSources } from "./media";
-import style from "./shiftdown.module.css";
+import style from "./speedswitch.module.css";
 
 type DemoMediaProps = {
 	/**
@@ -59,7 +59,7 @@ export default function DemoMedia({
 	kind = "clip",
 	order = "defined",
 }: DemoMediaProps) {
-	const t = useTranslations("Products.shiftdown.media");
+	const t = useTranslations("Products.speedswitch.media");
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 

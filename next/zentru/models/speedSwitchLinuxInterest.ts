@@ -7,7 +7,7 @@ import BaseSignupSchema from "./baseSignup";
  * `dialAppEarlyAccessSignup` build on. Adding `src` to it directly would put the field on
  * their collections too.
  */
-const shiftDownLinuxInterestSchema = BaseSignupSchema.clone().add({
+const speedSwitchLinuxInterestSchema = BaseSignupSchema.clone().add({
 	/** Acquisition token of the page they signed up from, if there was one */
 	src: {
 		type: String,
@@ -15,5 +15,5 @@ const shiftDownLinuxInterestSchema = BaseSignupSchema.clone().add({
 	},
 });
 
-export default mongoose.models.shiftDownLinuxInterest
-	|| mongoose.model("shiftDownLinuxInterest", shiftDownLinuxInterestSchema);
+export default mongoose.models.speedSwitchLinuxInterest
+	|| mongoose.model("speedSwitchLinuxInterest", speedSwitchLinuxInterestSchema);

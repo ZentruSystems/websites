@@ -1,7 +1,7 @@
-# ShiftDown media
+# SpeedSwitch media
 
 Drop clips and stills here, then fill in the path on the matching slot in
-`app/[locale]/products/shiftdown/media.ts`. Until then each slot renders a placeholder
+`app/[locale]/products/speedswitch/media.ts`. Until then each slot renders a placeholder
 that already reserves its aspect ratio, so nothing on the page shifts when a file arrives.
 
 Clips are silent and loop, roughly 15 seconds, each with a poster frame. The poster is what
@@ -12,11 +12,11 @@ visitors who asked for reduced motion see, so pick a frame that still makes the 
 A slot takes either a single source or a list of them:
 
 ```ts
-"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
+"usecase-graphics-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Figma.mp4" },
 
 "usecase-video-music-demo": [
-    { src: "/img/shiftdown/ShiftDown.Horizontal.SBS.Logic.mp4" },
-    { src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },
+    { src: "/img/speedswitch/SpeedSwitch.Horizontal.SBS.Logic.mp4" },
+    { src: "/img/speedswitch/SpeedSwitch.Fast.Resolve.mp4" },
 ],
 ```
 
@@ -102,7 +102,7 @@ their boxes match the aspect ratios above exactly.
 | `hero-one-pass` | `hero-one-pass.mp4` | Same edit: hold the key, grab it, done. Same timer. |
 | `problem` | `problem.mp4` | The same edit done both ways, side by side. |
 | `pen` | `pen.mp4` | Pen on a tablet, same small target at full speed and in low gear. |
-| `accessibility-permission` | `accessibility-permission.png` | System Settings → Privacy & Security → Accessibility, ShiftDown switched on. |
+| `accessibility-permission` | `accessibility-permission.png` | System Settings → Privacy & Security → Accessibility, SpeedSwitch switched on. |
 | `usecase-general-demo` | `usecase-general.mp4` | Grabbing a window resize edge and a panel divider. |
 | `usecase-general-still` | `usecase-general.png` | A panel divider under the cursor, hover state armed. |
 | `usecase-video-music-demo` | `usecase-video-music.mp4` | A tight cut in an NLE: trim handle versus move zone. |

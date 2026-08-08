@@ -35,10 +35,10 @@ export default {
 					</ul>`
 			},
 		},
-		"shiftdown": {
+		"speedswitch": {
 			"meta": {
-				// Der Name gehört schon einem anderen Windows-Tool – deshalb immer mit Zusatz
-				"title": "ShiftDown — Zielgenauigkeit ohne Zoomen",
+				// Der Zusatz muss den Klick verdienen: der Name allein sagt nicht, was das Ding tut
+				"title": "SpeedSwitch — Zielgenauigkeit ohne Zoomen",
 			},
 			"hero": {
 				"headline": "Hör auf, nur zum Verschieben reinzuzoomen.",
@@ -174,17 +174,17 @@ export default {
 					"arrowNudge": {
 						"title": "Mit den Pfeiltasten schieben",
 						"text": `Feste Schritte, in jeder Anwendung ein anderes Kürzel, und deine Hand muss den Zeiger verlassen,
-							um sie zu erreichen. ShiftDown ist stufenlos, überall gleich, und deine Hand bleibt, wo sie war.`,
+							um sie zu erreichen. SpeedSwitch ist stufenlos, überall gleich, und deine Hand bleibt, wo sie war.`,
 					},
 					"lowerSensitivity": {
 						"title": "Die Empfindlichkeit herunterdrehen",
 						"text": `Dann ist den ganzen Tag alles langsam – auch die neunzig Prozent der Zeit, in denen du nur quer
-							über den Bildschirm willst. ShiftDown ist langsam, solange du hältst, und sonst normal.`,
+							über den Bildschirm willst. SpeedSwitch ist langsam, solange du hältst, und sonst normal.`,
 					},
 					"buyHardware": {
 						"title": "„Kauf dir halt eine Maus“",
 						"text": `Auf einem Klapptisch ein nutzloser Rat – und für Trackpad, Trackball oder Stift überhaupt keine
-							Hilfe. ShiftDown funktioniert mit dem, was ohnehin unter deiner Hand liegt.`,
+							Hilfe. SpeedSwitch funktioniert mit dem, was ohnehin unter deiner Hand liegt.`,
 					},
 				},
 			},
@@ -194,7 +194,7 @@ export default {
 				"items": {
 					"games": {
 						"title": "Es hilft deinem Aim nicht",
-						"text": `ShiftDown verändert den System-Zeiger und hat deshalb keinen Effekt in Spielen, die die Maus
+						"text": `SpeedSwitch verändert den System-Zeiger und hat deshalb keinen Effekt in Spielen, die die Maus
 							über Raw Input auslesen – also in den meisten kompetitiven. Es ist für Werkzeuge gebaut, nicht für
 							Spiele.`,
 					},
@@ -217,23 +217,23 @@ export default {
 				"body": `<p>Ein Stift ist direkt, nicht präzise. Er setzt den Zeiger genau dorthin, wo du hinzeigst – aber „wo du
 					hinzeigst“ ist begrenzt durch deine Hand und dadurch, wie viel Bildschirm jeder Millimeter Tablett abdeckt.
 					Bei 100 % Zoom reicht das nicht, um das richtige Pixel zu treffen.</p>
-					<p>ShiftDown tauscht das eine, das du in diesem Moment nicht brauchst – Direktheit – gegen das, was du
+					<p>SpeedSwitch tauscht das eine, das du in diesem Moment nicht brauchst – Direktheit – gegen das, was du
 					brauchst. Und anders als mit der Maus kannst du dich hier nicht mit einem Empfindlichkeitsknopf freikaufen.</p>`,
 				"demo": "Stift auf dem Tablett: dasselbe kleine Ziel, bei voller Geschwindigkeit und verlangsamt.",
 			},
 			// Wird auf /welcome gezeigt, kurz bevor macOS die Berechtigung abfragt
 			"permission": {
 				"title": "Warum es die Bedienungshilfen braucht",
-				"body": `<p>ShiftDown beobachtet Zeigerbewegungen auf Systemebene und skaliert sie, solange deine Taste
+				"body": `<p>SpeedSwitch beobachtet Zeigerbewegungen auf Systemebene und skaliert sie, solange deine Taste
 					gehalten wird. Unter macOS erfordert das die Berechtigung „Bedienungshilfen“ – dieselbe, die jeder
 					Fenstermanager und jedes Shortcut-Tool braucht. Du erteilst sie einmal in den Systemeinstellungen.</p>
-					<p>ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine Eingaben
+					<p>SpeedSwitch liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine Eingaben
 					nirgendwohin.</p>`,
-				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem ShiftDown.",
+				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem SpeedSwitch.",
 			},
 			"privacy": {
 				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
-				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und ShiftDown ist keine Ausnahme. Es beobachtet
+				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und SpeedSwitch ist keine Ausnahme. Es beobachtet
 					Zeigerbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
 					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
 				"analytics": `Was wir erheben, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
@@ -270,7 +270,7 @@ export default {
 					"fineAdjust": {
 						"question": "Hat mein Editor nicht längst eine Feinjustierung?",
 						"answer": `Modifier-Tasten verfeinern einen Wert, nachdem du etwas gegriffen hast. Sie helfen dir nicht
-							dabei, überhaupt das Richtige zu greifen. ShiftDown wirkt vor dem Klick, in jeder App – auch in
+							dabei, überhaupt das Richtige zu greifen. SpeedSwitch wirkt vor dem Klick, in jeder App – auch in
 							Plugin-Oberflächen, die nie einen Feinmodus bekommen haben.`,
 					},
 					"dpiButton": {
@@ -284,7 +284,7 @@ export default {
 					},
 					"tablet": {
 						"question": "Funktioniert es mit einem Grafiktablett?",
-						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – ShiftDown ist die fehlende Hälfte.",
+						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – SpeedSwitch ist die fehlende Hälfte.",
 					},
 					"usageDays": {
 						"question": "Wie läuft der Testzeitraum ab?",
@@ -299,7 +299,7 @@ export default {
 					},
 					"appStore": {
 						"question": "Gibt es das im Mac App Store?",
-						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die ShiftDown braucht, steht Apps aus dem App
+						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die SpeedSwitch braucht, steht Apps aus dem App
 							Store nicht zur Verfügung. Deshalb verkaufen wir direkt.`,
 					},
 					"linux": {
@@ -323,9 +323,9 @@ export default {
 			},
 			// Wird von der App beim ersten Start geöffnet, bevor macOS nach der Berechtigung fragt
 			"welcome": {
-				"metaTitle": "Willkommen bei ShiftDown",
-				"metaDescription": "Der Einstieg in ShiftDown – und warum es die Bedienungshilfen braucht.",
-				"title": "ShiftDown ist installiert.",
+				"metaTitle": "Willkommen bei SpeedSwitch",
+				"metaDescription": "Der Einstieg in SpeedSwitch – und warum es die Bedienungshilfen braucht.",
+				"title": "SpeedSwitch ist installiert.",
 				"intro": {
 					"macos": "Eine Berechtigung, dann bist du startklar. Hier ist, was macOS dich gleich fragt – und warum.",
 					"windows": "Du bist startklar. So bekommst du in der nächsten Minute ein Gefühl dafür.",
@@ -333,13 +333,13 @@ export default {
 				"steps": {
 					"permission": {
 						"title": "macOS fragt nach den Bedienungshilfen",
-						"text": `ShiftDown skaliert Zeigerbewegungen, solange deine Taste gehalten wird – dafür muss es diese
+						"text": `SpeedSwitch skaliert Zeigerbewegungen, solange deine Taste gehalten wird – dafür muss es diese
 							Bewegung auf Systemebene beobachten. macOS schützt das über die Bedienungshilfen, dieselbe
 							Berechtigung, nach der jeder Fenstermanager und jedes Shortcut-Tool fragt.`,
 					},
 					"grant": {
 						"title": "Einmal erteilen, in den Systemeinstellungen",
-						"text": `Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, dann ShiftDown
+						"text": `Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, dann SpeedSwitch
 							einschalten. Mehr ist nicht einzurichten.`,
 					},
 					"tryIt": {
@@ -353,10 +353,10 @@ export default {
 							sind ein Startpunkt, keine Empfehlung.`,
 					},
 				},
-				"reassurance": `ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine
+				"reassurance": `SpeedSwitch liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine
 					Eingaben nirgendwohin.`,
 				"trialNote": "Dein Test läuft – {days} Nutzungstage, volle Version, kein Konto, keine Karte.",
-				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? ShiftDown öffnen",
+				"manualClaim": "Die App ist nicht in den Vordergrund gekommen? SpeedSwitch öffnen",
 			},
 		},
 		"DialApp": {

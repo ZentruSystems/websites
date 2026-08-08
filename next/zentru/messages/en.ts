@@ -35,14 +35,14 @@ export default {
 					</ul>`
 			},
 		},
-		"shiftdown": {
+		"speedswitch": {
 			"meta": {
-				// The name is taken by another Windows utility, so it is always paired with a qualifier
-				"title": "ShiftDown — pointer precision without zooming",
+				// The qualifier is what the title has to earn a click on: the name alone says nothing about what it does
+				"title": "SpeedSwitch — pointer precision without zooming",
 			},
 			"hero": {
 				"headline": "Stop zooming in just to nudge something.",
-				"sub": `Hold a key and your pointer shifts down a gear: the same hand movement now covers a quarter of the
+				"sub": `Hold a key and your pointer switches to a lower gear: the same hand movement now covers a quarter of the
 					distance. Place the exact node, the exact handle, the exact keyframe without leaving the zoom level you
 					are working at — and without reaching for a mouse you didn't bring.`,
 				"micro": "{days} usage days, full version. No account, no card.",
@@ -137,7 +137,7 @@ export default {
 			},
 			"howItWorks": {
 				"title": "A gearbox for your pointer.",
-				"body": `<p>Hold your key and the pointer shifts down a gear: the same hand movement now covers a quarter of
+				"body": `<p>Hold your key and the pointer switches to a lower gear: the same hand movement now covers a quarter of
 					the distance. Like a bike on a hill, you trade ground covered for control — adjustable from barely
 					damped to a crawl. The pixels don't move. Your hand just covers fewer of them, so every hover zone is
 					effectively four times further apart, and your zoom level never changes.</p>
@@ -160,22 +160,22 @@ export default {
 					"zoomCycle": {
 						"title": "Zoom in, edit, zoom out",
 						"text": `It works, but it makes precision and overview mutually exclusive, dozens of times an hour.
-							Shift down a gear instead — a quarter of the distance for the same movement — and the view never
+							Switch to a lower gear instead — a quarter of the distance for the same movement — and the view never
 							moves.`,
 					},
 					"arrowNudge": {
 						"title": "Nudging with the arrow keys",
 						"text": `Discrete steps, a different shortcut in every application, and your hand has to leave the
-							pointer to reach them. ShiftDown is continuous, the same everywhere, and your hand stays where it was.`,
+							pointer to reach them. SpeedSwitch is continuous, the same everywhere, and your hand stays where it was.`,
 					},
 					"lowerSensitivity": {
 						"title": "Turning the sensitivity down",
 						"text": `Then everything is slow all day, including the ninety percent of the time you only want to
-							cross the screen. ShiftDown is slow while you hold it and normal the rest of the time.`,
+							cross the screen. SpeedSwitch is slow while you hold it and normal the rest of the time.`,
 					},
 					"buyHardware": {
 						"title": "“Just buy a mouse”",
-						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. ShiftDown works
+						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. SpeedSwitch works
 							with whatever is already under your hand.`,
 					},
 				},
@@ -186,7 +186,7 @@ export default {
 				"items": {
 					"games": {
 						"title": "It won't help your aim",
-						"text": `ShiftDown adjusts the system pointer, so it has no effect in games that read the mouse through
+						"text": `SpeedSwitch adjusts the system pointer, so it has no effect in games that read the mouse through
 							raw input — which is most of the competitive ones. It is built for tools, not for games.`,
 					},
 					"tremor": {
@@ -207,23 +207,23 @@ export default {
 				"body": `<p>A pen is direct, not precise. It puts the pointer exactly where you point — but “where you point” is
 					bounded by your hand, and by how much screen each millimetre of tablet covers. At 100% zoom, that isn't
 					enough to land on the right pixel.</p>
-					<p>ShiftDown trades the one thing you don't need in that moment — directness — for the one you do. And
+					<p>SpeedSwitch trades the one thing you don't need in that moment — directness — for the one you do. And
 					unlike a mouse user, you can't buy your way out of this with a sensitivity button.</p>`,
 				"demo": "Pen on a tablet: the same small target, at full speed and slowed down.",
 			},
 			// Shown on /welcome, right before macOS puts the prompt in front of them
 			"permission": {
 				"title": "Why it asks for Accessibility permission",
-				"body": `<p>ShiftDown works by watching pointer movement at the system level and scaling it while your key
+				"body": `<p>SpeedSwitch works by watching pointer movement at the system level and scaling it while your key
 					is held. On macOS, that requires Accessibility permission — the same one any window manager or shortcut
 					utility needs. You grant it once, in System Settings.</p>
-					<p>ShiftDown does not read what you type, does not record your screen, and does not send your input
+					<p>SpeedSwitch does not read what you type, does not record your screen, and does not send your input
 					anywhere.</p>`,
-				"screenshot": "System Settings → Privacy & Security → Accessibility, with ShiftDown enabled.",
+				"screenshot": "System Settings → Privacy & Security → Accessibility, with SpeedSwitch enabled.",
 			},
 			"privacy": {
 				"title": "We value privacy — so we protect yours",
-				"intro": `That is how every Zentru Systems product is built, and ShiftDown is no exception. It watches
+				"intro": `That is how every Zentru Systems product is built, and SpeedSwitch is no exception. It watches
 					pointer movement to do its job and that is where it ends: it does not read what you type, does not record
 					your screen, and does not send your input anywhere.`,
 				"analytics": `What we do collect is anonymous product analytics — app launches, whether the key
@@ -259,7 +259,7 @@ export default {
 					"fineAdjust": {
 						"question": "Doesn't my editor already have a fine-adjust modifier?",
 						"answer": `Modifier keys refine a value once you've already grabbed something. They don't help you grab
-							the right thing in the first place. ShiftDown works before the click, in every app — including
+							the right thing in the first place. SpeedSwitch works before the click, in every app — including
 							plugin interfaces that never implemented a fine mode at all.`,
 					},
 					"dpiButton": {
@@ -273,7 +273,7 @@ export default {
 					},
 					"tablet": {
 						"question": "Does it work with a drawing tablet?",
-						"answer": "Yes. A pen is direct but not precise — ShiftDown is the missing half.",
+						"answer": "Yes. A pen is direct but not precise — SpeedSwitch is the missing half.",
 					},
 					"usageDays": {
 						"question": "How does the trial count down?",
@@ -288,7 +288,7 @@ export default {
 					},
 					"appStore": {
 						"question": "Is it on the Mac App Store?",
-						"answer": `No. The Accessibility permission ShiftDown needs isn't available to sandboxed App Store
+						"answer": `No. The Accessibility permission SpeedSwitch needs isn't available to sandboxed App Store
 							apps, so it's sold directly.`,
 					},
 					"linux": {
@@ -312,9 +312,9 @@ export default {
 			},
 			// Opened by the app on first launch, before macOS shows the permission prompt
 			"welcome": {
-				"metaTitle": "Welcome to ShiftDown",
-				"metaDescription": "Getting started with ShiftDown, and why it asks for Accessibility permission.",
-				"title": "ShiftDown is installed.",
+				"metaTitle": "Welcome to SpeedSwitch",
+				"metaDescription": "Getting started with SpeedSwitch, and why it asks for Accessibility permission.",
+				"title": "SpeedSwitch is installed.",
 				"intro": {
 					"macos": "One permission and you're set. Here's what macOS is about to ask you, and why.",
 					"windows": "You're set. Here's how to get the feel of it in the next minute.",
@@ -322,13 +322,13 @@ export default {
 				"steps": {
 					"permission": {
 						"title": "macOS will ask for Accessibility",
-						"text": `ShiftDown scales pointer movement while your key is held, which means watching that movement
+						"text": `SpeedSwitch scales pointer movement while your key is held, which means watching that movement
 							at the system level. macOS gates that behind Accessibility — the same permission every window
 							manager and shortcut tool asks for.`,
 					},
 					"grant": {
 						"title": "Grant it once, in System Settings",
-						"text": `System Settings → Privacy & Security → Accessibility, then switch ShiftDown on. There is
+						"text": `System Settings → Privacy & Security → Accessibility, then switch SpeedSwitch on. There is
 							nothing else to set up.`,
 					},
 					"tryIt": {
@@ -342,10 +342,10 @@ export default {
 							point, not a recommendation.`,
 					},
 				},
-				"reassurance": `ShiftDown does not read what you type, does not record your screen, and does not send your
+				"reassurance": `SpeedSwitch does not read what you type, does not record your screen, and does not send your
 					input anywhere.`,
 				"trialNote": "Your trial is running — {days} usage days, full version, no account, no card.",
-				"manualClaim": "Didn't the app come back to the front? Open ShiftDown",
+				"manualClaim": "Didn't the app come back to the front? Open SpeedSwitch",
 			},
 		},
 		"DialApp": {

@@ -1,4 +1,4 @@
-import shiftDownLinuxInterest from "@/models/shiftDownLinuxInterest";
+import speedSwitchLinuxInterest from "@/models/speedSwitchLinuxInterest";
 import { NextRequest } from "next/server";
 import buildSignupHandler from "../../baseSignup";
 
@@ -14,7 +14,7 @@ function sanitizeSource(raw: unknown): string | undefined {
  * "I would use a Linux version" – how the demand for one gets measured.
  * Signing up twice is not an error, it just counts again.
  */
-const signupHandler = buildSignupHandler(shiftDownLinuxInterest, json => {
+const signupHandler = buildSignupHandler(speedSwitchLinuxInterest, json => {
 	const src = sanitizeSource(json.src);
 	return src ? { src } : {};
 });

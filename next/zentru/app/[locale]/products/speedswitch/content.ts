@@ -1,7 +1,7 @@
 /**
  * The structure of the page: which items exist and in which order.
  *
- * Every string lives in `messages/{en,de}.ts` under `Products.shiftdown` – the keys here
+ * Every string lives in `messages/{en,de}.ts` under `Products.speedswitch` – the keys here
  * are the message keys, so adding an item means adding it in both message files and listing
  * it below. Ids that are not text (media slots, tab and panel ids) are derived from these.
  */

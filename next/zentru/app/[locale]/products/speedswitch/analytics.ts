@@ -1,5 +1,5 @@
 /**
- * Events for the ShiftDown funnel.
+ * Events for the SpeedSwitch funnel.
  *
  * Both tools `app/layout.tsx` already loads get every event, so neither becomes the single
  * place the funnel lives: Google Analytics (gaId G-31E6P1N02L) and Vercel Web Analytics.
@@ -20,7 +20,7 @@ declare global {
 	}
 }
 
-export type ShiftDownEvent = "download_click" | "buy_click" | "install_confirmed";
+export type SpeedSwitchEvent = "download_click" | "buy_click" | "install_confirmed";
 
 /**
  * The queue the tag itself uses.
@@ -40,7 +40,7 @@ const queue: (...args: unknown[]) => void = function () {
 /** Only what both tools accept as an event property */
 export type EventProps = Record<string, string | number | boolean | null>;
 
-export function track(event: ShiftDownEvent, props: EventProps): void {
+export function track(event: SpeedSwitchEvent, props: EventProps): void {
 	if (window.gtag) window.gtag("event", event, props);
 	else queue("event", event, props);
 

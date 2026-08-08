@@ -10,30 +10,30 @@ import MediaSection from "./MediaSection";
 import SourceCapture from "./SourceCapture";
 import StickyCta from "./StickyCta";
 import UseCaseTabs from "./UseCaseTabs";
-import { shiftDown } from "./config";
+import { speedSwitch } from "./config";
 import { limitKeys, modeKeys, workaroundKeys } from "./content";
 import { mediaFor } from "./media";
-import style from "./shiftdown.module.css";
+import style from "./speedswitch.module.css";
 
 /** The sticky download bar keeps out of the way while either of these is on screen */
-const heroId = "shiftdown-hero";
-const finalCtaId = "shiftdown-final-cta";
+const heroId = "speedswitch-hero";
+const finalCtaId = "speedswitch-final-cta";
 
 /** Trial length, price and platforms appear in several messages */
 const productValues = {
-	days: `${shiftDown.trialDays}`,
-	price: shiftDown.price,
-	macOs: shiftDown.minMacOs,
-	windows: shiftDown.minWindows,
+	days: `${speedSwitch.trialDays}`,
+	price: speedSwitch.price,
+	macOs: speedSwitch.minMacOs,
+	windows: speedSwitch.minWindows,
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("Products.shiftdown");
+	const t = await getTranslations("Products.speedswitch");
 
 	const title = t("meta.title");
 	const description = t("hero.sub");
-	const url = `${shiftDown.siteUrl}${shiftDown.path}`;
-	const images = { url: `${shiftDown.siteUrl}${shiftDown.ogImage}` };
+	const url = `${speedSwitch.siteUrl}${speedSwitch.path}`;
+	const images = { url: `${speedSwitch.siteUrl}${speedSwitch.ogImage}` };
 
 	return {
 		title,
@@ -51,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export default function ShiftDownPage() {
+export default function SpeedSwitchPage() {
 	return <>
 		<div className="underNav">
 			<SourceCapture />
@@ -81,7 +81,7 @@ export default function ShiftDownPage() {
 
 /** One wide clip runs behind the headline, under a scrim that keeps the type readable. */
 async function Hero() {
-	const t = await getTranslations("Products.shiftdown");
+	const t = await getTranslations("Products.speedswitch");
 
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
@@ -100,7 +100,7 @@ async function Hero() {
 }
 
 async function UseCasesSection() {
-	const t = await getTranslations("Products.shiftdown.useCases");
+	const t = await getTranslations("Products.speedswitch.useCases");
 
 	return <section className="vhGrid vPad bg-l5">
 		<div className="s1 e12 ph-s1 ph-e5 gr-s1 bMarg">
@@ -114,7 +114,7 @@ async function UseCasesSection() {
 // Commented out of the page, kept ready to restore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function ProblemSection() {
-	const t = await getTranslations("Products.shiftdown.problem");
+	const t = await getTranslations("Products.speedswitch.problem");
 
 	return <MediaSection
 		title={t("title")}
@@ -125,7 +125,7 @@ async function ProblemSection() {
 }
 
 async function HowItWorksSection() {
-	const t = await getTranslations("Products.shiftdown.howItWorks");
+	const t = await getTranslations("Products.speedswitch.howItWorks");
 
 	return <section className="vhGrid vPad bg-l6">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -144,7 +144,7 @@ async function HowItWorksSection() {
 
 /** The laptop and trackpad case, which is the one the product leads on. */
 async function TrackpadSection() {
-	const t = await getTranslations("Products.shiftdown.trackpad");
+	const t = await getTranslations("Products.speedswitch.trackpad");
 
 	return <MediaSection
 		title={t("title")}
@@ -158,7 +158,7 @@ async function TrackpadSection() {
 
 /** What people reach for instead today, and why each one falls short. */
 async function WorkaroundsSection() {
-	const t = await getTranslations("Products.shiftdown.workarounds");
+	const t = await getTranslations("Products.speedswitch.workarounds");
 
 	return <section className="vhGrid vPad">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -173,7 +173,7 @@ async function WorkaroundsSection() {
 
 /** Said here so nobody has to find it out after paying. */
 async function LimitsSection() {
-	const t = await getTranslations("Products.shiftdown.limits");
+	const t = await getTranslations("Products.speedswitch.limits");
 
 	return <section className="vhGrid vPad bg-l6">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -189,7 +189,7 @@ async function LimitsSection() {
 // Commented out of the page, kept ready to restore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function PenSection() {
-	const t = await getTranslations("Products.shiftdown.pen");
+	const t = await getTranslations("Products.speedswitch.pen");
 
 	return <MediaSection
 		title={t("title")}
@@ -202,7 +202,7 @@ async function PenSection() {
 }
 
 async function PrivacySection() {
-	const t = await getTranslations("Products.shiftdown.privacy");
+	const t = await getTranslations("Products.speedswitch.privacy");
 
 	const inlineLink = "hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline";
 
@@ -221,20 +221,20 @@ async function PrivacySection() {
 }
 
 async function PricingSection() {
-	const t = await getTranslations("Products.shiftdown");
+	const t = await getTranslations("Products.speedswitch");
 
 	return <section className="vhGrid vPad bg-l5">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("pricing.title", productValues)}</h2>
 		<div className={`s1 e7 ph-s1 ph-e5 ${style.priceBox}`}>
 			<p className={style.priceAnchor}>
-				{t("pricing.anchor", { regular: shiftDown.regularPrice })}
+				{t("pricing.anchor", { regular: speedSwitch.regularPrice })}
 			</p>
 			<ul className={style.priceList}>
 				<li>{t("pricing.items.trial", productValues)}</li>
 				<li>{t("pricing.items.platforms", productValues)}</li>
-				<li>{t("pricing.items.machines", { machines: `${shiftDown.machines}` })}</li>
+				<li>{t("pricing.items.machines", { machines: `${speedSwitch.machines}` })}</li>
 				<li>{t("pricing.items.updates")}</li>
-				<li>{t("pricing.items.refund", { days: `${shiftDown.refundDays}` })}</li>
+				<li>{t("pricing.items.refund", { days: `${speedSwitch.refundDays}` })}</li>
 			</ul>
 			<DownloadCta placement="pricing" full note={t("hero.micro", productValues)} />
 		</div>
@@ -243,16 +243,16 @@ async function PricingSection() {
 			{" "}
 			<Link
 				className="hover-fg fg-l2 decorationC-l4 hoverUnderlineAnimation underline"
-				href={`mailto:${shiftDown.supportEmail}`}
+				href={`mailto:${speedSwitch.supportEmail}`}
 			>
-				{shiftDown.supportEmail}
+				{speedSwitch.supportEmail}
 			</Link>
 		</p>
 	</section>;
 }
 
 async function FaqSection() {
-	const t = await getTranslations("Products.shiftdown.faq");
+	const t = await getTranslations("Products.speedswitch.faq");
 
 	return <section className="vhGrid vPad">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
@@ -263,7 +263,7 @@ async function FaqSection() {
 }
 
 async function FinalCtaSection() {
-	const t = await getTranslations("Products.shiftdown.finalCta");
+	const t = await getTranslations("Products.speedswitch.finalCta");
 
 	return <section id={finalCtaId} className="vhGrid vPad bg-l6">
 		<div className="s1 e12 ph-s1 ph-e5">
@@ -277,14 +277,14 @@ async function FinalCtaSection() {
  * Entry for the products overview – mirrors RecSection / ToolsSection.
  * Not wired up yet, see README.md.
  */
-export async function ShiftDownSection() {
-	const t = await getTranslations("Products.shiftdown");
+export async function SpeedSwitchSection() {
+	const t = await getTranslations("Products.speedswitch");
 
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
-		title={shiftDown.name}
+		title={speedSwitch.name}
 		aside={<DemoMedia description={t("hero.demo")} />}
-		link={shiftDown.path}
+		link={speedSwitch.path}
 	>
 		{t("hero.headline")}
 	</Section>;

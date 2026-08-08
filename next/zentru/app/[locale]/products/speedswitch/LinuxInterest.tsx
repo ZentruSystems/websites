@@ -4,8 +4,8 @@ import Spinner from "common/components/spinner/Spinner";
 import { useTranslations } from "next-intl";
 import { useSignup } from "../baseSignup";
 import { readSource } from "./acquisitionSource";
-import { shiftDown } from "./config";
-import style from "./shiftdown.module.css";
+import { speedSwitch } from "./config";
+import style from "./speedswitch.module.css";
 
 /**
  * Interest in a Linux version, which is how the demand for one gets measured.
@@ -15,11 +15,11 @@ import style from "./shiftdown.module.css";
  * centred viewport, and this has to fit inside an open FAQ answer.
  */
 export default function LinuxInterest() {
-	const t = useTranslations("Products.shiftdown.linuxInterest");
+	const t = useTranslations("Products.speedswitch.linuxInterest");
 	const tAlways = useTranslations("Always");
 
 	const { email, setEmail, isEmailValid, sending, result, submit } = useSignup({
-		apiPath: "/api/products/shiftdown/linux-interest",
+		apiPath: "/api/products/speedswitch/linux-interest",
 		// Read at submit time: the token is only in localStorage, not in this component's state
 		extraFields: () => ({ src: readSource() }),
 	});
@@ -31,7 +31,7 @@ export default function LinuxInterest() {
 	}
 
 	return <div className={style.interest}>
-		<p>{t("pitch", { price: shiftDown.price })}</p>
+		<p>{t("pitch", { price: speedSwitch.price })}</p>
 		<form
 			className={style.interestForm}
 			onSubmit={event => {

@@ -15,7 +15,7 @@ export interface SignupResult {
  * The submit half of a signup: the email, whether it is valid, and what came back.
  *
  * Split out of the component below so a signup that cannot use that full page layout –
- * ShiftDown's Linux interest form sits inside a FAQ answer – still shares one definition
+ * SpeedSwitch's Linux interest form sits inside a FAQ answer – still shares one definition
  * of how a signup is sent and what "already signed up" means.
  */
 export function useSignup({ apiPath, extraFields, onSuccess }: {

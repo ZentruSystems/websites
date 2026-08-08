@@ -4,7 +4,7 @@
  * Every slot below renders a reserved-space placeholder until it has a `src`, so adding a
  * file is a two step job and never touches layout:
  *
- *   1. drop the file into `public/img/shiftdown/` (see the README there)
+ *   1. drop the file into `public/img/speedswitch/` (see the README there)
  *   2. fill in the path – and a poster frame for clips – on the matching slot
  *
  * A slot can hold one source or several. Several play one after another in the order written
@@ -13,9 +13,9 @@
  * Clips are silent, looping and muted; the poster is what reduced-motion visitors see.
  */
 export type MediaSource = {
-	/** Path under /public, e.g. "/img/shiftdown/hero.mp4" */
+	/** Path under /public, e.g. "/img/speedswitch/hero.mp4" */
 	src?: string;
-	/** Poster frame, e.g. "/img/shiftdown/hero.jpg" */
+	/** Poster frame, e.g. "/img/speedswitch/hero.jpg" */
 	poster?: string;
 };
 
@@ -23,22 +23,22 @@ export type MediaSource = {
 export type Media = MediaSource | MediaSource[];
 
 const mediaSources: Record<string, Media> = {
-	"hero-comparison": { src: "/img/shiftdown/ShiftDown.Horizontal.SBS.LowRes.Logic.mp4" },
+	"hero-comparison": { src: "/img/speedswitch/SpeedSwitch.Horizontal.SBS.LowRes.Logic.mp4" },
 
-	"problem": { src: "/img/shiftdown/ShiftDown.Sequential.SBS.Figma.mp4" },
+	"problem": { src: "/img/speedswitch/SpeedSwitch.Sequential.SBS.Figma.mp4" },
 	// The laptop and trackpad section: placing an object exactly, which is the whole case
-	"trackpad": { src: "/img/shiftdown/ShiftDown.Fast.Powerpoint.mp4" },
+	"trackpad": { src: "/img/speedswitch/SpeedSwitch.Fast.Powerpoint.mp4" },
 	"pen": {},
 	// A screenshot rather than a clip: System Settings → Privacy & Security → Accessibility
 	"accessibility-permission": {},
 	"usecase-video-music-demo": [
-		{ src: "/img/shiftdown/ShiftDown.Vertical.SBS.Logic.mp4" },
-		{ src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },
+		{ src: "/img/speedswitch/SpeedSwitch.Vertical.SBS.Logic.mp4" },
+		{ src: "/img/speedswitch/SpeedSwitch.Fast.Resolve.mp4" },
 	],
 	"usecase-video-music-still": {},
-	"usecase-graphics-demo": { src: "/img/shiftdown/ShiftDown.Fast.Figma.mp4" },
+	"usecase-graphics-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Figma.mp4" },
 	"usecase-graphics-still": {},
-	"usecase-cad-3d-demo": { src: "/img/shiftdown/ShiftDown.Fast.Blender.mp4" },
+	"usecase-cad-3d-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Blender.mp4" },
 	"usecase-cad-3d-still": {},
 };
 

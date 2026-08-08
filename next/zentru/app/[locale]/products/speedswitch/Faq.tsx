@@ -1,10 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import LinuxInterest from "./LinuxInterest";
 import { faqKeys } from "./content";
-import style from "./shiftdown.module.css";
+import style from "./speedswitch.module.css";
 
 export default async function Faq() {
-	const t = await getTranslations("Products.shiftdown.faq.items");
+	const t = await getTranslations("Products.speedswitch.faq.items");
 
 	return <>
 		{faqKeys.map(key => <details key={key} className={style.faqItem}>

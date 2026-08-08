@@ -4,12 +4,12 @@
  * The entries marked TODO are placeholders – the page renders and links correctly with them,
  * but they must be replaced before the page goes public.
  */
-export const shiftDown = {
-	name: "ShiftDown",
-	/** TODO: confirm – the app's bundle ID (systems.zentru.shiftdown) suggests this one */
+export const speedSwitch = {
+	name: "SpeedSwitch",
+	/** TODO: confirm – the app's bundle ID (systems.zentru.speedswitch) suggests this one */
 	siteUrl: "https://zentru.systems",
-	path: "/products/shiftdown",
-	// The page title is translated: messages/{en,de}.ts, Products.shiftdown.meta.title
+	path: "/products/speedswitch",
+	// The page title is translated: messages/{en,de}.ts, Products.speedswitch.meta.title
 
 	/** Formatted per locale by the messages that use it – "€9.99" in English, "9,99 €" in German */
 	price: 9.99,
@@ -29,13 +29,13 @@ export const shiftDown = {
 
 	/** The real binaries, in `public/download/` */
 	downloads: {
-		macos: "/download/ShiftDown-macOS.zip",
-		windows: "/download/ShiftDown-Windows.zip",
+		macos: "/download/SpeedSwitch-macOS.zip",
+		windows: "/download/SpeedSwitch-Windows.zip",
 	},
 
 	checkoutUrl: "https://zentrusystems.lemonsqueezy.com/checkout/buy/79624aff-0cfc-4ebe-8064-a87aec2192c9?enabled=1944236",
 
-	/** TODO: replace with a ShiftDown specific OG image – this is the site wide one */
+	/** TODO: replace with a SpeedSwitch specific OG image – this is the site wide one */
 	ogImage: "/opengraph-image.png",
 
 	supportEmail: "service@zentru.systems",
