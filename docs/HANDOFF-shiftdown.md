@@ -100,6 +100,31 @@ not "modernise" that to an array; it will stop being replayed and the event will
 
 ## 4. Decisions worth not re-litigating
 
+The copy follows the August 2026 positioning guide. The parts that shape every string:
+
+- **The laptop and trackpad case leads.** It has its own section directly under the hero,
+  before the profession tabs, because a trackpad's precision problem is structural — ~10cm of
+  travel for a whole display — and unlike a mouse user there is no hardware escape. Software
+  is the only fix. That case used to be a tab called "general"; it was promoted, and the
+  mousepad, trackball and cramped-desk cases fold into it.
+- **The pitch is one sentence:** stop zooming in just to nudge something. The cost being
+  removed is *context loss* — precision and overview becoming mutually exclusive — not time.
+- **The gear metaphor stays, but is never used cold.** Every occurrence decodes itself in the
+  same sentence: *"your pointer shifts down a gear: the same hand movement now covers a
+  quarter of the distance."* It appears in exactly three places per locale — the hero sub, the
+  how-it-works section, and one workaround card. **Metadata is plain language only**
+  (`meta.title`, `welcome.metaTitle`, `welcome.metaDescription`), and so is `/welcome`, which
+  the app opens directly and which is therefore read with no page context.
+- **No trigger key is named.** The old copy promised "Left Shift", which is the drag modifier
+  in every application this targets. The guide calls that an activation killer, and the app's
+  default has not moved yet, so the page says "any key or combination, picked when you set it
+  up" and stays true either way.
+- **Gaming is answered once, honestly, in "What it doesn't do":** ShiftDown moves the system
+  pointer, so it has no effect in games reading the mouse through raw input. No anti-cheat
+  framing, no "sniper" language anywhere.
+- **No analytics vendor is named in the app-facing copy.** The website and the app use
+  different providers, and which one the app uses is not something a visitor should have to
+  take on trust from a brand name.
 - **Copy lives in the message files**, never in components. Multi-paragraph text is a single
   rich string with `<p>`/`<ul>` rendered through `t.rich(…, defaultHtml)`, matching `.rec`.
 - **Lists are keyed objects, not arrays.** `content.ts` holds the key order, so adding a
@@ -198,8 +223,9 @@ anything; both will confuse the next reader.
 - **`ShiftDown.Fast.Resolve.mp4` is 7.3 MB**, the largest file on the page. It is the second
   clip of the video/music playlist, so it downloads when the first one ends. The hero has
   already been through a low-res pass — this one has not.
-- The German meta title was changed to "Mausübersetzung" (was "Mausgetriebe"); the rest of
-  the German copy still uses the gearbox metaphor ("kleiner Gang", "Getriebe").
+- **`ProblemSection` is commented out**, not deleted — the hero and the workaround cards
+  already make the zoom-cycle point. Its copy and its clip are still wired up, so restoring it
+  is one line in `page.tsx`. `PenSection` is commented out the same way.
 
 ---
 

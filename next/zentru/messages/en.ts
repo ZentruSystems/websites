@@ -64,23 +64,6 @@ export default {
 				"title": "What are you working on?",
 				"intro": "The problem is the same everywhere: too many targets, too few pixels. Only what sits under the pointer changes.",
 				"tabsLabel": "Use cases",
-				"laptop": {
-					"label": "Laptop & trackpad",
-					"headline": "No mouse. No desk. Still has to be exact.",
-					"body": `<p>A trackpad gives you about ten centimetres of travel to cover a whole display, so the pointer
-						has to move fast. Fine control isn't poor because you set it up wrong — the geometry decides for you.</p>
-						<p>At a desk you would reach for a mouse, or drop the sensitivity and sweep a bigger area. On a tray
-						table, a train seat or a hotel bed, neither is available. Holding a key is: the same swipe covers a
-						quarter of the distance, and the target stops sliding out from under you.</p>`,
-					"solves": `<ul>
-						<li>Editing on a plane or a train, or anywhere without room to sweep</li>
-						<li>Dragging an object into place in a slide or a document</li>
-						<li>Small controls — sliders, scrollbar handles, window and panel edges</li>
-						<li>Trackballs, mousepads and cramped desks, for the same reason</li>
-						</ul>`,
-					"demo": "Placing an object precisely on a trackpad, at full speed and slowed down.",
-					"still": "A panel divider under the pointer, hover state armed.",
-				},
 				"video-music": {
 					"label": "Video & Music",
 					"headline": "The right handle, first try.",
@@ -128,6 +111,17 @@ export default {
 					"still": "Four snap candidates inside a few pixels.",
 				},
 			},
+			// The laptop and trackpad case – its own section, because it is the case we lead on
+			"trackpad": {
+				"title": "No mouse. No desk. Still has to be exact.",
+				"body": `<p>A trackpad has about ten centimetres of travel to cover a whole display, so the pointer has to
+					move fast. Fine control isn't poor because you set it up wrong — the geometry decides for you.</p>
+					<p>At a desk you would reach for a mouse, or drop the sensitivity and sweep a bigger area. On a tray
+					table, a train seat or a hotel bed, neither is available. Holding a key is: the same swipe covers a
+					quarter of the distance, and the edge stops sliding out from under you.</p>
+					<p>It works the same way for a trackball, a mousepad, or any desk too small to sweep across.</p>`,
+				"demo": "Placing an object exactly, on a trackpad, at full speed and slowed down.",
+			},
 			"problem": {
 				"title": "Precision and overview shouldn't be a trade-off.",
 				"body": `<p>A timeline edge is stacked with targets a few pixels apart — move here, trim two pixels to the left,
@@ -142,10 +136,11 @@ export default {
 				"demo": "The same edit twice: zoomed in and back out, versus done in one pass.",
 			},
 			"howItWorks": {
-				"title": "Hold a key. The pointer slows.",
-				"body": `<p>Hold your key and the pointer covers a quarter of the distance for the same hand movement —
-					adjustable from barely damped to a crawl. The pixels don't move. Your hand just covers fewer of them, so
-					every hover zone is effectively four times further apart, and your zoom level never changes.</p>
+				"title": "A gearbox for your pointer.",
+				"body": `<p>Hold your key and the pointer shifts down a gear: the same hand movement now covers a quarter of
+					the distance. Like a bike on a hill, you trade ground covered for control — adjustable from barely
+					damped to a crawl. The pixels don't move. Your hand just covers fewer of them, so every hover zone is
+					effectively four times further apart, and your zoom level never changes.</p>
 					<p>Let go, and you're back to full speed.</p>
 					<p>It sits in the menu bar or the tray and applies everywhere at once — it isn't a plugin for one
 					application. And it scales pointer movement itself, so it doesn't care whether a mouse, a trackpad, a
@@ -165,7 +160,8 @@ export default {
 					"zoomCycle": {
 						"title": "Zoom in, edit, zoom out",
 						"text": `It works, but it makes precision and overview mutually exclusive, dozens of times an hour.
-							Slow the pointer instead and the view never moves.`,
+							Shift down a gear instead — a quarter of the distance for the same movement — and the view never
+							moves.`,
 					},
 					"arrowNudge": {
 						"title": "Nudging with the arrow keys",
@@ -231,12 +227,10 @@ export default {
 				"intro": `That is how every Zentru Systems product is built, and ShiftDown is no exception. It watches
 					pointer movement to do its job and that is where it ends: it does not read what you type, does not record
 					your screen, and does not send your input anywhere.`,
-				// The two sentences that carry a link, split around it
-				"analyticsBeforeLink": "What we do collect is anonymous product analytics, through ",
-				"analyticsLinkLabel": "Aptabase",
-				"analyticsAfterLink": ` — app launches, whether the key actually got used, which settings people change. No
-					account, no personal data, no device fingerprint, no tracking across sites. It tells us whether the app is
-					working for people, and nothing else.`,
+				"analytics": `What we do collect is anonymous product analytics — app launches, whether the key
+					actually got used, which settings people change. No account, no personal data, no device
+					fingerprint, no tracking across sites. It tells us whether the app is working for people, and
+					nothing else.`,
 				"controlBeforeLink": "You can turn it off completely in Settings. The full detail is in our ",
 				"controlLinkLabel": "privacy policy",
 				"controlAfterLink": ".",

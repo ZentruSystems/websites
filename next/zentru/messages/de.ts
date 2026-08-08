@@ -37,16 +37,17 @@ export default {
 		},
 		"shiftdown": {
 			"meta": {
-				// Der Name sagt, was es tut, aber nicht wofür – die Kategorie steht deshalb im Titel
-				"title": "ShiftDown — Mausübersetzung",
+				// Der Name gehört schon einem anderen Windows-Tool – deshalb immer mit Zusatz
+				"title": "ShiftDown — Zielgenauigkeit ohne Zoomen",
 			},
 			"hero": {
-				"headline": "Wie reinzoomen. Ohne den Überblick zu verlieren.",
-				"sub": `Halte eine Taste. Dein Cursor schaltet in den kleinen Gang – jede Handbewegung legt nur noch ein
-					Viertel der Strecke zurück. Triff genau den Clip, genau den Griff, genau den Snap-Punkt, mit der ganzen
-					Timeline im Blick.`,
+				"headline": "Hör auf, nur zum Verschieben reinzuzoomen.",
+				"sub": `Halte eine Taste und dein Zeiger schaltet einen Gang herunter: dieselbe Handbewegung legt nur noch
+					ein Viertel der Strecke zurück. Triff genau den Punkt, genau den Griff,
+					genau das Keyframe – ohne die Zoomstufe zu verlassen, in der du gerade arbeitest, und ohne nach einer
+					Maus zu greifen, die du gar nicht dabeihast.`,
 				"micro": "{days} Nutzungstage, volle Version. Kein Konto, keine Karte.",
-				"demo": "Links: reinzoomen, bewegen, wieder rauszoomen. Viel Weg für nichts. Rechts: Taste halten, bewegen, fertig.",
+				"demo": "Links: reinzoomen, schieben, rauszoomen, prüfen. Rechts: Taste halten, schieben, fertig.",
 			},
 			"cta": {
 				"download": "Testversion herunterladen",
@@ -54,7 +55,7 @@ export default {
 				"buy": "Kaufen – {price, number, ::currency/EUR}, einmalig",
 				"alsoFor": "Auch für {platform}",
 			},
-			// Platzhalter-Beschriftungen, bis das Material existiert
+			// Platzhalter-Beschriftungen für Slots, die noch kein Material haben
 			"media": {
 				"clip": "Demo-Clip – folgt",
 				"still": "Bild – folgt",
@@ -62,30 +63,14 @@ export default {
 			},
 			"useCases": {
 				"title": "Woran arbeitest du?",
-				"intro": "Das Problem ist überall dasselbe: zu viele Ziele, zu wenige Pixel. Nur was unter dem Cursor liegt, ändert sich.",
+				"intro": "Das Problem ist überall dasselbe: zu viele Ziele, zu wenige Pixel. Nur was unter dem Zeiger liegt, ändert sich.",
 				"tabsLabel": "Anwendungsfälle",
-				"general": {
-					"label": "Allgemein",
-					"headline": "Die zwei Pixel, die jedes Fenster hat.",
-					"body": `<p>Eine Fensterkante, die Trennlinie zwischen zwei Panels, die Ecke eines Bildes, das du in einem
-						Dokument zurechtschiebst. Das Ziel ist ein paar Pixel breit, es existiert nur, solange du darüber
-						stehst, und es gibt nichts, in das du hineinzoomen könntest.</p>
-						<p>Also fährst du langsam heran, schießt darüber hinaus, kommst zurück, wartest darauf, dass der Cursor
-						seine Form ändert, und versuchst es nochmal. Halte die Kupplung und derselbe Weg legt nur ein Viertel
-						der Strecke zurück – die Kante rutscht dir nicht mehr davon.</p>`,
-					"solves": `<ul>
-						<li>Fenster- und Panelkanten, über die der Cursor hinwegspringt</li>
-						<li>Ein Bild oder Textfeld im Dokument an seinen Platz schieben</li>
-						<li>Kleine Bedienelemente – Slider, Scrollbalken, Schließen-Kreuze an Tabs</li>
-						</ul>`,
-					"demo": "Eine Fensterkante und eine Panel-Trennlinie greifen, bei voller Geschwindigkeit und im kleinen Gang.",
-					"still": "Eine Panel-Trennlinie unter dem Cursor, Hover-Zustand aktiv.",
-				},
 				"video-music": {
 					"label": "Video & Musik",
 					"headline": "Der richtige Griff, beim ersten Versuch.",
-					"body": `<p>Trim, Roll, Slip und der Fade-Griff liegen alle innerhalb weniger Pixel derselben Kante. Schalte
-						herunter und nimm den, den du gemeint hast, ohne in den Schnitt hinein- und wieder herauszuzoomen.</p>
+					"body": `<p>Trim, Roll, Slip und der Fade-Griff liegen alle innerhalb weniger Pixel derselben Kante.
+						Verlangsame den Zeiger und nimm den, den du gemeint hast, ohne in den Schnitt hinein- und wieder
+						herauszuzoomen.</p>
 						<p>Audio stapelt sich genauso: Regionenkanten, Fade-Kurven, Automationspunkte und Warp-Marker landen alle
 						auf demselben Punkt der Timeline. Erwisch den, den du suchst, mit dem ganzen Arrangement im Blick.</p>`,
 					"solves": `<ul>
@@ -102,8 +87,8 @@ export default {
 					"body": `<p>Ein Pfadpunkt, seine beiden Bézier-Griffe und das Segment dazwischen liegen auf einer Handvoll
 						Pixel. Triffst du den falschen, hast du die Kurve verschoben statt sie zu formen – oder den ganzen Pfad
 						gezogen statt eines Punktes.</p>
-						<p>Ebenenkanten, Maskenecken und Transform-Griffe machen dasselbe. Im kleinen Gang setzt du den Cursor
-						auf den, den du gemeint hast, während die Zeichenfläche stehen bleibt.</p>`,
+						<p>Ebenenkanten, Maskenecken und Transform-Griffe machen dasselbe. Ein langsamerer Zeiger landet auf dem,
+						den du gemeint hast, während die Zeichenfläche stehen bleibt.</p>`,
 					"solves": `<ul>
 						<li>Pfadpunkte gegen ihre Griffe gegen das Segment</li>
 						<li>Transform-Griffe, die sich in der Ecke einer kleinen Auswahl drängen</li>
@@ -116,99 +101,133 @@ export default {
 					"label": "CAD & 3D",
 					"headline": "Der Fangpunkt, den du gemeint hast.",
 					"body": `<p>Endpunkt, Mittelpunkt, Zentrum und Schnittpunkt drängen sich auf wenigen Pixeln. Verlangsame den
-						Cursor und der richtige rastet ein – ohne Orbit und Zoom nur zur Unterscheidung.</p>
+						Zeiger und der richtige rastet ein – ohne Orbit und Zoom nur zur Unterscheidung.</p>
 						<p>Nicht das Einrasten ist das Problem. Das Einrasten ist das, was das Ergebnis exakt macht. Das Problem
 						ist, ihm zu sagen, welchen der vier Kandidaten du gemeint hast.</p>`,
 					"solves": `<ul>
-						<li>Fangpunkte, die um dieselbe Cursorposition konkurrieren</li>
+						<li>Fangpunkte, die um dieselbe Zeigerposition konkurrieren</li>
 						<li>Gizmo-Achsen, die sich im Ursprung treffen</li>
 						<li>Eine Kante auswählen statt der Fläche dahinter</li>
 						</ul>`,
-					"demo": "Eine CAD-Skizze: den gemeinten Fangpunkt aus dicht gedrängten Kandidaten aktivieren.",
+					"demo": "Eine 3D-Szene: den gemeinten Fangpunkt aus dicht gedrängten Kandidaten aktivieren.",
 					"still": "Vier Fangpunkt-Kandidaten auf wenigen Pixeln.",
 				},
 			},
+			// Der Laptop- und Trackpad-Fall – eigener Abschnitt, weil wir damit führen
+			"trackpad": {
+				"title": "Keine Maus. Kein Schreibtisch. Trotzdem exakt.",
+				"body": `<p>Ein Trackpad hat etwa zehn Zentimeter Weg, um einen ganzen Bildschirm abzudecken – der Zeiger
+					muss also schnell laufen. Die Feinsteuerung ist nicht schlecht, weil du etwas falsch eingestellt hast,
+					sondern weil die Geometrie es so vorgibt.</p>
+					<p>Am Schreibtisch würdest du zur Maus greifen oder die Empfindlichkeit senken und weiter ausholen. Auf
+					dem Klapptisch im Flugzeug, im Zug oder im Hotelbett geht beides nicht. Eine Taste halten schon: derselbe
+					Wisch legt nur ein Viertel der Strecke zurück, und die Kante rutscht dir nicht mehr davon.</p>
+					<p>Für Trackballs, Mauspads und jeden zu kleinen Schreibtisch gilt dasselbe.</p>`,
+				"demo": "Ein Objekt exakt platzieren, auf dem Trackpad, bei voller Geschwindigkeit und verlangsamt.",
+			},
 			"problem": {
-				"title": "Du zoomst nicht rein, um präzise zu sein. Du zoomst rein, um deinem Editor zu sagen, was du gemeint hast.",
+				"title": "Präzision und Überblick sollten kein Entweder-oder sein.",
 				"body": `<p>Eine Timeline-Kante ist voller Ziele, die wenige Pixel auseinanderliegen – hier verschieben, zwei
 					Pixel weiter links trimmen, an der Grenze rollen, in der Ecke faden, knapp darüber ein Keyframe. Jedes davon
-					aktiviert ein anderes Werkzeug. In CAD dieselbe Geschichte, mit Endpunkt, Mittelpunkt, Zentrum und
-					Schnittpunkt, die sich um dieselbe Cursorposition streiten.</p>
-					<p>Das Einrasten ist nicht das Problem. Das Einrasten ist genau das, was du willst – es sorgt dafür, dass das
-					Ergebnis exakt auf dem Frame landet. Das Problem ist, die richtigen paar Pixel des richtigen Elements zu
-					treffen, damit das richtige Werkzeug aktiviert wird und der richtige Fangpunkt gewinnt.</p>
-					<p>Zwei Pixel daneben und du warst nicht leicht ungenau. Du hast getrimmt, wo du verschieben wolltest, oder
-					den Clip nebenan erwischt. Rückgängig, neu ansetzen, nochmal.</p>
-					<p>Also zoomst du rein. Nicht für die Genauigkeit – für den Ellbogenraum. Und dann wieder raus, um zu sehen,
-					was du getan hast. Dutzende Male pro Stunde.</p>`,
-				"demo": "Derselbe Schnitt zweimal: einmal mit Zoomen hin und zurück, einmal in einem Zug.",
+					aktiviert ein anderes Werkzeug. Bei CAD ist es dieselbe Geschichte: Endpunkt, Mittelpunkt, Zentrum und
+					Schnittpunkt streiten sich um dieselbe Zeigerposition.</p>
+					<p>Nicht das Einrasten ist das Problem. Einrasten ist genau das, was du willst – es lässt das Ergebnis exakt
+					auf dem Frame landen. Das Problem ist, die richtigen paar Pixel zu treffen, damit das richtige Werkzeug
+					aktiv wird und der richtige Fangpunkt gewinnt.</p>
+					<p>Also zoomst du rein. Jetzt kannst du präzise sein – aber der Rest des Bildes ist weg, du kannst also nicht
+					beurteilen, ob die Änderung im Zusammenhang stimmt. Du zoomst raus, um zu prüfen. Es passt nicht. Wieder
+					rein.</p>
+					<p>Die Zeit, die das kostet, ist real – und noch nicht das Schlimmste. Das Schlimmste ist, dass Präzision und
+					Überblick sich gegenseitig ausschließen und du den Tag damit verbringst, zwischen beiden hin und her zu
+					springen.</p>`,
+				"demo": "Derselbe Schnitt zweimal: rein- und rausgezoomt gegen einmal durchgezogen.",
 			},
 			"howItWorks": {
-				"title": "Ein Getriebe für deinen Cursor.",
-				"body": `<p>Halte deine Kupplungstaste und ShiftDown skaliert deine Bewegung herunter – standardmäßig viermal
-					feiner, einstellbar von Kriechtempo bis kaum gedämpft. Die Pixel bewegen sich nicht. Deine Hand deckt nur
-					weniger davon ab. Jede Hover-Zone liegt effektiv viermal weiter auseinander, und dein Zoom-Level ändert sich
+				"title": "Ein Getriebe für deinen Zeiger.",
+				"body": `<p>Halte deine Taste und der Zeiger schaltet einen Gang herunter: dieselbe Handbewegung legt nur noch
+					ein Viertel der Strecke zurück. Wie am Berg mit dem Rad tauschst du Strecke gegen Kontrolle –
+					einstellbar von kaum gedämpft bis Kriechtempo. Die Pixel bewegen sich nicht. Deine Hand deckt nur weniger
+					davon ab, jede Hover-Zone liegt also effektiv viermal weiter auseinander, und deine Zoomstufe ändert sich
 					nie.</p>
-					<p>Lass los und du bist zurück auf voller Geschwindigkeit.</p>`,
-				"keyLine": "Jede Taste oder Kombination, die du willst. Ab Werk die linke Shift-Taste.",
+					<p>Lass los und du bist zurück auf voller Geschwindigkeit.</p>
+					<p>Es sitzt in der Menüleiste oder im Tray und wirkt überall gleichzeitig – es ist kein Plug-in für eine
+					einzelne Anwendung. Und es skaliert die Zeigerbewegung selbst, es ist ihm also egal, ob eine Maus, ein
+					Trackpad, ein Trackball oder ein Stift sie erzeugt hat.</p>`,
+				"keyLine": "Jede Taste oder Kombination, die du magst – du legst sie beim Einrichten fest.",
 				"modes": {
-					// Namen bleiben englisch: so heißen sie in den Einstellungen der App
-					"hold": { "name": "Hold", "text": "Aktiv, solange die Taste unten ist. Die Standardeinstellung." },
-					"toggle": { "name": "Toggle", "text": "Einmal drücken zum Aktivieren, nochmal zum Lösen." },
-					"inverted": { "name": "Inverted", "text": "Immer langsam, halten für schnell." },
+					// Bleiben englisch: so heißen sie auch in den Einstellungen der App
+					"hold": { "name": "Hold", "text": "Langsam, solange die Taste gedrückt ist. Das nehmen die meisten." },
+					"toggle": { "name": "Toggle", "text": "Einmal drücken für langsam, nochmal drücken für zurück." },
+					"inverted": { "name": "Inverted", "text": "Immer langsam, halten für schnell. Die Wahl bei Tremor oder Ermüdung." },
 				},
 			},
-			"features": {
-				"title": "Was es dir abnimmt",
+			// Die Behelfslösungen, die man heute benutzt – und warum jede zu kurz greift
+			"workarounds": {
+				"title": "Was du stattdessen gerade tust",
 				"items": {
-					"zoomRoundTrip": {
-						"title": "Der Zoom-Umweg",
-						"text": `Reinzoomen für Ellbogenraum und wieder rauszoomen zum Prüfen kostet dich den Überblick und
-							dutzende Unterbrechungen pro Stunde. Schalte stattdessen herunter und die Ansicht bleibt, wo sie ist.`,
+					"zoomCycle": {
+						"title": "Rein-, umschalten, rauszoomen",
+						"text": `Es funktioniert, aber es macht Präzision und Überblick zu einem Entweder-oder – dutzende Male
+							pro Stunde. Schalte stattdessen einen Gang herunter – ein Viertel der Strecke bei derselben
+							Bewegung – und die Ansicht bleibt, wo sie ist.`,
 					},
-					"wrongTool": {
-						"title": "Das falsche Werkzeug aktiviert",
-						"text": `Hover-Zonen, die wenige Pixel auseinanderliegen, aktivieren jeweils ein anderes Werkzeug.
-							Viermal feinere Bewegung legt echten Abstand zwischen sie, ohne ein einziges Pixel auf dem Bildschirm
-							zu ändern.`,
+					"arrowNudge": {
+						"title": "Mit den Pfeiltasten schieben",
+						"text": `Feste Schritte, in jeder Anwendung ein anderes Kürzel, und deine Hand muss den Zeiger verlassen,
+							um sie zu erreichen – in After Effects ändert sich die Schrittweite sogar mit der Zoomstufe. Das hier
+							ist stufenlos, überall gleich, und deine Hand bleibt, wo sie war.`,
 					},
-					"undoWorkflow": {
-						"title": "Rückgängig als Arbeitsweise",
-						"text": `Danebengreifen ist nicht leicht ungenau, es ist falsch – getrimmt statt verschoben, der Nachbar
-							statt des Clips. Beim ersten Versuch treffen heißt, es gibt nichts zurückzunehmen.`,
+					"lowerSensitivity": {
+						"title": "Die Empfindlichkeit herunterdrehen",
+						"text": `Dann ist den ganzen Tag alles langsam – auch die neunzig Prozent der Zeit, in denen du nur quer
+							über den Bildschirm willst. Das hier ist langsam, solange du hältst, und sonst normal.`,
 					},
-					"pluginUis": {
-						"title": "Apps, die nie einen Feinmodus bekommen haben",
-						"text": `Es arbeitet unterhalb der Anwendungsebene und deckt damit Plugin-Fenster, exotische Werkzeuge
-							und alles andere ab, das die Modifier-Tasten deines Editors nie erreicht haben.`,
+					"buyHardware": {
+						"title": "„Kauf dir halt eine Maus“",
+						"text": `Auf einem Klapptisch ein nutzloser Rat – und für Trackpad, Trackball oder Stift überhaupt keine
+							Hilfe. Das hier funktioniert mit dem, was ohnehin unter deiner Hand liegt.`,
 					},
-					"hardware": {
-						"title": "Hardware, die du nicht mit Hardware löst",
-						"text": `Ein Trackpad hat keinen DPI-Knopf und ein Stifttablett lässt sich nicht weniger direkt machen.
-							Das Getriebe steckt in der Software und gilt deshalb für alles, was du ohnehin benutzt.`,
+				},
+			},
+			// Einmal klar gesagt, damit es niemand erst herausfinden muss
+			"limits": {
+				"title": "Was es nicht tut",
+				"items": {
+					"games": {
+						"title": "Es hilft deinem Aim nicht",
+						"text": `ShiftDown verändert den System-Zeiger und hat deshalb keinen Effekt in Spielen, die die Maus
+							über Raw Input auslesen – also in den meisten kompetitiven. Es ist für Werkzeuge gebaut, nicht für
+							Spiele.`,
 					},
-					"modes": {
-						"title": "Sich merken, in welchem Modus du bist",
-						"text": `Hold wirkt nur im Moment – die Kupplung greift, solange du hältst. Toggle und Inverted sind da,
-							wenn eine Aufgabe danach verlangt.`,
+					"tremor": {
+						"title": "Es ist keine Tremor-Software",
+						"text": `Bewegung herunterzuskalieren skaliert einen Tremor mit herunter, und der Inverted-Modus passt
+							dafür gut. Aber es skaliert alles gleichmäßig – es trennt nicht Absicht von Zittern, wie es
+							spezialisierte Tremor-Software tut.`,
+					},
+					"permission": {
+						"title": "macOS fragt nach den Bedienungshilfen",
+						"text": `Zeigerbewegung systemweit zu beobachten erfordert das – dieselbe Berechtigung, nach der jeder
+							Fenstermanager und jedes Shortcut-Tool fragt. Du erteilst sie einmal. Deshalb kann das hier auch
+							keine App aus dem Mac App Store sein.`,
 					},
 				},
 			},
 			"pen": {
-				"title": "Besonders gut mit dem Stift.",
-				"body": `<p>Ein Stift ist direkt, nicht präzise. Er setzt den Cursor genau dorthin, wo du hinzeigst – aber „wo du
+				"title": "Besonders gut mit einem Stift.",
+				"body": `<p>Ein Stift ist direkt, nicht präzise. Er setzt den Zeiger genau dorthin, wo du hinzeigst – aber „wo du
 					hinzeigst“ ist begrenzt durch deine Hand und dadurch, wie viel Bildschirm jeder Millimeter Tablett abdeckt.
 					Bei 100 % Zoom reicht das nicht, um das richtige Pixel zu treffen.</p>
 					<p>ShiftDown tauscht das eine, das du in diesem Moment nicht brauchst – Direktheit – gegen das, was du
-					brauchst. Und anders als mit der Maus kannst du dich hier nicht mit einem DPI-Knopf freikaufen.</p>`,
-				"demo": "Stift auf dem Tablett: dasselbe kleine Ziel, bei voller Geschwindigkeit und im kleinen Gang.",
+					brauchst. Und anders als mit der Maus kannst du dich hier nicht mit einem Empfindlichkeitsknopf freikaufen.</p>`,
+				"demo": "Stift auf dem Tablett: dasselbe kleine Ziel, bei voller Geschwindigkeit und verlangsamt.",
 			},
-			// Steht auf /welcome, kurz bevor macOS die Abfrage anzeigt
+			// Wird auf /welcome gezeigt, kurz bevor macOS die Berechtigung abfragt
 			"permission": {
 				"title": "Warum es die Bedienungshilfen braucht",
-				"body": `<p>ShiftDown beobachtet Mausbewegungen auf Systemebene und skaliert sie, solange deine
-					Kupplungstaste gehalten wird. Unter macOS erfordert das die Berechtigung „Bedienungshilfen“ – dieselbe, die
-					jeder Fenstermanager und jedes Shortcut-Tool braucht. Du erteilst sie einmal in den Systemeinstellungen.</p>
+				"body": `<p>ShiftDown beobachtet Zeigerbewegungen auf Systemebene und skaliert sie, solange deine Taste
+					gehalten wird. Unter macOS erfordert das die Berechtigung „Bedienungshilfen“ – dieselbe, die jeder
+					Fenstermanager und jedes Shortcut-Tool braucht. Du erteilst sie einmal in den Systemeinstellungen.</p>
 					<p>ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine Eingaben
 					nirgendwohin.</p>`,
 				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem ShiftDown.",
@@ -216,68 +235,68 @@ export default {
 			"privacy": {
 				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
 				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und ShiftDown ist keine Ausnahme. Es beobachtet
-					Mausbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
+					Zeigerbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
 					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
-				// Die zwei Sätze mit Link, um den Link herum aufgeteilt
-				"analyticsBeforeLink": "Was wir erheben, ist eine anonyme Produktanalyse über ",
-				"analyticsLinkLabel": "Aptabase",
-				"analyticsAfterLink": ` – App-Starts, ob die Kupplung tatsächlich benutzt wurde, welche Einstellungen geändert
-					werden. Kein Konto, keine personenbezogenen Daten, kein Geräte-Fingerabdruck, kein Tracking über Seiten
-					hinweg. Es sagt uns, ob die App für Menschen funktioniert, und sonst nichts.`,
-				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alles Weitere steht in unserer ",
+				"analytics": `Was wir erheben, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
+					wurde, welche Einstellungen geändert werden. Kein Konto, keine personenbezogenen Daten, kein
+					Geräte-Fingerabdruck, kein seitenübergreifendes Tracking. Es sagt uns, ob die App für Leute
+					funktioniert, und sonst nichts.`,
+				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alle Details stehen in unserer ",
 				"controlLinkLabel": "Datenschutzerklärung",
 				"controlAfterLink": ".",
 			},
 			"pricing": {
 				"title": "{price, number, ::currency/EUR}. Einmal.",
 				"items": {
-					"trial": "{days} Nutzungstage – es zählen nur Tage, an denen du es benutzt, volle Version, keine Karte, kein Konto",
+					"trial": "{days} Nutzungstage – es zählen nur die Tage, an denen du es benutzt, volle Version, keine Karte, kein Konto",
 					"platforms": "{macOs}+ und {windows}+ in einer Lizenz",
 					"machines": "Bis zu {machines} Geräte",
 					"updates": "Kostenlose Updates",
-					"refund": "{days} Tage Rückgaberecht, eine E-Mail genügt",
+					"refund": "{days} Tage Rückgabe, eine E-Mail genügt",
 				},
-				"anchor": "Einführungspreis. Der reguläre Preis ist {regular, number, ::currency/EUR precision-integer}.",
+				"anchor": "Einführungspreis. Regulär kostet es {regular, number, ::currency/EUR precision-integer}.",
 				"note": `Wenn du das wegen eines Tremors oder aus motorischen Gründen brauchst und {price, number, ::currency/EUR} eine Hürde sind,
 					schreib uns – wir schicken dir eine Lizenz.`,
 			},
 			"faq": {
 				"title": "Fragen",
 				"items": {
+					"trackpad": {
+						"question": "Funktioniert es auf einem Laptop-Trackpad?",
+						"answer": `Ja, und genau dafür ist es gebaut. Ein Trackpad muss mit wenigen Zentimetern Weg einen ganzen
+							Bildschirm abdecken, die Feinsteuerung ist also prinzipbedingt schlecht – und anders als bei einer
+							Maus gibt es keinen Empfindlichkeitsknopf und keinen größeren Schreibtisch als Ausweg. Scrollen,
+							Pinch-Zoom und Wischgesten bleiben unangetastet.`,
+					},
 					"fineAdjust": {
 						"question": "Hat mein Editor nicht längst eine Feinjustierung?",
 						"answer": `Modifier-Tasten verfeinern einen Wert, nachdem du etwas gegriffen hast. Sie helfen dir nicht
 							dabei, überhaupt das Richtige zu greifen. ShiftDown wirkt vor dem Klick, in jeder App – auch in
-							Oberflächen, die nie einen Feinmodus bekommen haben.`,
+							Plugin-Oberflächen, die nie einen Feinmodus bekommen haben.`,
 					},
 					"dpiButton": {
-						"question": "Macht das nicht der DPI-Knopf einer Gaming-Maus?",
+						"question": "Macht das nicht der DPI-Knopf an einer Gaming-Maus?",
 						"answer": `Dieselbe Idee, aber er hängt an einem Gerät, er ist ein Modus, aus dem du wieder
-							herausschalten musst, und für Trackpad oder Stifttablett tut er nichts. Gegen die
-							Mausbeschleunigung tut er ebenfalls nichts: Dein System streckt eine schnelle Bewegung weiterhin
-							und staucht eine langsame, dieselbe Handbewegung legt also nicht zuverlässig dieselbe Strecke
-							zurück – egal, welche DPI-Stufe du gewählt hast. ShiftDown wirkt nur im Moment, arbeitet
-							softwareseitig und funktioniert mit dem, was du ohnehin benutzt.`,
+							zurückschalten musst, und für Trackpad oder Stift-Tablett tut er nichts – also genau dort, wo das
+							Problem am größten ist. Gegen Zeigerbeschleunigung tut er ebenfalls nichts: Dein System streckt eine
+							schnelle Bewegung weiterhin und staucht eine langsame, dieselbe Handbewegung legt also nicht
+							zuverlässig dieselbe Strecke zurück – egal, welche DPI-Stufe du gewählt hast. Das hier wirkt nur im
+							Moment, arbeitet softwareseitig und funktioniert mit dem, was du ohnehin benutzt.`,
 					},
 					"tablet": {
 						"question": "Funktioniert es mit einem Grafiktablett?",
 						"answer": "Ja. Ein Stift ist direkt, aber nicht präzise – ShiftDown ist die fehlende Hälfte.",
 					},
 					"usageDays": {
-						"question": "Wie läuft der Test ab?",
+						"question": "Wie läuft der Testzeitraum ab?",
 						"answer": `In Nutzungstagen, nicht in Kalendertagen. Ein Tag zählt erst, wenn du es tatsächlich benutzt –
-							lässt du es eine Woche liegen, bleibt der Test stehen. Du bekommst also Tage echter Arbeit und keinen
+							lass es eine Woche liegen und der Test bewegt sich nicht. Du bekommst Tage echter Arbeit, keinen
 							Countdown, der abläuft, während du mit etwas anderem beschäftigt bist.`,
 					},
 					"apps": {
 						"question": "In welchen Apps funktioniert es?",
 						"answer": `In allen. Es arbeitet unterhalb der Anwendungsebene und muss deshalb nichts über die Software
-							wissen, die du gerade benutzt.`,
-					},
-					"games": {
-						"question": "Kann ich es in Spielen benutzen?",
-						"answer": `Wir raten davon ab. Anti-Cheat-Systeme können systemnahe Eingabe-Software melden.
-							ShiftDown ist für Werkzeuge zum Arbeiten gebaut.`,
+							wissen, die du benutzt.`,
 					},
 					"appStore": {
 						"question": "Gibt es das im Mac App Store?",
@@ -286,21 +305,21 @@ export default {
 					},
 					"linux": {
 						"question": "Linux?",
-						"answer": `Noch nicht – ob es dazu kommt, hängt davon ab, wie viele es wollen. Trag dich ein und wir
-							sagen dir Bescheid, wenn es soweit ist.`,
+						"answer": `Noch nicht – ob es dazu kommt, hängt davon ab, wie viele Leute es wollen. Trag dich ein und
+							wir sagen dir Bescheid, falls es so weit ist.`,
 					},
 				},
 			},
-			// Eintragen für eine Linux-Version, in der FAQ-Antwort, die sagt, dass es noch keine gibt
+			// Anmeldung für eine Linux-Version, in der FAQ-Antwort, die sagt, dass es keine gibt
 			"linuxInterest": {
 				"pitch": "Ich hätte Interesse an einer Linux-Version für {price, number, ::currency/EUR}",
 				"action": "Trag mich ein",
-				"success": "Notiert. Wir melden uns, wenn es eine Linux-Version gibt.",
-				"alreadySignedUp": "Du standst schon auf der Liste – trotzdem notiert.",
+				"success": "Notiert. Wir melden uns, falls es eine Linux-Version gibt.",
+				"alreadySignedUp": "Du warst schon auf der Liste – trotzdem nochmal notiert.",
 				"error": "Das hat nicht geklappt. Versuch es gleich nochmal.",
 			},
 			"finalCta": {
-				"title": "Hör auf, nur zum Greifen reinzuzoomen.",
+				"title": "Behalte deine Zoomstufe. Triff trotzdem.",
 				"micro": "{days} Nutzungstage, volle Version. {macOs}+ und {windows}+.",
 			},
 			// Wird von der App beim ersten Start geöffnet, bevor macOS nach der Berechtigung fragt
@@ -310,13 +329,13 @@ export default {
 				"title": "ShiftDown ist installiert.",
 				"intro": {
 					"macos": "Eine Berechtigung, dann bist du startklar. Hier ist, was macOS dich gleich fragt – und warum.",
-					"windows": "Du bist startklar. So probierst du es aus.",
+					"windows": "Du bist startklar. So bekommst du in der nächsten Minute ein Gefühl dafür.",
 				},
 				"steps": {
 					"permission": {
 						"title": "macOS fragt nach den Bedienungshilfen",
-						"text": `ShiftDown skaliert Mausbewegungen, solange deine Kupplungstaste gehalten wird – dafür muss
-							es diese Bewegung auf Systemebene beobachten. macOS schützt das über die Bedienungshilfen, dieselbe
+						"text": `ShiftDown skaliert Zeigerbewegungen, solange deine Taste gehalten wird – dafür muss es diese
+							Bewegung auf Systemebene beobachten. macOS schützt das über die Bedienungshilfen, dieselbe
 							Berechtigung, nach der jeder Fenstermanager und jedes Shortcut-Tool fragt.`,
 					},
 					"grant": {
@@ -325,13 +344,14 @@ export default {
 							einschalten. Mehr ist nicht einzurichten.`,
 					},
 					"tryIt": {
-						"title": "Halte die linke Shift-Taste und bewege die Maus",
-						"text": `Das ist der kleine Gang: ein Viertel der Strecke bei gleicher Handbewegung. Loslassen und du
-							bist zurück auf voller Geschwindigkeit.`,
+						"title": "Probier es an etwas Kleinem",
+						"text": `Öffne, womit du arbeitest, such dir einen Griff oder eine Kante, für die du sonst reinzoomst,
+							und halte deine Taste, während du dich näherst. Das ist das ganze Produkt.`,
 					},
 					"customise": {
-						"title": "Mach es dir passend",
-						"text": "Kupplungstaste, Übersetzung und Modus – Hold, Toggle oder Inverted – findest du in den Einstellungen.",
+						"title": "Mach es zu deinem",
+						"text": `Taste, Stärke der Verlangsamung und Modus änderst du in den Einstellungen. Die Voreinstellungen
+							sind ein Startpunkt, keine Empfehlung.`,
 					},
 				},
 				"reassurance": `ShiftDown liest nicht mit, was du tippst, nimmt deinen Bildschirm nicht auf und sendet deine

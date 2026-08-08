@@ -11,7 +11,7 @@ import SourceCapture from "./SourceCapture";
 import StickyCta from "./StickyCta";
 import UseCaseTabs from "./UseCaseTabs";
 import { shiftDown } from "./config";
-import { featureKeys, modeKeys } from "./content";
+import { limitKeys, modeKeys, workaroundKeys } from "./content";
 import { mediaFor } from "./media";
 import style from "./shiftdown.module.css";
 
@@ -56,10 +56,13 @@ export default function ShiftDownPage() {
 		<div className="underNav">
 			<SourceCapture />
 			<Hero />
+			<TrackpadSection />
 			<UseCasesSection />
-			<ProblemSection />
+			{/* The hero and the workaround cards already make the zoom-cycle point */}
+			{/* <ProblemSection /> */}
 			<HowItWorksSection />
-			<FeaturesSection />
+			<WorkaroundsSection />
+			<LimitsSection />
 			{/* <PenSection /> */}
 			<PrivacySection />
 			<PricingSection />
@@ -108,6 +111,8 @@ async function UseCasesSection() {
 	</section>;
 }
 
+// Commented out of the page, kept ready to restore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function ProblemSection() {
 	const t = await getTranslations("Products.shiftdown.problem");
 
@@ -137,13 +142,28 @@ async function HowItWorksSection() {
 	</section>;
 }
 
-async function FeaturesSection() {
-	const t = await getTranslations("Products.shiftdown.features");
+/** The laptop and trackpad case, which is the one the product leads on. */
+async function TrackpadSection() {
+	const t = await getTranslations("Products.shiftdown.trackpad");
+
+	return <MediaSection
+		title={t("title")}
+		isMediaLeft
+		className="bg-l5"
+		media={<DemoMedia media={mediaFor("trackpad")} description={t("demo")} />}
+	>
+		{t.rich("body", defaultHtml)}
+	</MediaSection>;
+}
+
+/** What people reach for instead today, and why each one falls short. */
+async function WorkaroundsSection() {
+	const t = await getTranslations("Products.shiftdown.workarounds");
 
 	return <section className="vhGrid vPad">
 		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
 		<div className={`s1 e12 ph-s1 ph-e5 ${style.cards} ${style.cardsWide}`}>
-			{featureKeys.map(key => <div key={key} className={`${style.card} bg-l6`}>
+			{workaroundKeys.map(key => <div key={key} className={`${style.card} bg-l6`}>
 				<h3 className={style.subHeadline}>{t(`items.${key}.title`)}</h3>
 				<p>{t(`items.${key}.text`)}</p>
 			</div>)}
@@ -151,6 +171,23 @@ async function FeaturesSection() {
 	</section>;
 }
 
+/** Said here so nobody has to find it out after paying. */
+async function LimitsSection() {
+	const t = await getTranslations("Products.shiftdown.limits");
+
+	return <section className="vhGrid vPad bg-l6">
+		<h2 className="s1 e12 ph-s1 ph-e5">{t("title")}</h2>
+		<div className={`s1 e12 ph-s1 ph-e5 ${style.cards}`}>
+			{limitKeys.map(key => <div key={key} className={`${style.card} bg-l5`}>
+				<h3 className={style.subHeadline}>{t(`items.${key}.title`)}</h3>
+				<p>{t(`items.${key}.text`)}</p>
+			</div>)}
+		</div>
+	</section>;
+}
+
+// Commented out of the page, kept ready to restore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function PenSection() {
 	const t = await getTranslations("Products.shiftdown.pen");
 
@@ -172,11 +209,9 @@ async function PrivacySection() {
 	// Untinted: with the permission section moved to /welcome, this keeps the sections alternating
 	return <Section title={t("title")} className="paragraphSpaceLarger" isStringAsChild={false}>
 		<p>{t("intro")}</p>
-		<p>
-			{t("analyticsBeforeLink")}
-			<Link className={inlineLink} href="https://aptabase.com">{t("analyticsLinkLabel")}</Link>
-			{t("analyticsAfterLink")}
-		</p>
+		{/* No vendor named: the app and this website use different analytics, and which one
+			the app uses is not something a visitor needs to take on trust from a brand name */}
+		<p>{t("analytics")}</p>
 		<p>
 			{t("controlBeforeLink")}
 			<Link className={inlineLink} href="/privacy-policy">{t("controlLinkLabel")}</Link>

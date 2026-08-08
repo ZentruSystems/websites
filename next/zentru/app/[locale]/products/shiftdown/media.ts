@@ -26,13 +26,11 @@ const mediaSources: Record<string, Media> = {
 	"hero-comparison": { src: "/img/shiftdown/ShiftDown.Horizontal.SBS.LowRes.Logic.mp4" },
 
 	"problem": { src: "/img/shiftdown/ShiftDown.Sequential.SBS.Figma.mp4" },
+	// The laptop and trackpad section: placing an object exactly, which is the whole case
+	"trackpad": { src: "/img/shiftdown/ShiftDown.Fast.Powerpoint.mp4" },
 	"pen": {},
 	// A screenshot rather than a clip: System Settings → Privacy & Security → Accessibility
 	"accessibility-permission": {},
-	"usecase-general-demo": [
-		{ src: "/img/shiftdown/ShiftDown.Fast.Powerpoint.mp4" },
-	],
-	"usecase-general-still": {},
 	"usecase-video-music-demo": [
 		{ src: "/img/shiftdown/ShiftDown.Vertical.SBS.Logic.mp4" },
 		{ src: "/img/shiftdown/ShiftDown.Fast.Resolve.mp4" },

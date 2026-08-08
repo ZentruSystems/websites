@@ -6,26 +6,33 @@
  * it below. Ids that are not text (media slots, tab and panel ids) are derived from these.
  */
 
-export const useCaseIds = ["general", "video-music", "graphics", "cad-3d"] as const;
+/**
+ * The professions, in the order the tabs show them. The laptop and trackpad case that used
+ * to be "general" is now its own section above these – it is the case the product leads on,
+ * and a tab would have buried it.
+ */
+export const useCaseIds = ["video-music", "graphics", "cad-3d"] as const;
 
 export const modeKeys = ["hold", "toggle", "inverted"] as const;
 
-export const featureKeys = [
-	"zoomRoundTrip",
-	"wrongTool",
-	"undoWorkflow",
-	"pluginUis",
-	"hardware",
-	"modes",
+/** What people do instead today, one card each, and why each one falls short. */
+export const workaroundKeys = [
+	"zoomCycle",
+	"arrowNudge",
+	"lowerSensitivity",
+	"buyHardware",
 ] as const;
 
+/** Said plainly on the page rather than left for someone to find out. */
+export const limitKeys = ["games", "tremor", "permission"] as const;
+
 export const faqKeys = [
+	"trackpad",
 	"fineAdjust",
 	"dpiButton",
 	"tablet",
 	"usageDays",
 	"apps",
-	"games",
 	"appStore",
 	"linux",
 ] as const;
