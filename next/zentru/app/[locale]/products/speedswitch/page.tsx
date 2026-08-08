@@ -15,6 +15,9 @@ import { limitKeys, modeKeys, workaroundKeys } from "./content";
 import { mediaFor } from "./media";
 import style from "./speedswitch.module.css";
 
+import SpeedSwitchIconLight from "@/public/img/speedswitch/app-icon.svg";
+import Image from "next/image";
+
 /** The sticky download bar keeps out of the way while either of these is on screen */
 const heroId = "speedswitch-hero";
 const finalCtaId = "speedswitch-final-cta";
@@ -283,7 +286,13 @@ export async function SpeedSwitchSection() {
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
 		title={speedSwitch.name}
-		aside={<DemoMedia description={t("hero.demo")} />}
+		aside={<Image
+			loading="eager"
+			className="ph-NoFloat RightFloat From15vw To0"
+			style={{ marginBlock: 10, height: "400px", width: "400px", aspectRatio: 1 }}
+			src={SpeedSwitchIconLight}
+			alt={t("hero.demo")}
+		/>}
 		link={speedSwitch.path}
 	>
 		{t("hero.headline")}
