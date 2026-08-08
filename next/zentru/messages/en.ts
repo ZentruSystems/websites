@@ -166,17 +166,16 @@ export default {
 					"arrowNudge": {
 						"title": "Nudging with the arrow keys",
 						"text": `Discrete steps, a different shortcut in every application, and your hand has to leave the
-							pointer to reach them — in After Effects the step even changes with the zoom level. This is
-							continuous, the same everywhere, and your hand stays where it was.`,
+							pointer to reach them. ShiftDown is continuous, the same everywhere, and your hand stays where it was.`,
 					},
 					"lowerSensitivity": {
 						"title": "Turning the sensitivity down",
 						"text": `Then everything is slow all day, including the ninety percent of the time you only want to
-							cross the screen. This is slow while you hold it and normal the rest of the time.`,
+							cross the screen. ShiftDown is slow while you hold it and normal the rest of the time.`,
 					},
 					"buyHardware": {
 						"title": "“Just buy a mouse”",
-						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. This works
+						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. ShiftDown works
 							with whatever is already under your hand.`,
 					},
 				},

@@ -174,18 +174,17 @@ export default {
 					"arrowNudge": {
 						"title": "Mit den Pfeiltasten schieben",
 						"text": `Feste Schritte, in jeder Anwendung ein anderes Kürzel, und deine Hand muss den Zeiger verlassen,
-							um sie zu erreichen – in After Effects ändert sich die Schrittweite sogar mit der Zoomstufe. Das hier
-							ist stufenlos, überall gleich, und deine Hand bleibt, wo sie war.`,
+							um sie zu erreichen. ShiftDown ist stufenlos, überall gleich, und deine Hand bleibt, wo sie war.`,
 					},
 					"lowerSensitivity": {
 						"title": "Die Empfindlichkeit herunterdrehen",
 						"text": `Dann ist den ganzen Tag alles langsam – auch die neunzig Prozent der Zeit, in denen du nur quer
-							über den Bildschirm willst. Das hier ist langsam, solange du hältst, und sonst normal.`,
+							über den Bildschirm willst. ShiftDown ist langsam, solange du hältst, und sonst normal.`,
 					},
 					"buyHardware": {
 						"title": "„Kauf dir halt eine Maus“",
 						"text": `Auf einem Klapptisch ein nutzloser Rat – und für Trackpad, Trackball oder Stift überhaupt keine
-							Hilfe. Das hier funktioniert mit dem, was ohnehin unter deiner Hand liegt.`,
+							Hilfe. ShiftDown funktioniert mit dem, was ohnehin unter deiner Hand liegt.`,
 					},
 				},
 			},
