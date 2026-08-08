@@ -37,15 +37,16 @@ export default {
 		},
 		"shiftdown": {
 			"meta": {
-				// The name says what it does but not what it is for, so the title carries the category
-				"title": "ShiftDown — mouse gearing",
+				// The name is taken by another Windows utility, so it is always paired with a qualifier
+				"title": "ShiftDown — pointer precision without zooming",
 			},
 			"hero": {
-				"headline": "Like zooming in. Without losing the bigger picture.",
-				"sub": `Hold a key. Your cursor drops into low gear — every hand movement covers a quarter of the distance.
-					Land the exact clip, the exact handle, the exact snap point, with your whole timeline still on screen.`,
+				"headline": "Stop zooming in just to nudge something.",
+				"sub": `Hold a key and your pointer shifts down a gear: the same hand movement now covers a quarter of the
+					distance. Place the exact node, the exact handle, the exact keyframe without leaving the zoom level you
+					are working at — and without reaching for a mouse you didn't bring.`,
 				"micro": "{days} usage days, full version. No account, no card.",
-				"demo": "Left: zoom in, nudge, zoom back out. A round trip. Right: hold the key, grab it, done.",
+				"demo": "Left: zoom in, nudge, zoom back out, check. Right: hold the key, nudge, done.",
 			},
 			"cta": {
 				"download": "Download free trial",
@@ -53,7 +54,7 @@ export default {
 				"buy": "Buy — {price, number, ::currency/EUR}, one-time",
 				"alsoFor": "Also for {platform}",
 			},
-			// Placeholder labels, shown until the footage exists
+			// Placeholder labels, kept for slots that have no footage yet
 			"media": {
 				"clip": "Demo clip — coming soon",
 				"still": "Still — coming soon",
@@ -61,29 +62,30 @@ export default {
 			},
 			"useCases": {
 				"title": "What are you working on?",
-				"intro": "The pain is the same everywhere: too many targets, too few pixels. What sits under the cursor changes.",
+				"intro": "The problem is the same everywhere: too many targets, too few pixels. Only what sits under the pointer changes.",
 				"tabsLabel": "Use cases",
-				"general": {
-					"label": "General",
-					"headline": "The two pixels every window has.",
-					"body": `<p>A window edge, the divider between two panels, the corner of an image you're dragging into place
-						in a document. The target is a couple of pixels wide, it only exists while you hover it, and there is
-						nothing to zoom into.</p>
-						<p>So you approach slowly, overshoot, come back, watch for the cursor to change shape, and try again.
-						Hold the clutch and the same approach covers a quarter of the distance — the edge stops slipping past you.</p>`,
+				"laptop": {
+					"label": "Laptop & trackpad",
+					"headline": "No mouse. No desk. Still has to be exact.",
+					"body": `<p>A trackpad gives you about ten centimetres of travel to cover a whole display, so the pointer
+						has to move fast. Fine control isn't poor because you set it up wrong — the geometry decides for you.</p>
+						<p>At a desk you would reach for a mouse, or drop the sensitivity and sweep a bigger area. On a tray
+						table, a train seat or a hotel bed, neither is available. Holding a key is: the same swipe covers a
+						quarter of the distance, and the target stops sliding out from under you.</p>`,
 					"solves": `<ul>
-						<li>Window and panel resize edges that the cursor skips over</li>
-						<li>Nudging an image or text box into place in a document</li>
-						<li>Small controls — sliders, scrollbar handles, close buttons on tabs</li>
+						<li>Editing on a plane or a train, or anywhere without room to sweep</li>
+						<li>Dragging an object into place in a slide or a document</li>
+						<li>Small controls — sliders, scrollbar handles, window and panel edges</li>
+						<li>Trackballs, mousepads and cramped desks, for the same reason</li>
 						</ul>`,
-					"demo": "Grabbing a window resize edge and a panel divider, at full speed and in low gear.",
-					"still": "A panel divider under the cursor, hover state armed.",
+					"demo": "Placing an object precisely on a trackpad, at full speed and slowed down.",
+					"still": "A panel divider under the pointer, hover state armed.",
 				},
 				"video-music": {
 					"label": "Video & Music",
 					"headline": "The right handle, first try.",
-					"body": `<p>Trim, roll, slip and the fade handle all live within a few pixels of the same edge. Downshift and
-						pick the one you meant without zooming into the cut and back out again.</p>
+					"body": `<p>Trim, roll, slip and the fade handle all live within a few pixels of the same edge. Slow the
+						pointer and take the one you meant, without zooming into the cut and back out again.</p>
 						<p>Audio stacks the same way: region edges, fade curves, automation nodes and warp markers all land on the
 						same point of the timeline. Get the one you're after with the whole arrangement still in view.</p>`,
 					"solves": `<ul>
@@ -100,8 +102,8 @@ export default {
 					"body": `<p>A path point, its two Bézier handles and the segment between them occupy a handful of pixels.
 						Click the wrong one and you've moved the curve instead of shaping it, or dragged the whole path instead
 						of one point.</p>
-						<p>Layer edges, mask corners and transform handles do the same thing. Low gear lets you place the cursor
-						on the one you meant while the artboard stays where it is.</p>`,
+						<p>Layer edges, mask corners and transform handles do the same thing. Slowing the pointer lets you place
+						it on the one you meant while the artboard stays where it is.</p>`,
 					"solves": `<ul>
 						<li>Path points versus their handles versus the segment</li>
 						<li>Transform handles crowding the corner of a small selection</li>
@@ -113,96 +115,112 @@ export default {
 				"cad-3d": {
 					"label": "CAD & 3D",
 					"headline": "The snap point you meant.",
-					"body": `<p>Endpoint, midpoint, centre and intersection cluster inside a handful of pixels. Slow the cursor
+					"body": `<p>Endpoint, midpoint, centre and intersection cluster inside a handful of pixels. Slow the pointer
 						and the right one arms — no orbiting and zooming just to disambiguate.</p>
 						<p>Snapping isn't what's failing you here. Snapping is what makes the result exact. What's failing you is
 						telling it which of the four candidates you meant.</p>`,
 					"solves": `<ul>
-						<li>Osnap candidates competing for one cursor position</li>
+						<li>Snap candidates competing for one pointer position</li>
 						<li>Gizmo axis handles that meet at the origin</li>
 						<li>Selecting an edge instead of the face behind it</li>
 						</ul>`,
-					"demo": "A CAD sketch: arming the intended osnap among clustered candidates.",
+					"demo": "A 3D scene: arming the intended snap among clustered candidates.",
 					"still": "Four snap candidates inside a few pixels.",
 				},
 			},
 			"problem": {
-				"title": "You don't zoom in to be precise. You zoom in to tell your editor which thing you meant.",
+				"title": "Precision and overview shouldn't be a trade-off.",
 				"body": `<p>A timeline edge is stacked with targets a few pixels apart — move here, trim two pixels to the left,
 					roll at the boundary, fade at the corner, a keyframe just above. Each one arms a different tool. CAD is the
-					same story, with endpoint, midpoint, centre and intersection all fighting over the same cursor position.</p>
+					same story, with endpoint, midpoint, centre and intersection all fighting over one pointer position.</p>
 					<p>Snapping isn't the problem. Snapping is what you want — it's what makes the result land exactly on the
-					frame. The problem is hitting the right few pixels of the right element so that the right tool arms and the
-					right snap target wins.</p>
-					<p>Miss by two pixels and you haven't been slightly imprecise. You've trimmed when you meant to move, or
-					grabbed the clip next door. Undo, re-approach, try again.</p>
-					<p>So you zoom in. Not for accuracy — for elbow room. Then you zoom back out to see what you did. Dozens of
-					times an hour.</p>`,
+					frame. The problem is hitting the right few pixels so the right tool arms and the right target wins.</p>
+					<p>So you zoom in. Now you can be precise — but the rest of the picture is gone, so you can't tell whether
+					the edit is right in context. You zoom out to check. It's off. Zoom back in.</p>
+					<p>The time that costs is real, and it isn't the worst of it. The worst of it is that precision and overview
+					have become mutually exclusive, and you spend the day ping-ponging between them.</p>`,
 				"demo": "The same edit twice: zoomed in and back out, versus done in one pass.",
 			},
 			"howItWorks": {
-				"title": "A gearbox for your cursor.",
-				"body": `<p>Hold your clutch key and ShiftDown gears your movement down — four times finer by default,
-					adjustable from a crawl to barely damped. The pixels don't move. Your hand just covers fewer of them. Every
-					hover zone is effectively four times further apart, and your zoom level never changes.</p>
-					<p>Let go, and you're back to full speed.</p>`,
-				"keyLine": "Any key or combination you like. Left Shift out of the box.",
+				"title": "Hold a key. The pointer slows.",
+				"body": `<p>Hold your key and the pointer covers a quarter of the distance for the same hand movement —
+					adjustable from barely damped to a crawl. The pixels don't move. Your hand just covers fewer of them, so
+					every hover zone is effectively four times further apart, and your zoom level never changes.</p>
+					<p>Let go, and you're back to full speed.</p>
+					<p>It sits in the menu bar or the tray and applies everywhere at once — it isn't a plugin for one
+					application. And it scales pointer movement itself, so it doesn't care whether a mouse, a trackpad, a
+					trackball or a pen produced it.</p>`,
+				"keyLine": "Any key or combination you like, picked when you set it up.",
 				"modes": {
 					// Kept in English: these are the labels the app's own settings use
-					"hold": { "name": "Hold", "text": "Engaged while the key is down. The default." },
-					"toggle": { "name": "Toggle", "text": "Press once to engage, again to release." },
-					"inverted": { "name": "Inverted", "text": "Slow all the time, hold to go fast." },
+					"hold": { "name": "Hold", "text": "Slow while the key is down. The one most people use." },
+					"toggle": { "name": "Toggle", "text": "Press once to slow, press again to go back." },
+					"inverted": { "name": "Inverted", "text": "Slow all the time, hold to go fast. The one to pick for tremor or fatigue." },
 				},
 			},
-			"features": {
-				"title": "What it takes off your hands",
+			// The alternatives people actually use today, and why each one falls short
+			"workarounds": {
+				"title": "What you're doing instead right now",
 				"items": {
-					"zoomRoundTrip": {
-						"title": "The zoom round trip",
-						"text": `Zooming in for elbow room and back out to check costs you the overview and dozens of
-							interruptions an hour. Downshift instead and the view never moves.`,
+					"zoomCycle": {
+						"title": "Zoom in, edit, zoom out",
+						"text": `It works, but it makes precision and overview mutually exclusive, dozens of times an hour.
+							Slow the pointer instead and the view never moves.`,
 					},
-					"wrongTool": {
-						"title": "The wrong tool arming",
-						"text": `Hover zones a few pixels apart each arm a different tool. Four times finer movement puts real
-							distance between them without changing a single pixel on screen.`,
+					"arrowNudge": {
+						"title": "Nudging with the arrow keys",
+						"text": `Discrete steps, a different shortcut in every application, and your hand has to leave the
+							pointer to reach them — in After Effects the step even changes with the zoom level. This is
+							continuous, the same everywhere, and your hand stays where it was.`,
 					},
-					"undoWorkflow": {
-						"title": "Undo as a workflow",
-						"text": `Missing isn't slightly off, it's wrong — trimmed instead of moved, the neighbour instead of the
-							clip. Landing it first try means there is nothing to take back.`,
+					"lowerSensitivity": {
+						"title": "Turning the sensitivity down",
+						"text": `Then everything is slow all day, including the ninety percent of the time you only want to
+							cross the screen. This is slow while you hold it and normal the rest of the time.`,
 					},
-					"pluginUis": {
-						"title": "Apps that never got a fine mode",
-						"text": `It works below the application layer, so it covers plugin windows, obscure tools and everything
-							else your editor's own modifier keys never reached.`,
+					"buyHardware": {
+						"title": "“Just buy a mouse”",
+						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. This works
+							with whatever is already under your hand.`,
 					},
-					"hardware": {
-						"title": "Hardware you can't fix with hardware",
-						"text": `A trackpad has no DPI button and a pen tablet can't be made less direct. The gearing is in
-							software, so it applies to whatever you already use.`,
+				},
+			},
+			// Said plainly and once, so nobody has to find out the hard way
+			"limits": {
+				"title": "What it doesn't do",
+				"items": {
+					"games": {
+						"title": "It won't help your aim",
+						"text": `ShiftDown adjusts the system pointer, so it has no effect in games that read the mouse through
+							raw input — which is most of the competitive ones. It is built for tools, not for games.`,
 					},
-					"modes": {
-						"title": "Remembering which mode you're in",
-						"text": `Hold is momentary — the clutch is engaged only while you hold it. Toggle and Inverted are there
-							when a job wants them.`,
+					"tremor": {
+						"title": "It isn't tremor-filtering software",
+						"text": `Scaling movement down scales a tremor down with it, and Inverted mode suits that well. But it
+							scales everything uniformly — it doesn't separate intent from shake the way dedicated tremor
+							software does.`,
+					},
+					"permission": {
+						"title": "macOS will ask for Accessibility permission",
+						"text": `Watching pointer movement system-wide requires it — the same permission any window manager or
+							shortcut utility asks for. You grant it once. It is also why this cannot be a Mac App Store app.`,
 					},
 				},
 			},
 			"pen": {
 				"title": "Especially good with a pen.",
-				"body": `<p>A pen is direct, not precise. It puts the cursor exactly where you point — but “where you point” is
+				"body": `<p>A pen is direct, not precise. It puts the pointer exactly where you point — but “where you point” is
 					bounded by your hand, and by how much screen each millimetre of tablet covers. At 100% zoom, that isn't
 					enough to land on the right pixel.</p>
 					<p>ShiftDown trades the one thing you don't need in that moment — directness — for the one you do. And
-					unlike a mouse user, you can't buy your way out of this with a DPI button.</p>`,
-				"demo": "Pen on a tablet: the same small target, at full speed and in low gear.",
+					unlike a mouse user, you can't buy your way out of this with a sensitivity button.</p>`,
+				"demo": "Pen on a tablet: the same small target, at full speed and slowed down.",
 			},
 			// Shown on /welcome, right before macOS puts the prompt in front of them
 			"permission": {
 				"title": "Why it asks for Accessibility permission",
-				"body": `<p>ShiftDown works by watching mouse movement at the system level and scaling it while your clutch
-					key is held. On macOS, that requires Accessibility permission — the same one any window manager or shortcut
+				"body": `<p>ShiftDown works by watching pointer movement at the system level and scaling it while your key
+					is held. On macOS, that requires Accessibility permission — the same one any window manager or shortcut
 					utility needs. You grant it once, in System Settings.</p>
 					<p>ShiftDown does not read what you type, does not record your screen, and does not send your input
 					anywhere.</p>`,
@@ -211,12 +229,12 @@ export default {
 			"privacy": {
 				"title": "We value privacy — so we protect yours",
 				"intro": `That is how every Zentru Systems product is built, and ShiftDown is no exception. It watches
-					mouse movement to do its job and that is where it ends: it does not read what you type, does not record
+					pointer movement to do its job and that is where it ends: it does not read what you type, does not record
 					your screen, and does not send your input anywhere.`,
 				// The two sentences that carry a link, split around it
 				"analyticsBeforeLink": "What we do collect is anonymous product analytics, through ",
 				"analyticsLinkLabel": "Aptabase",
-				"analyticsAfterLink": ` — app launches, whether the clutch actually got used, which settings people change. No
+				"analyticsAfterLink": ` — app launches, whether the key actually got used, which settings people change. No
 					account, no personal data, no device fingerprint, no tracking across sites. It tells us whether the app is
 					working for people, and nothing else.`,
 				"controlBeforeLink": "You can turn it off completely in Settings. The full detail is in our ",
@@ -239,19 +257,26 @@ export default {
 			"faq": {
 				"title": "Questions",
 				"items": {
+					"trackpad": {
+						"question": "Does it work on a laptop trackpad?",
+						"answer": `Yes, and that is the case it was built for. A trackpad has to cover a whole display with a
+							few centimetres of travel, so fine control is poor by construction — and unlike a mouse there is no
+							sensitivity button or bigger desk to fall back on. Scrolling, pinch-zoom and swipes are left alone.`,
+					},
 					"fineAdjust": {
 						"question": "Doesn't my editor already have a fine-adjust modifier?",
 						"answer": `Modifier keys refine a value once you've already grabbed something. They don't help you grab
 							the right thing in the first place. ShiftDown works before the click, in every app — including
-							UIs that never implemented a fine mode at all.`,
+							plugin interfaces that never implemented a fine mode at all.`,
 					},
 					"dpiButton": {
 						"question": "Isn't this what the DPI button on a gaming mouse does?",
-						"answer": `Same idea, but it's tied to one device, it's a mode you have to remember to switch back out
-							of, and it does nothing for a trackpad or a pen tablet. It also does nothing about mouse
-							acceleration: your system still stretches a quick movement and compresses a slow one, so the same
-							hand movement doesn't reliably cover the same distance no matter which DPI step you picked.
-							ShiftDown is momentary, software-side, and works with whatever you already use.`,
+						"answer": `Same idea, but it is tied to one device, it's a mode you have to remember to switch back out
+							of, and it does nothing for a trackpad or a pen tablet — which is exactly where the problem is
+							worst. It also does nothing about pointer acceleration: your system still stretches a quick
+							movement and compresses a slow one, so the same hand movement doesn't reliably cover the same
+							distance no matter which DPI step you picked. This is momentary, in software, and works with
+							whatever you already use.`,
 					},
 					"tablet": {
 						"question": "Does it work with a drawing tablet?",
@@ -267,11 +292,6 @@ export default {
 						"question": "Which apps does it work in?",
 						"answer": `All of them. It operates below the application layer, so it doesn't need to know anything
 							about the software you're using.`,
-					},
-					"games": {
-						"question": "Can I use it in games?",
-						"answer": `We don't recommend it. Anti-cheat systems can flag low-level input software. ShiftDown is
-							built for editing tools.`,
 					},
 					"appStore": {
 						"question": "Is it on the Mac App Store?",
@@ -294,7 +314,7 @@ export default {
 				"error": "That didn't go through. Try again in a moment.",
 			},
 			"finalCta": {
-				"title": "Stop zooming in just to grab things.",
+				"title": "Keep your zoom level. Hit the target anyway.",
 				"micro": "{days} usage days, full version. {macOs}+ and {windows}+.",
 			},
 			// Opened by the app on first launch, before macOS shows the permission prompt
@@ -304,28 +324,29 @@ export default {
 				"title": "ShiftDown is installed.",
 				"intro": {
 					"macos": "One permission and you're set. Here's what macOS is about to ask you, and why.",
-					"windows": "You're set. Here's how to try it.",
+					"windows": "You're set. Here's how to get the feel of it in the next minute.",
 				},
 				"steps": {
 					"permission": {
-						"title": "macOS will ask for Accessibility permission",
-						"text": `ShiftDown scales mouse movement while your clutch key is held, which means watching that
-							movement at the system level. macOS gates that behind Accessibility — the same permission any window
-							manager or shortcut utility asks for.`,
+						"title": "macOS will ask for Accessibility",
+						"text": `ShiftDown scales pointer movement while your key is held, which means watching that movement
+							at the system level. macOS gates that behind Accessibility — the same permission every window
+							manager and shortcut tool asks for.`,
 					},
 					"grant": {
 						"title": "Grant it once, in System Settings",
-						"text": `System Settings → Privacy & Security → Accessibility, then switch ShiftDown on. Nothing else
-							to configure.`,
+						"text": `System Settings → Privacy & Security → Accessibility, then switch ShiftDown on. There is
+							nothing else to set up.`,
 					},
 					"tryIt": {
-						"title": "Hold Left Shift and move your mouse",
-						"text": `That's low gear: a quarter of the distance for the same hand movement. Let go and you're back to
-							full speed.`,
+						"title": "Try it on something small",
+						"text": `Open whatever you work in, find a handle or an edge you normally zoom in for, and hold your
+							key as you approach it. That is the whole product.`,
 					},
 					"customise": {
 						"title": "Make it yours",
-						"text": "The clutch key, the speed factor and the mode — Hold, Toggle or Inverted — are all in Settings.",
+						"text": `Change the key, the amount of slowdown, or the mode in Settings. The defaults are a starting
+							point, not a recommendation.`,
 					},
 				},
 				"reassurance": `ShiftDown does not read what you type, does not record your screen, and does not send your
