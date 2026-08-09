@@ -1,5 +1,4 @@
 import Section from "@/app/Section";
-import ThemedImage from "@/app/ThemedImage";
 import { defaultHtml } from "@/lib/localization";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -16,8 +15,9 @@ import { limitKeys, modeKeys, workaroundKeys } from "./content";
 import { mediaFor } from "./media";
 import style from "./speedswitch.module.css";
 
-import SpeedSwitchIconDark from "@/public/img/speedswitch/app-icon.Dark.svg";
-import SpeedSwitchIconLight from "@/public/img/speedswitch/app-icon.svg";
+// import SpeedSwitchIcon from "@/public/img/speedswitch/app-icon.svg";
+import SpeedSwitchIcon from "@/public/img/speedswitch/SpeedSwitch.PointerPath.dark.svg";
+import Image from "next/image";
 
 /** The sticky download bar keeps out of the way while either of these is on screen */
 const heroId = "speedswitch-hero";
@@ -287,13 +287,12 @@ export async function SpeedSwitchSection() {
 	return <Section
 		asideContainerStyle={{ placeContent: "center" }}
 		title={speedSwitch.name}
-		aside={<ThemedImage
+		aside={<Image
 			loading="eager"
 			className="ph-NoFloat RightFloat From15vw To0"
 			style={{ marginBlock: 10, height: "400px", width: "400px", aspectRatio: 1 }}
-			lightSrc={SpeedSwitchIconLight}
-			darkSrc={SpeedSwitchIconDark}
-			alt={t("overview.icon")}
+			src={SpeedSwitchIcon}
+			alt={t("hero.demo")}
 		/>}
 		link={speedSwitch.path}
 	>
