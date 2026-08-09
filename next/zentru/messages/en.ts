@@ -40,6 +40,13 @@ export default {
 				// The qualifier is what the title has to earn a click on: the name alone says nothing about what it does
 				"title": "SpeedSwitch — pointer precision without zooming",
 			},
+			// The card on the products overview
+			"overview": {
+				"icon": "The SpeedSwitch app icon.",
+				// For SpeedSwitch.PointerPath.svg, which is drawn and ready but not the icon currently shown
+				"image": `The same hand movement twice: without the key the pointer overshoots the target and hunts for
+					it, with the key held it covers a quarter of the distance and lands on it.`,
+			},
 			"hero": {
 				"headline": "Stop zooming in just to nudge something.",
 				"sub": `Hold a key and your pointer switches to a lower gear: the same hand movement now covers a quarter of the
@@ -81,19 +88,21 @@ export default {
 				},
 				"graphics": {
 					"label": "Graphics",
-					"headline": "The node, not the segment.",
-					"body": `<p>A path point, its two Bézier handles and the segment between them occupy a handful of pixels.
-						Click the wrong one and you've moved the curve instead of shaping it, or dragged the whole path instead
-						of one point.</p>
-						<p>Layer edges, mask corners and transform handles do the same thing. Slowing the pointer lets you place
-						it on the one you meant while the artboard stays where it is.</p>`,
+					"headline": "Precision while you see the bigger picture.",
+					"body": `<p>Design is judged whole. Whether something sits right depends on the margin on the other
+						side and the alignment three elements over, and that judgement needs the whole canvas on screen.
+						Placing it exactly needs the opposite.</p>
+						<p>So you zoom in, nudge, zoom out to see whether it worked, zoom back in to correct it. Most
+						people have done it for so long that it no longer registers as a cost. Hold your key instead and
+						the same hand movement covers a quarter of the distance: you place it to the pixel at the zoom
+						level you were already at, and there is nothing to go back and check.</p>`,
 					"solves": `<ul>
-						<li>Path points versus their handles versus the segment</li>
-						<li>Transform handles crowding the corner of a small selection</li>
+						<li>Moving one element without losing sight of the rest</li>
+						<li>Aligning by eye to something at the far end of the canvas</li>
 						<li>Picking one object out of an overlapping stack</li>
 						</ul>`,
-					"demo": "A vector path: selecting a point instead of the segment next to it.",
-					"still": "A Bézier point with both handles extended.",
+					"demo": "Placing an element exactly, with the whole canvas still on screen.",
+					"still": "A canvas at working zoom, with one element being placed.",
 				},
 				"3d": {
 					"label": "3D",
