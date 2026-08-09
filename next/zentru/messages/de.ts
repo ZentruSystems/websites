@@ -40,6 +40,13 @@ export default {
 				// Der Zusatz muss den Klick verdienen: der Name allein sagt nicht, was das Ding tut
 				"title": "SpeedSwitch — Zielgenauigkeit ohne Zoomen",
 			},
+			// Die Kachel in der Produktübersicht
+			"overview": {
+				"icon": "Das App-Icon von SpeedSwitch.",
+				// Für SpeedSwitch.PointerPath.svg – gezeichnet und einsatzbereit, aktuell steht dort aber das Icon
+				"image": `Zweimal dieselbe Handbewegung: ohne Taste schießt der Zeiger über das Ziel hinaus und sucht
+					es, mit gehaltener Taste legt er ein Viertel der Strecke zurück und landet darauf.`,
+			},
 			"hero": {
 				"headline": "Hör auf, nur zum Verschieben reinzuzoomen.",
 				"sub": `Halte eine Taste und dein Zeiger schaltet einen Gang herunter: dieselbe Handbewegung legt nur noch
@@ -83,19 +90,21 @@ export default {
 				},
 				"graphics": {
 					"label": "Grafik",
-					"headline": "Der Punkt, nicht das Segment.",
-					"body": `<p>Ein Pfadpunkt, seine beiden Bézier-Griffe und das Segment dazwischen liegen auf einer Handvoll
-						Pixel. Triffst du den falschen, hast du die Kurve verschoben statt sie zu formen – oder den ganzen Pfad
-						gezogen statt eines Punktes.</p>
-						<p>Ebenenkanten, Maskenecken und Transform-Griffe machen dasselbe. Ein langsamerer Zeiger landet auf dem,
-						den du gemeint hast, während die Zeichenfläche stehen bleibt.</p>`,
+					"headline": "Präzision mit dem großen Ganzen im Blick.",
+					"body": `<p>Gestaltung beurteilst du als Ganzes. Ob etwas richtig sitzt, hängt vom Abstand auf der
+						anderen Seite ab und von der Ausrichtung drei Elemente weiter – dieses Urteil braucht die ganze
+						Fläche auf dem Bildschirm. Es genau zu platzieren braucht das Gegenteil.</p>
+						<p>Also zoomst du rein, schiebst, zoomst raus zum Prüfen, zoomst wieder rein zum Korrigieren. Die
+						meisten machen das so lange, dass es ihnen gar nicht mehr als Aufwand auffällt. Halte stattdessen
+						deine Taste, und dieselbe Handbewegung legt nur ein Viertel der Strecke zurück: Du triffst den
+						Pixel in der Zoomstufe, in der du ohnehin warst, und musst hinterher nichts mehr kontrollieren.</p>`,
 					"solves": `<ul>
-						<li>Pfadpunkte gegen ihre Griffe gegen das Segment</li>
-						<li>Transform-Griffe, die sich in der Ecke einer kleinen Auswahl drängen</li>
+						<li>Ein Element verschieben, ohne den Rest aus den Augen zu verlieren</li>
+						<li>Nach Augenmaß an etwas ausrichten, das am anderen Ende der Fläche liegt</li>
 						<li>Ein Objekt aus einem Stapel überlappender Objekte auswählen</li>
 						</ul>`,
-					"demo": "Ein Vektorpfad: einen Punkt auswählen statt des Segments daneben.",
-					"still": "Ein Bézier-Punkt mit beiden ausgefahrenen Griffen.",
+					"demo": "Ein Element genau platzieren, während die ganze Fläche sichtbar bleibt.",
+					"still": "Eine Fläche in Arbeits-Zoomstufe, während ein Element platziert wird.",
 				},
 				"cad-3d": {
 					"label": "CAD & 3D",

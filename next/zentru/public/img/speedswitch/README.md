@@ -114,3 +114,25 @@ their boxes match the aspect ratios above exactly.
 
 The placeholders are deliberately neutral blocks. Do not stand in a fake screenshot or stock
 footage — an obviously empty slot is honest, a fake one is not.
+
+## The products-overview card
+
+`/products` shows one card per product, and its aside is not a `media.ts` slot — the image is
+imported directly in `SpeedSwitchSection` at the bottom of `page.tsx`.
+
+Two sets are in this folder:
+
+| File | What it is |
+|---|---|
+| `app-icon.svg` / `app-icon.Dark.svg` | The app icon. **Currently the one on the page.** |
+| `SpeedSwitch.PointerPath.svg` / `.dark.svg` | A drawing of the mechanism: two identical dimension lines for the hand movement, and two very different pointer traces under them. Drawn, wired for nothing. |
+
+Swapping is one block in `SpeedSwitchSection` — change the two `ThemedImage` sources, drop
+the fixed `width` and `aspectRatio` (the drawing is 460 × 400, not square), and use
+`t("overview.image")` for the alt instead of `t("overview.icon")`.
+
+Whatever goes there has to survive the panel's crop. `Section` clips its aside and parks the
+image at `left: 15vw` until the card is hovered, so **only the left ~55% shows at rest**
+(57% at 1440, 55% at 900, ~84% at 390 where `ph-NoFloat` turns the slide off). Compose so the
+point lands in the left half; the right half is the reward for hovering. The pointer-path
+drawing is built that way — the overshoot is what slides in.
