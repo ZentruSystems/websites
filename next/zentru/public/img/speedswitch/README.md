@@ -109,8 +109,8 @@ their boxes match the aspect ratios above exactly.
 | `usecase-video-music-still` | `usecase-video-music.png` | A timeline edge with the trim handle armed. |
 | `usecase-graphics-demo` | `usecase-graphics.mp4` | A vector path: selecting a point instead of the segment. |
 | `usecase-graphics-still` | `usecase-graphics.png` | A Bézier point with both handles extended. |
-| `usecase-cad-3d-demo` | `usecase-cad-3d.mp4` | Arming the intended osnap among clustered candidates. |
-| `usecase-cad-3d-still` | `usecase-cad-3d.png` | Four snap candidates inside a few pixels. |
+| `usecase-3d-demo` | `usecase-3d.mp4` | Arming the intended osnap among clustered candidates. |
+| `usecase-3d-still` | `usecase-3d.png` | Four snap candidates inside a few pixels. |
 
 The placeholders are deliberately neutral blocks. Do not stand in a fake screenshot or stock
 footage — an obviously empty slot is honest, a fake one is not.

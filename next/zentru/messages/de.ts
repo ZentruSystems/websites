@@ -97,8 +97,8 @@ export default {
 					"demo": "Ein Vektorpfad: einen Punkt auswählen statt des Segments daneben.",
 					"still": "Ein Bézier-Punkt mit beiden ausgefahrenen Griffen.",
 				},
-				"cad-3d": {
-					"label": "CAD & 3D",
+				"3d": {
+					"label": "3D",
 					"headline": "Der Fangpunkt, den du gemeint hast.",
 					"body": `<p>Endpunkt, Mittelpunkt, Zentrum und Schnittpunkt drängen sich auf wenigen Pixeln. Verlangsame den
 						Zeiger und der richtige rastet ein – ohne Orbit und Zoom nur zur Unterscheidung.</p>
@@ -129,8 +129,7 @@ export default {
 				"title": "Präzision und Überblick sollten kein Entweder-oder sein.",
 				"body": `<p>Eine Timeline-Kante ist voller Ziele, die wenige Pixel auseinanderliegen – hier verschieben, zwei
 					Pixel weiter links trimmen, an der Grenze rollen, in der Ecke faden, knapp darüber ein Keyframe. Jedes davon
-					aktiviert ein anderes Werkzeug. Bei CAD ist es dieselbe Geschichte: Endpunkt, Mittelpunkt, Zentrum und
-					Schnittpunkt streiten sich um dieselbe Zeigerposition.</p>
+					aktiviert ein anderes Werkzeug.</p>
 					<p>Nicht das Einrasten ist das Problem. Einrasten ist genau das, was du willst – es lässt das Ergebnis exakt
 					auf dem Frame landen. Das Problem ist, die richtigen paar Pixel zu treffen, damit das richtige Werkzeug
 					aktiv wird und der richtige Fangpunkt gewinnt.</p>

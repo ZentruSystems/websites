@@ -45,7 +45,6 @@ export async function generateMetadata(): Promise<Metadata> {
 			"cursor precision",
 			"mouse sensitivity",
 			"video editing",
-			"CAD",
 			"pen tablet",
 		],
 		robots: { index: true, follow: true },

@@ -95,8 +95,8 @@ export default {
 					"demo": "A vector path: selecting a point instead of the segment next to it.",
 					"still": "A Bézier point with both handles extended.",
 				},
-				"cad-3d": {
-					"label": "CAD & 3D",
+				"3d": {
+					"label": "3D",
 					"headline": "The snap point you meant.",
 					"body": `<p>Endpoint, midpoint, centre and intersection cluster inside a handful of pixels. Slow the pointer
 						and the right one arms — no orbiting and zooming just to disambiguate.</p>
@@ -125,8 +125,7 @@ export default {
 			"problem": {
 				"title": "Precision and overview shouldn't be a trade-off.",
 				"body": `<p>A timeline edge is stacked with targets a few pixels apart — move here, trim two pixels to the left,
-					roll at the boundary, fade at the corner, a keyframe just above. Each one arms a different tool. CAD is the
-					same story, with endpoint, midpoint, centre and intersection all fighting over one pointer position.</p>
+					roll at the boundary, fade at the corner, a keyframe just above. Each one arms a different tool.</p>
 					<p>Snapping isn't the problem. Snapping is what you want — it's what makes the result land exactly on the
 					frame. The problem is hitting the right few pixels so the right tool arms and the right target wins.</p>
 					<p>So you zoom in. Now you can be precise — but the rest of the picture is gone, so you can't tell whether

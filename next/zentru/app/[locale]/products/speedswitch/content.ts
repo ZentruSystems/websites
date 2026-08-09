@@ -11,7 +11,7 @@
  * to be "general" is now its own section above these – it is the case the product leads on,
  * and a tab would have buried it.
  */
-export const useCaseIds = ["video-music", "graphics", "cad-3d"] as const;
+export const useCaseIds = ["video-music", "graphics", "3d"] as const;
 
 export const modeKeys = ["hold", "toggle", "inverted"] as const;
 

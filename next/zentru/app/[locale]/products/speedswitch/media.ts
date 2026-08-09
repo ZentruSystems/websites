@@ -38,8 +38,8 @@ const mediaSources: Record<string, Media> = {
 	"usecase-video-music-still": {},
 	"usecase-graphics-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Figma.mp4" },
 	"usecase-graphics-still": {},
-	"usecase-cad-3d-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Blender.mp4" },
-	"usecase-cad-3d-still": {},
+	"usecase-3d-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Blender.mp4" },
+	"usecase-3d-still": {},
 };
 
 /** An unknown or unfilled slot renders as a placeholder, which is the point. */
