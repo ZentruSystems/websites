@@ -29,8 +29,8 @@ export const speedSwitch = {
 
 	/** The real binaries, in `public/download/` */
 	downloads: {
-		macos: "/download/SpeedSwitch-macOS.zip",
-		windows: "/download/SpeedSwitch-Windows.zip",
+		macos: "/download/SpeedSwitch.dmg",
+		windows: "/download/SpeedSwitch.exe",
 	},
 
 	checkoutUrl: "https://zentrusystems.lemonsqueezy.com/checkout/buy/79624aff-0cfc-4ebe-8064-a87aec2192c9?enabled=1944236",
