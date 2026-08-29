@@ -431,6 +431,24 @@ export default {
 							Das unbeschreibbare Gefühl ein Produkt zu benützen, dass <i>richtig gut</i> ist.`,
 
 		"checkOutAllOther": "Schau dir alle anderen Projekte und Felder an",
+
+		// Der Über-mich-Abschnitt auf der Startseite. Anker #about, verlinkt aus dem Footer.
+		"about": {
+			"title": "Über mich",
+			"body": `<p>Ich bin Felix – Entwickler, Musiker, Design-Liebhaber und jemand, der Dinge gerne möglich
+				macht.</p>
+				<p>Coole Sachen mit coolen Leuten zu machen ist für mich das Beste, was ich tun kann.</p>
+				<p>Und dabei mache ich Dinge gerne "richtig gut". Für mich heißt das: Ich denke immer an die Umwelt,
+				daran, wie Menschen meine Produkte benutzen werden, und daran, was die beste Entscheidung wäre – nicht
+				für mich und meine Firma, sondern für alle.</p>`,
+			"findMe": "Du findest mich und Zentru Systems auf LinkedIn, GitHub und Instagram:",
+			// Benennt die Zeile, zu der die Icons gehören – die Icons allein sagen nicht, wessen sie sind
+			"mineLabel": "Ich",
+			"zentruLabel": "Zentru Systems",
+			"closing": `<p>Ich fange gerade erst an und würde mich freuen, wenn dir gefällt, was ich mache. Wenn du
+				Unterstützung brauchst, dir ein Feature wünschst oder einfach reden willst, erreichst du mich dort oder
+				über <mailLink>service@zentru.systems</mailLink></p>`,
+		},
 	},
 	"Fields": {
 		"digitalExperiences": {
@@ -477,6 +495,7 @@ export default {
 		"letsMeetAt": "Besuche mich auf",
 		"weAre": "Ich bin",
 		"imprint": "Impressum",
+		"about": "Über mich",
 		"privacyPolicy": "Datenschutzerklärung",
 		"email": "E-Mail",
 		"valid": "valide",

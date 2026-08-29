@@ -528,6 +528,24 @@ export default {
 							The undescribable feeling of using a product that is <i>really good</i>.`,
 
 		"checkOutAllOther": "Check out all my Projects from all my Fields",
+
+		// The About section on the home page. Anchored at #about, linked from the footer.
+		"about": {
+			"title": "About me",
+			"body": `<p>I am Felix, a developer, musician, design lover and a person that loves to make things
+				happen.</p>
+				<p>To me doing cool things with cool people is the best I can do.</p>
+				<p>And while doing that I like to do things "really good", to me that means that I always think about
+				the environment, how people will use my products, and what would be the best choice, not for me and my
+				company, but for everyone.</p>`,
+			"findMe": "You can find me and Zentru Systems on LinkedIn GitHub and Instagram:",
+			// Names the row each set of icons belongs to – the icons alone cannot say whose they are
+			"mineLabel": "Me",
+			"zentruLabel": "Zentru Systems",
+			"closing": `<p>I am just starting out and so I would love you to enjoy the products I make, if you ever
+				need any support, have a feature request or just want to chat, you can reach me there or via
+				<mailLink>service@zentru.systems</mailLink></p>`,
+		},
 	},
 	"Fields": {
 		"digitalExperiences": {
@@ -574,6 +592,7 @@ export default {
 		"letsMeetAt": "Let's meet at",
 		"weAre": "I am",
 		"imprint": "Imprint",
+		"about": "About me",
 		"privacyPolicy": "Privacy Policy",
 		"email": "E-Mail",
 		"valid": "valid",

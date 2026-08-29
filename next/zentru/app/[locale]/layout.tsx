@@ -35,6 +35,9 @@ export default async function BaseLayout({
 						</Link>
 					</div>
 					<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
+						<Link href="/#about">
+							<p>{tAlways("about") ?? "About me"}</p>
+						</Link>
 						<Link href="/impressum">
 							<p>{tAlways("imprint") ?? "Imprint"}</p>
 						</Link>
