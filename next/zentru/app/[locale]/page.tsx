@@ -12,8 +12,8 @@ export default async function Page() {
 	return <main>
 			<section className="Head bg-l5 hGrid">
 				<div className="vCenter vBigPad ph-vPad s1 e7 ph-e5 vFill vSpaceing">
-					<h2 className="light noMargin">{tMain("because1") ?? "Because we don’t like how Companies treat their Customers."}</h2>
-					<h2 className="light noMargin">{tMain("because2") ?? "Because we don’t like bad design."}</h2>
+					<h2 className="light noMargin">{tMain("because1") ?? "Because I don’t like how Companies treat their Customers."}</h2>
+					<h2 className="light noMargin">{tMain("because2") ?? "Because I don’t like bad design."}</h2>
 					<h2 className="light noMargin">{tMain.rich("because3", {
 						span: (chunks) => <span className="bold mutedPrimaryAccent">{chunks}</span>,
 					})}</h2>

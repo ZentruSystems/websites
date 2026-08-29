@@ -19,7 +19,7 @@ export default {
 				"title": "Warum .rec?",
 				"content": `<maxWidth>Damit du nie wieder eine Melodie oder einen Song im Kopf hast, es aufnimmst,
 					nur um später festzustellen, dass du keine Ahnung mehr hast, wie du dir die Harmonien, den Bass, die Drums...vorgestellt hast.</maxWidth>
-					<maxWidth>Glaub uns, soetwas passiert allen – die ganze Zeit, wir kennen diesen Schmerz, das ist der Grund, warum wir .rec machen.</maxWidth>
+					<maxWidth>Glaub mir, soetwas passiert allen – die ganze Zeit, ich kenne diesen Schmerz, das ist der Grund, warum ich .rec mache.</maxWidth>
 					<maxWidth>Für wen .rec ist? – Na für jeden! Jeder der supercharged voice-memos praktisch findet!</maxWidth>`
 			},
 			"section3": {
@@ -240,15 +240,15 @@ export default {
 				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem SpeedSwitch.",
 			},
 			"privacy": {
-				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
-				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und SpeedSwitch ist keine Ausnahme. Es beobachtet
+				"title": "Mir ist Privatsphäre wichtig – deshalb schütze ich deine",
+				"intro": `So baue ich jedes Produkt bei Zentru Systems, und SpeedSwitch ist keine Ausnahme. Es beobachtet
 					Zeigerbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
 					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
-				"analytics": `Was wir erheben, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
+				"analytics": `Was ich erhebe, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
 					wurde, welche Einstellungen geändert werden. Kein Konto, keine personenbezogenen Daten, kein
-					Geräte-Fingerabdruck, kein seitenübergreifendes Tracking. Es sagt uns, ob die App für Leute
+					Geräte-Fingerabdruck, kein seitenübergreifendes Tracking. Es sagt mir, ob die App für Leute
 					funktioniert, und sonst nichts.`,
-				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alle Details stehen in unserer ",
+				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alle Details stehen in meiner ",
 				"controlLinkLabel": "Datenschutzerklärung",
 				"controlAfterLink": ".",
 			},
@@ -263,7 +263,7 @@ export default {
 				},
 				"anchor": "Einführungspreis. Regulär kostet es {regular, number, ::currency/EUR precision-integer}.",
 				"note": `Wenn du das wegen eines Tremors oder aus motorischen Gründen brauchst und {price, number, ::currency/EUR} eine Hürde sind,
-					schreib uns – wir schicken dir eine Lizenz.`,
+					schreib mir – ich schicke dir eine Lizenz.`,
 			},
 			"faq": {
 				"title": "Fragen",
@@ -308,12 +308,12 @@ export default {
 					"appStore": {
 						"question": "Gibt es das im Mac App Store?",
 						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die SpeedSwitch braucht, steht Apps aus dem App
-							Store nicht zur Verfügung. Deshalb verkaufen wir direkt.`,
+							Store nicht zur Verfügung. Deshalb verkaufe ich direkt.`,
 					},
 					"linux": {
 						"question": "Linux?",
 						"answer": `Noch nicht – ob es dazu kommt, hängt davon ab, wie viele Leute es wollen. Trag dich ein und
-							wir sagen dir Bescheid, falls es so weit ist.`,
+							ich sage dir Bescheid, falls es so weit ist.`,
 					},
 				},
 			},
@@ -321,7 +321,7 @@ export default {
 			"linuxInterest": {
 				"pitch": "Ich hätte Interesse an einer Linux-Version für {price, number, ::currency/EUR}",
 				"action": "Trag mich ein",
-				"success": "Notiert. Wir melden uns, falls es eine Linux-Version gibt.",
+				"success": "Notiert. Ich melde mich, falls es eine Linux-Version gibt.",
 				"alreadySignedUp": "Du warst schon auf der Liste – trotzdem nochmal notiert.",
 				"error": "Das hat nicht geklappt. Versuch es gleich nochmal.",
 			},
@@ -414,19 +414,19 @@ export default {
 		},
 	},
 	"Main": {
-		"because1": "Weil uns nicht gefällt, wie Unternehmen ihre Kunden behandeln.",
-		"because2": "Weil uns schlechtes Design nicht gefällt.",
-		"because3": "Weil wir <span>lieben</span> richtig gut.",
+		"because1": "Weil mir nicht gefällt, wie Unternehmen ihre Kunden behandeln.",
+		"because2": "Weil mir schlechtes Design nicht gefällt.",
+		"because3": "Weil ich <span>liebe</span> richtig gut.",
 
-		"weBelieve": `Wir glauben, dass alles, was wir tun, wirklich gut sein sollte.<br></br>
-			Wir glauben das, weil wir nach der Achtsamkeit und nachhaltigem Design der Vergangenheit streben.<br></br>
+		"weBelieve": `Ich glaube, dass alles, was ich tue, wirklich gut sein sollte.<br></br>
+			Ich glaube das, weil ich nach der Achtsamkeit und nachhaltigem Design der Vergangenheit strebe.<br></br>
 			<br></br>
-			Denk nur an all die zeitlosen Designs, die wir haben – das ist es, was wir lieben.<br></br>
+			Denk nur an all die zeitlosen Designs, die wir haben – das ist es, was ich liebe.<br></br>
 			<span>Wie {quoteer} es sagte</span>`,
 		"timelessStark": "Zeitloses Design ist das einzige Design das nachhaltig sein kann und das einzige Design auf das wir uns fokusieren sollten.",
 		"timelessWe": "Keine unnötigen Funktionen, keine Kompromisse—einfach gut gemachte Systeme, die genau das tun, was sie sollen, nicht mehr, nicht weniger.",
 
-		"weFocusOn": `Wir fokusieren uns auf was du fühlst, nicht wie wir dieses Gefühl liefern, nur um sicherzustellen, dass du mehr davon bekommst.<br></br>
+		"weFocusOn": `Ich fokusiere mich auf was du fühlst, nicht wie ich dieses Gefühl liefere, nur um sicherzustellen, dass du mehr davon bekommst.<br></br>
 							<br></br>
 							Das unbeschreibbare Gefühl ein Produkt zu benützen, dass <i>richtig gut</i> ist.`,
 
@@ -436,7 +436,7 @@ export default {
 		"digitalExperiences": {
 			"name": "Digitale Erfahrungen",
 			"subline": "Nützlich, schön, emotional – eine Erfahrung",
-			"headline-p1": "Wir können Ihnen helfen Ihr ",
+			"headline-p1": "Ich kann Ihnen helfen Ihr ",
 			"headline-p2/1": "Produkt",
 			"headline-p2/2": "Projekt",
 			"headline-p3": "zu einer <span>Erfahrung</span> zu machen.",
@@ -444,11 +444,11 @@ export default {
 				`<p>Damit Ihre Kunden fühlen, was Sie meinen.</p>
 						<br></br>
 						<br></br>
-						<p>Unsere Expertise beinhaltet: User interface design, Klangdesign, Scoring und Musikproduktion</p>
+						<p>Meine Expertise beinhaltet: User interface design, Klangdesign, Scoring und Musikproduktion</p>
 						<br></br>
 						<br></br>
 						<p>Physikalischer Charakter für die digitale Welt</p>
-						<p>Viele Dinge, die wir lieben sind in der realen Welt, wir möchten diesen Charakter und dieses Gefühl auch für digitale Dinge erreichen.</p>`,
+						<p>Viele Dinge, die ich liebe sind in der realen Welt, ich möchte diesen Charakter und dieses Gefühl auch für digitale Dinge erreichen.</p>`,
 			"ui": {
 				"headline": "User Interfaces",
 				"text": `<p>Apps, Websiten und Spiel Interfaces, designt Probleme zu lösen, designt ein Erlebnis zu sein.</p>`,
@@ -456,7 +456,7 @@ export default {
 			"sonicDesign": {
 				"headline": "Sonic Design",
 				"text":
-					`<p>Wir machen Soundeffekte, Klanglandschaften und Musik in Harmonie, um die richtigen Gefühle zu übertragen.
+					`<p>Ich mache Soundeffekte, Klanglandschaften und Musik in Harmonie, um die richtigen Gefühle zu übertragen.
 						<br></br>
 						<br></br>
 						Musik für Film, Animation und Werbung
@@ -466,7 +466,7 @@ export default {
 		"evar": {
 			"subline": "Spiele, weltraum Spiele",
 		},
-		"inTheFuture": "In Zukunft werden alle unsere Felder hier sein.",
+		"inTheFuture": "In Zukunft werden alle meine Felder hier sein.",
 	},
 	// always there, nav, footer general translations
 	"Always": {
@@ -474,8 +474,8 @@ export default {
 		"products": "Produkte",
 		"fields": "Felder",
 		// Footer
-		"letsMeetAt": "Besuche uns auf",
-		"weAre": "Wir sind",
+		"letsMeetAt": "Besuche mich auf",
+		"weAre": "Ich bin",
 		"imprint": "Impressum",
 		"privacyPolicy": "Datenschutzerklärung",
 		"email": "E-Mail",
@@ -485,8 +485,8 @@ export default {
 	//
 	"Signup": {
 		"share": "Teile, was du gefunden hast?",
-		"noticed": "Du wirst so bald wie möglich von uns hören.",
-		"multipleNotice": "Wir werden dir nicht zwei E-Mails senden, aber wir haben uns deine Begeisterung vorgemerkt!",
+		"noticed": "Du wirst so bald wie möglich von mir hören.",
+		"multipleNotice": "Ich werde dir nicht zwei E-Mails senden, aber ich habe mir deine Begeisterung vorgemerkt!",
 	},
 	//
 	"createdBy": "Designed und gebaut von Zentru Systems mit 🫀 ❤️"
