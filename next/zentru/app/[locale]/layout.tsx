@@ -26,7 +26,7 @@ export default async function BaseLayout({
 						<Link href="https://www.linkedin.com/company/zentru-systems">linkedIn</Link>
 					</div>
 					<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset vPad">
-						<p>{tAlways("weAre") ?? "We are"}</p>
+						<p>{tAlways("weAre")}</p>
 						<Link href="/">
 							<ThemedImg style={{ height: 25 }}
 								lightSrc="/img/ZentruLogo/Color=Dark,Connected=False,Accent=Green,Line=Thick,Italic=False,WithRects=True.svg"
@@ -35,6 +35,9 @@ export default async function BaseLayout({
 						</Link>
 					</div>
 					<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
+						<Link href="/#about">
+							<p>{tAlways("about") ?? "About me"}</p>
+						</Link>
 						<Link href="/impressum">
 							<p>{tAlways("imprint") ?? "Imprint"}</p>
 						</Link>

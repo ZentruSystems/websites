@@ -1,4 +1,5 @@
 import { defaultHtml } from "@/lib/localization";
+import SocialLinks from "common/components/socialLinks/SocialLinks";
 import VerticalDivider from "common/components/verticalDivider/VerticalDivider";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
@@ -12,8 +13,8 @@ export default async function Page() {
 	return <main>
 			<section className="Head bg-l5 hGrid">
 				<div className="vCenter vBigPad ph-vPad s1 e7 ph-e5 vFill vSpaceing">
-					<h2 className="light noMargin">{tMain("because1") ?? "Because we don’t like how Companies treat their Customers."}</h2>
-					<h2 className="light noMargin">{tMain("because2") ?? "Because we don’t like bad design."}</h2>
+					<h2 className="light noMargin">{tMain("because1") ?? "Because I don’t like how Companies treat their Customers."}</h2>
+					<h2 className="light noMargin">{tMain("because2") ?? "Because I don’t like bad design."}</h2>
 					<h2 className="light noMargin">{tMain.rich("because3", {
 						span: (chunks) => <span className="bold mutedPrimaryAccent">{chunks}</span>,
 					})}</h2>
@@ -38,6 +39,29 @@ export default async function Page() {
 					src="/img/OldProducts.svg"
 					alt="Thoughtfulness from a lost era"
 				/>
+			</section>
+			{/*
+				Linked from the footer as `/#about`. The nav is fixed over the top of the page, so
+				`scroll-padding-top` in app/style.css is what keeps the heading out from under it.
+			*/}
+			<section id="about" className="About vhGrid">
+				<h2 className="s1 e5 ph-e5 tPad">{tMain("about.title")}</h2>
+				<div className="s1 e8 ph-e5 paragraphSpaceLarger">
+					{tMain.rich("about.body", defaultHtml)}
+				</div>
+				<p className="s1 e8 ph-e5 tPad">{tMain("about.findMe")}</p>
+				{/* One row per account – the icons alone cannot say whose they are, so each is labelled */}
+				<div className="s1 e8 ph-e5 flex">
+					<p className="vCenter">{tMain("about.mineLabel")}</p>
+					<SocialLinks account="personal" linkedIn github instagram style={{ placeContent: "start" }} />
+				</div>
+				<div className="s1 e8 ph-e5 flex">
+					<p className="vCenter">{tMain("about.zentruLabel")}</p>
+					<SocialLinks linkedIn instagram style={{ placeContent: "start" }} />
+				</div>
+				<div className="s1 e8 ph-e5 bPad paragraphSpaceLarger">
+					{tMain.rich("about.closing", defaultHtml)}
+				</div>
 			</section>
 			<section className="Sustainability">
 
