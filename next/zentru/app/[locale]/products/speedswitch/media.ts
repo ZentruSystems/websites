@@ -15,7 +15,15 @@
 export type MediaSource = {
 	/** Path under /public, e.g. "/img/speedswitch/hero.mp4" */
 	src?: string;
-	/** Poster frame, e.g. "/img/speedswitch/hero.jpg" */
+	/**
+	 * Optional smaller encode of the same clip, offered ahead of `src`. Browsers that cannot
+	 * decode it fall through to the mp4, so filling this in is safe on its own.
+	 */
+	webm?: string;
+	/**
+	 * Poster frame, e.g. "/img/speedswitch/hero.jpg". Worth filling in for every clip: it is
+	 * what shows before a clip scrolls into view, and it is all a reduced-motion visitor sees.
+	 */
 	poster?: string;
 };
 

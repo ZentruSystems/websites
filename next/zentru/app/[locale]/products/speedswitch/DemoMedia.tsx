@@ -43,12 +43,25 @@ function shuffled(items: number[]): number[] {
 	return next;
 }
 
+/** What `<source type>` should say. Only ever called for the paths that passed the video test. */
+function mimeType(src: string): string {
+	if (/\.webm$/i.test(src)) return "video/webm";
+	if (/\.mov$/i.test(src)) return "video/quicktime";
+	return "video/mp4";
+}
+
 /**
  * A silent, looping demo clip – or a playlist of them.
  *
  * Motion is started from an effect rather than the `autoplay` attribute: that way
  * `prefers-reduced-motion` is honoured on the first frame instead of after it, and the
  * poster stays put with a play control for anyone who asked for less movement.
+ *
+ * The same effect also pauses the clip while it is off screen. A decoding video costs the
+ * same whether or not anyone can see it, and this page carries three of them, so leaving them
+ * all running was most of its idle cost. Waiting for the clip to come into view is also what
+ * lets `preload="metadata"` mean anything: before this, calling `play()` on mount overrode it
+ * and pulled every clip down at once.
  */
 export default function DemoMedia({
 	media,
@@ -84,21 +97,46 @@ export default function DemoMedia({
 	const src = current?.src;
 
 	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
 		const query = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-		function apply() {
-			setPrefersReducedMotion(query.matches);
+		// Whether the clip is on screen lives here rather than in state: nothing rendered below
+		// depends on it, so putting it in React would re-render on every scroll for no repaint.
+		let isOnScreen = false;
 
-			const video = videoRef.current;
-			if (!video) return;
-
-			if (query.matches) video.pause();
-			else video.play().catch(() => { /* autoplay refused – the poster stays, which is fine */ });
+		function sync() {
+			if (isOnScreen && !query.matches) {
+				video.play().catch(() => { /* autoplay refused – the poster stays, which is fine */ });
+			} else {
+				video.pause();
+			}
 		}
 
-		apply();
-		query.addEventListener("change", apply);
-		return () => query.removeEventListener("change", apply);
+		function onMotionPreferenceChange() {
+			// This one does need a render: it is what puts controls on the element
+			setPrefersReducedMotion(query.matches);
+			sync();
+		}
+
+		// A little ahead of the viewport, so a clip is already running by the time it is read
+		const observer = new IntersectionObserver(
+			entries => {
+				isOnScreen = entries.some(entry => entry.isIntersecting);
+				sync();
+			},
+			{ rootMargin: "200px" },
+		);
+		observer.observe(video);
+
+		setPrefersReducedMotion(query.matches);
+		query.addEventListener("change", onMotionPreferenceChange);
+
+		return () => {
+			observer.disconnect();
+			query.removeEventListener("change", onMotionPreferenceChange);
+		};
 	}, [src]);
 
 	/** One clip finished. Move to the next, reshuffling each time round so a cycle is not fixed. */
@@ -150,7 +188,6 @@ export default function DemoMedia({
 			// Remounts on change, so the new clip starts from its first frame rather than
 			// carrying the previous one's playback position
 			key={src}
-			src={src}
 			poster={current?.poster}
 			aria-label={description}
 			controls={prefersReducedMotion}
@@ -159,7 +196,12 @@ export default function DemoMedia({
 			onEnded={sources.length > 1 ? playNext : undefined}
 			muted
 			playsInline
+			// Only metadata until the clip comes into view – the effect above starts it there
 			preload="metadata"
-		/>
+		>
+			{/* Sources rather than a `src` attribute, so a smaller encode can be listed first */}
+			{current?.webm && <source src={current.webm} type="video/webm" />}
+			<source src={src} type={mimeType(src)} />
+		</video>
 	</div>;
 }

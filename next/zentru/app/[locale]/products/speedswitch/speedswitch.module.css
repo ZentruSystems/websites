@@ -23,12 +23,18 @@
 	background-color: var(--l5);
 }
 
-/* Keeps the headline readable over whatever ends up in the clips, in both themes */
+/*
+	Keeps the headline readable over whatever ends up in the clips, in both themes.
+
+	Deliberately no `backdrop-filter`. This element is viewport sized and the clip behind it is
+	playing, so a backdrop blur would be recomputed across the whole viewport on every decoded
+	frame – and the 0.8 alpha above it hid all but a fifth of the result anyway. If the edges
+	need softening, blur the video element itself rather than the backdrop.
+*/
 .heroScrim {
 	position: absolute;
 	inset: 0;
-	background-color: rgb(from var(--backgroundColor) r g b / 0.8);
-	backdrop-filter: blur(3px);
+	background-color: rgb(from var(--backgroundColor) r g b / 0.85);
 }
 
 .heroContent {
