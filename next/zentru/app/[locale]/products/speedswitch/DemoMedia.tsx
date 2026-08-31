@@ -107,10 +107,15 @@ export default function DemoMedia({
 		let isOnScreen = false;
 
 		function sync() {
+			// Read through the ref rather than the const above: this runs later, from an
+			// observer or a media query, by which time the element may already be gone
+			const element = videoRef.current;
+			if (!element) return;
+
 			if (isOnScreen && !query.matches) {
-				video.play().catch(() => { /* autoplay refused – the poster stays, which is fine */ });
+				element.play().catch(() => { /* autoplay refused – the poster stays, which is fine */ });
 			} else {
-				video.pause();
+				element.pause();
 			}
 		}
 
@@ -120,14 +125,14 @@ export default function DemoMedia({
 			sync();
 		}
 
-		// A little ahead of the viewport, so a clip is already running by the time it is read
-		const observer = new IntersectionObserver(
-			entries => {
-				isOnScreen = entries.some(entry => entry.isIntersecting);
-				sync();
-			},
-			{ rootMargin: "200px" },
-		);
+		// No rootMargin. The sections here are about a viewport tall, so even a small margin
+		// reaches into the next one and starts a second clip decoding – and downloading –
+		// while it is still off screen, which is the cost this is here to avoid. The poster is
+		// what covers the moment before the first frame.
+		const observer = new IntersectionObserver(entries => {
+			isOnScreen = entries.some(entry => entry.isIntersecting);
+			sync();
+		});
 		observer.observe(video);
 
 		setPrefersReducedMotion(query.matches);
@@ -196,8 +201,11 @@ export default function DemoMedia({
 			onEnded={sources.length > 1 ? playNext : undefined}
 			muted
 			playsInline
-			// Only metadata until the clip comes into view – the effect above starts it there
-			preload="metadata"
+			// Nothing until the clip comes into view, where the effect above plays it and the
+			// load starts. `metadata` is not enough: the browser fetches the header of every
+			// video element on the page, which for these files is a request each before a
+			// visitor has scrolled anywhere. The poster covers the gap before the first frame.
+			preload="none"
 		>
 			{/* Sources rather than a `src` attribute, so a smaller encode can be listed first */}
 			{current?.webm && <source src={current.webm} type="video/webm" />}
