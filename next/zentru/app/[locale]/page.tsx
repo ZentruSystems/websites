@@ -52,11 +52,11 @@ export default async function Page() {
 				<p className="s1 e8 ph-e5 tPad">{tMain("about.findMe")}</p>
 				{/* One row per account – the icons alone cannot say whose they are, so each is labelled */}
 				<div className="s1 e8 ph-e5 flex">
-					<p className="vCenter rUnitPad">{tMain("about.mineLabel")}</p>
+					<p className="vCenter">{tMain("about.mineLabel")}</p>
 					<SocialLinks account="personal" linkedIn github instagram style={{ placeContent: "start" }} />
 				</div>
 				<div className="s1 e8 ph-e5 flex">
-					<p className="vCenter rUnitPad">{tMain("about.zentruLabel")}</p>
+					<p className="vCenter">{tMain("about.zentruLabel")}</p>
 					<SocialLinks linkedIn instagram style={{ placeContent: "start" }} />
 				</div>
 				<div className="s1 e8 ph-e5 bPad paragraphSpaceLarger">

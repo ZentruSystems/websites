@@ -590,7 +590,7 @@ export default {
 		"fields": "Fields",
 		// Footer
 		"letsMeetAt": "Let's meet at",
-		"weAre": "I am",
+		"weAre": "This is",
 		"imprint": "Imprint",
 		"about": "About me",
 		"privacyPolicy": "Privacy Policy",

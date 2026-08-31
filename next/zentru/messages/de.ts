@@ -493,7 +493,7 @@ export default {
 		"fields": "Felder",
 		// Footer
 		"letsMeetAt": "Besuche mich auf",
-		"weAre": "Ich bin",
+		"weAre": "Das ist",
 		"imprint": "Impressum",
 		"about": "Über mich",
 		"privacyPolicy": "Datenschutzerklärung",
