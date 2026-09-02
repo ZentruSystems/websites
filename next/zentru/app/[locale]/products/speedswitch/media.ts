@@ -33,7 +33,7 @@ const mediaSources: Record<string, Media> = {
 	"accessibility-permission": {},
 	"usecase-video-music-demo": [
 		{ src: "/img/speedswitch/SpeedSwitch.Vertical.SBS.Logic.mp4" },
-		{ src: "/img/speedswitch/SpeedSwitch.Fast.Resolve.mp4" },
+		// { src: "/img/speedswitch/SpeedSwitch.Fast.Resolve.mp4" },
 	],
 	"usecase-video-music-still": {},
 	"usecase-graphics-demo": { src: "/img/speedswitch/SpeedSwitch.Fast.Figma.mp4" },

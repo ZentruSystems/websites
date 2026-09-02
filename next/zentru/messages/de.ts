@@ -48,7 +48,7 @@ export default {
 					es, mit gehaltener Taste legt er ein Viertel der Strecke zurück und landet darauf.`,
 			},
 			"hero": {
-				"headline": "Hör auf, nur zum Verschieben reinzuzoomen.",
+				"headline": "Hör auf, nur für's Verschieben reinzuzoomen.",
 				"sub": `Halte eine Taste und dein Zeiger schaltet einen Gang herunter: dieselbe Handbewegung legt nur noch
 					ein Viertel der Strecke zurück. Triff genau den Punkt, genau den Griff,
 					genau das Keyframe – ohne die Zoomstufe zu verlassen, in der du gerade arbeitest, und ohne nach einer
