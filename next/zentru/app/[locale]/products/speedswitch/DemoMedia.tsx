@@ -31,6 +31,7 @@ type DemoMediaProps = {
 	 * Ignored when the slot holds a single clip.
 	 */
 	order?: "defined" | "random";
+	preload?: "none" | "metadata" | "auto"
 };
 
 /** Fisher-Yates. Returns a new array; the caller decides when it is safe to swap one in. */
@@ -58,6 +59,7 @@ export default function DemoMedia({
 	fill = false,
 	kind = "clip",
 	order = "defined",
+	preload = "none"
 }: DemoMediaProps) {
 	const t = useTranslations("Products.speedswitch.media");
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -159,7 +161,7 @@ export default function DemoMedia({
 			onEnded={sources.length > 1 ? playNext : undefined}
 			muted
 			playsInline
-			preload="metadata"
+			preload={preload}
 		/>
 	</div>;
 }

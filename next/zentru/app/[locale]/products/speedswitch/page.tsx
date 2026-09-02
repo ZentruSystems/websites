@@ -89,7 +89,7 @@ async function Hero() {
 	return <section id={heroId} className={`vhGrid ${style.hero}`}>
 		<div className={style.heroMedia} aria-hidden>
 			<div className={style.heroPane}>
-				<DemoMedia fill media={mediaFor("hero-comparison")} description={t("hero.demo")} />
+				<DemoMedia fill media={mediaFor("hero-comparison")} description={t("hero.demo")} preload="auto" />
 			</div>
 			<div className={style.heroScrim} />
 		</div>
@@ -227,8 +227,8 @@ async function PricingSection() {
 	const t = await getTranslations("Products.speedswitch");
 
 	return <section className="vhGrid vPad bg-l5">
-		<h2 className="s1 e12 ph-s1 ph-e5">{t("pricing.title", productValues)}</h2>
-		<div className={`s1 e7 ph-s1 ph-e5 ${style.priceBox}`}>
+		<h2 className="s4 e8 ph-s1 ph-e5" style={{textAlign:"center"}}>{t("pricing.title", productValues)}</h2>
+		<div className={`s4 e8 ph-s1 ph-e5 hCenter ${style.priceBox}`}>
 			<p className={style.priceAnchor}>
 				{t("pricing.anchor", { regular: speedSwitch.regularPrice })}
 			</p>
@@ -241,7 +241,7 @@ async function PricingSection() {
 			</ul>
 			<DownloadCta placement="pricing" full note={t("hero.micro", productValues)} />
 		</div>
-		<p className={`s1 e7 ph-s1 ph-e5 ${style.priceNote}`}>
+		<p className={`s4 e8 ph-s1 ph-e5 hCenter${style.priceNote}`}>
 			{t("pricing.note", productValues)}
 			{" "}
 			<Link
