@@ -88,10 +88,20 @@ footer p {
   }
 }
 
+/* An #anchor has to stop below the nav, which is fixed across the top of the page */
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
 @media screen and (max-width: 730px) {
   nav {
     position: fixed;
     bottom: 0;
+  }
+
+  /* Down here the nav sits along the bottom instead, so nothing covers the target */
+  html {
+    scroll-padding-top: 0;
   }
 
 

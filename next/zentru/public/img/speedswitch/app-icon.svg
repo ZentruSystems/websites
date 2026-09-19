@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- The macOS/Windows app icon. The rounded shape below plays the part of the
+       stroked square in logo.*.svg, so the arrow and the accent bar sit at the
+       proportions they do in the logo.
+
+       Geometry follows Apple's icon grid: an 824x824 shape inset in a 1024
+       canvas, corner radius 185.4.
+
+       The accent is #55f1a3, the exact hex of the logo's hsl(150, 85%, 64%).
+       Spelled out because AppKit's SVG renderer — which rasterises this file
+       into the .icns and .ico slots — ignores hsl() and falls back to blue. -->
+  <defs>
+    <linearGradient id="backdrop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262a2e"></stop>
+      <stop offset="1" stop-color="#121316"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185.4" fill="url(#backdrop)"></rect>
+  <polygon points="512,705.7 333.3,507.1 422.7,507.1 422.7,268.9 601.4,268.9 601.4,507.1 690.7,507.1" fill="#ffffff"></polygon>
+  <rect x="392.9" y="816.8" width="238.3" height="49.6" rx="24.8" fill="#55f1a3"></rect>
+</svg>

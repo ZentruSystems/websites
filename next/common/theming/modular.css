@@ -355,6 +355,13 @@
 	padding-top: var(--nav-height);
 }
 
+.underNav {
+	margin-top: calc(-1* var(--nav-height));
+}
+.underNav>* {
+	--nav-height: 0px;
+}
+
 .s0 {
 	grid-column-start: 1;
 }

@@ -2,12 +2,15 @@
 
 import useTheme from "common/theming/useTheme";
 import Image, { ImageProps } from "next/image";
+import { MouseEventHandler } from "react";
 
 type AdditionalProps = {
 	/** Path or imported image */
 	lightSrc: String | any;
 	/** Path or imported image */
 	darkSrc: String | any;
+	onMouseEnter?: MouseEventHandler<HTMLImageElement> | undefined;
+	onMouseLeave?: MouseEventHandler<HTMLImageElement> | undefined;
 }
 type ThemedImagePropsType = AdditionalProps & Omit<ImageProps, "src">;
 

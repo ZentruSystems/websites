@@ -1,0 +1,687 @@
+/*
+	The visual language of the product pages, as blocks any page can compose: full-width bands that
+	alternate with `bg-l5`, flat cards, hairlines instead of shadows, and the accent only for small
+	markers.
+
+	Note that `base.css` gives every element `line-height: 1em` and only `p` gets a readable one back,
+	so running text sits in a `p` or sets its own line height.
+*/
+
+/* Set by every section-level block (Band, Hero, ProofBar, CtaBand) */
+.block {
+	/* The mint is only readable on dark – the theme defines the dark variant for light backgrounds */
+	--accent: var(--darkPrimaryAccentColor);
+	--cardBg: var(--l5);
+}
+
+/* A card on a `bg-l5` band would disappear into it */
+.tinted {
+	--cardBg: var(--backgroundColor);
+}
+
+@media (prefers-color-scheme: dark) {
+	.block {
+		--accent: var(--primaryAccentColor);
+	}
+
+	.tinted {
+		--cardBg: var(--l6);
+	}
+}
+
+/* The shared theme defines no focus style, so keyboard focus would otherwise be the browser default or nothing */
+.block :focus-visible {
+	outline: 2px solid var(--foregroundColor);
+	outline-offset: 3px;
+}
+
+/*
+	Secondary text uses --l1, not --l2: --l2 is 50% grey, which is under 4:1 on white and fails
+	contrast at the sizes these are set in.
+*/
+.eyebrow {
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	color: var(--l1);
+	margin-bottom: var(--smallPad);
+}
+
+.note {
+	font-size: 0.8em;
+	font-weight: 300;
+	color: var(--l1);
+	margin-top: var(--smallPad);
+}
+
+/* For text that a phone's narrow column can do without */
+@media screen and (max-width: 730px) {
+	.notOnPhone {
+		display: none;
+	}
+}
+
+.visuallyHidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Hero */
+
+.hero {
+	padding-top: var(--bigPadding);
+	padding-bottom: var(--normalPadding);
+}
+
+.heroTitle {
+	font-size: min(calc(var(--largerFontSize) * 1.7), 11vw);
+	line-height: 1.08em;
+	color: var(--foregroundColor);
+	margin-bottom: var(--paddingUnit);
+	max-width: 22ch;
+}
+
+.lead {
+	max-width: 640px;
+	margin-bottom: var(--paddingUnit);
+}
+
+/* Proof bar – sits on the hero's band, under a hairline */
+
+.proofBar {
+	padding-bottom: var(--normalPadding);
+}
+
+.proofInner {
+	padding-top: var(--paddingUnit);
+	border-top: 1px solid var(--l4);
+}
+
+.proofList {
+	list-style: none;
+	margin: 0;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+	gap: var(--grid-gap);
+}
+
+/* Spelled out: base.css gives `li:not(:last-child)` a margin at the same specificity */
+.proofList li,
+.proofList li:not(:last-child) {
+	margin: 0;
+	padding-left: var(--smallPad);
+	border-left: 2px solid var(--accent);
+}
+
+.proofTitle {
+	font-weight: 400;
+	font-size: 0.9em;
+}
+
+.proofText {
+	font-size: 0.8em;
+	font-weight: 300;
+	color: var(--l1);
+}
+
+/* Band – a section with a heading, an optional intro and aside, and a body */
+
+.intro {
+	max-width: 68ch;
+}
+
+.bandHead {
+	align-self: start;
+}
+
+.aside {
+	align-self: start;
+}
+
+.bandBody {
+	margin-top: var(--paddingUnit);
+}
+
+.bandBody > * + * {
+	margin-top: var(--normalPadding);
+}
+
+/* A heading one level below the band's own */
+.subTitle {
+	font-size: var(--normalFontSize);
+	font-weight: 400;
+	line-height: calc(var(--normalFontSize) + 4px);
+	margin-bottom: var(--smallPad);
+}
+
+/* A portrait or still in a band's aside */
+.portrait {
+	display: block;
+	width: 100%;
+	max-width: 360px;
+	height: auto;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	border-radius: var(--borderRadius);
+	/* Reserved space, so nothing shifts while it loads */
+	background-color: var(--l5);
+}
+
+/* Emphasis inside running text, for the one line a section wants remembered */
+.highlight {
+	font-weight: 400;
+	padding-left: var(--smallPad);
+	border-left: 2px solid var(--accent);
+}
+
+/* Cards */
+
+.cards {
+	list-style: none;
+	margin: 0;
+	display: grid;
+	gap: var(--grid-gap);
+}
+
+.cols2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cols3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cols4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+	margin: 0;
+	padding: var(--paddingUnit);
+	border-radius: var(--borderRadius);
+	background-color: var(--cardBg);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.card:not(:last-child) {
+	margin-bottom: 0;
+}
+
+.cardTitle {
+	font-size: var(--normalFontSize);
+	font-weight: 400;
+	line-height: calc(var(--normalFontSize) + 4px);
+	margin-bottom: calc(var(--paddingUnit) / 2);
+}
+
+.cardText ul {
+	margin-top: 0;
+}
+
+.cardText li {
+	margin-left: 1.1em;
+	font-weight: 200;
+	line-height: calc(var(--normalFontSize) * 1.4);
+}
+
+.tag {
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	font-weight: 300;
+	line-height: 1;
+	color: var(--l1);
+
+	padding: 5px 8px;
+	border: 1px solid var(--l3);
+	border-radius: 2px;
+	margin-bottom: var(--smallPad);
+}
+
+.tagAccent {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+/* At the foot of the card, level across a row however long each card's text is */
+.cardFoot {
+	margin-top: auto;
+	padding-top: var(--paddingUnit);
+}
+
+.cardFoot .tag {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+/* Steps – a numbered sequence, across on wide screens and down on narrow ones */
+
+.steps {
+	list-style: none;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(var(--count), minmax(0, 1fr));
+	gap: var(--grid-gap);
+}
+
+.step {
+	margin: 0;
+	padding-top: var(--smallPad);
+	border-top: 2px solid var(--l1);
+}
+
+.step:not(:last-child) {
+	margin-bottom: 0;
+}
+
+/* The stage that never finishes */
+.stepOngoing {
+	border-top-style: dashed;
+}
+
+.stepNumber {
+	display: block;
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	color: var(--l1);
+	margin-bottom: calc(var(--paddingUnit) / 3);
+}
+
+.step .tag {
+	display: inline-block;
+	margin-top: var(--smallPad);
+	margin-bottom: 0;
+}
+
+/* Comparison – before and after, paired row by row */
+
+/* Separate, not collapsed: collapsed cells ignore the radius the "after" column is drawn with */
+.comparison {
+	width: 100%;
+	/* Two short phrases per row read as a pair only while the columns stay close together */
+	max-width: 960px;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.comparison th {
+	text-align: left;
+	font-size: var(--normalFontSize);
+	font-weight: 400;
+	line-height: 1.3;
+	padding: var(--smallPad) var(--paddingUnit);
+}
+
+/* German compounds are longer than a phone's table column; hyphens need the page's `lang` */
+.comparison th,
+.comparison td,
+.packageTable th,
+.packageTable td {
+	hyphens: auto;
+	overflow-wrap: break-word;
+}
+
+.comparison td {
+	vertical-align: top;
+	font-weight: 200;
+	line-height: 1.4;
+	padding: calc(var(--paddingUnit) / 2) var(--paddingUnit);
+	border-top: 1px solid var(--l4);
+}
+
+.comparison .before {
+	color: var(--l1);
+}
+
+/* The "after" column is the one that's filled in */
+.comparison .after {
+	background-color: var(--cardBg);
+	font-weight: 300;
+}
+
+.comparison thead .after {
+	border-top-left-radius: var(--borderRadius);
+	border-top-right-radius: var(--borderRadius);
+}
+
+.comparison tbody tr:last-child .after {
+	border-bottom-left-radius: var(--borderRadius);
+	border-bottom-right-radius: var(--borderRadius);
+}
+
+/* A drawn check or dash in front of a line of text; its own line height, or `*` sets 1em */
+.marker {
+	display: flex;
+	gap: calc(var(--smallPad) / 1.5);
+	align-items: baseline;
+	line-height: 1.4;
+}
+
+/* Check and dash – drawn, so they take the theme's colours in both modes */
+
+.check,
+.dash {
+	flex: none;
+	display: inline-block;
+}
+
+.check {
+	width: 0.4em;
+	height: 0.75em;
+	margin-inline: 0.2em;
+	border: solid var(--accent);
+	border-width: 0 2px 2px 0;
+	transform: translateY(-0.1em) rotate(45deg);
+}
+
+.dash {
+	width: 0.7em;
+	height: 2px;
+	vertical-align: middle;
+	background-color: var(--l3);
+	transform: translateY(-0.25em);
+}
+
+/* Case studies */
+
+.cases {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--grid-gap);
+}
+
+.case {
+	padding: var(--paddingUnit);
+	border-radius: var(--borderRadius);
+	background-color: var(--cardBg);
+}
+
+.caseFacts {
+	margin: 0;
+}
+
+.caseFacts dt {
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	color: var(--l1);
+	margin-top: var(--paddingUnit);
+	margin-bottom: 6px;
+}
+
+.caseFacts dd {
+	margin: 0;
+}
+
+.result {
+	padding-left: var(--smallPad);
+	border-left: 2px solid var(--accent);
+}
+
+.result p {
+	font-weight: 400;
+}
+
+/* Packages */
+
+.packageCards {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--grid-gap);
+}
+
+.packageCard {
+	padding: var(--paddingUnit);
+	border-radius: var(--borderRadius);
+	border: 1px solid transparent;
+	background-color: var(--cardBg);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* The upgrade reads as the one that adds something, without competing with the call to action */
+.packageUpgrade {
+	border-color: var(--accent);
+}
+
+.packageName {
+	font-size: var(--largerFontSize);
+	font-weight: 200;
+	line-height: 1.15;
+	margin-bottom: var(--smallPad);
+}
+
+.packageSummary {
+	font-weight: 400;
+}
+
+.packageFit {
+	margin-top: var(--smallPad);
+}
+
+.packageTable {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+.packageTable col:first-child {
+	width: 50%;
+}
+
+.packageTable th,
+.packageTable td {
+	padding: calc(var(--paddingUnit) / 2) var(--smallPad);
+	border-top: 1px solid var(--l4);
+	line-height: 1.4;
+}
+
+.packageTable thead th {
+	border-top: none;
+	font-weight: 400;
+	text-align: center;
+}
+
+.packageTable thead th:first-child,
+.packageTable tbody th,
+.packageTable tfoot th {
+	text-align: left;
+	font-weight: 200;
+}
+
+.packageTable td {
+	text-align: center;
+}
+
+.packageTable tfoot td,
+.packageTable tfoot th {
+	font-size: 0.8em;
+	font-weight: 300;
+	color: var(--l1);
+	vertical-align: top;
+}
+
+/* FAQ */
+
+.faqItem {
+	border-top: 1px solid var(--l4);
+	max-width: 800px;
+}
+
+.faqItem:last-of-type {
+	border-bottom: 1px solid var(--l4);
+}
+
+.faqQuestion {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--paddingUnit);
+	align-items: baseline;
+
+	padding-block: calc(var(--paddingUnit) / 1.5);
+	font-weight: 400;
+	line-height: 1.3;
+	cursor: pointer;
+	list-style: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+	display: none;
+}
+
+.faqQuestion::after {
+	content: "+";
+	color: var(--l1);
+}
+
+.faqItem[open] .faqQuestion::after {
+	content: "–";
+}
+
+.faqAnswer {
+	padding-bottom: calc(var(--paddingUnit) / 1.5);
+	max-width: 68ch;
+}
+
+/* Final call to action – set apart by scale and space rather than by colour */
+
+.ctaBand {
+	padding-block: var(--bigPadding);
+	text-align: center;
+}
+
+.ctaBandTitle {
+	font-size: min(calc(var(--largerFontSize) * 1.4), 9vw);
+	line-height: 1.15em;
+	margin-bottom: var(--paddingUnit);
+	color: var(--foregroundColor);
+}
+
+.ctaBandInner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.checkList {
+	list-style: none;
+	margin: var(--paddingUnit) 0 var(--normalPadding);
+	display: grid;
+	gap: var(--smallPad);
+	text-align: left;
+}
+
+.checkList li,
+.checkList li:not(:last-child) {
+	margin: 0;
+	font-weight: 200;
+}
+
+/* The call to action button – larger than the theme's default, which is sized for secondary actions */
+
+.cta:global(.buttonPrimary) {
+	display: inline-block;
+	padding: 15px 24px;
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+.ctaLarge:global(.buttonPrimary) {
+	padding: 20px 34px;
+	font-size: 1.15em;
+}
+
+@media screen and (max-width: 1100px) {
+
+	.cols3,
+	.cols4 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.steps {
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--paddingUnit);
+	}
+
+	.step {
+		padding-top: 0;
+		padding-left: var(--paddingUnit);
+		border-top: none;
+		border-left: 2px solid var(--l1);
+	}
+
+	.stepOngoing {
+		border-left-style: dashed;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.cases {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.hero {
+		padding-top: var(--normalPadding);
+	}
+
+	.heroTitle {
+		font-size: calc(var(--largerFontSize) * 1.15);
+	}
+
+	.cols2,
+	.cols3,
+	.cols4,
+	.packageCards {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.aside {
+		margin-top: var(--paddingUnit);
+	}
+
+	.comparison,
+	.packageTable {
+		font-size: 0.85em;
+	}
+
+	.comparison th {
+		font-size: inherit;
+	}
+
+	.comparison th,
+	.comparison td {
+		padding-inline: var(--smallPad);
+	}
+
+	.packageTable th,
+	.packageTable td {
+		padding-inline: 6px;
+	}
+
+	/* Two columns of names don't fit next to a 50% label column on a phone */
+	.packageTable col:first-child {
+		width: 46%;
+	}
+
+	.cta:global(.buttonPrimary),
+	.ctaLarge:global(.buttonPrimary) {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}

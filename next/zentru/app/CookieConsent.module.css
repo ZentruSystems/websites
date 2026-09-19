@@ -1,0 +1,73 @@
+.banner {
+	position: fixed;
+	left: var(--paddingUnit);
+	bottom: var(--paddingUnit);
+	/* Above the nav and the SpeedSwitch download bar */
+	z-index: 11;
+
+	max-width: 560px;
+	padding: var(--paddingUnit);
+	border-radius: var(--borderRadius);
+}
+
+.text {
+	font-size: 0.8em;
+	font-weight: 300;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--smallPad);
+	margin-top: var(--smallPad);
+}
+
+/*
+	Both buttons the same size, whatever the theme's defaults for each. The theme's button classes
+	set no font family, so without one here they fall back to the browser's (Arial).
+*/
+.actions :global(button.primary),
+.actions :global(button.secondary) {
+	min-width: 8em;
+	padding: 12px 18px;
+	font-family: var(--normalFont);
+}
+
+.banner :focus-visible,
+.settingsButton:focus-visible {
+	outline: 2px solid var(--foregroundColor);
+	outline-offset: 3px;
+}
+
+/* Looks like the footer links around it – buttons don't inherit type from their parent by default */
+.settingsButton {
+	font: inherit;
+	color: inherit;
+	line-height: inherit;
+	text-align: inherit;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 730px) {
+	/* The nav is along the bottom on a phone */
+	.banner {
+		left: var(--grid-gap);
+		right: var(--grid-gap);
+		bottom: calc(var(--nav-height) + var(--grid-gap));
+		max-width: none;
+		padding: var(--smallPad);
+	}
+
+	/* Side by side, sharing the width – stacked, the banner covers half the screen */
+	.actions > * {
+		flex: 1;
+	}
+
+	.actions :global(button.primary),
+	.actions :global(button.secondary) {
+		min-width: 0;
+	}
+}

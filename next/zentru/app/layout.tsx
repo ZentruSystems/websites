@@ -1,13 +1,13 @@
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "common";
 import FixFavicon from "common/theming/FixFavicon";
 import { Metadata } from "next";
 import { Locale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
 import { Geist_Mono } from 'next/font/google';
+import CookieConsent from "./CookieConsent";
 
 export const geistMono = Geist_Mono({});
 
@@ -30,8 +30,9 @@ export function InternationalizationLayout({ children, locale }: LayoutProps<"/"
 					lightSrc="/faviconDark/favicon.ico"
 				/>
 				<body>
+					{/* First in the tab order, so a keyboard reaches the choice before the page. Loads GA only once accepted. */}
+					<CookieConsent gaId="G-31E6P1N02L" />
 					{children}
-					<GoogleAnalytics gaId="G-31E6P1N02L" />
 					<Analytics />
 					<SpeedInsights />
 				</body>

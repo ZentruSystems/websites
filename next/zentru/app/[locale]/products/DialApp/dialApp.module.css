@@ -1,0 +1,119 @@
+.headSection {
+	grid-template-areas:
+		". . ."
+		". title ."
+		".  btn ."
+		". . ."
+		". text ."
+	;
+
+	grid-template-columns: 1fr auto 1fr;
+	grid-template-rows: 200px auto auto 185px 1fr;
+
+	/* fills the whole view, respecting the navigationBar */
+	--fullViewHeight: calc(100vh - var(--nav-height));
+	/* How much the next section should be visible */
+	--viewOver: max(calc(20vh - 100px), 30px);
+	/* The next section should be visible a bit */
+	--adaptiveHeight: calc(var(--fullViewHeight) - var(--viewOver));
+	/* Slow growth from here */
+	--adaptiveMaxHeight: calc(500px + 20vh);
+	/* Grow to this height at max, no matter what */
+	--maxHeight: calc(600px + var(--normalPadding));
+	/* At least show all content */
+	--minHeight: 630px;
+
+	/* maxHeight limited adaptiveMaxHeight */
+	--limitedAdaptiveMaxHeight: min(var(--adaptiveMaxHeight), var(--maxHeight));
+	/* limitedAdaptive Height */
+	--limitedHeight: min(var(--adaptiveHeight), var(--limitedAdaptiveMaxHeight));
+
+
+	height: max(var(--limitedHeight), var(--minHeight));
+	/* height: max-content; */
+	overflow: clip;
+	width: 100%;
+
+	position: relative;
+}
+.headSection img {
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	aspect-ratio: 1;
+	left: -137px;
+	top: -165px;
+}
+
+.recImage {
+	grid-area: rec;
+	position: absolute;
+	/* top: 57%; */
+
+	--imageHeight: 600px;
+	--sectionHeight: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+
+	max-height: 600px;
+	max-width: 350px;
+
+	/* --intrusion: min(80px + 20%, 260px); */
+	/* clip-path: rect(0 100% calc(var(--intrusion) * 2) 0); */
+	/* mask-clip: clip-box; */
+	/* top: calc(var(--sectionHeight) - var(--intrusion)); */
+	/* top: 50px; */
+	/* bottom: max(calc(600px), -300px); */
+	left: calc(5vw - 20px);
+	/* margin-bottom: -50%; */
+	/* bottom: calc(100% - 680px); */
+	bottom: min(calc(80% - 550px), -280px);
+	z-index: -1;
+}
+
+.neutralImage {
+	z-index: -1;
+	justify-self: center;
+	max-height: 600px;
+	max-width: 350px;
+}
+
+/* .recHeadBackground {
+	display: grid;
+	grid-template-rows: minmax(70px, 3fr) 1fr minmax(10%, 0.3fr);
+	height: calc(100vh - var(--nav-height) - (min(5vh, 30px)));
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+
+	grid-template-areas:
+		"text  .   neut"
+		". title neut"
+		"rec   . neut";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 15vh 1fr;
+	overflow: clip;
+} */
+
+@media screen and (max-width: 730px) {
+	.headSection img {
+		left: -145px;
+		top: -170px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.headSection {
+		grid-template-areas:
+			". . . ."
+			"text . . ."
+			"text . title ."
+			"text . btn ."
+			"text . . ."
+			". . . ."
+		;
+
+		/* grid-template-columns: auto 170px 1fr 1fr; */
+		grid-template-rows: max(150px, 40%) 10px min-content auto auto max(170px, 40%);
+		--minHeight: 430px;
+		--maxHeight: 530px;
+	}
+}

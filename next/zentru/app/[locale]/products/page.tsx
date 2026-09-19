@@ -1,8 +1,12 @@
 import { RecSection } from "./.rec/page";
+import { DialAppSection } from "./DialApp/page";
 import { ToolsSection } from "./tools/page";
+import { SpeedSwitchSection } from "./speedswitch/page";
 
 export default function Page() {
 	return <>
+	<SpeedSwitchSection/>
+	<DialAppSection/>
 	<RecSection/>
 	<ToolsSection/>
 	{/* <section className="Pad vFillView hCenter vCenter flex">

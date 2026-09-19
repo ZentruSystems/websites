@@ -29,7 +29,7 @@ export default function Nav() {
 				<img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink href="/products">{tAlways("products")}</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-				<NavLink href="/fields">{tAlways("fields")}</NavLink>
+				<NavLink href="/services">{tAlways("services")}</NavLink>
 				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink>{tAlways("about")}</NavLink> */}
 				{vercelEnv != "production" && stagingBadge}
@@ -63,7 +63,7 @@ export default function Nav() {
 			<img className="vertSep" src="/img/vertical-divider.svg" />
 			<NavLink onNavigate={e => closeBurger()} href="/products">{tAlways("products") ?? "Products"}</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-			<NavLink onNavigate={e => closeBurger()} href="/fields">{tAlways("fields")}</NavLink>
+			<NavLink onNavigate={e => closeBurger()} href="/services">{tAlways("services")}</NavLink>
 			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
 			<NavLink>{tAlways("about")}</NavLink> */}
 		</div>

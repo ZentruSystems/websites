@@ -9,7 +9,7 @@ export default function DynamicQuote() {
 	const tMain = useTranslations("Main");
 
 	// TODO: add link to youtube video
-	const quoteer = isQuoteHovered ? "we" : "Phillip Stark";
+	const quoteer = isQuoteHovered ? "I" : "Phillip Stark";
 
 	return <>
 		<p className="s1 e8 ph-e5 rUnitPad">

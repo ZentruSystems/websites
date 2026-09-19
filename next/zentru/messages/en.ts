@@ -17,9 +17,9 @@ export default {
 			},
 			"section2": {
 				"title": "Why .rec?",
-					"content": `<maxWidth>So you never lose that melody or song you have in your head. You record it,
+				"content": `<maxWidth>So you never lose that melody or song you have in your head. You record it,
 						only to realize later that you have no idea how you imagined the harmonies, the bass, the drums... to be.<br></br></maxWidth>
-						<maxWidth>Believe us, this happens to everyone – all the time. We know this pain, and that's exactly why we built .rec.<br></br></maxWidth>
+						<maxWidth>Believe me, this happens to everyone – all the time. I know this pain, and that's exactly why I built .rec.<br></br></maxWidth>
 						<maxWidth>Who is .rec for? – Anyone! Everyone who thinks supercharged voice-memos sound pretty great!</maxWidth>`
 			},
 			"section3": {
@@ -35,31 +35,520 @@ export default {
 					</ul>`
 			},
 		},
+		"speedswitch": {
+			"meta": {
+				// The qualifier is what the title has to earn a click on: the name alone says nothing about what it does
+				"title": "SpeedSwitch — pointer precision without zooming",
+			},
+			// The card on the products overview
+			"overview": {
+				"icon": "The SpeedSwitch app icon.",
+				// For SpeedSwitch.PointerPath.svg, which is drawn and ready but not the icon currently shown
+				"image": `The same hand movement twice: without the key the pointer overshoots the target and hunts for
+					it, with the key held it covers a quarter of the distance and lands on it.`,
+			},
+			"hero": {
+				"headline": "Stop zooming in just to nudge something.",
+				"sub": `Hold a key and your pointer switches to a lower gear: the same hand movement now covers a quarter of the
+					distance. Place the exact node, the exact handle, the exact keyframe without leaving the zoom level you
+					are working at — and without reaching for a mouse you didn't bring.`,
+				"micro": "{days} usage days, full version. No account, no card.",
+				"demo": "Left: zoom in, nudge, zoom back out, check. Right: hold the key, nudge, done.",
+			},
+			"cta": {
+				"download": "Download free trial",
+				"downloadFor": "Download free trial — for {platform}",
+				"buy": "Buy — {price, number, ::currency/EUR}, one-time",
+				"alsoFor": "Also for {platform}",
+			},
+			// Placeholder labels, kept for slots that have no footage yet
+			"media": {
+				"clip": "Demo clip — coming soon",
+				"still": "Still — coming soon",
+				"screenshot": "Screenshot — coming soon",
+			},
+			"useCases": {
+				"title": "What are you working on?",
+				"intro": "The problem is the same everywhere: too many targets, too few pixels. Only what sits under the pointer changes.",
+				"tabsLabel": "Use cases",
+				"video-music": {
+					"label": "Video & Music",
+					"headline": "The right handle, first try.",
+					"body": `<p>Trim, roll, slip and the fade handle all live within a few pixels of the same edge. Slow the
+						pointer and take the one you meant, without zooming into the cut and back out again.</p>
+						<p>Audio stacks the same way: region edges, fade curves, automation nodes and warp markers all land on the
+						same point of the timeline. Get the one you're after with the whole arrangement still in view.</p>`,
+					"solves": `<ul>
+						<li>Trim, roll and slip zones sharing one clip edge</li>
+						<li>Automation nodes and keyframes sitting on top of the clip below them</li>
+						<li>Region edges next to the neighbouring region's edge</li>
+						</ul>`,
+					"demo": "A tight cut in an NLE: the trim handle versus the move zone.",
+					"still": "A timeline edge with the trim handle armed.",
+				},
+				"graphics": {
+					"label": "Graphics",
+					"headline": "Precision while you see the bigger picture.",
+					"body": `<p>Design is judged whole. Whether something sits right depends on the margin on the other
+						side and the alignment three elements over, and that judgement needs the whole canvas on screen.
+						Placing it exactly needs the opposite.</p>
+						<p>So you zoom in, nudge, zoom out to see whether it worked, zoom back in to correct it. Most
+						people have done it for so long that it no longer registers as a cost. Hold your key instead and
+						the same hand movement covers a quarter of the distance: you place it to the pixel at the zoom
+						level you were already at, and there is nothing to go back and check.</p>`,
+					"solves": `<ul>
+						<li>Moving one element without losing sight of the rest</li>
+						<li>Aligning by eye to something at the far end of the canvas</li>
+						<li>Picking one object out of an overlapping stack</li>
+						</ul>`,
+					"demo": "Placing an element exactly, with the whole canvas still on screen.",
+					"still": "A canvas at working zoom, with one element being placed.",
+				},
+				"3d": {
+					"label": "3D",
+					"headline": "The snap point you meant.",
+					"body": `<p>Endpoint, midpoint, centre and intersection cluster inside a handful of pixels. Slow the pointer
+						and the right one arms — no orbiting and zooming just to disambiguate.</p>
+						<p>Snapping isn't what's failing you here. Snapping is what makes the result exact. What's failing you is
+						telling it which of the four candidates you meant.</p>`,
+					"solves": `<ul>
+						<li>Snap candidates competing for one pointer position</li>
+						<li>Gizmo axis handles that meet at the origin</li>
+						<li>Selecting an edge instead of the face behind it</li>
+						</ul>`,
+					"demo": "A 3D scene: arming the intended snap among clustered candidates.",
+					"still": "Four snap candidates inside a few pixels.",
+				},
+			},
+			// The laptop and trackpad case – its own section, because it is the case we lead on
+			"trackpad": {
+				"title": "No mouse. No desk. Still has to be exact.",
+				"body": `<p>A trackpad has about ten centimetres of travel to cover a whole display, so the pointer has to
+					move fast. Fine control isn't poor because you set it up wrong — the geometry decides for you.</p>
+					<p>At a desk you would reach for a mouse, or drop the sensitivity and sweep a bigger area. On a tray
+					table, a train seat or a hotel bed, neither is available. Holding a key is: the same swipe covers a
+					quarter of the distance, and the edge stops sliding out from under you.</p>
+					<p>It works the same way for a trackball, a mousepad, or any desk too small to sweep across.</p>`,
+				"demo": "Placing an object exactly, on a trackpad, at full speed and slowed down.",
+			},
+			"problem": {
+				"title": "Precision and overview shouldn't be a trade-off.",
+				"body": `<p>A timeline edge is stacked with targets a few pixels apart — move here, trim two pixels to the left,
+					roll at the boundary, fade at the corner, a keyframe just above. Each one arms a different tool.</p>
+					<p>Snapping isn't the problem. Snapping is what you want — it's what makes the result land exactly on the
+					frame. The problem is hitting the right few pixels so the right tool arms and the right target wins.</p>
+					<p>So you zoom in. Now you can be precise — but the rest of the picture is gone, so you can't tell whether
+					the edit is right in context. You zoom out to check. It's off. Zoom back in.</p>
+					<p>The time that costs is real, and it isn't the worst of it. The worst of it is that precision and overview
+					have become mutually exclusive, and you spend the day ping-ponging between them.</p>`,
+				"demo": "The same edit twice: zoomed in and back out, versus done in one pass.",
+			},
+			"howItWorks": {
+				"title": "A gearbox for your pointer.",
+				"body": `<p>Hold your key and the pointer switches to a lower gear: the same hand movement now covers a quarter of
+					the distance. Like a bike on a hill, you trade ground covered for control — adjustable from barely
+					damped to a crawl. The pixels don't move. Your hand just covers fewer of them, so every hover zone is
+					effectively four times further apart, and your zoom level never changes.</p>
+					<p>Let go, and you're back to full speed.</p>
+					<p>It sits in the menu bar or the tray and applies everywhere at once — it isn't a plugin for one
+					application. And it scales pointer movement itself, so it doesn't care whether a mouse, a trackpad, a
+					trackball or a pen produced it.</p>`,
+				"keyLine": "Any key or combination you like, picked when you set it up.",
+				"modes": {
+					// Kept in English: these are the labels the app's own settings use
+					"hold": { "name": "Hold", "text": "Slow while the key is down. The one most people use." },
+					"toggle": { "name": "Toggle", "text": "Press once to slow, press again to go back." },
+					"inverted": { "name": "Inverted", "text": "Slow all the time, hold to go fast. The one to pick for tremor or fatigue." },
+				},
+			},
+			// The alternatives people actually use today, and why each one falls short
+			"workarounds": {
+				"title": "What you're doing instead right now",
+				"items": {
+					"zoomCycle": {
+						"title": "Zoom in, edit, zoom out",
+						"text": `It works, but it makes precision and overview mutually exclusive, dozens of times an hour.
+							Switch to a lower gear instead — a quarter of the distance for the same movement — and the view never
+							moves.`,
+					},
+					"arrowNudge": {
+						"title": "Nudging with the arrow keys",
+						"text": `Discrete steps, a different shortcut in every application, and your hand has to leave the
+							pointer to reach them. SpeedSwitch is continuous, the same everywhere, and your hand stays where it was.`,
+					},
+					"lowerSensitivity": {
+						"title": "Turning the sensitivity down",
+						"text": `Then everything is slow all day, including the ninety percent of the time you only want to
+							cross the screen. SpeedSwitch is slow while you hold it and normal the rest of the time.`,
+					},
+					"buyHardware": {
+						"title": "“Just buy a mouse”",
+						"text": `Useless advice on a tray table, and no help to a trackpad, a trackball or a pen. SpeedSwitch works
+							with whatever is already under your hand.`,
+					},
+				},
+			},
+			// Said plainly and once, so nobody has to find out the hard way
+			"limits": {
+				"title": "What it doesn't do",
+				"items": {
+					"games": {
+						"title": "It won't help your aim",
+						"text": `SpeedSwitch adjusts the system pointer, so it has no effect in games that read the mouse through
+							raw input — which is most of the competitive ones. It is built for tools, not for games.`,
+					},
+					"tremor": {
+						"title": "It isn't tremor-filtering software",
+						"text": `Scaling movement down scales a tremor down with it, and Inverted mode suits that well. But it
+							scales everything uniformly — it doesn't separate intent from shake the way dedicated tremor
+							software does.`,
+					},
+					"permission": {
+						"title": "macOS will ask for Accessibility permission",
+						"text": `Watching pointer movement system-wide requires it — the same permission any window manager or
+							shortcut utility asks for. You grant it once. It is also why this cannot be a Mac App Store app.`,
+					},
+				},
+			},
+			"pen": {
+				"title": "Especially good with a pen.",
+				"body": `<p>A pen is direct, not precise. It puts the pointer exactly where you point — but “where you point” is
+					bounded by your hand, and by how much screen each millimetre of tablet covers. At 100% zoom, that isn't
+					enough to land on the right pixel.</p>
+					<p>SpeedSwitch trades the one thing you don't need in that moment — directness — for the one you do. And
+					unlike a mouse user, you can't buy your way out of this with a sensitivity button.</p>`,
+				"demo": "Pen on a tablet: the same small target, at full speed and slowed down.",
+			},
+			// Shown on /welcome, right before macOS puts the prompt in front of them
+			"permission": {
+				"title": "Why it asks for Accessibility permission",
+				"body": `<p>SpeedSwitch works by watching pointer movement at the system level and scaling it while your key
+					is held. On macOS, that requires Accessibility permission — the same one any window manager or shortcut
+					utility needs. You grant it once, in System Settings.</p>
+					<p>SpeedSwitch does not read what you type, does not record your screen, and does not send your input
+					anywhere.</p>`,
+				"screenshot": "System Settings → Privacy & Security → Accessibility, with SpeedSwitch enabled.",
+			},
+			"privacy": {
+				"title": "I value privacy — so I protect yours",
+				"intro": `That is how every Zentru Systems product is built, and SpeedSwitch is no exception. It watches
+					pointer movement to do its job and that is where it ends: it does not read what you type, does not record
+					your screen, and does not send your input anywhere.`,
+				"analytics": `What I do collect is anonymous product analytics — app launches, whether the key
+					actually got used, which settings people change. No account, no personal data, no device
+					fingerprint, no tracking across sites. It tells me whether the app is working for people, and
+					nothing else.`,
+				"controlBeforeLink": "You can turn it off completely in Settings. The full detail is in my ",
+				"controlLinkLabel": "privacy policy",
+				"controlAfterLink": ".",
+			},
+			"pricing": {
+				"title": "{price, number, ::currency/EUR}. Once.",
+				"items": {
+					"trial": "{days} usage days — only the days you use it count, full version, no card, no account",
+					"platforms": "{macOs}+ and {windows}+ in a single licence",
+					"machines": "Up to {machines} machines",
+					"updates": "Free updates",
+					"refund": "{days}-day refund, just email",
+				},
+				"anchor": "Introductory price. The regular price is {regular, number, ::currency/EUR precision-integer}.",
+				"note": `If you need this for a tremor or motor-control reason and {price, number, ::currency/EUR} is a barrier, email me and I'll send
+					you a licence.`,
+			},
+			"faq": {
+				"title": "Questions",
+				"items": {
+					"trackpad": {
+						"question": "Does it work on a laptop trackpad?",
+						"answer": `Yes, and that is the case it was built for. A trackpad has to cover a whole display with a
+							few centimetres of travel, so fine control is poor by construction — and unlike a mouse there is no
+							sensitivity button or bigger desk to fall back on. Scrolling, pinch-zoom and swipes are left alone.`,
+					},
+					"fineAdjust": {
+						"question": "Doesn't my editor already have a fine-adjust modifier?",
+						"answer": `Modifier keys refine a value once you've already grabbed something. They don't help you grab
+							the right thing in the first place. SpeedSwitch works before the click, in every app — including
+							plugin interfaces that never implemented a fine mode at all.`,
+					},
+					"dpiButton": {
+						"question": "Isn't this what the DPI button on a gaming mouse does?",
+						"answer": `Same idea, but it is tied to one device, it's a mode you have to remember to switch back out
+							of, and it does nothing for a trackpad or a pen tablet — which is exactly where the problem is
+							worst. It also does nothing about pointer acceleration: your system still stretches a quick
+							movement and compresses a slow one, so the same hand movement doesn't reliably cover the same
+							distance no matter which DPI step you picked. This is momentary, in software, and works with
+							whatever you already use.`,
+					},
+					"tablet": {
+						"question": "Does it work with a drawing tablet?",
+						"answer": "Yes. A pen is direct but not precise — SpeedSwitch is the missing half.",
+					},
+					"usageDays": {
+						"question": "How does the trial count down?",
+						"answer": `In usage days, not calendar days. A day only counts once you actually use it — leave it
+							untouched for a week and the trial doesn't move. What you get is days of real work, not a countdown
+							that runs out while you're busy with something else.`,
+					},
+					"apps": {
+						"question": "Which apps does it work in?",
+						"answer": `All of them. It operates below the application layer, so it doesn't need to know anything
+							about the software you're using.`,
+					},
+					"appStore": {
+						"question": "Is it on the Mac App Store?",
+						"answer": `No. The Accessibility permission SpeedSwitch needs isn't available to sandboxed App Store
+							apps, so it's sold directly.`,
+					},
+					"linux": {
+						"question": "Linux?",
+						"answer": `Not yet — whether it happens depends on how many people want it. Put your name down and
+							I'll let you know if it does.`,
+					},
+				},
+			},
+			// Signing up for a Linux version, inside the FAQ answer that says there isn't one
+			"linuxInterest": {
+				"pitch": "I'd be interested in a Linux version for {price, number, ::currency/EUR}",
+				"action": "Put me down",
+				"success": "Noted. I'll email you if a Linux version happens.",
+				"alreadySignedUp": "You were already on the list — noted again anyway.",
+				"error": "That didn't go through. Try again in a moment.",
+			},
+			"finalCta": {
+				"title": "Keep your zoom level. Hit the target anyway.",
+				"micro": "{days} usage days, full version. {macOs}+ and {windows}+.",
+			},
+			// Opened by the app on first launch, before macOS shows the permission prompt
+			"welcome": {
+				"metaTitle": "Welcome to SpeedSwitch",
+				"metaDescription": "Getting started with SpeedSwitch, and why it asks for Accessibility permission.",
+				"title": "SpeedSwitch is installed.",
+				"intro": {
+					"macos": "One permission and you're set. Here's what macOS is about to ask you, and why.",
+					"windows": "You're set. Here's how to get the feel of it in the next minute.",
+				},
+				"steps": {
+					"permission": {
+						"title": "macOS will ask for Accessibility",
+						"text": `SpeedSwitch scales pointer movement while your key is held, which means watching that movement
+							at the system level. macOS gates that behind Accessibility — the same permission every window
+							manager and shortcut tool asks for.`,
+					},
+					"grant": {
+						"title": "Grant it once, in System Settings",
+						"text": `System Settings → Privacy & Security → Accessibility, then switch SpeedSwitch on. There is
+							nothing else to set up.`,
+					},
+					"tryIt": {
+						"title": "Try it on something small",
+						"text": `Open whatever you work in, find a handle or an edge you normally zoom in for, and hold your
+							key as you approach it. That is the whole product.`,
+					},
+					"customise": {
+						"title": "Make it yours",
+						"text": `Change the key, the amount of slowdown, or the mode in Settings. The defaults are a starting
+							point, not a recommendation.`,
+					},
+				},
+				"reassurance": `SpeedSwitch does not read what you type, does not record your screen, and does not send your
+					input anywhere.`,
+				"trialNote": "Your trial is running — {days} usage days, full version, no account, no card.",
+				"manualClaim": "Didn't the app come back to the front? Open SpeedSwitch",
+			},
+		},
+		"DialApp": {
+			"sectionSummary": `Get a hold of your windows on macOS.
+			<br></br>
+			Switch the windows like Tony.<br></br>
+			Press the shortcut, move the mouse, let go, window switched!.`,
+			// TODO: Get the gaming aspect in there, "Windowswitching like gaming", "switch windows with like Tony Stark"
+			"headsection": {
+				"whatItIs": "Window switching, productive with emotions",
+				"reason": "No empty travels with your cursor, the menu is always where you are.",
+			},
+			"earlyAccess": {
+				"getEarlyAccess": "Get early access to DialApp",
+				"signupEarlyAccess-action": "Sign up for the early access",
+			},
+			"section2": {
+				"title": "Why DialApp?",
+				"content": `<maxWidth>Your cursor stays at the middle of the screen, ready for the next window, without having to move it to the edge or even another screen,
+						only for the dock to stay hidden until it pops up for a second, before giving up on you again. Save your energy for what you really want to do.<br></br></maxWidth>
+						<maxWidth>DialApp solves this issue by showing a radial menu, as seen in Sci-Fi and Games, showing all your open windows.<br></br></maxWidth>
+						<maxWidth>"Ha I can do that with Cmd+Tab already!" you might say, but try switching between multiple Finder windows...DialApp can do that<br></br></maxWidth>
+						<maxWidth>Who is DialApp for? – Anyone working with a Mac and wishing it had a better way to switch windows than to stack them.</maxWidth>`
+				// TODO: Add gif/video of DialApp showing multiple Finder windows.
+			},
+			"section3": {
+				"title": "Features",
+				"content": `<maxWidth>
+					DialApp is fast, it is simple and is set up in two minutes.<br></br>
+					</maxWidth>
+					<ul>
+					<li><maxWidth>Customizable global keyboard shortcut.</maxWidth></li>
+					<li><maxWidth>Resource efficient, it won't slow your Mac down, no matter how old.</maxWidth></li>
+					<li><maxWidth>Satisfying to use, customizable to your liking.</maxWidth></li>
+					</ul>`
+			},
+			"terms": {
+				"headline": "Terms and Conditions",
+				"lastUpdate": "Last updated: July 18, 2026",
+				"terms": `<p>Welcome to DialApp. These Terms and Conditions ("Terms") govern your use of my macOS application (the "App") and my associated web checkout services (the "Service"), operated by <b>Zentru Systems e.U.</b> ("me", "I", or "my").</p>
+					<p>By accessing or using my App and Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
+					<hr></hr>
+					<br></br>
+					<h3>1. Eligibility and Account</h3>
+					<p>To use my Service, you must be at least 16 years old (or the minimum age of digital consent in your jurisdiction). If you are under the legal age to form a binding contract, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+					<p>You are responsible for maintaining the confidentiality of any account credentials used to access the Service and for restricting access to your macOS device.</p>
+					<br></br>
+					<h3>2. Subscriptions, Fees, and Payments</h3>
+					<p>My Service offers premium features via paid subscriptions or one-time purchases ("Paid Services").</p>
+					<ul>
+							<li><p><strong>Billing Engine:</strong> Payments are processed via my third-party billing provider, RevenueCat Billing (utilizing Stripe as the underlying gateway). By initiating a purchase, you agree to provide accurate payment information and authorize recurring charges if applicable.</p></li>
+							<li><p><strong>Automatic Renewal:</strong> Subscription plans automatically renew at the end of each billing cycle unless cancelled before the renewal date through your customer portal.</p></li>
+							<li><p><strong>Price Changes:</strong> I reserve the right to modify subscription fees. Any price changes will be communicated in advance, giving you the opportunity to cancel before the change takes effect.</p></li>
+					</ul>
+					<br></br>
+					<h3>3. EU Right of Withdrawal (Compliance Statement)</h3>
+					<p>If you are a consumer residing in the European Union or European Economic Area (EEA), you generally have the right to withdraw from a digital purchase within 14 days without giving a reason under EU consumer law.</p>
+					<p><strong>Explicit Consent and Waiver:</strong> By purchasing a digital product or subscription through my Service and requesting immediate activation of the App’s premium features, you explicitly request the immediate performance of the contract. You acknowledge and agree that <strong>you lose your 14-day right of withdrawal</strong> once the digital content access is provisioned to your account via the RevenueCat system.</p>
+					<br></br>
+					<h3>4. License and Intellectual Property</h3>
+					<p>I grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App on compatible macOS devices strictly in accordance with these Terms.</p>
+					<p>All intellectual property rights in the App, including but not limited to source code, user interface designs, visual designs, assets, and logos, are the exclusive property of <b>Zentru Systems e.U.</b>. You may not reverse engineer, decompile, or modify the App.</p>
+					<br></br>
+					<h3>5. Acceptable Use</h3>
+					<p>You agree not to use the App or Service for any unlawful purpose, to disrupt the security or performance of my systems, or to attempt unauthorized access to my billing data or other users' profiles.</p>
+					<br></br>
+					<h3>6. Privacy and Data Protection</h3>
+					<p>Your privacy is important to me. My collection and processing of your personal data—including transaction identifiers processed via RevenueCat Billing—are governed strictly by my <strong>Privacy Policy</strong>, which complies with the General Data Protection Regulation (GDPR). Please review my Privacy Policy to understand your rights regarding data access, erasure, and portability.</p>
+					<br></br>
+					<h3>7. Disclaimer of Warranties</h3>
+					<p>The App and Service are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. I do not warrant that the App will be completely error-free or uninterrupted.</p>
+					<br></br>
+					<h3>8. Limitation of Liability</h3>
+					<p>To the maximum extent permitted by applicable law, <b>Zentru Systems e.U.</b> shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising out of your use or inability to use the App.</p>
+					<br></br>
+					<h3>9. Termination</h3>
+					<p>I reserve the right to terminate or suspend your access to the Paid Services or the App immediately, without prior notice or liability, if you breach these Terms.</p>
+					<br></br>
+					<h3>10. Governing Law and Jurisdiction</h3>
+					<p>These Terms shall be governed and construed in accordance with the laws of Austria, without regard to its conflict of law provisions.</p>
+					<p>Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts located in Klagenfurt, Austria.</p>
+					<br></br>
+					<h3>11. Contact Me</h3>
+					<p>If you have any questions about these Terms, please contact me at:</p>
+					<p>Email: <mailLink>service@zentru.systems</mailLink></p>`
+			},
+			"privacyPolicy": {
+				"headline": "Privacy Policy",
+				"lastUpdate": "July 18, 2026",
+				"policy": `<p>This Privacy Policy explains how <b>Zentru Systems e.U.</b> ("I", "me", or "my") collects, uses, and protects your personal data when you use my macOS application (the "App") and my associated web checkout services (the "Service").</p>
+					<p>I am committed to processing your data in compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws.</p>
+					<hr></hr>
+					<br></br>
+					<h3>1. Data Controller</h3>
+					<p>For the purpose of the GDPR, the data controller is:</p>
+					<p>
+							<b>Zentru Systems e.U.</b><br></br>
+							Laurenzgasse 13/11<br></br>
+							Austria<br></br>
+							Email: <mailLink>service@zentru.systems</mailLink>
+					</p>
+					<br></br>
+					<h3>2. Data Stored Locally on Your Device</h3>
+					<p>I strongly believe in data minimization. Any data you knowingly create inside the App—including your application settings, preferences, and local configurations—is stored <b>strictly locally on your macOS device</b>.</p>
+					<ul>
+							<li><p>This data never leaves your machine.</p></li>
+							<li><p>I do not operate external application servers, databases, or cloud syncing mechanisms to store your configuration data.</p></li>
+					</ul>
+					<br></br>
+					<h3>3. Data Collected Externally (RevenueCat Billing & Analytics)</h3>
+					<p>The only data collected externally is transaction and performance data managed by my third-party infrastructure partner, <b>RevenueCat, Inc.</b> (which utilizes <b>Stripe, Inc.</b> as the underlying payment gateway). This occurs when you interact with my web checkout or activate premium features.</p>
+					<br></br>
+					<h4>A. RevenueCat Billing (Transaction Data)</h4>
+					<p>When you subscribe or make a purchase, the following information is processed:</p>
+					<ul>
+							<li><p><b>Identifiers:</b> Email address (required to generate your receipt and access your billing customer portal) and an alphanumeric App User ID generated by the App.</p></li>
+							<li><p><b>Payment Data:</b> Subscription status, purchase history, transaction dates, and country/zip code. <em>Note: Full credit card numbers are handled directly by Stripe and are never visible to or stored by me.</em></p></li>
+							<li><p><b>Legal Basis under GDPR:</b> Art. 6(1)(b) GDPR – Performance of a contract (necessary to process your payment and deliver the premium features you purchased).</p></li>
+					</ul>
+					<br></br>
+					<h4>B. RevenueCat Analytics</h4>
+					<p>To ensure system stability, analyze conversion flows, and prevent fraudulent subscription usage, I utilize RevenueCat's analytics tools.</p>
+					<ul>
+							<li><p><b>Data Processed:</b> Device characteristics (macOS version, hardware model), coarse geographic location derived from IP address (country level), and purchase lifecycle events (e.g., trial starts, renewals, cancellations).</p></li>
+							<li><p><b>Legal Basis under GDPR:</b> Art. 6(1)(f) GDPR – Legitimate interests (my operational interest in optimizing my commercial service, debugging product failures, and maintaining app security).</p></li>
+					</ul>
+					<br></br>
+					<h3>4. Third-Party Data Processors</h3>
+					<p>I share the minimum required data with the following processors to operate my billing architecture:</p>
+					<ul>
+							<li><p><b>RevenueCat, Inc.</b> (Data infrastructure provider located in the USA). Data transfers to the US are secured via standard contractual clauses (SCCs) or verified frameworks approved by the European Commission.</p></li>
+							<li><p><b>Stripe, Inc.</b> (Payment gateway provider). Handles direct financial processing under strict PCI-DSS security standards.</p></li>
+					</ul>
+					<br></br>
+					<h3>5. Data Retention</h3>
+					<ul>
+							<li><p><b>Local Data:</b> Remains on your device until you delete the App or clean your local application support directories.</p></li>
+							<li><p><b>Billing Data:</b> Transaction records stored by RevenueCat are retained as long as your subscription is active, and subsequently archived for the duration required to fulfill local statutory tax, accounting, and legal audit obligations (typically up to 7 years depending on jurisdiction).</p></li>
+					</ul>
+					<br></br>
+					<h3>6. Your Rights Under the GDPR</h3>
+					<p>If you are a resident of the EU/EEA, you possess the following rights regarding your personal data:</p>
+					<ul>
+							<li><p><b>Right of Access:</b> You can request a copy of the billing data linked to your account.</p></li>
+							<li><p><b>Right to Rectification:</b> You can update your billing details via the self-service customer portal.</p></li>
+							<li><p><b>Right to Erasure ("Right to be Forgotten"):</b> You can request the deletion of your billing profile, subject to statutory retention limits.</p></li>
+							<li><p><b>Right to Data Portability:</b> You can request your transaction data in a structured, machine-readable format.</p></li>
+							<li><p><b>Right to Object:</b> You can object to data processing executed under my legitimate interests.</p></li>
+					</ul>
+					<p>To exercise any of these rights, please contact me at <mailLink>service@zentru.systems</mailLink>. You also retain the right to lodge a formal complaint with your local Data Protection Authority.</p>
+					<br></br>
+					<h3>7. Changes to This Policy</h3>
+					<p>I reserve the right to modify this Privacy Policy at any time. Any changes will be published directly on this page with an updated "Last Updated" timestamp.</p>`
+			}
+		},
 	},
 	"Main": {
-		"because1": "Because we don’t like how Companies treat their Customers.",
-		"because2": "Because we don’t like bad design.",
-		"because3": "Because we <span>love</span> really good.",
+		"because1": "Because I want customers to be treated well.",
+		"because2": "Because I care about good design.",
+		"because3": "Because I <span>love</span> really good.",
 
-		"weBelieve": `We believe that whatever we do, we should do it really good.<br></br>
-			We believe this, because we strive for the thoughtfulness and sustainable design of the past.<br></br>
+		"weBelieve": `I believe that whatever I do, I should do it really good.<br></br>
+			I believe this, because I strive for the thoughtfulness and sustainable design of the past.<br></br>
 			<br></br>
-			Just think of all the timeless designs we got – that’s what we love.<br></br>
+			Just think of all the timeless designs we got – that’s what I love.<br></br>
 			<span>As {quoteer} put it</span>`,
 		"timelessStark": "Timeless design is the only design that can be sustainable and the only design we should focus on",
 		"timelessWe": "No unnecessary features, no compromises—just well-executed systems that do exactly what they should, nothing more, nothing less.",
 
-		"weFocusOn": `We focus on what you feel, not how we deliver that feeling, just making sure you get more of it.<br></br>
+		"weFocusOn": `I focus on what you feel, not how I deliver that feeling, just making sure you get more of it.<br></br>
 							<br></br>
 							The undescribable feeling of using a product that is <i>really good</i>.`,
 
-		"checkOutAllOther": "Check out all our Projects from all our Fields",
+		// The About section on the home page. Anchored at #about, linked from the footer.
+		"about": {
+			"title": "About me",
+			"body": `<p>I am Felix, a developer, musician, design lover and a person that loves to make things
+				happen.</p>
+				<p>To me doing cool things with cool people is the best I can do.</p>
+				<p>And while doing that I like to do things "really good", to me that means that I always think about
+				what would be a good balance to achieve the goals we set, how people will use my products, and what would
+				be the best choice, not for me and my company, but for everyone.</p>`,
+			"findMe": "You can find me and Zentru Systems on LinkedIn and GitHub:",
+			// Names the row each set of icons belongs to – the icons alone cannot say whose they are
+			"mineLabel": "Me",
+			"zentruLabel": "Zentru Systems",
+			"closing": `<p>If you ever need any support, you can reach me there or via
+				<mailLink>service@zentru.systems</mailLink></p>`,
+		},
 	},
 	"Fields": {
 		"digitalExperiences": {
 			"name": "Digital Experiences",
 			"subline": "Useful, beautiful, emotional – an experience",
-			"headline-p1": "We can help you making your ",
+			"headline-p1": "I can help you making your ",
 			"headline-p2/1": "product",
 			"headline-p2/2": "project",
 			"headline-p3": "an <span>experience</span>.",
@@ -67,11 +556,11 @@ export default {
 				`<p>To make customers feel what you mean.</p>
 						<br></br>
 						<br></br>
-						<p>Our expertise contains: User interface design, Sonic design, Scoring and Music production</p>
+						<p>My expertise contains: User interface design, Sonic design, Scoring and Music production</p>
 						<br></br>
 						<br></br>
 						<p>Physical soul for the digital world.</p>
-						<p>Many things we love are in the physical world, we want to provide that character and soul for digital things as well</p>`,
+						<p>Many things I love are in the physical world, I want to provide that character and soul for digital things as well</p>`,
 			"ui": {
 				"headline": "User Interfaces",
 				"text": `<p>Apps, Websites and Game interfaces, designed to solve problems, designed to be an experience.</p>`,
@@ -79,29 +568,433 @@ export default {
 			"sonicDesign": {
 				"headline": "Sonic design",
 				"text":
-					`<p>We make sound effects, sweeping soundscapes and music in harmony to convey the right feelings.
+					`<p>I make sound effects, sweeping soundscapes and music in harmony to convey the right feelings.
 						<br></br>
 						<br></br>
 						Video scores for film, animation and advertising
 					</p>`,
 			},
 		},
+		// /project-bootstrap – the page has one job: a booked strategy call
+		"projectBootstrap": {
+			// The card on /fields
+			"name": "Project Bootstrap",
+			"subline": "Tools, plans and consulting",
+			"meta": {
+				"title": "Project Bootstrap — start your software project right",
+				// Kept under ~160 characters, which is where search results cut it off
+				"description": "Zentru Systems helps small finance businesses start software projects right: the right tools, a sound architecture, and tech and hiring decisions they understand.",
+			},
+			"hero": {
+				// <audience> is left out on a phone, where the headline right below already says it
+				"eyebrow": "Project Bootstrap<audience> · for small finance businesses</audience>",
+				"headline": "I help small finance businesses start their software project right.",
+				"sub": `From an idea or an AI-built prototype to a project that is ready to start, typically within one to
+					two weeks: the tools you actually need, a system architecture where every part fits, a timeline with
+					work packages, and the right hires. Every technical decision is explained in business terms, so you
+					always know what is going on.`,
+				"note": "Free and without obligation. You get a short assessment of your project.",
+			},
+			// The one conversion action on the page – the same words wherever it appears
+			"cta": {
+				"label": "Book a Free Strategy Call",
+			},
+			"proof": {
+				"label": "Recent work",
+				"items": {
+					"forecasting": {
+						"title": "Finance forecasting",
+						"text": "Bayesian regression with a Monte Carlo roll-up",
+					},
+					"marketData": {
+						"title": "Market and news impact",
+						"text": "Sourced live from the FastMarkets API",
+					},
+					"documents": {
+						"title": "Report extraction",
+						"text": "Profit and loss data from PDF, Word, Excel and CSV",
+					},
+					"jobs": {
+						"title": "Job intake",
+						"text": "From email into Google Sheets and a custom job system",
+					},
+				},
+			},
+			"problem": {
+				"title": "A good idea isn't a project yet.",
+				"intro": `You have an idea, maybe even a prototype an AI tool built for you. What's missing is everything
+					between that and a team that delivers: which tools you really need, how the parts fit together, what
+					gets built first, and who should build it.`,
+				"items": {
+					"tools": {
+						"title": "Paying for the wrong tools",
+						"text": `Without knowing what you actually need, you end up with too many subscriptions, or the
+							expensive ones, and tools that don't talk to each other.`,
+					},
+					"outsourcing": {
+						"title": "Built the way that suits them",
+						"text": `An external team will usually build the way that is easiest for them. That isn't
+							necessarily what's best for you, and without a plan of your own you can't tell the difference.`,
+					},
+					"plan": {
+						"title": "No plan to steer by",
+						"text": `Without milestones and clear work packages nobody can say whether the project is on
+							track, until it is over time and over budget.`,
+					},
+				},
+				"cost": `Every week of guessing costs budget, and the earliest choices, like tools, architecture and first
+					hires, are the most expensive ones to undo later.`,
+			},
+			"outcomes": {
+				"title": "Start with a project that is ready to run.",
+				"intro": `When we're done, your project is set up and ready for the people who will build it, and you
+					understand why it is set up the way it is.`,
+				"items": {
+					"tools": {
+						"title": "Only the tools you need",
+						"text": "Every tool has a job. Nothing you pay for sits unused, and nothing important is missing.",
+					},
+					"structure": {
+						"title": "Parts that work together",
+						"text": `One system architecture, so data, tools and people work with each other instead of
+							against each other.`,
+					},
+					"plan": {
+						"title": "Room to grow",
+						"text": `Work packages that can be done independently, so you can add people or hand a package
+							to an outside team without everything waiting on everything else.`,
+					},
+					"onboarding": {
+						"title": "Faster onboarding",
+						"text": `Documented tools and hands-on onboarding, so your managers can step in and new hires
+							get going without you explaining everything twice.`,
+					},
+					"decisions": {
+						"title": "Decisions you understand",
+						"text": "Tech and hiring choices explained in business terms, before you commit to them.",
+					},
+					"meetings": {
+						"title": "Fewer meetings, clear reporting",
+						"text": `With the Management upgrade I handle the day-to-day. You get one weekly check-in and a
+							status report instead of a calendar full of meetings.`,
+					},
+				},
+				"evidence": `In the two projects further down, this freed my clients to take on more work: one now runs
+					parallel projects and has won new clients, the other takes on more jobs with an error rate close to
+					zero.`,
+			},
+			"solution": {
+				"title": "One person between your business and your tech.",
+				"intro": `<p>I take your project from an idea to a working setup: project structure, choosing the tools,
+					technology consulting, building the idea and support with hiring.</p>
+					<p>Along the way I take load off management, cut out meetings nobody needs and translate between
+					business and tech, so a misunderstanding doesn't turn into weeks of rework.</p>`,
+				"estimate": "I solve about 95% of the issues that come up without you having to do anything.",
+				"portraitAlt": "Felix, who runs Zentru Systems",
+				"stagesTitle": "How a project comes together",
+				"ongoing": "Ongoing, with the Management upgrade",
+				"stages": {
+					"assess": {
+						"title": "Assess",
+						"text": "Where your idea or prototype stands, what works and what is missing.",
+					},
+					"architecture": {
+						"title": "Structure",
+						"text": "One system architecture, so every part of the project fits together.",
+					},
+					"tools": {
+						"title": "Tools",
+						"text": "Select, set up and connect the tools the project actually needs.",
+					},
+					"onboarding": {
+						"title": "Onboarding",
+						"text": "You and your team learn every tool that is new to you.",
+					},
+					"manage": {
+						"title": "Manage",
+						"text": "Issues, tasks, requirements, hires and meetings, handled continuously.",
+					},
+				},
+			},
+			"deliverables": {
+				"title": "What you get",
+				"intro": "Every deliverable is there for a business reason. Here is what each one does for you.",
+				"tags": {
+					"setup": "Setup",
+					"management": "Management upgrade",
+				},
+				"items": {
+					"assessment": {
+						"title": "Project assessment report",
+						"text": `Where your idea or prototype stands, what is missing and what it will take, so you
+							decide on facts instead of guesses.`,
+					},
+					"timeline": {
+						"title": "Project timeline",
+						"text": "Milestones with dates, so you know what happens when and can plan budget and people around it.",
+					},
+					"workPackages": {
+						"title": "Work packages",
+						"text": `The project split into pieces that can be worked on independently, so you can hire,
+							outsource or work in parallel.`,
+					},
+					"architecture": {
+						"title": "System architecture document",
+						"text": `How every part of the project fits together, written down, so everyone builds towards
+							the same system and nothing has to be rebuilt later to connect it.`,
+					},
+					"tools": {
+						"title": "Tools, completely set up",
+						"text": `Project management, communication and development tools sized for your business,
+							connected to each other and ready on day one.`,
+					},
+					"onboarding": {
+						"title": "Onboarding",
+						"text": `I go through the tools with you, your managers and new hires, in the way that suits each
+							person, so the system keeps working without me in the room.`,
+					},
+					"consulting": {
+						"title": "Tech and hiring consulting",
+						"text": `Help deciding what to build, what to buy and who to hire, so you hire the people you
+							actually need.`,
+					},
+					"management": {
+						"title": "Ongoing project management",
+						"text": `I manage the project day to day: issues, tasks, requirements and hires, with an eye on
+							costs. You get a weekly check-in and a status report.`,
+					},
+				},
+			},
+			"comparison": {
+				"title": "Before and after",
+				"beforeLabel": "Without a sound start",
+				"afterLabel": "With Project Bootstrap",
+				"rows": {
+					"guessing": {
+						"before": "Uninformed guessing",
+						"after": "Decisions based on an assessment",
+					},
+					"disconnected": {
+						"before": "Disconnected tools",
+						"after": "The right tools, connected",
+					},
+					"expensive": {
+						"before": "The wrong, expensive tools",
+						"after": "Only what you need, sized for your business",
+					},
+					"plan": {
+						"before": "No real plan behind the project",
+						"after": "Systematic documentation: architecture, timeline, work packages",
+					},
+					"budget": {
+						"before": "Out of time and over budget",
+						"after": "A timeline and budget to steer by",
+					},
+					"hires": {
+						"before": "Unneeded or wrong hires",
+						"after": "The right hires",
+					},
+					"meetings": {
+						"before": "Many meetings, because tech and business speak different languages",
+						"after": "Fewer meetings, with one person translating",
+					},
+				},
+			},
+			"cases": {
+				"title": "Results from real projects",
+				"intro": "Two projects I bootstrapped, managed and consulted on.",
+				"labels": {
+					"challenge": "The situation",
+					"work": "What I did",
+					"result": "The result",
+				},
+				"items": {
+					"forecasting": {
+						"title": "A finance forecasting system",
+						"challenge": `Forecasts depended on figures spread across profit and loss statements and reports
+							in PDF, Word, Excel and CSV files.`,
+						"work": `Bootstrapped, managed and consulted on a forecasting system: a customised Bayesian
+							regression model with Monte Carlo simulation for the roll-up, market and news impacts sourced
+							from the FastMarkets API, and data extraction from all of those documents.`,
+						"result": "The client was freed up to run parallel projects and win new clients.",
+					},
+					"jobs": {
+						"title": "Job extraction from email",
+						"challenge": "Job orders arrived by email and had to be moved into the job system by hand: slow and error-prone.",
+						"work": `Bootstrapped, managed and consulted on a system that extracts jobs from incoming email
+							into Google Sheets and a custom job system.`,
+						"result": `The client takes on more jobs, errors dropped to practically zero, and there is time
+							to handle special jobs personally, which improved customer retention and satisfaction.`,
+					},
+				},
+			},
+			"process": {
+				"title": "How it works",
+				"steps": {
+					"call": {
+						"title": "Book a strategy call",
+						"text": "We talk about your project, what you want it to achieve and where it is stuck.",
+					},
+					"plan": {
+						"title": "Get an assessment and a plan",
+						"text": `I work out the current state, the problems and their solutions, and create the timeline
+							and the system architecture.`,
+					},
+					"implement": {
+						"title": "Tools get implemented",
+						"text": "I set up and connect the agreed tools, onboard your team and set up the defined tasks.",
+					},
+				},
+			},
+			"packages": {
+				"title": "Two ways to work with me",
+				"intro": `Every project starts with the Setup. Management is an upgrade, for when you want me to manage the
+					project.`,
+				"caption": "What each package includes",
+				"featureLabel": "Included",
+				"included": "Included",
+				"notIncluded": "Not included",
+				"priceLabel": "Pricing",
+				"setup": {
+					"tag": "The default",
+					"name": "Setup",
+					"summary": "Your project, set up and ready to start.",
+					"fit": "Choose this if you or someone on your team will manage the project.",
+					"price": "Fixed price, up to {weeks} weeks",
+				},
+				"management": {
+					"tag": "Upgrade",
+					"name": "Setup + Management",
+					"summary": "Set up, then managed by me.",
+					"fit": "Choose this if you want me to manage the project, with one weekly check-in to keep you up to date.",
+					"price": "Setup at a fixed price, then monthly or hourly",
+				},
+				"rows": {
+					"assessment": "Project assessment report",
+					"architecture": "System architecture document",
+					"timeline": "Timeline and work packages",
+					"tools": "Tools set up and connected",
+					"onboarding": "Onboarding for you and your team",
+					"consulting": "Tech and hiring consulting, first {weeks} weeks included",
+					"dayToDay": "Day-to-day project management",
+					"meetings": "One weekly check-in instead of many meetings",
+					"reports": "Status reports",
+					"issues": "Issue handling and cost control",
+				},
+			},
+			// Plain strings: they also go into the page's structured data
+			"faq": {
+				"title": "Questions",
+				"items": {
+					"software": {
+						"question": "Will this work with our existing software?",
+						"answer": "Yes. I start from the tools you already use and build around them.",
+					},
+					"knowledge": {
+						"question": "Do we need technical knowledge?",
+						"answer": "No. I explain everything in business terms. If you do have technical knowledge, all the better.",
+					},
+					"duration": {
+						"question": "How long does implementation take?",
+						"answer": `The setup typically takes one to two weeks, and it can be faster if I get the information
+							I need when I need it. If we also shape the idea together it can take longer, depending on how
+							much consulting it needs. Management, if you choose it, is ongoing.`,
+					},
+					"consulting": {
+						"question": "Is the consulting included?",
+						"answer": "Yes, at no extra cost for the first {weeks} weeks. After that my standard rates apply.",
+					},
+					"handover": {
+						"question": "Can others work with the system?",
+						"answer": `Yes. I build the setup, and onboard your team on it, so that your managers can step in
+							and onboard new hires themselves.`,
+					},
+					"breaks": {
+						"question": "What happens if something stops working?",
+						"answer": `You can always reach out to me. If you use my standard setup, I also let you know about
+							problems other clients run into and help you apply the fix.`,
+					},
+					"smallBusiness": {
+						"question": "Is this suitable for a smaller business?",
+						"answer": `Yes, that is who it is for. A small business without its own development team should
+							still be able to build world-class software.`,
+					},
+					"involvement": {
+						"question": "How much involvement is required from our team?",
+						"answer": `As much as you want. With the Management upgrade you talk to me once a week. You can also
+							manage the project yourself and use me as a consultant.`,
+					},
+					"pricing": {
+						"question": "How is the service priced?",
+						"answer": `The setup, up to {weeks} weeks, is a fixed price. Management afterwards is billed monthly
+							or by the hour, whichever fits your project better.`,
+					},
+					"call": {
+						"question": "What happens during the call?",
+						"answer": `I learn about the project you have in mind and whether and how I can help best. If we
+							work together, I start right away. You don't need to decide on the Management upgrade yet,
+							but it helps if you already know.`,
+					},
+				},
+			},
+			"finalCta": {
+				"title": "Find out how your project can start on solid ground.",
+				"intro": "In a free strategy call you get:",
+				"items": {
+					"assessment": "A brief assessment of where your project stands",
+					"recommendations": "Practical recommendations on technology and project structure",
+					"nextSteps": "Clear next steps, whether you work with me or not",
+				},
+				"note": "For small businesses with a software project in mind. Free, no obligation.",
+			},
+			// The page the booking tool sends people back to
+			"booked": {
+				"title": "Your call is booked.",
+				"intro": "Thank you. The confirmation and the calendar invite are on their way to your inbox.",
+				"prepareTitle": "To get the most out of the call",
+				"prepare": `<ul>
+					<li>A few sentences about your idea, or a link to your prototype</li>
+					<li>What the project should achieve, and by when</li>
+					<li>The tools and people you already have</li>
+				</ul>`,
+				"change": "Need to move the call? Use the link in your confirmation email.",
+				"back": "Back to Project Bootstrap",
+			},
+		},
 		"evar": {
 			"subline": "Games, space games",
 		},
-		"inTheFuture": "In the future you will see all our fields here.",
 	},
 	// always there, nav, footer general translations
 	"Always": {
 		// Nav
 		"products": "Products",
-		"fields": "Fields",
+		"services": "Services",
 		// Footer
 		"letsMeetAt": "Let's meet at",
-		"weAre": "We are",
+		"weAre": "This is",
 		"imprint": "Imprint",
+		"about": "About me",
 		"privacyPolicy": "Privacy Policy",
 		"email": "E-Mail",
+		"valid": "valid",
+		"invalid": "invalid",
+		// The consent banner, and the footer entry that reopens it
+		"cookies": {
+			"label": "Cookie consent",
+			"text": `This site uses Google Analytics to understand how visitors use it. It sets cookies and only runs if
+				you accept. Anonymous, cookie-free statistics from Vercel run either way.`,
+			"policy": "Privacy Policy",
+			"accept": "Accept",
+			"decline": "Decline",
+			"settings": "Cookie settings",
+		},
+	},
+	//
+	"Signup": {
+		"share": "Share what you found?",
+		"noticed": "You will hear back from me as soon as possible.",
+		"multipleNotice": "I won't send you two emails, but I registered your eagerness!",
 	},
 	//
 	"createdBy": "Designed and built by Zentru Systems 🫀 ❤️"
