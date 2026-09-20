@@ -45,7 +45,7 @@ export default function BookCallCta({ placement, large = false }: {
 	}, []);
 
 	return <a
-		className={`buttonPrimary hover ${style.cta} ${large ? style.ctaLarge : ""}`}
+		className={`buttonAccent buttonPrimary hover ${style.cta} ${large ? style.ctaLarge : ""}`}
 		href={href}
 		onClick={() => trackEvent("booking_click", { placement })}
 	>

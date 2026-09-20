@@ -2,7 +2,6 @@ import Band from "@/app/blocks/Band";
 import style from "@/app/blocks/blocks.module.css";
 import CardGrid from "@/app/blocks/CardGrid";
 import CaseStudies from "@/app/blocks/CaseStudies";
-import Comparison from "@/app/blocks/Comparison";
 import CtaBand from "@/app/blocks/CtaBand";
 import Faq, { FaqItem } from "@/app/blocks/Faq";
 import Hero from "@/app/blocks/Hero";
@@ -18,8 +17,6 @@ import BookCallCta from "./BookCallCta";
 import { projectBootstrap } from "./config";
 import {
 	caseKeys,
-	comparisonKeys,
-	deliverables,
 	faqKeys,
 	finalCtaKeys,
 	managementOutcomeKeys,
@@ -81,8 +78,6 @@ export default async function ProjectBootstrapPage() {
 		<ProblemSection />
 		<OutcomesSection />
 		<SolutionSection />
-		<DeliverablesSection />
-		<ComparisonSection />
 		<CasesSection />
 		<ProcessSection />
 		<PackagesSection />
@@ -190,26 +185,27 @@ async function ProblemSection() {
 				text: t(`items.${key}.text`),
 			}))}
 		/>
-		<p className={`${style.highlight} ${style.intro}`}>{t("cost")}</p>
 	</Band>;
 }
 
+/** What the work is worth – money saved and hours freed – before the page says how it is done */
 async function OutcomesSection() {
-	const t = await getTranslations("Fields.projectBootstrap");
+	const t = await getTranslations("Fields.projectBootstrap.outcomes");
 
-	return <Band tinted title={t("outcomes.title")} intro={<p>{t("outcomes.intro")}</p>}>
+	return <Band tinted title={t("title")}>
+		<p className={`${style.highlight} ${style.intro} bUnitMarg`}>{t("evidence")}</p>
 		<CardGrid
-			columns={3}
+			columns={2}
+			tagPosition="topRight"
 			items={outcomeKeys.map(key => ({
 				key,
-				title: t(`outcomes.items.${key}.title`),
-				text: t(`outcomes.items.${key}.text`),
+				title: t(`items.${key}.title`),
+				text: t(`items.${key}.text`),
 				tag: managementOutcomeKeys.includes(key)
-					? { label: t("deliverables.tags.management"), accent: true }
+					? { label: t("managementTag"), accent: true }
 					: undefined,
 			}))}
 		/>
-		<p className={`${style.highlight} ${style.intro}`}>{t("outcomes.evidence")}</p>
 	</Band>;
 }
 
@@ -245,38 +241,11 @@ async function SolutionSection() {
 				}))}
 			/>
 		</div>
-	</Band>;
-}
-
-async function DeliverablesSection() {
-	const t = await getTranslations("Fields.projectBootstrap.deliverables");
-
-	return <Band tinted title={t("title")} intro={<p>{t("intro")}</p>}>
-		<CardGrid
-			columns={4}
-			items={deliverables.map(({ key, from }) => ({
-				key,
-				title: t(`items.${key}.title`),
-				text: t(`items.${key}.text`),
-				tag: { label: t(`tags.${from}`), accent: from == "management" },
-			}))}
-		/>
-	</Band>;
-}
-
-async function ComparisonSection() {
-	const t = await getTranslations("Fields.projectBootstrap.comparison");
-
-	return <Band title={t("title")}>
-		<Comparison
-			beforeLabel={t("beforeLabel")}
-			afterLabel={t("afterLabel")}
-			rows={comparisonKeys.map(key => ({
-				key,
-				before: t(`rows.${key}.before`),
-				after: t(`rows.${key}.after`),
-			}))}
-		/>
+		{/* The same button as everywhere else, so the visitor never has to scroll back for it */}
+		<div>
+			<p className={`${style.intro} bUnitMarg`}>{t("ctaLine")}</p>
+			<BookCallCta placement="solution" />
+		</div>
 	</Band>;
 }
 

@@ -300,7 +300,9 @@
 	margin-left: var(--normalPadding);
 	margin-right: var(--normalPadding);
 }
-
+.bUnitMarg {
+	margin-bottom: var(--paddingUnit);
+}
 
 .vUnitPad {
 	padding-top: var(--paddingUnit);
@@ -772,8 +774,11 @@ button.primary,
 	border-width: 2px;
 	border-style: solid;
 
-	border-color: var(--l1);
-	background-color: var(--l1);
+	--button-color: var(--l1);
+	--button-border-color: var(--l1);
+
+	border-color: var(--button-color);
+	background-color: var(--button-border-color);
 	color: var(--l6);
 	line-height: 1em;
 	padding: 10px;
@@ -816,6 +821,10 @@ button.primary.hover:active,
 	border-color: var(--l2);
 	background-color: var(--l2);
 	color: var(--l6);
+}
+button.accent, .buttonAccent {
+	--button-color: var(--mutedPrimaryAccentColor);
+	--button-border-color: var(--mutedPrimaryAccentColor);
 }
 
 /* Outline version */

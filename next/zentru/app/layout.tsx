@@ -6,10 +6,14 @@ import { Metadata } from "next";
 import { Locale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Icon } from "next/dist/lib/metadata/types/metadata-types";
-import { Geist_Mono } from 'next/font/google';
+import { Geist_Mono, Jura, Montserrat, Raleway, Rubik } from 'next/font/google';
 import CookieConsent from "./CookieConsent";
 
 export const geistMono = Geist_Mono({});
+export const montserrat = Montserrat({});
+export const raleway = Raleway({});
+export const jura = Jura({});
+export const rubik = Rubik({});
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));

@@ -10,7 +10,7 @@
 /* Set by every section-level block (Band, Hero, ProofBar, CtaBand) */
 .block {
 	/* The mint is only readable on dark – the theme defines the dark variant for light backgrounds */
-	--accent: var(--darkPrimaryAccentColor);
+	--accent: var(--mutedPrimaryAccentColor);
 	--cardBg: var(--l5);
 }
 
@@ -252,6 +252,37 @@
 .tagAccent {
 	color: var(--accent);
 	border-color: var(--accent);
+}
+
+/* Title left, tag in the top right corner. A row rather than a corner absolutely placed: the
+   title keeps whatever width is left, so a long one wraps instead of running under the tag. */
+.cardHead {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--smallPad);
+}
+
+.cardHead .tag {
+	flex-shrink: 0;
+	margin-bottom: 0;
+}
+
+/* One column, so the tag beside the title would squeeze it into three words on three lines */
+@media screen and (max-width: 730px) {
+	.cardHead {
+		flex-wrap: wrap;
+	}
+
+	.cardHead .tag {
+		order: -1;
+		margin-left: auto;
+	}
+
+	.cardHead .cardTitle {
+		flex-basis: 100%;
+	}
 }
 
 /* At the foot of the card, level across a row however long each card's text is */

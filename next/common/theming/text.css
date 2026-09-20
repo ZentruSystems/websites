@@ -1,9 +1,17 @@
 h2 {
 	font-size: var(--largerFontSize);
-	font-weight: 400;
+	font-weight: 500;
 	line-height: calc(var(--largerFontSize) + 9px);
 	color: var(--foregroundColor);
-	margin-bottom: 24px;
+	margin-bottom: 25px;
+	font-family: "Montserrat";
+	/* letter-spacing: 2%; */
+	letter-spacing: -2%;
+}
+
+h3 {
+	font-weight: 550;
+	font-family: "Montserrat";
 }
 
 h4 {
@@ -11,10 +19,12 @@ h4 {
 	font-weight: 400;
 	line-height: calc(var(--normalFontSize) + 4px);
 	color: var(--foregroundColor);
+	font-family: "Montserrat";
 }
 
 p {
-	--p-line-height-factor: 1.4;
+	--p-line-height-factor: 1.5;
+	letter-spacing: 0.25%;
 	line-height: calc(var(--normalFontSize) * var(--p-line-height-factor)); /* 28px; */
 	font-size: var(--normalFontSize);
 	font-family: var(--normalFont);

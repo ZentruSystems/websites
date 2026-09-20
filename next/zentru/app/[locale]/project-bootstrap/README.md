@@ -15,9 +15,14 @@ visitor anywhere.
 | `booked/page.tsx` | Where Cal.com sends people after booking. `noindex`. |
 | `BookingConfirmed.tsx` | Reports `booking_confirmed` once per session on that page. |
 
-The sections are built from `app/blocks` (Hero, ProofBar, Band, CardGrid, Steps, Comparison,
-CaseStudies, PackageTable, Faq, CtaBand). Those take plain strings and nodes, not message keys,
-so the home page can use them with its own copy.
+The sections are built from `app/blocks` (Hero, ProofBar, Band, CardGrid, Steps, CaseStudies,
+PackageTable, Faq, CtaBand). Those take plain strings and nodes, not message keys, so the home page
+can use them with its own copy. `Comparison` is unused here – the before/after rows moved into the
+package table – but it stays in `app/blocks` for the home page.
+
+The order is: hero, proof bar, the problem, **what it is worth** (`outcomes` – money saved and hours
+freed, deliberately before any "how"), the solution and its five stages with a call to action, case
+studies, how it works, the two packages, FAQ, final call to action.
 
 ## Copy
 
@@ -47,7 +52,7 @@ and to Vercel Web Analytics always (cookieless – custom events need a paid Ver
 
 | Event | When | Properties |
 |---|---|---|
-| `booking_click` | A booking button is clicked | `placement`: `hero`, `process`, `final` |
+| `booking_click` | A booking button is clicked | `placement`: `hero`, `solution`, `process`, `final` |
 | `booking_confirmed` | `/project-bootstrap/booked` loads, once per session | – |
 | `scroll_depth` | 25, 50, 75 and 100% of the page scrolled, once each | `page`, `percent` |
 

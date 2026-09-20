@@ -589,10 +589,9 @@ export default {
 				// <audience> is left out on a phone, where the headline right below already says it
 				"eyebrow": "Project Bootstrap<audience> · for small finance businesses</audience>",
 				"headline": "I help small finance businesses start their software project right.",
-				"sub": `From an idea or an AI-built prototype to a project that is ready to start, typically within one to
-					two weeks: the tools you actually need, a system architecture where every part fits, a timeline with
-					work packages, and the right hires. Every technical decision is explained in business terms, so you
-					always know what is going on.`,
+				"sub": `From an idea or an AI-built prototype to a project that is ready to start, usually in one to two
+					weeks: the right tools, an architecture where every part fits, a timeline, and the right hires.
+					Explained in business terms throughout.`,
 				"note": "Free and without obligation. You get a short assessment of your project.",
 			},
 			// The one conversion action on the page – the same words wherever it appears
@@ -622,89 +621,74 @@ export default {
 			},
 			"problem": {
 				"title": "A good idea isn't a project yet.",
-				"intro": `You have an idea, maybe even a prototype an AI tool built for you. What's missing is everything
-					between that and a team that delivers: which tools you really need, how the parts fit together, what
-					gets built first, and who should build it.`,
+				"intro": `You have an idea, maybe a prototype an AI tool built for you. What is missing is everything
+					between that and a team that delivers: the tools, the structure, the order of work, and the people.`,
 				"items": {
 					"tools": {
 						"title": "Paying for the wrong tools",
-						"text": `Without knowing what you actually need, you end up with too many subscriptions, or the
-							expensive ones, and tools that don't talk to each other.`,
+						"text": "Too many subscriptions, or the expensive ones, and tools that do not talk to each other.",
 					},
 					"outsourcing": {
 						"title": "Built the way that suits them",
-						"text": `An external team will usually build the way that is easiest for them. That isn't
-							necessarily what's best for you, and without a plan of your own you can't tell the difference.`,
+						"text": `An external team builds the way that is easiest for them. Without a plan of your own you
+							cannot tell whether that is best for you.`,
 					},
 					"plan": {
 						"title": "No plan to steer by",
-						"text": `Without milestones and clear work packages nobody can say whether the project is on
-							track, until it is over time and over budget.`,
+						"text": `Without milestones and work packages nobody can say whether the project is on track, until
+							it is over budget.`,
 					},
 				},
-				"cost": `Every week of guessing costs budget, and the earliest choices, like tools, architecture and first
-					hires, are the most expensive ones to undo later.`,
 			},
 			"outcomes": {
-				"title": "Start with a project that is ready to run.",
-				"intro": `When we're done, your project is set up and ready for the people who will build it, and you
-					understand why it is set up the way it is.`,
+				"title": "Spend less on the project, more time on your clients.",
+				// The tag on the one card the Setup alone does not deliver
+				"managementTag": "Management upgrade",
 				"items": {
 					"tools": {
-						"title": "Only the tools you need",
-						"text": "Every tool has a job. Nothing you pay for sits unused, and nothing important is missing.",
+						"title": "You only pay for tools you use",
+						"text": "The right tools, sized for your business. No stack of subscriptions nobody opens.",
 					},
 					"structure": {
-						"title": "Parts that work together",
-						"text": `One system architecture, so data, tools and people work with each other instead of
-							against each other.`,
-					},
-					"plan": {
-						"title": "Room to grow",
-						"text": `Work packages that can be done independently, so you can add people or hand a package
-							to an outside team without everything waiting on everything else.`,
-					},
-					"onboarding": {
-						"title": "Faster onboarding",
-						"text": `Documented tools and hands-on onboarding, so your managers can step in and new hires
-							get going without you explaining everything twice.`,
+						"title": "Nothing gets built twice",
+						"text": "One architecture up front, so the parts fit together instead of being rebuilt later.",
 					},
 					"decisions": {
-						"title": "Decisions you understand",
-						"text": "Tech and hiring choices explained in business terms, before you commit to them.",
+						"title": "No expensive wrong turns",
+						"text": `Tech and hiring decisions explained in business terms, before you commit budget to
+							them.`,
 					},
 					"meetings": {
-						"title": "Fewer meetings, clear reporting",
-						"text": `With the Management upgrade I handle the day-to-day. You get one weekly check-in and a
-							status report instead of a calendar full of meetings.`,
+						"title": "Your week back",
+						"text": `With the Management upgrade I run the day-to-day. One weekly check-in and a status
+							report, so your hours go into your clients.`,
 					},
 				},
-				"evidence": `In the two projects further down, this freed my clients to take on more work: one now runs
-					parallel projects and has won new clients, the other takes on more jobs with an error rate close to
-					zero.`,
+				"evidence": `This freed both clients below to take on more work: one runs parallel projects and has won
+					new clients, the other takes on more jobs with an error rate close to zero.`,
 			},
 			"solution": {
 				"title": "One person between your business and your tech.",
-				"intro": `<p>I take your project from an idea to a working setup: project structure, choosing the tools,
-					technology consulting, building the idea and support with hiring.</p>
-					<p>Along the way I take load off management, cut out meetings nobody needs and translate between
-					business and tech, so a misunderstanding doesn't turn into weeks of rework.</p>`,
+				"intro": `<p>I take your project from an idea to a working setup: structure, tools, consulting and
+					support with hiring. And I translate between business and tech, so a misunderstanding doesn't
+					turn into weeks of rework.</p>`,
 				"estimate": "I solve about 95% of the issues that come up without you having to do anything.",
+				"ctaLine": "Get on a call, get your assessment, and start cutting time and cost.",
 				"portraitAlt": "Felix, who runs Zentru Systems",
 				"stagesTitle": "How a project comes together",
 				"ongoing": "Ongoing, with the Management upgrade",
 				"stages": {
 					"assess": {
 						"title": "Assess",
-						"text": "Where your idea or prototype stands, what works and what is missing.",
+						"text": "Where your idea or prototype stands, and what is missing.",
 					},
 					"architecture": {
 						"title": "Structure",
-						"text": "One system architecture, so every part of the project fits together.",
+						"text": "One system architecture, so every part fits together.",
 					},
 					"tools": {
 						"title": "Tools",
-						"text": "Select, set up and connect the tools the project actually needs.",
+						"text": "Select, set up and connect the tools the project needs.",
 					},
 					"onboarding": {
 						"title": "Onboarding",
@@ -713,90 +697,6 @@ export default {
 					"manage": {
 						"title": "Manage",
 						"text": "Issues, tasks, requirements, hires and meetings, handled continuously.",
-					},
-				},
-			},
-			"deliverables": {
-				"title": "What you get",
-				"intro": "Every deliverable is there for a business reason. Here is what each one does for you.",
-				"tags": {
-					"setup": "Setup",
-					"management": "Management upgrade",
-				},
-				"items": {
-					"assessment": {
-						"title": "Project assessment report",
-						"text": `Where your idea or prototype stands, what is missing and what it will take, so you
-							decide on facts instead of guesses.`,
-					},
-					"timeline": {
-						"title": "Project timeline",
-						"text": "Milestones with dates, so you know what happens when and can plan budget and people around it.",
-					},
-					"workPackages": {
-						"title": "Work packages",
-						"text": `The project split into pieces that can be worked on independently, so you can hire,
-							outsource or work in parallel.`,
-					},
-					"architecture": {
-						"title": "System architecture document",
-						"text": `How every part of the project fits together, written down, so everyone builds towards
-							the same system and nothing has to be rebuilt later to connect it.`,
-					},
-					"tools": {
-						"title": "Tools, completely set up",
-						"text": `Project management, communication and development tools sized for your business,
-							connected to each other and ready on day one.`,
-					},
-					"onboarding": {
-						"title": "Onboarding",
-						"text": `I go through the tools with you, your managers and new hires, in the way that suits each
-							person, so the system keeps working without me in the room.`,
-					},
-					"consulting": {
-						"title": "Tech and hiring consulting",
-						"text": `Help deciding what to build, what to buy and who to hire, so you hire the people you
-							actually need.`,
-					},
-					"management": {
-						"title": "Ongoing project management",
-						"text": `I manage the project day to day: issues, tasks, requirements and hires, with an eye on
-							costs. You get a weekly check-in and a status report.`,
-					},
-				},
-			},
-			"comparison": {
-				"title": "Before and after",
-				"beforeLabel": "Without a sound start",
-				"afterLabel": "With Project Bootstrap",
-				"rows": {
-					"guessing": {
-						"before": "Uninformed guessing",
-						"after": "Decisions based on an assessment",
-					},
-					"disconnected": {
-						"before": "Disconnected tools",
-						"after": "The right tools, connected",
-					},
-					"expensive": {
-						"before": "The wrong, expensive tools",
-						"after": "Only what you need, sized for your business",
-					},
-					"plan": {
-						"before": "No real plan behind the project",
-						"after": "Systematic documentation: architecture, timeline, work packages",
-					},
-					"budget": {
-						"before": "Out of time and over budget",
-						"after": "A timeline and budget to steer by",
-					},
-					"hires": {
-						"before": "Unneeded or wrong hires",
-						"after": "The right hires",
-					},
-					"meetings": {
-						"before": "Many meetings, because tech and business speak different languages",
-						"after": "Fewer meetings, with one person translating",
 					},
 				},
 			},
@@ -811,20 +711,18 @@ export default {
 				"items": {
 					"forecasting": {
 						"title": "A finance forecasting system",
-						"challenge": `Forecasts depended on figures spread across profit and loss statements and reports
-							in PDF, Word, Excel and CSV files.`,
-						"work": `Bootstrapped, managed and consulted on a forecasting system: a customised Bayesian
-							regression model with Monte Carlo simulation for the roll-up, market and news impacts sourced
-							from the FastMarkets API, and data extraction from all of those documents.`,
+						"challenge": `Forecasts depended on figures spread across statements and reports in PDF, Word,
+							Excel and CSV.`,
+						"work": `A customised Bayesian regression model with a Monte Carlo roll-up, market and news impact
+							from the FastMarkets API, and extraction from all of those documents.`,
 						"result": "The client was freed up to run parallel projects and win new clients.",
 					},
 					"jobs": {
 						"title": "Job extraction from email",
-						"challenge": "Job orders arrived by email and had to be moved into the job system by hand: slow and error-prone.",
-						"work": `Bootstrapped, managed and consulted on a system that extracts jobs from incoming email
-							into Google Sheets and a custom job system.`,
-						"result": `The client takes on more jobs, errors dropped to practically zero, and there is time
-							to handle special jobs personally, which improved customer retention and satisfaction.`,
+						"challenge": "Job orders arrived by email and were moved into the job system by hand: slow and error-prone.",
+						"work": "A system that extracts jobs from incoming email into Google Sheets and a custom job system.",
+						"result": `More jobs taken on, errors practically at zero, and time to handle special jobs
+							personally, which improved retention and satisfaction.`,
 					},
 				},
 			},
@@ -833,16 +731,15 @@ export default {
 				"steps": {
 					"call": {
 						"title": "Book a strategy call",
-						"text": "We talk about your project, what you want it to achieve and where it is stuck.",
+						"text": "We talk about your project, what it should achieve and where it is stuck.",
 					},
 					"plan": {
 						"title": "Get an assessment and a plan",
-						"text": `I work out the current state, the problems and their solutions, and create the timeline
-							and the system architecture.`,
+						"text": "I work out the current state and the solutions, then create the timeline and the architecture.",
 					},
 					"implement": {
 						"title": "Tools get implemented",
-						"text": "I set up and connect the agreed tools, onboard your team and set up the defined tasks.",
+						"text": "I set up and connect the agreed tools, onboard your team and create the tasks.",
 					},
 				},
 			},
@@ -871,11 +768,12 @@ export default {
 				},
 				"rows": {
 					"assessment": "Project assessment report",
-					"architecture": "System architecture document",
-					"timeline": "Timeline and work packages",
-					"tools": "Tools set up and connected",
+					"architecture": "System architecture and work packages",
+					"timeline": "Timeline and budget to steer by",
+					"tools": "The right tools, set up and connected",
 					"onboarding": "Onboarding for you and your team",
 					"consulting": "Tech and hiring consulting, first {weeks} weeks included",
+					"translation": "One contact who translates between tech and business",
 					"dayToDay": "Day-to-day project management",
 					"meetings": "One weekly check-in instead of many meetings",
 					"reports": "Status reports",
@@ -896,9 +794,8 @@ export default {
 					},
 					"duration": {
 						"question": "How long does implementation take?",
-						"answer": `The setup typically takes one to two weeks, and it can be faster if I get the information
-							I need when I need it. If we also shape the idea together it can take longer, depending on how
-							much consulting it needs. Management, if you choose it, is ongoing.`,
+						"answer": `The setup usually takes one to two weeks, faster if I get the information I need when I
+							need it. Shaping the idea together takes longer. Management, if you choose it, is ongoing.`,
 					},
 					"consulting": {
 						"question": "Is the consulting included?",
@@ -911,8 +808,8 @@ export default {
 					},
 					"breaks": {
 						"question": "What happens if something stops working?",
-						"answer": `You can always reach out to me. If you use my standard setup, I also let you know about
-							problems other clients run into and help you apply the fix.`,
+						"answer": `You can always reach out to me. With my standard setup I also let you know about problems
+							other clients run into, and help you apply the fix.`,
 					},
 					"smallBusiness": {
 						"question": "Is this suitable for a smaller business?",
@@ -931,9 +828,8 @@ export default {
 					},
 					"call": {
 						"question": "What happens during the call?",
-						"answer": `I learn about the project you have in mind and whether and how I can help best. If we
-							work together, I start right away. You don't need to decide on the Management upgrade yet,
-							but it helps if you already know.`,
+						"answer": `I learn about the project you have in mind, and whether and how I can help best. If we
+							work together, I start right away. You don't need to decide on the Management upgrade yet.`,
 					},
 				},
 			},

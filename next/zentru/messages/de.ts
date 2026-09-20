@@ -489,10 +489,9 @@ export default {
 			"hero": {
 				"eyebrow": "Project Bootstrap<audience> · für kleine Finanzunternehmen</audience>",
 				"headline": "Ich helfe kleinen Finanzunternehmen, ihr Softwareprojekt richtig zu starten.",
-				"sub": `Von der Idee oder dem KI-gebauten Prototyp zu einem Projekt, das startklar ist, meist innerhalb von
-					ein bis zwei Wochen: die Tools, die Sie wirklich brauchen, eine Systemarchitektur, in der alles
-					zusammenpasst, ein Zeitplan mit Arbeitspaketen und die richtigen Leute. Jede technische Entscheidung
-					erkläre ich in der Sprache Ihres Geschäfts, damit Sie immer wissen, was passiert.`,
+				"sub": `Von der Idee oder dem KI-gebauten Prototyp zu einem Projekt, das startklar ist, meist in ein bis
+					zwei Wochen: die richtigen Tools, eine Architektur, in der alles zusammenpasst, ein Zeitplan und die
+					richtigen Leute. Alles in der Sprache Ihres Geschäfts erklärt.`,
 				"note": "Kostenlos und unverbindlich. Sie erhalten eine kurze Einschätzung Ihres Projekts.",
 			},
 			"cta": {
@@ -521,89 +520,77 @@ export default {
 			},
 			"problem": {
 				"title": "Eine gute Idee ist noch kein Projekt.",
-				"intro": `Sie haben eine Idee, vielleicht sogar einen Prototyp, den ein KI-Tool für Sie gebaut hat. Was fehlt,
-					ist alles zwischen diesem Punkt und einem Team, das liefert: welche Tools Sie wirklich brauchen, wie
-					die Teile zusammenpassen, was zuerst gebaut wird und wer es bauen soll.`,
+				"intro": `Sie haben eine Idee, vielleicht einen Prototyp, den ein KI-Tool gebaut hat. Was fehlt, ist alles
+					zwischen diesem Punkt und einem Team, das liefert: die Tools, die Struktur, die Reihenfolge der
+					Arbeit und die Leute.`,
 				"items": {
 					"tools": {
 						"title": "Für die falschen Tools bezahlen",
-						"text": `Ohne zu wissen, was Sie tatsächlich brauchen, landen Sie bei zu vielen Abos oder den
-							teuren, und bei Tools, die nicht miteinander sprechen.`,
+						"text": "Zu viele Abos, oder die teuren, und Tools, die nicht miteinander sprechen.",
 					},
 					"outsourcing": {
 						"title": "Gebaut, wie es dem Dienstleister passt",
-						"text": `Ein externes Team baut meist so, wie es für das Team am einfachsten ist. Das ist nicht
-							unbedingt das Beste für Sie, und ohne eigenen Plan erkennen Sie den Unterschied nicht.`,
+						"text": `Ein externes Team baut so, wie es für das Team am einfachsten ist. Ohne eigenen Plan erkennen
+							Sie nicht, ob das für Sie das Beste ist.`,
 					},
 					"plan": {
 						"title": "Kein Plan zum Steuern",
-						"text": `Ohne Meilensteine und klare Arbeitspakete kann niemand sagen, ob das Projekt auf Kurs ist,
-							bis Zeit und Budget überschritten sind.`,
+						"text": `Ohne Meilensteine und Arbeitspakete kann niemand sagen, ob das Projekt auf Kurs ist, bis das
+							Budget überschritten ist.`,
 					},
 				},
-				"cost": `Jede Woche Rätselraten kostet Budget, und die frühesten Entscheidungen, wie Tools, Architektur und
-					die ersten Einstellungen, lassen sich später am teuersten rückgängig machen.`,
 			},
 			"outcomes": {
-				"title": "Starten Sie mit einem Projekt, das bereit ist zu laufen.",
-				"intro": `Wenn wir fertig sind, ist Ihr Projekt aufgesetzt und bereit für die Leute, die es bauen, und Sie
-					verstehen, warum es so aufgesetzt ist.`,
+				"title": "Weniger Kosten im Projekt, mehr Zeit für Ihre Kunden.",
+				// Der Hinweis auf der einen Karte, die das Setup allein nicht liefert
+				"managementTag": "Management-Upgrade",
 				"items": {
 					"tools": {
-						"title": "Nur die Tools, die Sie brauchen",
-						"text": "Jedes Tool hat eine Aufgabe. Nichts, wofür Sie zahlen, liegt ungenutzt herum, und nichts Wichtiges fehlt.",
+						"title": "Sie zahlen nur für Tools, die Sie nutzen",
+						"text": "Die richtigen Tools, passend zu Ihrer Größe. Kein Stapel Abos, den niemand öffnet.",
 					},
 					"structure": {
-						"title": "Teile, die zusammenarbeiten",
-						"text": `Eine Systemarchitektur, damit Daten, Tools und Menschen miteinander statt gegeneinander
-							arbeiten.`,
-					},
-					"plan": {
-						"title": "Raum zum Wachsen",
-						"text": `Arbeitspakete, die unabhängig voneinander erledigt werden können, damit Sie Leute
-							hinzunehmen oder ein Paket extern vergeben können, ohne dass alles auf alles andere wartet.`,
-					},
-					"onboarding": {
-						"title": "Schnelleres Onboarding",
-						"text": `Dokumentierte Tools und ein praktisches Onboarding, damit Ihre Führungskräfte einspringen
-							können und neue Mitarbeitende loslegen, ohne dass Sie alles zweimal erklären.`,
+						"title": "Nichts wird zweimal gebaut",
+						"text": `Eine Architektur von Anfang an, damit die Teile zusammenpassen, statt später neu
+							gebaut zu werden.`,
 					},
 					"decisions": {
-						"title": "Entscheidungen, die Sie verstehen",
-						"text": "Technik- und Personalentscheidungen in der Sprache Ihres Geschäfts erklärt, bevor Sie sich festlegen.",
+						"title": "Keine teuren Umwege",
+						"text": `Technik- und Personalentscheidungen in der Sprache Ihres Geschäfts erklärt, bevor Sie
+							Budget binden.`,
 					},
 					"meetings": {
-						"title": "Weniger Meetings, klare Berichte",
-						"text": `Mit dem Management-Upgrade übernehme ich das Tagesgeschäft. Sie bekommen einen
-							wöchentlichen Termin und einen Statusbericht statt eines Kalenders voller Meetings.`,
+						"title": "Ihre Woche zurück",
+						"text": `Mit dem Management-Upgrade übernehme ich das Tagesgeschäft. Ein wöchentlicher Termin
+							und ein Statusbericht, damit Ihre Stunden zu Ihren Kunden gehen.`,
 					},
 				},
-				"evidence": `In den beiden Projekten weiter unten hat das meinen Kunden Luft für mehr Arbeit verschafft: einer
-					führt jetzt parallele Projekte und hat neue Kunden gewonnen, der andere nimmt mehr Aufträge an, bei einer
-					Fehlerquote nahe null.`,
+				"evidence": `Das hat beiden Kunden weiter unten Luft für mehr Arbeit verschafft: einer führt parallele
+					Projekte und hat neue Kunden gewonnen, der andere nimmt mehr Aufträge an, bei einer Fehlerquote
+					nahe null.`,
 			},
 			"solution": {
 				"title": "Eine Person zwischen Ihrem Geschäft und Ihrer Technik.",
-				"intro": `<p>Ich bringe Ihr Projekt von der Idee zu einem funktionierenden Setup: Projektstruktur, Auswahl
-					der Tools, Technologieberatung, Umsetzung der Idee und Unterstützung bei der Personalauswahl.</p>
-					<p>Dabei entlaste ich die Geschäftsführung, streiche Meetings, die niemand braucht, und übersetze
-					zwischen Geschäft und Technik, damit aus einem Missverständnis keine Wochen Nacharbeit werden.</p>`,
+				"intro": `<p>Ich bringe Ihr Projekt von der Idee zu einem funktionierenden Setup: Struktur, Tools,
+					Beratung und Unterstützung bei der Personalauswahl. Und ich übersetze zwischen Geschäft und
+					Technik, damit aus einem Missverständnis keine Wochen Nacharbeit werden.</p>`,
 				"estimate": "Etwa 95 % der auftretenden Probleme löse ich, ohne dass Sie etwas tun müssen.",
+				"ctaLine": "Ins Gespräch kommen, Einschätzung bekommen, Zeit und Kosten senken.",
 				"portraitAlt": "Felix, der Zentru Systems führt",
 				"stagesTitle": "Wie ein Projekt zusammenkommt",
 				"ongoing": "Laufend, mit dem Management-Upgrade",
 				"stages": {
 					"assess": {
 						"title": "Einschätzen",
-						"text": "Wo Ihre Idee oder Ihr Prototyp steht, was funktioniert und was fehlt.",
+						"text": "Wo Ihre Idee oder Ihr Prototyp steht, und was fehlt.",
 					},
 					"architecture": {
 						"title": "Strukturieren",
-						"text": "Eine Systemarchitektur, damit jeder Teil des Projekts zusammenpasst.",
+						"text": "Eine Systemarchitektur, damit jeder Teil zusammenpasst.",
 					},
 					"tools": {
 						"title": "Tools",
-						"text": "Die Tools auswählen, einrichten und verbinden, die das Projekt wirklich braucht.",
+						"text": "Die Tools auswählen, einrichten und verbinden, die das Projekt braucht.",
 					},
 					"onboarding": {
 						"title": "Onboarding",
@@ -612,91 +599,6 @@ export default {
 					"manage": {
 						"title": "Managen",
 						"text": "Probleme, Aufgaben, Anforderungen, Einstellungen und Meetings, laufend betreut.",
-					},
-				},
-			},
-			"deliverables": {
-				"title": "Was Sie bekommen",
-				"intro": "Jedes Ergebnis hat einen geschäftlichen Grund. Das leistet jedes einzelne für Sie.",
-				"tags": {
-					"setup": "Setup",
-					"management": "Management-Upgrade",
-				},
-				"items": {
-					"assessment": {
-						"title": "Projekteinschätzung",
-						"text": `Wo Ihre Idee oder Ihr Prototyp steht, was fehlt und was es braucht, damit Sie auf Basis
-							von Fakten entscheiden statt zu raten.`,
-					},
-					"timeline": {
-						"title": "Projektzeitplan",
-						"text": "Meilensteine mit Terminen, damit Sie wissen, was wann passiert, und Budget und Personal danach planen können.",
-					},
-					"workPackages": {
-						"title": "Arbeitspakete",
-						"text": `Das Projekt, aufgeteilt in Teile, die unabhängig bearbeitet werden können, damit Sie
-							einstellen, auslagern oder parallel arbeiten können.`,
-					},
-					"architecture": {
-						"title": "Systemarchitektur-Dokument",
-						"text": `Wie alle Teile des Projekts zusammenpassen, schriftlich festgehalten, damit alle auf
-							dasselbe System hinarbeiten und später nichts neu gebaut werden muss, um es anzubinden.`,
-					},
-					"tools": {
-						"title": "Tools, komplett eingerichtet",
-						"text": `Projektmanagement-, Kommunikations- und Entwicklungstools passend zu Ihrer Größe,
-							miteinander verbunden und ab dem ersten Tag bereit.`,
-					},
-					"onboarding": {
-						"title": "Onboarding",
-						"text": `Ich gehe die Tools mit Ihnen, Ihren Führungskräften und neuen Mitarbeitenden so durch, wie
-							es für die jeweilige Person passt, damit das System auch ohne mich funktioniert.`,
-					},
-					"consulting": {
-						"title": "Technik- und Personalberatung",
-						"text": `Hilfe bei der Entscheidung, was gebaut, was gekauft und wer eingestellt wird, damit Sie
-							die Leute einstellen, die Sie wirklich brauchen.`,
-					},
-					"management": {
-						"title": "Laufendes Projektmanagement",
-						"text": `Ich manage das Projekt im Tagesgeschäft: Probleme, Aufgaben, Anforderungen und
-							Einstellungen, mit Blick auf die Kosten. Sie bekommen einen wöchentlichen Termin und einen
-							Statusbericht.`,
-					},
-				},
-			},
-			"comparison": {
-				"title": "Vorher und nachher",
-				"beforeLabel": "Ohne soliden Start",
-				"afterLabel": "Mit Project Bootstrap",
-				"rows": {
-					"guessing": {
-						"before": "Uninformiertes Raten",
-						"after": "Entscheidungen auf Basis einer Einschätzung",
-					},
-					"disconnected": {
-						"before": "Unverbundene Tools",
-						"after": "Die richtigen Tools, verbunden",
-					},
-					"expensive": {
-						"before": "Falsche, teure Tools",
-						"after": "Nur was Sie brauchen, passend zu Ihrer Größe",
-					},
-					"plan": {
-						"before": "Kein echter Plan hinter dem Projekt",
-						"after": "Systematische Dokumentation: Architektur, Zeitplan, Arbeitspakete",
-					},
-					"budget": {
-						"before": "Zeit und Budget überschritten",
-						"after": "Ein Zeitplan und ein Budget zum Steuern",
-					},
-					"hires": {
-						"before": "Unnötige oder falsche Einstellungen",
-						"after": "Die richtigen Leute",
-					},
-					"meetings": {
-						"before": "Viele Meetings, weil Technik und Geschäft verschiedene Sprachen sprechen",
-						"after": "Weniger Meetings, mit einer Person, die übersetzt",
 					},
 				},
 			},
@@ -711,21 +613,19 @@ export default {
 				"items": {
 					"forecasting": {
 						"title": "Ein System für Finanzprognosen",
-						"challenge": `Die Prognosen hingen an Zahlen, die über Gewinn- und Verlustrechnungen und Berichte in
-							PDF-, Word-, Excel- und CSV-Dateien verteilt waren.`,
-						"work": `Ein Prognosesystem aufgesetzt, gemanagt und beraten: ein angepasstes bayessches
-							Regressionsmodell mit Monte-Carlo-Simulation für das Roll-up, Markt- und Nachrichteneinflüsse
-							über die FastMarkets API und die Datenextraktion aus all diesen Dokumenten.`,
+						"challenge": `Die Prognosen hingen an Zahlen, verteilt über Abschlüsse und Berichte in PDF, Word,
+							Excel und CSV.`,
+						"work": `Ein angepasstes bayessches Regressionsmodell mit Monte-Carlo-Roll-up, Markt- und
+							Nachrichteneinflüsse über die FastMarkets API und die Extraktion aus all diesen Dokumenten.`,
 						"result": "Der Kunde hatte wieder Luft für parallele Projekte und neue Kunden.",
 					},
 					"jobs": {
 						"title": "Auftragsextraktion aus E-Mails",
-						"challenge": "Aufträge kamen per E-Mail und mussten von Hand ins Auftragssystem übertragen werden: langsam und fehleranfällig.",
-						"work": `Ein System aufgesetzt, gemanagt und beraten, das Aufträge aus eingehenden E-Mails in Google
-							Sheets und ein eigenes Auftragssystem überträgt.`,
-						"result": `Der Kunde nimmt mehr Aufträge an, die Fehler sind praktisch auf null gesunken, und es
-							bleibt Zeit, Sonderaufträge persönlich zu betreuen, was Kundenbindung und -zufriedenheit
-							verbessert hat.`,
+						"challenge": "Aufträge kamen per E-Mail und wurden von Hand ins Auftragssystem übertragen: langsam und fehleranfällig.",
+						"work": `Ein System, das Aufträge aus eingehenden E-Mails in Google Sheets und ein eigenes
+							Auftragssystem überträgt.`,
+						"result": `Mehr Aufträge, Fehler praktisch auf null, und Zeit, Sonderaufträge persönlich zu betreuen,
+							was die Kundenbindung verbessert hat.`,
 					},
 				},
 			},
@@ -734,16 +634,15 @@ export default {
 				"steps": {
 					"call": {
 						"title": "Strategiegespräch buchen",
-						"text": "Wir sprechen über Ihr Projekt, was es erreichen soll und wo es gerade hakt.",
+						"text": "Wir sprechen über Ihr Projekt, was es erreichen soll und wo es hakt.",
 					},
 					"plan": {
 						"title": "Einschätzung und Plan erhalten",
-						"text": `Ich ermittle den aktuellen Stand, die Probleme und ihre Lösungen und erstelle den
-							Zeitplan und die Systemarchitektur.`,
+						"text": "Ich ermittle den aktuellen Stand und die Lösungen und erstelle Zeitplan und Architektur.",
 					},
 					"implement": {
 						"title": "Tools werden umgesetzt",
-						"text": "Ich richte die vereinbarten Tools ein, verbinde sie, schule Ihr Team und lege die definierten Aufgaben an.",
+						"text": "Ich richte die vereinbarten Tools ein, verbinde sie, schule Ihr Team und lege die Aufgaben an.",
 					},
 				},
 			},
@@ -772,11 +671,12 @@ export default {
 				},
 				"rows": {
 					"assessment": "Projekteinschätzung",
-					"architecture": "Systemarchitektur-Dokument",
-					"timeline": "Zeitplan und Arbeitspakete",
-					"tools": "Tools eingerichtet und verbunden",
+					"architecture": "Systemarchitektur und Arbeitspakete",
+					"timeline": "Zeitplan und Budget zum Steuern",
+					"tools": "Die richtigen Tools, eingerichtet und verbunden",
 					"onboarding": "Onboarding für Sie und Ihr Team",
 					"consulting": "Technik- und Personalberatung, erste {weeks} Wochen inklusive",
+					"translation": "Eine Ansprechperson, die zwischen Technik und Geschäft übersetzt",
 					"dayToDay": "Projektmanagement im Tagesgeschäft",
 					"meetings": "Ein wöchentlicher Termin statt vieler Meetings",
 					"reports": "Statusberichte",
@@ -796,10 +696,9 @@ export default {
 					},
 					"duration": {
 						"question": "Wie lange dauert die Umsetzung?",
-						"answer": `Das Setup dauert meist ein bis zwei Wochen, und es geht schneller, wenn ich die nötigen
-							Informationen bekomme, sobald ich sie brauche. Wenn wir auch die Idee gemeinsam schärfen, kann
-							es länger dauern, je nachdem, wie viel Beratung nötig ist. Das Management, falls Sie es wählen,
-							läuft fortlaufend.`,
+						"answer": `Das Setup dauert meist ein bis zwei Wochen, schneller, wenn ich die nötigen Informationen
+							bekomme, sobald ich sie brauche. Die Idee gemeinsam zu schärfen dauert länger. Das Management,
+							falls Sie es wählen, läuft fortlaufend.`,
 					},
 					"consulting": {
 						"question": "Ist die Beratung inklusive?",
@@ -812,9 +711,8 @@ export default {
 					},
 					"breaks": {
 						"question": "Was passiert, wenn etwas nicht mehr funktioniert?",
-						"answer": `Sie können sich jederzeit an mich wenden. Wenn Sie mein Standard-Setup nutzen, informiere
-							ich Sie außerdem über Probleme, auf die andere Kunden stoßen, und helfe Ihnen, die Lösung
-							umzusetzen.`,
+						"answer": `Sie können sich jederzeit an mich wenden. Mit meinem Standard-Setup informiere ich Sie
+							außerdem über Probleme, auf die andere Kunden stoßen, und helfe Ihnen, die Lösung umzusetzen.`,
 					},
 					"smallBusiness": {
 						"question": "Passt das auch für ein kleineres Unternehmen?",
@@ -835,7 +733,7 @@ export default {
 						"question": "Was passiert im Gespräch?",
 						"answer": `Ich lerne das Projekt kennen, das Sie im Kopf haben, und ob und wie ich am besten helfen
 							kann. Wenn wir zusammenarbeiten, lege ich sofort los. Über das Management-Upgrade müssen Sie noch
-							nicht entscheiden, aber es hilft, wenn Sie es schon wissen.`,
+							nicht entscheiden.`,
 					},
 				},
 			},
