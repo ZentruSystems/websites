@@ -613,10 +613,11 @@ export default {
 				"items": {
 					"forecasting": {
 						"title": "Ein System für Finanzprognosen",
-						"challenge": `Die Prognosen hingen an Zahlen, verteilt über Abschlüsse und Berichte in PDF, Word,
-							Excel und CSV.`,
-						"work": `Ein angepasstes bayessches Regressionsmodell mit Monte-Carlo-Roll-up, Markt- und
-							Nachrichteneinflüsse über die FastMarkets API und die Extraktion aus all diesen Dokumenten.`,
+						"challenge": `Ein KI-Prototyp, ein erster Pilotkunde und ein bereits aufgebautes Entwicklungsteam
+							in Indien – aber kein Plan, der aus der Idee für eine Forecasting-Plattform ein System machte, das sich bauen lässt.`,
+						"work": `Die Projektmanagement-Tools aufgesetzt, die Idee zu einem System geplant und die Arbeit
+							mit dem Team erstellt, verteilt und gemanagt. Als die Prognose-Engine Budget und Zeitplan
+							gefährdet hat, bin ich eingesprungen und habe sie selbst gebaut.`,
 						"result": "Der Kunde hatte wieder Luft für parallele Projekte und neue Kunden.",
 					},
 					"jobs": {

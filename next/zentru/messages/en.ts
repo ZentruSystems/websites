@@ -711,10 +711,11 @@ export default {
 				"items": {
 					"forecasting": {
 						"title": "A finance forecasting system",
-						"challenge": `Forecasts depended on figures spread across statements and reports in PDF, Word,
-							Excel and CSV.`,
-						"work": `A customised Bayesian regression model with a Monte Carlo roll-up, market and news impact
-							from the FastMarkets API, and extraction from all of those documents.`,
+						"challenge": `An AI prototype, a first pilot client and a development team already hired in
+							India – but no plan that turned the idea of an advanced forecasting system into a system they could build.`,
+						"work": `Set up the project management tools, planned the idea into a system, and created,
+							delegated and managed the work with the team. When the forecasting engine put the budget and the
+							timeline at risk, I stepped in and built it myself.`,
 						"result": "The client was freed up to run parallel projects and win new clients.",
 					},
 					"jobs": {
