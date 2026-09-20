@@ -10,7 +10,7 @@ export default function CaseStudies(props: {
 	items: CaseStudy[],
 }) {
 	return <div className={style.cases}>
-		{props.items.map(item => <article key={item.key} className={style.case}>
+		{props.items.map(item => <article key={item.key} className={style.case} data-lift>
 			<h3 className={style.cardTitle}>{item.title}</h3>
 			<dl className={style.caseFacts}>
 				<dt>{props.labels.challenge}</dt>

@@ -24,6 +24,58 @@ The order is: hero, proof bar, the problem, **what it is worth** (`outcomes` –
 freed, deliberately before any "how"), the solution and its five stages with a call to action, case
 studies, how it works, the two packages, FAQ, final call to action.
 
+## Movement
+
+Three small effects, and deliberately only three.
+
+Every filled card – the card grids, the case studies, the package cards, all marked `data-lift` –
+rises towards the pointer. `PointerLift`, mounted once per page, gives each one `--near`: 1 when the
+pointer is on it, falling to 0 at 130px from its edge. The stylesheet turns that into up to 4px of
+lift and a shadow that grows with it, so hovering is not a separate state but the top of the same
+ramp, and the cards beside the one under the cursor come up part of the way with it.
+
+The transition is half `--snappyDuration`, because this follows a pointer rather than answering an
+event – at the full duration the cards visibly trail behind it. Behind `hover: hover` so a phone
+doesn't keep the lifted state after a tap; `prefers-reduced-motion` drops the whole thing, and the
+`:hover` rule alone still works if the script never runs.
+
+**"How a project comes together" is held.** These are the five stages inside the *solution* section
+(`solution.stagesTitle`) – not the "How it works" list further down, which is a different `Steps` and
+stays still. `<ScrollFocus>` in `page.tsx` wraps the heading and the list; `scrollFocus` on `Steps`
+marks the list as the thing it drives.
+
+`ScrollFocus` is a track holding a sticky pin and an empty spacer. The spacer is `--hold` (1.6vh) per
+step of reserved scrolling; the pin sticks through it while the stylesheet releases a `--drift` (3vh)
+offset, so the section rises by that much over the stretch. It therefore crosses it at about **43% of
+the page's speed – slowed, not stopped** – and then picks up again. The wheel is never intercepted;
+doing that breaks trackpads, keyboards and screen readers.
+
+The lane is short because it is paid for twice over: the reserved scrolling becomes space above the
+stages once the pin rests at the end of its range, and space below them while it is still travelling.
+A longer, more emphatic slowdown costs the section's own spacing both ways.
+
+The drift is set low and released, rather than lifted and left there: either way the section rises
+while the pin is stuck, but this way it ends at zero instead of hovering `--drift` above its own box
+with that much dead space beneath it. The gap to the call to action is then the band's own 60px.
+
+The spacer cannot be padding on the track: a sticky element is confined to its containing block's
+*content* box, so padding leaves it nothing to stick through and the section sails past at full speed.
+
+Because the lane is short, the sweep is not tied to it. `--focus` – how far the reader has got,
+counted in steps, fractional so neighbours crossfade – starts while the section is still coming up
+the screen (0.65 of a viewport out) and runs a little past the last step, so the fifth is lit and
+settled by the time the slowdown begins rather than still arriving as it lets go. Each step
+turns that into `--reached` and comes up 14px to full opacity; the ones still waiting sit at
+`--waiting` (0.35). `--hold`, `--drift` and `--waiting` are one number each in `blocks.module.css`.
+
+Stacked below 1100px nothing is pinned and there is no "further along" to point at, so the steps
+become a card stack instead: each pins clear of the nav until the next slides up and covers it,
+`position: sticky` and equal rows, no JS at all.
+
+Native scroll-driven animations (`animation-timeline: view()`) would replace the JS, but Firefox
+still has them behind a flag; when that changes, `.stepsFocus` is the one place to swap. No
+animation library is installed and none is needed.
+
 ## Copy
 
 All text lives in `messages/en.ts` and `messages/de.ts` under `Fields.projectBootstrap`. German

@@ -35,7 +35,7 @@ export default function CardGrid(props: {
 				&& <p className={`${style.tag} ${item.tag.accent ? style.tagAccent : ""}`}>{item.tag.label}</p>;
 			const heading = <Heading className={style.cardTitle}>{item.title}</Heading>;
 
-			return <li key={item.key} className={style.card}>
+			return <li key={item.key} className={style.card} data-lift>
 				{/* Title and tag share a row, so the tag can't cover the title however long it is */}
 				{onTop ? <div className={style.cardHead}>{heading}{tag}</div> : heading}
 				{typeof item.text == "string"

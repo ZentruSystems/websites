@@ -32,7 +32,7 @@ export default function PackageTable(props: {
 }) {
 	return <>
 		<div className={style.packageCards}>
-			{props.packages.map(pkg => <div key={pkg.key} className={`${style.packageCard} ${pkg.isUpgrade ? style.packageUpgrade : ""}`}>
+			{props.packages.map(pkg => <div key={pkg.key} className={`${style.packageCard} ${pkg.isUpgrade ? style.packageUpgrade : ""}`} data-lift>
 				<p className={`${style.tag} ${pkg.isUpgrade ? style.tagAccent : ""}`}>{pkg.tag}</p>
 				<h3 className={style.packageName}>{pkg.name}</h3>
 				<p className={style.packageSummary}>{pkg.summary}</p>

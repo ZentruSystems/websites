@@ -635,6 +635,141 @@
 	font-size: 1.15em;
 }
 
+/* Interaction – a lift under the pointer, and a focus that moves with the scroll */
+
+/*
+	The filled surfaces rise towards the pointer. `--near` is how close it is – PointerLift sets it
+	from the distance to the card, 1 once the pointer is on it – so hovering is not a state of its
+	own, just the top of the same ramp, and a card next to the one under the cursor lifts a little
+	with it. At 0 the shadow has no offset and no blur, which puts it exactly behind an opaque card.
+
+	The shadow is drawn from --foregroundColor the way base.css's pulsingShadow is, so it is a
+	shadow on light and a faint glow on dark. Behind `hover: hover`, or a phone keeps the lifted
+	state after a tap; the `:hover` rule is the floor if the script never runs.
+*/
+@media (hover: hover) {
+
+	.card,
+	.case,
+	.packageCard {
+		--near: 0;
+
+		transform: translateY(calc(var(--near) * -4px));
+		box-shadow:
+			hsl(from var(--foregroundColor) h s l / 0.12)
+			0
+			calc(var(--near) * 6px)
+			calc(var(--near) * 18px)
+			0;
+		/*
+			Half the usual, because this is not reacting to an event but following the pointer: at
+			the full duration the cards visibly trail behind it instead of answering to it.
+		*/
+		transition:
+			transform calc(var(--snappyDuration) / 2) var(--snappy),
+			box-shadow calc(var(--snappyDuration) / 2) var(--snappy);
+	}
+
+	.card:hover,
+	.case:hover,
+	.packageCard:hover {
+		--near: 1;
+	}
+}
+
+/*
+	How far the reader has gone through the steps, counted in steps – ScrollFocus overwrites it
+	each frame. 99 is "not running": without JS, and in the stacked layout below, every step stays
+	at full opacity.
+*/
+/*
+	Both are overwritten every frame by ScrollFocus. The values here are what the page looks like
+	before it hydrates, or if the script never runs: every step lit, and nothing shifted.
+*/
+.scrollTrack {
+	--focus: 99;
+	/* 1, not 0: that is the end of the drift, where nothing is shifted */
+	--progress: 1;
+	/* How far back a step is held before the focus reaches it – the one number to tune */
+	--waiting: 0.35;
+}
+
+/*
+	The slow lane. The track reserves `--hold` per step of extra scrolling and the pin sticks inside
+	it, but the pin is also drifting upward by `--drift` over that stretch – so the section keeps
+	moving, at roughly a third of the page's speed, instead of stopping dead. The drift has to stay
+	under the reserved height, or the section would climb out of its own track and over what follows.
+
+	The pin is only as tall as its content and sits a little below the nav, so what comes before and
+	after stays on screen next to it. Side-by-side layout only: stacked, the steps have the card
+	stack instead, and neither runs for a reader who asked for less movement.
+*/
+@media screen and (min-width: 1101px) and (prefers-reduced-motion: no-preference) {
+	.scrollTrack {
+		/*
+			Deliberately short. Every bit of reserved scrolling is empty space between the stages
+			and whatever follows them, so a longer slow lane buys a stronger effect by cutting the
+			section off from the page around it. --drift over --hold is the apparent speed: ~30%.
+		*/
+		/*
+			Every pixel reserved here is a pixel of space above the stages once the pin reaches the
+			end of its range and rests there – so the lane buys its slowdown with the section's own
+			spacing, and stays short. --drift over the reserved total is the apparent speed.
+		*/
+		--hold: 1.6vh;
+		--drift: 3vh;
+	}
+
+	.scrollPin {
+		position: sticky;
+		top: calc(var(--nav-height) + 9vh);
+		/*
+			Set low and released, rather than lifted and left there. Either way the section rises by
+			--drift while the pin is stuck, which is the slowdown – but this way it ends at nothing,
+			so it isn't left hovering --drift above its own box with that much dead space under it.
+		*/
+		transform: translateY(calc((1 - var(--progress)) * var(--drift)));
+	}
+
+	/*
+		The reserved scrolling, as a real box. It cannot be padding on the track: a sticky element
+		is confined to its containing block's content box, so padding would leave it nothing to
+		stick through and the section would sail past at full speed.
+	*/
+	.scrollSpacer {
+		height: calc(var(--count) * var(--hold));
+	}
+}
+
+/* 0 before the focus reaches this step, 1 once it has, ramping across the step before it */
+.stepsFocus .step {
+	--reached: clamp(0, calc(var(--focus) - var(--index) + 1), 1);
+
+	opacity: calc(var(--waiting) + (1 - var(--waiting)) * var(--reached));
+	/* A small rise as it arrives, so the focus moving reads as movement and not only as brightness */
+	transform: translateY(calc((1 - var(--reached)) * 14px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.card,
+	.case,
+	.packageCard,
+	.card:hover,
+	.case:hover,
+	.packageCard:hover {
+		--near: 0;
+		transform: none;
+		box-shadow: none;
+		transition: none;
+	}
+
+	.stepsFocus .step {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 @media screen and (max-width: 1100px) {
 
 	.cols3,
@@ -656,6 +791,26 @@
 
 	.stepOngoing {
 		border-left-style: dashed;
+	}
+
+	/*
+		Stacked, there is no "further along" to dim, so the sweep gives way to a stack in the other
+		sense: each step pins clear of the nav until the next one slides up and covers it. Equal
+		rows, or the step underneath would show below the one covering it.
+	*/
+	.stepsFocus {
+		grid-auto-rows: 1fr;
+		gap: var(--smallPad);
+	}
+
+	/* A positioned element, so each step paints over the one pinned before it without a z-index */
+	.stepsFocus .step {
+		position: sticky;
+		top: calc(var(--nav-height) + var(--smallPad));
+		padding: var(--paddingUnit);
+		border-radius: var(--borderRadius);
+		/* Opaque, or the covered step reads through it */
+		background-color: var(--cardBg);
 	}
 }
 
@@ -714,5 +869,10 @@
 		display: block;
 		width: 100%;
 		text-align: center;
+	}
+
+	/* The nav runs along the bottom here, so a pinned step has nothing to clear at the top */
+	.stepsFocus .step {
+		top: var(--smallPad);
 	}
 }

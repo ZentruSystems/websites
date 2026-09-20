@@ -6,7 +6,9 @@ import CtaBand from "@/app/blocks/CtaBand";
 import Faq, { FaqItem } from "@/app/blocks/Faq";
 import Hero from "@/app/blocks/Hero";
 import PackageTable from "@/app/blocks/PackageTable";
+import PointerLift from "@/app/blocks/PointerLift";
 import ProofBar from "@/app/blocks/ProofBar";
+import ScrollFocus from "@/app/blocks/ScrollFocus";
 import Steps from "@/app/blocks/Steps";
 import ScrollDepth from "@/app/ScrollDepth";
 import { defaultHtml } from "@/lib/localization";
@@ -71,6 +73,7 @@ export default async function ProjectBootstrapPage() {
 
 	return <main lang={locale}>
 		<ScrollDepth page="project-bootstrap" />
+		<PointerLift />
 		<StructuredData />
 		{/* Tinted and plain alternate from here down; the hero and proof bar share one band */}
 		<HeroSection />
@@ -229,9 +232,11 @@ async function SolutionSection() {
 			sizes="(max-width: 730px) 90vw, 360px"
 		/>}
 	>
-		<div>
+		{/* Held still while the page scrolls past, so the stages come forward one after another */}
+		<ScrollFocus count={stageKeys.length}>
 			<h3 className={style.subTitle}>{t("stagesTitle")}</h3>
 			<Steps
+				scrollFocus
 				headingLevel="h4"
 				ongoingLabel={t("ongoing")}
 				items={stageKeys.map(key => ({
@@ -240,7 +245,7 @@ async function SolutionSection() {
 					text: t(`stages.${key}.text`),
 				}))}
 			/>
-		</div>
+		</ScrollFocus>
 		{/* The same button as everywhere else, so the visitor never has to scroll back for it */}
 		<div>
 			<p className={`${style.intro} bUnitMarg`}>{t("ctaLine")}</p>
