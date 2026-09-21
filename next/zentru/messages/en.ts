@@ -875,7 +875,7 @@ export default {
 	"Always": {
 		// Nav
 		"products": "Products",
-		"services": "Services",
+		"services": "Service",
 		"aboutPage": "About",
 		// Footer
 		"letsMeetAt": "Let's meet at",

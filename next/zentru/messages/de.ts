@@ -777,7 +777,7 @@ export default {
 	"Always": {
 		// Nav
 		"products": "Produkte",
-		"services": "Leistungen",
+		"services": "Service",
 		"aboutPage": "Über uns",
 		// Footer
 		"letsMeetAt": "Besuche uns auf",

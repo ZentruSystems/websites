@@ -29,7 +29,7 @@ export default function Nav() {
 				<img className="vertSep" src="/img/vertical-divider.svg" />
 				<NavLink href="/about">{tAlways("aboutPage")}</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-				<NavLink href="/services">{tAlways("services")}</NavLink>
+			<NavLink href="/">{tAlways("services")}</NavLink>
 				{vercelEnv != "production" && stagingBadge}
 			</div>
 		</nav>
