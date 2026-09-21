@@ -881,7 +881,7 @@ export default {
 		"letsMeetAt": "Let's meet at",
 		"weAre": "This is",
 		"imprint": "Imprint",
-		"about": "About me",
+		"about": "About",
 		"privacyPolicy": "Privacy Policy",
 		"email": "E-Mail",
 		"valid": "valid",

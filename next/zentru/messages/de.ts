@@ -783,7 +783,7 @@ export default {
 		"letsMeetAt": "Besuche uns auf",
 		"weAre": "Das ist",
 		"imprint": "Impressum",
-		"about": "Über mich",
+		"about": "Über uns",
 		"privacyPolicy": "Datenschutzerklärung",
 		"email": "E-Mail",
 		"valid": "valide",

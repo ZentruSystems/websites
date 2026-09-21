@@ -1,10 +1,9 @@
+import DynamicQuote from "@/app/DynamicQuote";
+import SideBoard from "@/app/SideBoard";
 import { defaultHtml } from "@/lib/localization";
-import SocialLinks from "common/components/socialLinks/SocialLinks";
 import VerticalDivider from "common/components/verticalDivider/VerticalDivider";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import DynamicQuote from "@/app/DynamicQuote";
-import SideBoard from "@/app/SideBoard";
 
 export default async function Page() {
 	const t = await getTranslations();
@@ -46,13 +45,12 @@ export default async function Page() {
 				Linked from the footer as `/about#about`. The nav is fixed over the top of the page, so
 				`scroll-padding-top` in app/style.css is what keeps the heading out from under it.
 			*/}
-			<section id="about" className="About vhGrid">
+			{/* <section id="about" className="About vhGrid">
 				<h2 className="s1 e5 ph-e5 tPad">{tMain("about.title")}</h2>
 				<div className="s1 e8 ph-e5 paragraphSpaceLarger">
 					{tMain.rich("about.body", defaultHtml)}
 				</div>
 				<p className="s1 e8 ph-e5 tPad">{tMain("about.findMe")}</p>
-				{/* One row per account – the icons alone cannot say whose they are, so each is labelled */}
 				<div className="s1 e8 ph-e5 flex">
 					<p className="vCenter">{tMain("about.mineLabel")}</p>
 					<SocialLinks account="personal" linkedIn github style={{ placeContent: "start" }} />
@@ -64,9 +62,9 @@ export default async function Page() {
 				<div className="s1 e8 ph-e5 bPad paragraphSpaceLarger">
 					{tMain.rich("about.closing", defaultHtml)}
 				</div>
-			</section>
-			<section className="Sustainability">
+			</section> */}
+			{/* <section className="Sustainability">
 
-			</section>
+			</section> */}
 		</main >
 }

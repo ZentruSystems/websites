@@ -5,8 +5,8 @@ import ThemedImg from 'common/theming/ThemedImg';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import '../animations.css';
-import '../style.css';
 import CookieSettingsButton from '../CookieSettingsButton';
+import '../style.css';
 import Nav from './nav/Nav';
 
 export default async function BaseLayout({
@@ -36,8 +36,8 @@ export default async function BaseLayout({
 						</Link>
 					</div>
 					<div className="s11 e12 ph-s1 ph-e5 vBottom hRight ph-hUnset bUnitPad">
-						<Link href="/about#about">
-							<p>{tAlways("about") ?? "About me"}</p>
+						<Link href="/about">
+							<p>{tAlways("about") ?? "About"}</p>
 						</Link>
 						<Link href="/impressum">
 							<p>{tAlways("imprint") ?? "Imprint"}</p>
