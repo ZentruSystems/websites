@@ -27,11 +27,9 @@ export default function Nav() {
 			</Link>
 			<div className="Refs s9 e12">
 				<img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink href="/products">{tAlways("products")}</NavLink>
+				<NavLink href="/about">{tAlways("aboutPage")}</NavLink>
 				<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 				<NavLink href="/services">{tAlways("services")}</NavLink>
-				{/* <img className="vertSep" src="/img/vertical-divider.svg" />
-				<NavLink>{tAlways("about")}</NavLink> */}
 				{vercelEnv != "production" && stagingBadge}
 			</div>
 		</nav>
@@ -61,11 +59,9 @@ export default function Nav() {
 	return <nav className="glass vhGrid hFill" style={{ height: `calc(var(--nav-height) + ${burgerExtend}px)` }}>
 		<div className="Refs s1 e5 liquidOpacity" style={{ position: "absolute", top: "var(--grid-gap)", opacity: burgerOpacity, zIndex: -1 }}>
 			<img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink onNavigate={e => closeBurger()} href="/products">{tAlways("products") ?? "Products"}</NavLink>
+			<NavLink onNavigate={e => closeBurger()} href="/about">{tAlways("aboutPage")}</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
 			<NavLink onNavigate={e => closeBurger()} href="/services">{tAlways("services")}</NavLink>
-			{/* <img className="vertSep" src="/img/vertical-divider.svg" />
-			<NavLink>{tAlways("about")}</NavLink> */}
 		</div>
 		<Link className="s1 e4 liquidMarg" href="/" style={{ marginTop: burgerExtend, width: "fit-content" }}>
 			<ThemedImg className="Logo" alt="Zentru"

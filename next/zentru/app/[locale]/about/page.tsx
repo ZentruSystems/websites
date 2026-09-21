@@ -3,8 +3,8 @@ import SocialLinks from "common/components/socialLinks/SocialLinks";
 import VerticalDivider from "common/components/verticalDivider/VerticalDivider";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import DynamicQuote from "../DynamicQuote";
-import SideBoard from "../SideBoard";
+import DynamicQuote from "@/app/DynamicQuote";
+import SideBoard from "@/app/SideBoard";
 
 export default async function Page() {
 	const t = await getTranslations();
@@ -43,7 +43,7 @@ export default async function Page() {
 				/>
 			</section>
 			{/*
-				Linked from the footer as `/#about`. The nav is fixed over the top of the page, so
+				Linked from the footer as `/about#about`. The nav is fixed over the top of the page, so
 				`scroll-padding-top` in app/style.css is what keeps the heading out from under it.
 			*/}
 			<section id="about" className="About vhGrid">

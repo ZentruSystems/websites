@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     return [
       { source: "/fields", destination: "/services", permanent: true },
       { source: "/:locale(en|de)/fields", destination: "/:locale/services", permanent: true },
+      // No home page while the old one lives at /about. Not permanent: a 308 is cached by browsers and
+      // search engines, and would keep sending people here after a home page exists again
+      { source: "/", destination: "/project-bootstrap", permanent: false },
+      { source: "/:locale(en|de)", destination: "/:locale/project-bootstrap", permanent: false },
     ];
   },
   allowedDevOrigins: [

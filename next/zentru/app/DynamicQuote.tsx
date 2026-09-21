@@ -9,7 +9,8 @@ export default function DynamicQuote() {
 	const tMain = useTranslations("Main");
 
 	// TODO: add link to youtube video
-	const quoteer = isQuoteHovered ? "I" : "Phillip Stark";
+	// "us" selects the message's own wording rather than being inserted – German needs a different verb form for it
+	const quoteer = isQuoteHovered ? "us" : "Phillip Stark";
 
 	return <>
 		<p className="s1 e8 ph-e5 rUnitPad">

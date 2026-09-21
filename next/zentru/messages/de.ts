@@ -19,7 +19,7 @@ export default {
 				"title": "Warum .rec?",
 				"content": `<maxWidth>Damit du nie wieder eine Melodie oder einen Song im Kopf hast, es aufnimmst,
 					nur um später festzustellen, dass du keine Ahnung mehr hast, wie du dir die Harmonien, den Bass, die Drums...vorgestellt hast.</maxWidth>
-					<maxWidth>Glaub mir, soetwas passiert allen – die ganze Zeit, ich kenne diesen Schmerz, das ist der Grund, warum ich .rec mache.</maxWidth>
+					<maxWidth>Glaub uns, soetwas passiert allen – die ganze Zeit, wir kennen diesen Schmerz, das ist der Grund, warum wir .rec machen.</maxWidth>
 					<maxWidth>Für wen .rec ist? – Na für jeden! Jeder der supercharged voice-memos praktisch findet!</maxWidth>`
 			},
 			"section3": {
@@ -240,15 +240,15 @@ export default {
 				"screenshot": "Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen, mit aktiviertem SpeedSwitch.",
 			},
 			"privacy": {
-				"title": "Mir ist Privatsphäre wichtig – deshalb schütze ich deine",
-				"intro": `So baue ich jedes Produkt bei Zentru Systems, und SpeedSwitch ist keine Ausnahme. Es beobachtet
+				"title": "Uns ist Privatsphäre wichtig – deshalb schützen wir deine",
+				"intro": `So bauen wir jedes Produkt bei Zentru Systems, und SpeedSwitch ist keine Ausnahme. Es beobachtet
 					Zeigerbewegungen, um seine Arbeit zu tun, und damit endet es: Es liest nicht mit, was du tippst, nimmt
 					deinen Bildschirm nicht auf und sendet deine Eingaben nirgendwohin.`,
-				"analytics": `Was ich erhebe, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
+				"analytics": `Was wir erheben, sind anonyme Produktdaten – App-Starts, ob die Taste tatsächlich benutzt
 					wurde, welche Einstellungen geändert werden. Kein Konto, keine personenbezogenen Daten, kein
-					Geräte-Fingerabdruck, kein seitenübergreifendes Tracking. Es sagt mir, ob die App für Leute
+					Geräte-Fingerabdruck, kein seitenübergreifendes Tracking. Es sagt uns, ob die App für Leute
 					funktioniert, und sonst nichts.`,
-				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alle Details stehen in meiner ",
+				"controlBeforeLink": "Du kannst es in den Einstellungen komplett abschalten. Alle Details stehen in unserer ",
 				"controlLinkLabel": "Datenschutzerklärung",
 				"controlAfterLink": ".",
 			},
@@ -263,7 +263,7 @@ export default {
 				},
 				"anchor": "Einführungspreis. Regulär kostet es {regular, number, ::currency/EUR precision-integer}.",
 				"note": `Wenn du das wegen eines Tremors oder aus motorischen Gründen brauchst und {price, number, ::currency/EUR} eine Hürde sind,
-					schreib mir – ich schicke dir eine Lizenz.`,
+					schreib uns – wir schicken dir eine Lizenz.`,
 			},
 			"faq": {
 				"title": "Fragen",
@@ -308,12 +308,12 @@ export default {
 					"appStore": {
 						"question": "Gibt es das im Mac App Store?",
 						"answer": `Nein. Die Bedienungshilfen-Berechtigung, die SpeedSwitch braucht, steht Apps aus dem App
-							Store nicht zur Verfügung. Deshalb verkaufe ich direkt.`,
+							Store nicht zur Verfügung. Deshalb verkaufen wir direkt.`,
 					},
 					"linux": {
 						"question": "Linux?",
 						"answer": `Noch nicht – ob es dazu kommt, hängt davon ab, wie viele Leute es wollen. Trag dich ein und
-							ich sage dir Bescheid, falls es so weit ist.`,
+							wir sagen dir Bescheid, falls es so weit ist.`,
 					},
 				},
 			},
@@ -321,7 +321,7 @@ export default {
 			"linuxInterest": {
 				"pitch": "Ich hätte Interesse an einer Linux-Version für {price, number, ::currency/EUR}",
 				"action": "Trag mich ein",
-				"success": "Notiert. Ich melde mich, falls es eine Linux-Version gibt.",
+				"success": "Notiert. Wir melden uns, falls es eine Linux-Version gibt.",
 				"alreadySignedUp": "Du warst schon auf der Liste – trotzdem nochmal notiert.",
 				"error": "Das hat nicht geklappt. Versuch es gleich nochmal.",
 			},
@@ -414,23 +414,23 @@ export default {
 		},
 	},
 	"Main": {
-		"because1": "Weil ich möchte, dass Kunden gut behandelt werden.",
-		"because2": "Weil mir gutes Design wichtig ist.",
-		"because3": "Weil ich „richtig gut“ <span>liebe</span>.",
+		"because1": "Weil wir möchten, dass Kunden gut behandelt werden.",
+		"because2": "Weil uns gutes Design wichtig ist.",
+		"because3": "Weil wir „richtig gut“ <span>lieben</span>.",
 
-		"weBelieve": `Ich glaube, dass alles, was ich tue, wirklich gut sein sollte.<br></br>
-			Ich glaube das, weil ich nach der Achtsamkeit und nachhaltigem Design der Vergangenheit strebe.<br></br>
+		"weBelieve": `Wir glauben, dass alles, was wir tun, wirklich gut sein sollte.<br></br>
+			Wir glauben das, weil wir nach der Achtsamkeit und nachhaltigem Design der Vergangenheit streben.<br></br>
 			<br></br>
-			Denk nur an all die zeitlosen Designs, die wir haben – das ist es, was ich liebe.<br></br>
-			<span>Wie {quoteer} es sagte</span>`,
+			Denk nur an all die zeitlosen Designs, die wir haben – das ist es, was wir lieben.<br></br>
+			<span>{quoteer, select, us {Wie wir es sagen} other {Wie {quoteer} es sagte}}</span>`,
 		"timelessStark": "Zeitloses Design ist das einzige Design das nachhaltig sein kann und das einzige Design auf das wir uns fokusieren sollten.",
 		"timelessWe": "Keine unnötigen Funktionen, keine Kompromisse—einfach gut gemachte Systeme, die genau das tun, was sie sollen, nicht mehr, nicht weniger.",
 
-		"weFocusOn": `Ich fokusiere mich auf was du fühlst, nicht wie ich dieses Gefühl liefere, nur um sicherzustellen, dass du mehr davon bekommst.<br></br>
+		"weFocusOn": `Wir fokussieren uns auf was du fühlst, nicht wie wir dieses Gefühl liefern, nur um sicherzustellen, dass du mehr davon bekommst.<br></br>
 							<br></br>
 							Das unbeschreibbare Gefühl ein Produkt zu benützen, dass <i>richtig gut</i> ist.`,
 
-		// Der Über-mich-Abschnitt auf der Startseite. Anker #about, verlinkt aus dem Footer.
+		// Der Über-mich-Abschnitt am Ende von /about. Anker #about, verlinkt aus dem Footer.
 		"about": {
 			"title": "Über mich",
 			"body": `<p>Ich bin Felix – Entwickler, Musiker, Design-Liebhaber und jemand, der Dinge gerne möglich
@@ -451,7 +451,7 @@ export default {
 		"digitalExperiences": {
 			"name": "Digitale Erfahrungen",
 			"subline": "Nützlich, schön, emotional – eine Erfahrung",
-			"headline-p1": "Ich kann Ihnen helfen Ihr ",
+			"headline-p1": "Wir können Ihnen helfen Ihr ",
 			"headline-p2/1": "Produkt",
 			"headline-p2/2": "Projekt",
 			"headline-p3": "zu einer <span>Erfahrung</span> zu machen.",
@@ -459,11 +459,11 @@ export default {
 				`<p>Damit Ihre Kunden fühlen, was Sie meinen.</p>
 						<br></br>
 						<br></br>
-						<p>Meine Expertise beinhaltet: User interface design, Klangdesign, Scoring und Musikproduktion</p>
+						<p>Unsere Expertise beinhaltet: User interface design, Klangdesign, Scoring und Musikproduktion</p>
 						<br></br>
 						<br></br>
 						<p>Physikalischer Charakter für die digitale Welt</p>
-						<p>Viele Dinge, die ich liebe sind in der realen Welt, ich möchte diesen Charakter und dieses Gefühl auch für digitale Dinge erreichen.</p>`,
+						<p>Viele Dinge, die wir lieben, sind in der realen Welt, wir möchten diesen Charakter und dieses Gefühl auch für digitale Dinge erreichen.</p>`,
 			"ui": {
 				"headline": "User Interfaces",
 				"text": `<p>Apps, Websiten und Spiel Interfaces, designt Probleme zu lösen, designt ein Erlebnis zu sein.</p>`,
@@ -471,7 +471,7 @@ export default {
 			"sonicDesign": {
 				"headline": "Sonic Design",
 				"text":
-					`<p>Ich mache Soundeffekte, Klanglandschaften und Musik in Harmonie, um die richtigen Gefühle zu übertragen.
+					`<p>Wir machen Soundeffekte, Klanglandschaften und Musik in Harmonie, um die richtigen Gefühle zu übertragen.
 						<br></br>
 						<br></br>
 						Musik für Film, Animation und Werbung
@@ -488,7 +488,7 @@ export default {
 			},
 			"hero": {
 				"eyebrow": "Project Bootstrap<audience> · für kleine Finanzunternehmen</audience>",
-				"headline": "Ich helfe kleinen Finanzunternehmen, ihr Softwareprojekt richtig zu starten.",
+				"headline": "Wir helfen kleinen Finanzunternehmen, ihr Softwareprojekt richtig zu starten.",
 				"sub": `Von der Idee oder dem KI-gebauten Prototyp zu einem Projekt, das startklar ist, meist in ein bis
 					zwei Wochen: die richtigen Tools, eine Architektur, in der alles zusammenpasst, ein Zeitplan und die
 					richtigen Leute. Alles in der Sprache Ihres Geschäfts erklärt.`,
@@ -561,7 +561,7 @@ export default {
 					},
 					"meetings": {
 						"title": "Ihre Woche zurück",
-						"text": `Mit dem Management-Upgrade übernehme ich das Tagesgeschäft. Ein wöchentlicher Termin
+						"text": `Mit dem Management-Upgrade übernehmen wir das Tagesgeschäft. Ein wöchentlicher Termin
 							und ein Statusbericht, damit Ihre Stunden zu Ihren Kunden gehen.`,
 					},
 				},
@@ -571,10 +571,10 @@ export default {
 			},
 			"solution": {
 				"title": "Eine Person zwischen Ihrem Geschäft und Ihrer Technik.",
-				"intro": `<p>Ich bringe Ihr Projekt von der Idee zu einem funktionierenden Setup: Struktur, Tools,
-					Beratung und Unterstützung bei der Personalauswahl. Und ich übersetze zwischen Geschäft und
+				"intro": `<p>Wir bringen Ihr Projekt von der Idee zu einem funktionierenden Setup: Struktur, Tools,
+					Beratung und Unterstützung bei der Personalauswahl. Und wir übersetzen zwischen Geschäft und
 					Technik, damit aus einem Missverständnis keine Wochen Nacharbeit werden.</p>`,
-				"estimate": "Etwa 95 % der auftretenden Probleme löse ich, ohne dass Sie etwas tun müssen.",
+				"estimate": "Etwa 95 % der auftretenden Probleme lösen wir, ohne dass Sie etwas tun müssen.",
 				"ctaLine": "Ins Gespräch kommen, Einschätzung bekommen, Zeit und Kosten senken.",
 				"portraitAlt": "Felix, der Zentru Systems führt",
 				"stagesTitle": "Wie ein Projekt zusammenkommt",
@@ -604,11 +604,11 @@ export default {
 			},
 			"cases": {
 				"title": "Ergebnisse aus echten Projekten",
-				"intro": "Zwei Projekte habe ich aufgesetzt und gemanagt, eines umgesetzt.",
+				"intro": "Zwei Projekte haben wir aufgesetzt und gemanagt, eines umgesetzt.",
 				"implementationTag": "Umsetzung",
 				"labels": {
 					"challenge": "Die Ausgangslage",
-					"work": "Was ich getan habe",
+					"work": "Was wir getan haben",
 					"result": "Das Ergebnis",
 				},
 				"items": {
@@ -618,7 +618,7 @@ export default {
 							in Indien – aber kein Plan, der aus der Idee für eine Forecasting-Plattform ein System machte, das sich bauen lässt.`,
 						"work": `Die Projektmanagement-Tools aufgesetzt, die Idee zu einem System geplant und die Arbeit
 							mit dem Team erstellt, verteilt und gemanagt. Als die Prognose-Engine Budget und Zeitplan
-							gefährdet hat, bin ich eingesprungen und habe sie selbst gebaut.`,
+							gefährdet hat, sind wir eingesprungen und haben sie selbst gebaut.`,
 						"result": "Der Kunde hatte wieder Luft für parallele Projekte und neue Kunden.",
 					},
 					"jobs": {
@@ -647,18 +647,18 @@ export default {
 					},
 					"plan": {
 						"title": "Einschätzung und Plan erhalten",
-						"text": "Ich ermittle den aktuellen Stand und die Lösungen und erstelle Zeitplan und Architektur.",
+						"text": "Wir ermitteln den aktuellen Stand und die Lösungen und erstellen Zeitplan und Architektur.",
 					},
 					"implement": {
 						"title": "Tools werden umgesetzt",
-						"text": "Ich richte die vereinbarten Tools ein, verbinde sie, schule Ihr Team und lege die Aufgaben an.",
+						"text": "Wir richten die vereinbarten Tools ein, verbinden sie, schulen Ihr Team und legen die Aufgaben an.",
 					},
 				},
 			},
 			"packages": {
-				"title": "Zwei Arten, mit mir zu arbeiten",
-				"intro": `Jedes Projekt beginnt mit dem Setup. Management ist ein Upgrade, wenn ich das Projekt managen
-					soll.`,
+				"title": "Zwei Arten, mit uns zu arbeiten",
+				"intro": `Jedes Projekt beginnt mit dem Setup. Management ist ein Upgrade, wenn wir das Projekt managen
+					sollen.`,
 				"caption": "Was jedes Paket enthält",
 				"featureLabel": "Enthalten",
 				"included": "Enthalten",
@@ -674,8 +674,8 @@ export default {
 				"management": {
 					"tag": "Upgrade",
 					"name": "Setup + Management",
-					"summary": "Aufgesetzt, dann von mir gemanagt.",
-					"fit": "Das Richtige, wenn ich das Projekt managen soll und Sie in einem wöchentlichen Termin auf dem Laufenden bleiben.",
+					"summary": "Aufgesetzt, dann von uns gemanagt.",
+					"fit": "Das Richtige, wenn wir das Projekt managen sollen und Sie in einem wöchentlichen Termin auf dem Laufenden bleiben.",
 					"price": "Setup zum Festpreis, danach monatlich oder stundenweise",
 				},
 				"rows": {
@@ -697,31 +697,31 @@ export default {
 				"items": {
 					"software": {
 						"question": "Funktioniert das mit unserer bestehenden Software?",
-						"answer": "Ja. Ich beginne mit den Tools, die Sie bereits nutzen, und baue darauf auf.",
+						"answer": "Ja. Wir beginnen mit den Tools, die Sie bereits nutzen, und bauen darauf auf.",
 					},
 					"knowledge": {
 						"question": "Brauchen wir technisches Wissen?",
-						"answer": "Nein. Ich erkläre alles in der Sprache Ihres Geschäfts. Wenn Sie technisches Wissen haben, umso besser.",
+						"answer": "Nein. Wir erklären alles in der Sprache Ihres Geschäfts. Wenn Sie technisches Wissen haben, umso besser.",
 					},
 					"duration": {
 						"question": "Wie lange dauert die Umsetzung?",
-						"answer": `Das Setup dauert meist ein bis zwei Wochen, schneller, wenn ich die nötigen Informationen
-							bekomme, sobald ich sie brauche. Die Idee gemeinsam zu schärfen dauert länger. Das Management,
+						"answer": `Das Setup dauert meist ein bis zwei Wochen, schneller, wenn wir die nötigen Informationen
+							bekommen, sobald wir sie brauchen. Die Idee gemeinsam zu schärfen dauert länger. Das Management,
 							falls Sie es wählen, läuft fortlaufend.`,
 					},
 					"consulting": {
 						"question": "Ist die Beratung inklusive?",
-						"answer": "Ja, ohne Aufpreis in den ersten {weeks} Wochen. Danach gelten meine Standardsätze.",
+						"answer": "Ja, ohne Aufpreis in den ersten {weeks} Wochen. Danach gelten unsere Standardsätze.",
 					},
 					"handover": {
 						"question": "Können andere mit dem System arbeiten?",
-						"answer": `Ja. Ich baue das Setup so und schule Ihr Team so darauf ein, dass Ihre Führungskräfte
+						"answer": `Ja. Wir bauen das Setup so und schulen Ihr Team so darauf ein, dass Ihre Führungskräfte
 							einspringen und neue Mitarbeitende selbst einarbeiten können.`,
 					},
 					"breaks": {
 						"question": "Was passiert, wenn etwas nicht mehr funktioniert?",
-						"answer": `Sie können sich jederzeit an mich wenden. Mit meinem Standard-Setup informiere ich Sie
-							außerdem über Probleme, auf die andere Kunden stoßen, und helfe Ihnen, die Lösung umzusetzen.`,
+						"answer": `Sie können sich jederzeit an uns wenden. Mit unserem Standard-Setup informieren wir Sie
+							außerdem über Probleme, auf die andere Kunden stoßen, und helfen Ihnen, die Lösung umzusetzen.`,
 					},
 					"smallBusiness": {
 						"question": "Passt das auch für ein kleineres Unternehmen?",
@@ -730,8 +730,8 @@ export default {
 					},
 					"involvement": {
 						"question": "Wie viel Einsatz braucht es von unserem Team?",
-						"answer": `So viel, wie Sie möchten. Mit dem Management-Upgrade sprechen Sie einmal pro Woche mit mir.
-							Sie können das Projekt auch selbst managen und mich als Berater einsetzen.`,
+						"answer": `So viel, wie Sie möchten. Mit dem Management-Upgrade sprechen Sie einmal pro Woche mit uns.
+							Sie können das Projekt auch selbst managen und uns als Berater einsetzen.`,
 					},
 					"pricing": {
 						"question": "Wie wird der Service abgerechnet?",
@@ -740,8 +740,8 @@ export default {
 					},
 					"call": {
 						"question": "Was passiert im Gespräch?",
-						"answer": `Ich lerne das Projekt kennen, das Sie im Kopf haben, und ob und wie ich am besten helfen
-							kann. Wenn wir zusammenarbeiten, lege ich sofort los. Über das Management-Upgrade müssen Sie noch
+						"answer": `Wir lernen das Projekt kennen, das Sie im Kopf haben, und ob und wie wir am besten helfen
+							kann. Wenn wir zusammenarbeiten, legen wir sofort los. Über das Management-Upgrade müssen Sie noch
 							nicht entscheiden.`,
 					},
 				},
@@ -752,7 +752,7 @@ export default {
 				"items": {
 					"assessment": "Eine kurze Einschätzung, wo Ihr Projekt steht",
 					"recommendations": "Praktische Empfehlungen zu Technologie und Projektstruktur",
-					"nextSteps": "Klare nächste Schritte, ob Sie mit mir arbeiten oder nicht",
+					"nextSteps": "Klare nächste Schritte, ob Sie mit uns arbeiten oder nicht",
 				},
 				"note": "Für kleine Unternehmen mit einem Softwareprojekt im Blick. Kostenlos und unverbindlich.",
 			},
@@ -778,8 +778,9 @@ export default {
 		// Nav
 		"products": "Produkte",
 		"services": "Leistungen",
+		"aboutPage": "Über uns",
 		// Footer
-		"letsMeetAt": "Besuche mich auf",
+		"letsMeetAt": "Besuche uns auf",
 		"weAre": "Das ist",
 		"imprint": "Impressum",
 		"about": "Über mich",
@@ -801,8 +802,8 @@ export default {
 	//
 	"Signup": {
 		"share": "Teile, was du gefunden hast?",
-		"noticed": "Du wirst so bald wie möglich von mir hören.",
-		"multipleNotice": "Ich werde dir nicht zwei E-Mails senden, aber ich habe mir deine Begeisterung vorgemerkt!",
+		"noticed": "Du wirst so bald wie möglich von uns hören.",
+		"multipleNotice": "Wir werden dir nicht zwei E-Mails senden, aber wir haben uns deine Begeisterung vorgemerkt!",
 	},
 	//
 	"createdBy": "Designed und gebaut von Zentru Systems mit 🫀 ❤️"

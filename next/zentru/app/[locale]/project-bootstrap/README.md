@@ -1,6 +1,7 @@
 # Project Bootstrap landing page
 
-Route: `/project-bootstrap`, linked from the Services page and the home page hero. The page has one job: a booked strategy
+Route: `/project-bootstrap`, linked from the Services page and the hero of `/about`. For now it is also
+where `/` goes – a temporary redirect in `next.config.ts`, until there is a home page again. The page has one job: a booked strategy
 call. Every call to action is the same `BookCallCta`, and nothing else on the page sends the
 visitor anywhere.
 
@@ -79,7 +80,8 @@ animation library is installed and none is needed.
 ## Copy
 
 All text lives in `messages/en.ts` and `messages/de.ts` under `Fields.projectBootstrap`. German
-uses "Sie", like the other Fields page, not the "du" of the product pages.
+uses "Sie", like the other Fields page, not the "du" of the product pages. Like the rest of the site it
+speaks as Zentru Systems, "we" – only the About section on `/about` is Felix in the first person.
 
 Nothing on the page is invented: the case studies, the proof bar and every number come from the
 brief – one to two weeks of setup, three weeks of consulting included, "practically zero" errors,
@@ -87,8 +89,8 @@ and the 95% of issues solved without the client's involvement. No client names, 
 testimonials, because none were supplied.
 
 The CRM case is the one Felix built but did not manage. It carries an *Implementation* tag
-(`implementationCaseKeys` in `content.ts`) and the section intro says "two I bootstrapped and
-managed, one I built", so the page claims no more involvement than there was. The value section's
+(`implementationCaseKeys` in `content.ts`) and the section intro says "two we bootstrapped and
+managed, one we built", so the page claims no more involvement than there was. The value section's
 evidence line names "two of the clients below" for the same reason.
 
 ## Before it goes public
