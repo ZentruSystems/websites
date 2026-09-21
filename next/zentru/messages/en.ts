@@ -664,7 +664,7 @@ export default {
 							report, so your hours go into your clients.`,
 					},
 				},
-				"evidence": `This freed both clients below to take on more work: one runs parallel projects and has won
+				"evidence": `This freed two of the clients below to take on more work: one runs parallel projects and has won
 					new clients, the other takes on more jobs with an error rate close to zero.`,
 			},
 			"solution": {
@@ -702,7 +702,9 @@ export default {
 			},
 			"cases": {
 				"title": "Results from real projects",
-				"intro": "Two projects I bootstrapped, managed and consulted on.",
+				"intro": "Two I bootstrapped and managed, one I built.",
+				// On the one case that was built, not managed – so nobody reads the other two into it
+				"implementationTag": "Implementation",
 				"labels": {
 					"challenge": "The situation",
 					"work": "What I did",
@@ -724,6 +726,13 @@ export default {
 						"work": "A system that extracts jobs from incoming email into Google Sheets and a custom job system.",
 						"result": `More jobs taken on, errors practically at zero, and time to handle special jobs
 							personally, which improved retention and satisfaction.`,
+					},
+					"crm": {
+						"title": "Integrations for a CRM platform",
+						"challenge": `A platform that takes customers from first contact to conversion and on down the
+							funnel needed Outreach and PersistIQ integrated, and the funnel made visible.`,
+						"work": "Built and tested the Outreach and PersistIQ integrations and the funnel visualization.",
+						"result": "The core visualization funnel is used and brings value to every of their customers, which increased customer retention.",
 					},
 				},
 			},

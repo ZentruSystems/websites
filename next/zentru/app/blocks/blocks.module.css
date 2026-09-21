@@ -427,9 +427,10 @@
 
 /* Case studies */
 
+/* One row, however many there are – CaseStudies sets --count */
 .cases {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(var(--count, 2), minmax(0, 1fr));
 	gap: var(--grid-gap);
 }
 
@@ -437,6 +438,17 @@
 	padding: var(--paddingUnit);
 	border-radius: var(--borderRadius);
 	background-color: var(--cardBg);
+}
+
+/*
+	Under the title, as a label on the case: only as wide as its text, and close to the title it
+	qualifies. A block sized to fit rather than inline-block, so its negative margin collapses into
+	the title's and actually closes the gap – inline, the line box keeps the full margin.
+*/
+.case .tag {
+	width: fit-content;
+	margin-top: calc(var(--paddingUnit) / -4);
+	margin-bottom: 0;
 }
 
 .caseFacts {
@@ -773,8 +785,14 @@
 @media screen and (max-width: 1100px) {
 
 	.cols3,
-	.cols4 {
+	.cols4,
+	.cases {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	/* An odd one out takes the whole row, rather than sitting alone in half of it */
+	.case:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
 	}
 
 	.steps {

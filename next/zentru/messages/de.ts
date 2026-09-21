@@ -565,7 +565,7 @@ export default {
 							und ein Statusbericht, damit Ihre Stunden zu Ihren Kunden gehen.`,
 					},
 				},
-				"evidence": `Das hat beiden Kunden weiter unten Luft für mehr Arbeit verschafft: einer führt parallele
+				"evidence": `Das hat zwei der Kunden weiter unten Luft für mehr Arbeit verschafft: einer führt parallele
 					Projekte und hat neue Kunden gewonnen, der andere nimmt mehr Aufträge an, bei einer Fehlerquote
 					nahe null.`,
 			},
@@ -604,7 +604,8 @@ export default {
 			},
 			"cases": {
 				"title": "Ergebnisse aus echten Projekten",
-				"intro": "Zwei Projekte, die ich aufgesetzt, gemanagt und beraten habe.",
+				"intro": "Zwei Projekte habe ich aufgesetzt und gemanagt, eines umgesetzt.",
+				"implementationTag": "Umsetzung",
 				"labels": {
 					"challenge": "Die Ausgangslage",
 					"work": "Was ich getan habe",
@@ -627,6 +628,13 @@ export default {
 							Auftragssystem überträgt.`,
 						"result": `Mehr Aufträge, Fehler praktisch auf null, und Zeit, Sonderaufträge persönlich zu betreuen,
 							was die Kundenbindung verbessert hat.`,
+					},
+					"crm": {
+						"title": "Integrationen für eine CRM-Plattform",
+						"challenge": `Eine Plattform, die Kunden vom ersten Kontakt bis zum Abschluss und weiter durch den
+							Funnel begleitet, brauchte Outreach und PersistIQ als Integrationen und eine Visualisierung des Funnels.`,
+						"work": "Die Integrationen für Outreach und PersistIQ und die Funnel-Visualisierung gebaut und getestet.",
+						"result": "Die zentrale Funnel Visualisierung bringt jedem Kunden Mehrwert, was die Kundenbindung verbesserte.",
 					},
 				},
 			},

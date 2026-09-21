@@ -21,7 +21,10 @@ export const managementOutcomeKeys: readonly (typeof outcomeKeys)[number][] = ["
 /** The framework. The last stage is the one that never finishes, and the one the upgrade covers. */
 export const stageKeys = ["assess", "architecture", "tools", "onboarding", "manage"] as const;
 
-export const caseKeys = ["forecasting", "jobs"] as const;
+export const caseKeys = ["forecasting", "jobs", "crm"] as const;
+
+/** Built, not managed – tagged, so the page doesn't claim more involvement than there was */
+export const implementationCaseKeys: readonly (typeof caseKeys)[number][] = ["crm"];
 
 export const stepKeys = ["call", "plan", "implement"] as const;
 

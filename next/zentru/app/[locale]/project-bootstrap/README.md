@@ -86,6 +86,11 @@ brief – one to two weeks of setup, three weeks of consulting included, "practi
 and the 95% of issues solved without the client's involvement. No client names, logos or
 testimonials, because none were supplied.
 
+The CRM case is the one Felix built but did not manage. It carries an *Implementation* tag
+(`implementationCaseKeys` in `content.ts`) and the section intro says "two I bootstrapped and
+managed, one I built", so the page claims no more involvement than there was. The value section's
+evidence line names "two of the clients below" for the same reason.
+
 ## Before it goes public
 
 1. **Cal.com redirect.** In the event's settings, set *Redirect on booking* to

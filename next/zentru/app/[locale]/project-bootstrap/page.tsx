@@ -21,6 +21,7 @@ import {
 	caseKeys,
 	faqKeys,
 	finalCtaKeys,
+	implementationCaseKeys,
 	managementOutcomeKeys,
 	outcomeKeys,
 	packageKeys,
@@ -270,6 +271,7 @@ async function CasesSection() {
 				challenge: t(`items.${key}.challenge`),
 				work: t(`items.${key}.work`),
 				result: t(`items.${key}.result`),
+				tag: implementationCaseKeys.includes(key) ? { label: t("implementationTag") } : undefined,
 			}))}
 		/>
 	</Band>;
