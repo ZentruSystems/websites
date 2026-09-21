@@ -12,8 +12,11 @@ const nextConfig: NextConfig = {
       { source: "/:locale(en|de)/fields", destination: "/:locale/services", permanent: true },
       // No home page while the old one lives at /about. Not permanent: a 308 is cached by browsers and
       // search engines, and would keep sending people here after a home page exists again
-      { source: "/", destination: "/project-bootstrap", permanent: false },
-      { source: "/:locale(en|de)", destination: "/:locale/project-bootstrap", permanent: false },
+      { source: "/", destination: "/project-management", permanent: false },
+      { source: "/:locale(en|de)", destination: "/:locale/project-management", permanent: false },
+      // Project Bootstrap was renamed to Project Management – links to the old address keep working
+      { source: "/project-bootstrap/:path*", destination: "/project-management/:path*", permanent: true },
+      { source: "/:locale(en|de)/project-bootstrap/:path*", destination: "/:locale/project-management/:path*", permanent: true },
     ];
   },
   allowedDevOrigins: [

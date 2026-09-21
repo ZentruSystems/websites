@@ -3,7 +3,7 @@ import style from "./blocks.module.css";
 export type PackageColumn = {
 	key: string,
 	/** "The default", "Upgrade" – what makes the relationship between the packages obvious */
-	tag: string,
+	tag?: string,
 	name: string,
 	summary: string,
 	/** "Choose this if …" – the line that lets a visitor pick without reading the table */
@@ -16,7 +16,8 @@ export type PackageColumn = {
 export type PackageRow = { key: string, label: string, included: boolean[] };
 
 /**
- * The packages side by side: a card each saying who it is for, then what each one includes.
+ * The packages side by side: a card each saying who it is for, then what each one includes. A single
+ * package gets no card – there is nothing to choose between, so the section's intro says what it is.
  *
  * No button per package – choosing happens on the call, and a second action here would compete
  * with the one the page is built around.
@@ -30,16 +31,18 @@ export default function PackageTable(props: {
 	packages: PackageColumn[],
 	rows: PackageRow[],
 }) {
+	const single = props.packages.length == 1;
+
 	return <>
-		<div className={style.packageCards}>
+		{!single && <div className={style.packageCards}>
 			{props.packages.map(pkg => <div key={pkg.key} className={`${style.packageCard} ${pkg.isUpgrade ? style.packageUpgrade : ""}`} data-lift>
-				<p className={`${style.tag} ${pkg.isUpgrade ? style.tagAccent : ""}`}>{pkg.tag}</p>
+				{pkg.tag && <p className={`${style.tag} ${pkg.isUpgrade ? style.tagAccent : ""}`}>{pkg.tag}</p>}
 				<h3 className={style.packageName}>{pkg.name}</h3>
 				<p className={style.packageSummary}>{pkg.summary}</p>
 				<p className={style.packageFit}>{pkg.fit}</p>
 			</div>)}
-		</div>
-		<table className={style.packageTable}>
+		</div>}
+		<table className={`${style.packageTable} ${single ? style.packageTableSingle : ""}`}>
 			<caption className={style.visuallyHidden}>{props.caption}</caption>
 			<colgroup>
 				<col />

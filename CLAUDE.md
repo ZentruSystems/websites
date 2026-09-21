@@ -37,7 +37,7 @@ next/zentru/
       products/
         page.tsx            the overview: one <…Section> per product, in display order
         .rec/  DialApp/  speedswitch/  tools/
-      services/  project-bootstrap/  impressum/  privacy-policy/  catalog/  digital-experiences/
+      services/  project-management/  impressum/  privacy-policy/  catalog/  digital-experiences/
     api/products/
       baseSignup.ts         buildSignupHandler(model, mapper?) — every signup route uses it
       .rec/  DialApp/  speedswitch/

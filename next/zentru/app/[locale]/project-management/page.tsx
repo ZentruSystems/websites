@@ -22,7 +22,6 @@ import {
 	faqKeys,
 	finalCtaKeys,
 	implementationCaseKeys,
-	managementOutcomeKeys,
 	outcomeKeys,
 	packageKeys,
 	packageRows,
@@ -33,8 +32,8 @@ import {
 } from "./content";
 
 /**
- * Project Bootstrap: the setup (and, as an upgrade, the management) of a small business's
- * software project. The page has one job – a booked strategy call – so every section leads
+ * Project Management: running an AI or software startup's software project – setting it up and
+ * choosing the tools are part of it. The page has one job – a booked strategy call – so every section leads
  * to the same button, and nothing else on it asks the visitor to go anywhere.
  *
  * The sections are built from `app/blocks`, which take plain strings so other pages can reuse
@@ -56,11 +55,11 @@ export async function generateMetadata(): Promise<Metadata> {
 		title,
 		description,
 		keywords: [
-			"project setup",
+			"project management",
 			"software project consulting",
 			"system architecture",
-			"small business",
-			"finance",
+			"AI startups",
+			"software startups",
 		],
 		robots: { index: true, follow: true },
 		openGraph: { title, description, type: "website", url, images },
@@ -73,7 +72,7 @@ export default async function ProjectBootstrapPage() {
 	const locale = await getLocale();
 
 	return <main lang={locale}>
-		<ScrollDepth page="project-bootstrap" />
+		<ScrollDepth page="project-management" />
 		<PointerLift />
 		<StructuredData />
 		{/* Tinted and plain alternate from here down; the hero and proof bar share one band */}
@@ -98,7 +97,7 @@ async function getFaqItems(): Promise<FaqItem[]> {
 		key,
 		question: t(`${key}.question`),
 		// The answers are template literals: line breaks and indentation collapse to single spaces
-		answer: (key == "consulting" || key == "pricing"
+		answer: (key == "pricing"
 			? t(`${key}.answer`, includedWeeks)
 			: t(`${key}.answer`)
 		).replace(/\s+/g, " "),
@@ -205,9 +204,6 @@ async function OutcomesSection() {
 				key,
 				title: t(`items.${key}.title`),
 				text: t(`items.${key}.text`),
-				tag: managementOutcomeKeys.includes(key)
-					? { label: t("managementTag"), accent: true }
-					: undefined,
 			}))}
 		/>
 	</Band>;
@@ -307,16 +303,14 @@ async function PackagesSection() {
 			priceLabel={t("priceLabel")}
 			packages={packageKeys.map(key => ({
 				key,
-				tag: t(`${key}.tag`),
 				name: t(`${key}.name`),
 				summary: t(`${key}.summary`),
 				fit: t(`${key}.fit`),
-				price: key == "setup" ? t("setup.price", includedWeeks) : t(`${key}.price`),
-				isUpgrade: key == "management",
+				price: t(`${key}.price`),
 			}))}
 			rows={packageRows.map(row => ({
 				key: row.key,
-				label: row.key == "consulting" ? t("rows.consulting", includedWeeks) : t(`rows.${row.key}`),
+				label: t(`rows.${row.key}`),
 				included: packageKeys.map(pkg => (row.in as readonly string[]).includes(pkg)),
 			}))}
 		/>

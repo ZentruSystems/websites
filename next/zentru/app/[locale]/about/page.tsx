@@ -21,9 +21,9 @@ export default async function Page() {
 				<div className="s8 e13 flex ph-s1 ph-e5 ph-flex-vert">
 					<VerticalDivider className="vAltPad rGap lGap"/>
 					<div className="vCenter vPad ph-tUnitPad vFill hFill il-grid layoutVBottom">
-						<Link href="/project-bootstrap" className="il-grid vUnitPad layoutVBottom layoutHCenter">
+						<Link href="/project-management" className="il-grid vUnitPad layoutVBottom layoutHCenter">
 							{/* Empty alt: the name is right below it as text */}
-							<img className="invertIfLightTheme" style={{ height: 50, }} src="/img/project-bootstrap/ProjectBootstrapMark.svg" alt="" />
+							<img className="invertIfLightTheme" style={{ height: 50, }} src="/img/project-management/ProjectManagementMark.svg" alt="" />
 							<h2 className="light noMargin tUnitPad">{t("Fields.projectBootstrap.name")}</h2>
 						</Link>
 						<h4 className="hCenter vBottom">{t("Fields.projectBootstrap.subline")}</h4>

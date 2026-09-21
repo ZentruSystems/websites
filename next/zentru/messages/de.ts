@@ -478,20 +478,20 @@ export default {
 					</p>`,
 			},
 		},
-		// /project-bootstrap – formell ("Sie") wie die anderen Felder, nicht "du" wie die Produktseiten
+		// /project-management – formell ("Sie") wie die anderen Felder, nicht "du" wie die Produktseiten
 		"projectBootstrap": {
-			"name": "Project Bootstrap",
-			"subline": "Tools, Pläne und Beratung",
+			"name": "Project Management",
+			"subline": "Im Budget, im Zeitplan, weniger Meetings",
 			"meta": {
-				"title": "Project Bootstrap — Ihr Softwareprojekt richtig starten",
-				"description": "Zentru Systems hilft kleinen Finanzunternehmen, Softwareprojekte richtig zu starten: passende Tools, eine solide Architektur und Entscheidungen, die sie verstehen.",
+				"title": "Project Management — Softwareprojekte im Budget und im Zeitplan",
+				"description": "Zentru Systems managt Softwareprojekte für KI- und Software-Startups mit den richtigen Tools, im Budget und im Zeitplan, ohne 10 Meetings pro Woche, damit sie sich um das Wesentliche kümmern können.",
 			},
 			"hero": {
-				"eyebrow": "Project Bootstrap<audience> · für kleine Finanzunternehmen</audience>",
-				"headline": "Wir helfen kleinen Finanzunternehmen, ihr Softwareprojekt richtig zu starten.",
-				"sub": `Von der Idee oder dem KI-gebauten Prototyp zu einem Projekt, das startklar ist, meist in ein bis
-					zwei Wochen: die richtigen Tools, eine Architektur, in der alles zusammenpasst, ein Zeitplan und die
-					richtigen Leute. Alles in der Sprache Ihres Geschäfts erklärt.`,
+				"eyebrow": "Project Management<audience> · für KI- und Software-Startups</audience>",
+				"headline": "Wir managen Softwareprojekte für KI- und Software-Startups – im Budget und im Zeitplan.",
+				"sub": `Von der Idee oder dem KI-gebauten Prototyp zum fertigen Produkt: Wir managen es mit den richtigen
+					Tools, einer Architektur, in der alles zusammenpasst, und einem wöchentlichen Termin statt zehn Meetings –
+					damit Sie frei sind für das Wesentliche. Alles wird verständlich erklärt.`,
 				"note": "Kostenlos und unverbindlich. Sie erhalten eine kurze Einschätzung Ihres Projekts.",
 			},
 			"cta": {
@@ -501,16 +501,16 @@ export default {
 				"label": "Aktuelle Projekte",
 				"items": {
 					"forecasting": {
-						"title": "Finanzprognosen",
+						"title": "Prognoseplattform",
 						"text": "Bayessche Regression mit Monte-Carlo-Roll-up",
 					},
 					"marketData": {
-						"title": "Markt- und Nachrichteneinfluss",
-						"text": "Live bezogen über die FastMarkets API",
+						"title": "KI-Nachrichtenfilter",
+						"text": "Marktnachrichten, von KI gewichtet und gefiltert, live aus der FastMarkets API",
 					},
 					"documents": {
-						"title": "Berichtsextraktion",
-						"text": "GuV-Daten aus PDF, Word, Excel und CSV",
+						"title": "KI-Dokumentenextraktion",
+						"text": "Berichtsdaten aus PDF, Word, Excel und CSV",
 					},
 					"jobs": {
 						"title": "Auftragseingang",
@@ -541,9 +541,7 @@ export default {
 				},
 			},
 			"outcomes": {
-				"title": "Weniger Kosten im Projekt, mehr Zeit für Ihre Kunden.",
-				// Der Hinweis auf der einen Karte, die das Setup allein nicht liefert
-				"managementTag": "Management-Upgrade",
+				"title": "Weniger Kosten, weniger Sorgen, mehr Zeit.",
 				"items": {
 					"tools": {
 						"title": "Sie zahlen nur für Tools, die Sie nutzen",
@@ -554,15 +552,15 @@ export default {
 						"text": `Eine Architektur von Anfang an, damit die Teile zusammenpassen, statt später neu
 							gebaut zu werden.`,
 					},
-					"decisions": {
-						"title": "Keine teuren Umwege",
-						"text": `Technik- und Personalentscheidungen in der Sprache Ihres Geschäfts erklärt, bevor Sie
-							Budget binden.`,
+					"budget": {
+						"title": "Keine Überraschungen bei Budget und Zeitplan",
+						"text": `Ein Zeitplan und ein Budget zum Steuern, Probleme gelöst, sobald sie auftauchen, und Technik- und
+							Personalentscheidungen erklärt, bevor Sie Geld dafür binden.`,
 					},
 					"meetings": {
 						"title": "Ihre Woche zurück",
-						"text": `Mit dem Management-Upgrade übernehmen wir das Tagesgeschäft. Ein wöchentlicher Termin
-							und ein Statusbericht, damit Ihre Stunden zu Ihren Kunden gehen.`,
+						"text": `Wir übernehmen das Tagesgeschäft. Ein wöchentlicher Termin und ein Statusbericht, damit Ihre
+							Stunden in Ihr Produkt und Ihre Kunden gehen.`,
 					},
 				},
 				"evidence": `Das hat zwei der Kunden weiter unten Luft für mehr Arbeit verschafft: einer führt parallele
@@ -571,14 +569,16 @@ export default {
 			},
 			"solution": {
 				"title": "Eine Person zwischen Ihrem Geschäft und Ihrer Technik.",
-				"intro": `<p>Wir bringen Ihr Projekt von der Idee zu einem funktionierenden Setup: Struktur, Tools,
-					Beratung und Unterstützung bei der Personalauswahl. Und wir übersetzen zwischen Geschäft und
-					Technik, damit aus einem Missverständnis keine Wochen Nacharbeit werden.</p>`,
+				"intro": `<p>Wir managen Ihr Projekt von der ersten Idee bis zum fertigen Produkt, einschließlich Struktur, Tools,
+					Beratung, Unterstützung bei der Personalauswahl und Tagesgeschäft. Und wir übersetzen zwischen Geschäft
+					und Technik, damit aus einem Missverständnis keine Wochen Nacharbeit werden.</p>
+					<p>Unsere Expertise verbindet praktische Erfahrung in der Softwareentwicklung mit einer akademischen
+					Ausbildung – unsere Arbeit stützt sich auf Praxis wie Theorie.</p>`,
 				"estimate": "Etwa 95 % der auftretenden Probleme lösen wir, ohne dass Sie etwas tun müssen.",
 				"ctaLine": "Ins Gespräch kommen, Einschätzung bekommen, Zeit und Kosten senken.",
 				"portraitAlt": "Felix, der Zentru Systems führt",
 				"stagesTitle": "Wie ein Projekt zusammenkommt",
-				"ongoing": "Laufend, mit dem Management-Upgrade",
+				"ongoing": "Laufend",
 				"stages": {
 					"assess": {
 						"title": "Einschätzen",
@@ -653,29 +653,25 @@ export default {
 						"title": "Tools werden umgesetzt",
 						"text": "Wir richten die vereinbarten Tools ein, verbinden sie, schulen Ihr Team und legen die Aufgaben an.",
 					},
+					"manage": {
+						"title": "Das Projekt wird gemanagt",
+						"text": "Wir übernehmen das Tagesgeschäft – Aufgaben, Probleme, Einstellungen und Kosten – mit einem wöchentlichen Termin und einem Statusbericht.",
+					},
 				},
 			},
 			"packages": {
-				"title": "Zwei Arten, mit uns zu arbeiten",
-				"intro": `Jedes Projekt beginnt mit dem Setup. Management ist ein Upgrade, wenn wir das Projekt managen
-					sollen.`,
-				"caption": "Was jedes Paket enthält",
+				"title": "Was enthalten ist",
+				"intro": `Wir managen Ihr Projekt, mit einem wöchentlichen Termin, der Sie auf dem Laufenden hält –
+					das Aufsetzen und die Wahl der richtigen Tools gehören dazu.`,
+				"caption": "Was das Paket enthält",
 				"featureLabel": "Enthalten",
 				"included": "Enthalten",
 				"notIncluded": "Nicht enthalten",
 				"priceLabel": "Preis",
-				"setup": {
-					"tag": "Standard",
-					"name": "Setup",
-					"summary": "Ihr Projekt, aufgesetzt und startklar.",
-					"fit": "Das Richtige, wenn Sie oder jemand in Ihrem Team das Projekt managt.",
-					"price": "Festpreis, bis zu {weeks} Wochen",
-				},
 				"management": {
-					"tag": "Upgrade",
-					"name": "Setup + Management",
-					"summary": "Aufgesetzt, dann von uns gemanagt.",
-					"fit": "Das Richtige, wenn wir das Projekt managen sollen und Sie in einem wöchentlichen Termin auf dem Laufenden bleiben.",
+					"name": "Project Management",
+					"summary": "Ihr Projekt, gemanagt – Setup und Tools inklusive.",
+					"fit": "Mit einem wöchentlichen Termin, der Sie auf dem Laufenden hält.",
 					"price": "Setup zum Festpreis, danach monatlich oder stundenweise",
 				},
 				"rows": {
@@ -684,7 +680,7 @@ export default {
 					"timeline": "Zeitplan und Budget zum Steuern",
 					"tools": "Die richtigen Tools, eingerichtet und verbunden",
 					"onboarding": "Onboarding für Sie und Ihr Team",
-					"consulting": "Technik- und Personalberatung, erste {weeks} Wochen inklusive",
+					"consulting": "Technik- und Personalberatung",
 					"translation": "Eine Ansprechperson, die zwischen Technik und Geschäft übersetzt",
 					"dayToDay": "Projektmanagement im Tagesgeschäft",
 					"meetings": "Ein wöchentlicher Termin statt vieler Meetings",
@@ -701,17 +697,17 @@ export default {
 					},
 					"knowledge": {
 						"question": "Brauchen wir technisches Wissen?",
-						"answer": "Nein. Wir erklären alles in der Sprache Ihres Geschäfts. Wenn Sie technisches Wissen haben, umso besser.",
+						"answer": "Nein. Alles wird so erklärt, dass die richtige Information auch richtig verstanden wird.",
 					},
 					"duration": {
 						"question": "Wie lange dauert die Umsetzung?",
-						"answer": `Das Setup dauert meist ein bis zwei Wochen, schneller, wenn wir die nötigen Informationen
-							bekommen, sobald wir sie brauchen. Die Idee gemeinsam zu schärfen dauert länger. Das Management,
-							falls Sie es wählen, läuft fortlaufend.`,
+						"answer": `Das Management läuft fortlaufend. Das Aufsetzen des Projekts gehört dazu und dauert meist ein bis
+							zwei Wochen, schneller, wenn wir die nötigen Informationen bekommen, sobald wir sie brauchen. Die Idee
+							gemeinsam zu schärfen dauert länger.`,
 					},
 					"consulting": {
 						"question": "Ist die Beratung inklusive?",
-						"answer": "Ja, ohne Aufpreis in den ersten {weeks} Wochen. Danach gelten unsere Standardsätze.",
+						"answer": "Ja. Technik- und Personalberatung ist Teil des Managements.",
 					},
 					"handover": {
 						"question": "Können andere mit dem System arbeiten?",
@@ -724,14 +720,13 @@ export default {
 							außerdem über Probleme, auf die andere Kunden stoßen, und helfen Ihnen, die Lösung umzusetzen.`,
 					},
 					"smallBusiness": {
-						"question": "Passt das auch für ein kleineres Unternehmen?",
-						"answer": `Ja, genau dafür ist es gedacht. Auch ein kleines Unternehmen ohne eigenes
-							Entwicklungsteam sollte Software auf Weltklasseniveau bauen können.`,
+						"question": "Passt das auch für ein junges Startup?",
+						"answer": `Ja, genau dafür ist es gedacht. Auch ein junges Startup ohne großes eigenes Team sollte Software
+							auf Weltklasseniveau bauen können.`,
 					},
 					"involvement": {
 						"question": "Wie viel Einsatz braucht es von unserem Team?",
-						"answer": `So viel, wie Sie möchten. Mit dem Management-Upgrade sprechen Sie einmal pro Woche mit uns.
-							Sie können das Projekt auch selbst managen und uns als Berater einsetzen.`,
+						"answer": "So viel Sie möchten. Es genügt aber, einmal pro Woche mit uns zu sprechen – den Rest erledigen wir.",
 					},
 					"pricing": {
 						"question": "Wie wird der Service abgerechnet?",
@@ -741,20 +736,19 @@ export default {
 					"call": {
 						"question": "Was passiert im Gespräch?",
 						"answer": `Wir lernen das Projekt kennen, das Sie im Kopf haben, und ob und wie wir am besten helfen
-							kann. Wenn wir zusammenarbeiten, legen wir sofort los. Über das Management-Upgrade müssen Sie noch
-							nicht entscheiden.`,
+							können. Wenn wir zusammenarbeiten, legen wir sofort los.`,
 					},
 				},
 			},
 			"finalCta": {
-				"title": "Finden Sie heraus, wie Ihr Projekt auf festem Boden starten kann.",
+				"title": "Finden Sie heraus, wie Ihr Projekt stark ins Ziel kommt.",
 				"intro": "Im kostenlosen Strategiegespräch bekommen Sie:",
 				"items": {
 					"assessment": "Eine kurze Einschätzung, wo Ihr Projekt steht",
 					"recommendations": "Praktische Empfehlungen zu Technologie und Projektstruktur",
 					"nextSteps": "Klare nächste Schritte, ob Sie mit uns arbeiten oder nicht",
 				},
-				"note": "Für kleine Unternehmen mit einem Softwareprojekt im Blick. Kostenlos und unverbindlich.",
+				"note": "Für KI- und Software-Startups mit einem Softwareprojekt im Blick. Kostenlos und unverbindlich.",
 			},
 			"booked": {
 				"title": "Ihr Gespräch ist gebucht.",
@@ -766,7 +760,7 @@ export default {
 					<li>Die Tools und Leute, die Sie bereits haben</li>
 				</ul>`,
 				"change": "Sie müssen den Termin verschieben? Nutzen Sie den Link in Ihrer Bestätigungs-E-Mail.",
-				"back": "Zurück zu Project Bootstrap",
+				"back": "Zurück zu Project Management",
 			},
 		},
 		"evar": {

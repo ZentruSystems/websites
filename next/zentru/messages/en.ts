@@ -575,23 +575,23 @@ export default {
 					</p>`,
 			},
 		},
-		// /project-bootstrap – the page has one job: a booked strategy call
+		// /project-management – the page has one job: a booked strategy call
 		"projectBootstrap": {
 			// The card on /fields
-			"name": "Project Bootstrap",
-			"subline": "Tools, plans and consulting",
+			"name": "Project Management",
+			"subline": "On budget, on time, fewer meetings",
 			"meta": {
-				"title": "Project Bootstrap — start your software project right",
-				// Kept under ~160 characters, which is where search results cut it off
-				"description": "Zentru Systems helps small finance businesses start software projects right: the right tools, a sound architecture, and tech and hiring decisions they understand.",
+				"title": "Project Management — software projects on budget and on time",
+				// Search results cut this off at ~160 characters
+				"description": "Zentru Systems manages software projects for AI and software startups with the right tools, on budget and on time, without having 10 meetings a week, so they are free to handle the important parts.",
 			},
 			"hero": {
 				// <audience> is left out on a phone, where the headline right below already says it
-				"eyebrow": "Project Bootstrap<audience> · for small finance businesses</audience>",
-				"headline": "We help small finance businesses start their software project right.",
-				"sub": `From an idea or an AI-built prototype to a project that is ready to start, usually in one to two
-					weeks: the right tools, an architecture where every part fits, a timeline, and the right hires.
-					Explained in business terms throughout.`,
+				"eyebrow": "Project Management<audience> · for AI and software startups</audience>",
+				"headline": "We manage software projects for AI and software startups, on budget and on time.",
+				"sub": `From an idea or an AI-built prototype to a finished product: we manage it with the right tools, an
+					architecture where every part fits and one weekly check-in instead of ten meetings, so you are free for
+					the important parts. Explained in plain text throughout.`,
 				"note": "Free and without obligation. You get a short assessment of your project.",
 			},
 			// The one conversion action on the page – the same words wherever it appears
@@ -602,16 +602,16 @@ export default {
 				"label": "Recent work",
 				"items": {
 					"forecasting": {
-						"title": "Finance forecasting",
+						"title": "Forecasting platform",
 						"text": "Bayesian regression with a Monte Carlo roll-up",
 					},
 					"marketData": {
-						"title": "Market and news impact",
-						"text": "Sourced live from the FastMarkets API",
+						"title": "AI news filtering",
+						"text": "Market news weighed and filtered by AI, live from the FastMarkets API",
 					},
 					"documents": {
-						"title": "Report extraction",
-						"text": "Profit and loss data from PDF, Word, Excel and CSV",
+						"title": "AI document extraction",
+						"text": "Report data from PDF, Word, Excel and CSV",
 					},
 					"jobs": {
 						"title": "Job intake",
@@ -641,9 +641,7 @@ export default {
 				},
 			},
 			"outcomes": {
-				"title": "Spend less on the project, more time on your clients.",
-				// The tag on the one card the Setup alone does not deliver
-				"managementTag": "Management upgrade",
+				"title": "Lower costs, fewer worries, and your time back.",
 				"items": {
 					"tools": {
 						"title": "You only pay for tools you use",
@@ -653,15 +651,15 @@ export default {
 						"title": "Nothing gets built twice",
 						"text": "One architecture up front, so the parts fit together instead of being rebuilt later.",
 					},
-					"decisions": {
-						"title": "No expensive wrong turns",
-						"text": `Tech and hiring decisions explained in business terms, before you commit budget to
-							them.`,
+					"budget": {
+						"title": "No surprises in budget or timeline",
+						"text": `A timeline and a budget to steer by, issues handled as they come up, and tech and hiring
+							decisions explained before you commit money to them.`,
 					},
 					"meetings": {
 						"title": "Your week back",
-						"text": `With the Management upgrade we run the day-to-day. One weekly check-in and a status
-							report, so your hours go into your clients.`,
+						"text": `We run the day-to-day. One weekly check-in and a status report, so your hours go into your
+							product and your customers.`,
 					},
 				},
 				"evidence": `This freed two of the clients below to take on more work: one runs parallel projects and has won
@@ -669,14 +667,16 @@ export default {
 			},
 			"solution": {
 				"title": "One person between your business and your tech.",
-				"intro": `<p>We take your project from an idea to a working setup: structure, tools, consulting and
-					support with hiring. And we translate between business and tech, so a misunderstanding doesn't
-					turn into weeks of rework.</p>`,
+				"intro": `<p>We manage your project from the initial idea to the finished product, including its structure,
+					tools, consulting, hiring support and day-to-day operations. And we translate between business and tech,
+					so a misunderstanding doesn't turn into weeks of rework.</p>
+					<p>Our expertise combines hands-on experience in software development with an academic education, so
+					our work rests on both practice and theory.</p>`,
 				"estimate": "We solve about 95% of the issues that come up without you having to do anything.",
 				"ctaLine": "Get on a call, get your assessment, and start cutting time and cost.",
 				"portraitAlt": "Felix, who runs Zentru Systems",
 				"stagesTitle": "How a project comes together",
-				"ongoing": "Ongoing, with the Management upgrade",
+				"ongoing": "Ongoing",
 				"stages": {
 					"assess": {
 						"title": "Assess",
@@ -751,29 +751,25 @@ export default {
 						"title": "Tools get implemented",
 						"text": "We set up and connect the agreed tools, onboard your team and create the tasks.",
 					},
+					"manage": {
+						"title": "The project gets managed",
+						"text": "We run the day-to-day – tasks, issues, hires and costs – with one weekly check-in and a status report.",
+					},
 				},
 			},
 			"packages": {
-				"title": "Two ways to work with us",
-				"intro": `Every project starts with the Setup. Management is an upgrade, for when you want us to manage the
-					project.`,
-				"caption": "What each package includes",
+				"title": "What's included",
+				"intro": `We manage your project, with one weekly check-in to keep you up to date – setting it
+					up and choosing the right tools are part of that.`,
+				"caption": "What the package includes",
 				"featureLabel": "Included",
 				"included": "Included",
 				"notIncluded": "Not included",
 				"priceLabel": "Pricing",
-				"setup": {
-					"tag": "The default",
-					"name": "Setup",
-					"summary": "Your project, set up and ready to start.",
-					"fit": "Choose this if you or someone on your team will manage the project.",
-					"price": "Fixed price, up to {weeks} weeks",
-				},
 				"management": {
-					"tag": "Upgrade",
-					"name": "Setup + Management",
-					"summary": "Set up, then managed by us.",
-					"fit": "Choose this if you want us to manage the project, with one weekly check-in to keep you up to date.",
+					"name": "Project Management",
+					"summary": "Your project, managed – set-up and tools included.",
+					"fit": "With one weekly check-in to keep you up to date.",
 					"price": "Setup at a fixed price, then monthly or hourly",
 				},
 				"rows": {
@@ -782,7 +778,7 @@ export default {
 					"timeline": "Timeline and budget to steer by",
 					"tools": "The right tools, set up and connected",
 					"onboarding": "Onboarding for you and your team",
-					"consulting": "Tech and hiring consulting, first {weeks} weeks included",
+					"consulting": "Tech and hiring consulting",
 					"translation": "One contact who translates between tech and business",
 					"dayToDay": "Day-to-day project management",
 					"meetings": "One weekly check-in instead of many meetings",
@@ -800,16 +796,16 @@ export default {
 					},
 					"knowledge": {
 						"question": "Do we need technical knowledge?",
-						"answer": "No. We explain everything in business terms. If you do have technical knowledge, all the better.",
+						"answer": "No. We explain everything in plain language. If you do have technical knowledge, all the better.",
 					},
 					"duration": {
 						"question": "How long does implementation take?",
-						"answer": `The setup usually takes one to two weeks, faster if we get the information we need when we
-							need it. Shaping the idea together takes longer. Management, if you choose it, is ongoing.`,
+						"answer": `Management is ongoing. Setting the project up, as part of it, usually takes one to two weeks,
+							faster if we get the information we need when we need it. Shaping the idea together takes longer.`,
 					},
 					"consulting": {
 						"question": "Is the consulting included?",
-						"answer": "Yes, at no extra cost for the first {weeks} weeks. After that our standard rates apply.",
+						"answer": "Yes. Tech and hiring consulting is part of the management.",
 					},
 					"handover": {
 						"question": "Can others work with the system?",
@@ -822,14 +818,13 @@ export default {
 							other clients run into, and help you apply the fix.`,
 					},
 					"smallBusiness": {
-						"question": "Is this suitable for a smaller business?",
-						"answer": `Yes, that is who it is for. A small business without its own development team should
-							still be able to build world-class software.`,
+						"question": "Is this suitable for an early-stage startup?",
+						"answer": `Yes, that is who it is for. A young startup without a large team of its own should still be
+							able to build world-class software.`,
 					},
 					"involvement": {
 						"question": "How much involvement is required from our team?",
-						"answer": `As much as you want. With the Management upgrade you talk to us once a week. You can also
-							manage the project yourself and use us as consultants.`,
+						"answer": "As much as you want. At the minimum you talk to us only once a week and we do the rest.",
 					},
 					"pricing": {
 						"question": "How is the service priced?",
@@ -839,19 +834,19 @@ export default {
 					"call": {
 						"question": "What happens during the call?",
 						"answer": `We learn about the project you have in mind, and whether and how we can help best. If we
-							work together, we start right away. You don't need to decide on the Management upgrade yet.`,
+							work together, we start right away.`,
 					},
 				},
 			},
 			"finalCta": {
-				"title": "Find out how your project can start on solid ground.",
+				"title": "Find out how your project can finish strong.",
 				"intro": "In a free strategy call you get:",
 				"items": {
 					"assessment": "A brief assessment of where your project stands",
 					"recommendations": "Practical recommendations on technology and project structure",
 					"nextSteps": "Clear next steps, whether you work with us or not",
 				},
-				"note": "For small businesses with a software project in mind. Free, no obligation.",
+				"note": "For AI and software startups with a project in mind. Free, no obligation.",
 			},
 			// The page the booking tool sends people back to
 			"booked": {
@@ -864,7 +859,7 @@ export default {
 					<li>The tools and people you already have</li>
 				</ul>`,
 				"change": "Need to move the call? Use the link in your confirmation email.",
-				"back": "Back to Project Bootstrap",
+				"back": "Back to Project Management",
 			},
 		},
 		"evar": {

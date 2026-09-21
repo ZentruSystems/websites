@@ -525,6 +525,17 @@
 	width: 50%;
 }
 
+/* One package: nothing to compare, so the labels get the room and the checkmarks a narrow column */
+.packageTableSingle col:first-child {
+	width: 70%;
+}
+
+/* The narrow column only holds the package's name and price: break those between words, not inside them */
+.packageTableSingle thead th:not(:first-child),
+.packageTableSingle td {
+	hyphens: manual;
+}
+
 .packageTable th,
 .packageTable td {
 	padding: calc(var(--paddingUnit) / 2) var(--smallPad);
@@ -696,11 +707,16 @@
 */
 /*
 	Both are overwritten every frame by ScrollFocus. The values here are what the page looks like
-	before it hydrates, or if the script never runs: every step lit, and nothing shifted.
+	before it hydrates, or if the script never runs: every step lit, and the pin where it rests once
+	the slow lane is behind it.
 */
 .scrollTrack {
 	--focus: 99;
-	/* 1, not 0: that is the end of the drift, where nothing is shifted */
+	/*
+		1, not 0. Wrong for the part of the page before the slow lane – but by less: there the pin sits
+		--drift higher than it should and reaches a little into the content above, where 0 would leave
+		it --drift lower than it should after the lane, and sitting on the call to action.
+	*/
 	--progress: 1;
 	/* How far back a step is held before the focus reaches it – the one number to tune */
 	--waiting: 0.35;
@@ -708,39 +724,46 @@
 
 /*
 	The slow lane. The track reserves `--hold` per step of extra scrolling and the pin sticks inside
-	it, but the pin is also drifting upward by `--drift` over that stretch – so the section keeps
-	moving, at roughly a third of the page's speed, instead of stopping dead. The drift has to stay
-	under the reserved height, or the section would climb out of its own track and over what follows.
+	it, rising by `--drift` over that stretch – so the section keeps moving, at --drift over the
+	reserve of the page's speed, instead of stopping dead. The drift has to stay under the reserve,
+	or the section would climb out of its own track and over what comes before it.
 
-	The pin is only as tall as its content and sits a little below the nav, so what comes before and
-	after stays on screen next to it. Side-by-side layout only: stacked, the steps have the card
-	stack instead, and neither runs for a reader who asked for less movement.
+	The pin is only as tall as its content, so what comes before and after stays on screen next to it.
+	Side-by-side layout only: stacked, the steps have the card stack instead, and neither runs for a
+	reader who asked for less movement.
 */
 @media screen and (min-width: 1101px) and (prefers-reduced-motion: no-preference) {
 	.scrollTrack {
 		/*
-			Deliberately short. Every bit of reserved scrolling is empty space between the stages
-			and whatever follows them, so a longer slow lane buys a stronger effect by cutting the
-			section off from the page around it. --drift over --hold is the apparent speed: ~30%.
+			The reserve minus the drift is spare space: it shows below the stages until the pin lets
+			go and above them after, so it is kept to 5vh however long the lane is. Stretching the
+			lane means raising both together, which starts the movement earlier and makes it gentler
+			rather than opening the section up.
 		*/
+		--hold: 4vh;
+		--drift: 15vh;
 		/*
-			Every pixel reserved here is a pixel of space above the stages once the pin reaches the
-			end of its range and rests there – so the lane buys its slowdown with the section's own
-			spacing, and stays short. --drift over the reserved total is the apparent speed.
+			What follows moves up by the drift – the pin ends the lane lifted by that much above its
+			own box, and would otherwise leave it empty under it – and by 3vh more, so the spare space
+			below reads as the band's gap narrowed rather than the section stopping short. That last
+			part has to stay under the band's own gap, or the stages end up on the call to action.
 		*/
-		--hold: 1.6vh;
-		--drift: 3vh;
+		--reclaim: calc(var(--drift) + 3vh);
+		margin-bottom: calc(-1 * var(--reclaim));
 	}
 
 	.scrollPin {
 		position: sticky;
-		top: calc(var(--nav-height) + 9vh);
 		/*
-			Set low and released, rather than lifted and left there. Either way the section rises by
-			--drift while the pin is stuck, which is the slowdown – but this way it ends at nothing,
-			so it isn't left hovering --drift above its own box with that much dead space under it.
+			Where the movement starts; it ends --drift higher. Low, so it begins while the steps are
+			still lighting up rather than after – held higher, it read as starting late.
 		*/
-		transform: translateY(calc((1 - var(--progress)) * var(--drift)));
+		top: calc(var(--nav-height) + 37vh);
+		/*
+			Lifted as it goes, not set low and released: set low, the section would come up the screen
+			--drift below its place, with that much empty space over it while the steps light up.
+		*/
+		transform: translateY(calc(var(--progress) * var(--drift) * -1));
 	}
 
 	/*
@@ -880,6 +903,15 @@
 	/* Two columns of names don't fit next to a 50% label column on a phone */
 	.packageTable col:first-child {
 		width: 46%;
+	}
+
+	/* A percentage can't guarantee the name fits on every phone: size its column to the name, the labels get the rest */
+	.packageTableSingle col:first-child {
+		width: auto;
+	}
+
+	.packageTableSingle col:last-child {
+		width: 7em;
 	}
 
 	.cta:global(.buttonPrimary),

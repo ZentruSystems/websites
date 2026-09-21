@@ -6,7 +6,7 @@
  */
 export const projectBootstrap = {
 	siteUrl: "https://zentru.systems",
-	path: "/project-bootstrap",
+	path: "/project-management",
 	// The page title is translated: messages/{en,de}.ts, Fields.projectBootstrap.meta.title
 
 	/**
@@ -14,13 +14,13 @@ export const projectBootstrap = {
 	 * the page there is what counts a booking as completed. Leave "forward parameters" off: it
 	 * would put the visitor's name and email into a URL that analytics records.
 	 */
-	bookingUrl: "https://cal.com/zentrusystems/project-bootstrap",
-	bookedPath: "/project-bootstrap/booked",
+	bookingUrl: "https://cal.com/zentrusystems/project-management",
+	bookedPath: "/project-management/booked",
 
-	/** Consulting included with the setup, and the length the setup's fixed price covers */
+	/** The length the setup's fixed price covers */
 	includedWeeks: 3,
 
-	portrait: "/img/project-bootstrap/portrait.jpg",
+	portrait: "/img/project-management/portrait.jpg",
 	/**
 	 * Where the 4:5 frame crops this photo: what sits 25px right of centre in the 360px desktop
 	 * frame belongs in the middle. A percentage rather than `calc(50% - 25px)`: the file is nearly

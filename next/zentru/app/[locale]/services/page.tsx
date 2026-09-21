@@ -8,7 +8,7 @@ export default async function Page() {
 		<section className="vFillView hGrid2 ph-hGrid1">
 			<div className="vPad il-grid" style={{ gridAutoRows: "1fr 1fr 1fr" }}>
 				<div />
-				<Link href="/project-bootstrap" className="vCenter hCenter"><h1 className="light">{tFields("projectBootstrap.name")}</h1></Link>
+				<Link href="/project-management" className="vCenter hCenter"><h1 className="light">{tFields("projectBootstrap.name")}</h1></Link>
 				<div className="hCenter vBottom">
 					<p>{tFields("projectBootstrap.subline")}</p>
 				</div>

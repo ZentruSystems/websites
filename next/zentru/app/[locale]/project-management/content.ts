@@ -13,7 +13,7 @@ export const proofKeys = ["forecasting", "marketData", "documents", "jobs"] as c
 export const problemKeys = ["tools", "outsourcing", "plan"] as const;
 
 /** What the setup is worth, in money and in hours – the first thing after the problem */
-export const outcomeKeys = ["tools", "structure", "decisions", "meetings"] as const;
+export const outcomeKeys = ["tools", "structure", "budget", "meetings"] as const;
 
 /** The outcome that only the Management upgrade delivers – tagged so nobody expects it from the Setup */
 export const managementOutcomeKeys: readonly (typeof outcomeKeys)[number][] = ["meetings"];
@@ -26,10 +26,10 @@ export const caseKeys = ["forecasting", "jobs", "crm"] as const;
 /** Built, not managed – tagged, so the page doesn't claim more involvement than there was */
 export const implementationCaseKeys: readonly (typeof caseKeys)[number][] = ["crm"];
 
-export const stepKeys = ["call", "plan", "implement"] as const;
+export const stepKeys = ["call", "plan", "implement", "manage"] as const;
 
-/** The Setup is the default, so it comes first; the upgrade includes everything it does */
-export const packageKeys = ["setup", "management"] as const satisfies readonly PackageKey[];
+/** Only the management is offered; setting up is part of it */
+export const packageKeys = ["management"] as const satisfies readonly PackageKey[];
 
 /**
  * One row per line of the package table, and which packages include it. This is the only list of

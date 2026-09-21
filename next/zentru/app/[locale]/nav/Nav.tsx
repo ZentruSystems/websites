@@ -61,7 +61,7 @@ export default function Nav() {
 			<img className="vertSep" src="/img/vertical-divider.svg" />
 			<NavLink onNavigate={e => closeBurger()} href="/about">{tAlways("aboutPage")}</NavLink>
 			<img className="vertSepChevronRight" src="/img/vertical-divider-chevron-right.svg" />
-			<NavLink onNavigate={e => closeBurger()} href="/services">{tAlways("services")}</NavLink>
+			<NavLink onNavigate={e => closeBurger()} href="/">{tAlways("services")}</NavLink>
 		</div>
 		<Link className="s1 e4 liquidMarg" href="/" style={{ marginTop: burgerExtend, width: "fit-content" }}>
 			<ThemedImg className="Logo" alt="Zentru"
