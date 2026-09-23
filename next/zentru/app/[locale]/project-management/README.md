@@ -12,7 +12,8 @@ visitor anywhere.
 |---|---|
 | `page.tsx` | The page, one section per function in the order they render, plus metadata and structured data. |
 | `content.ts` | Which items exist and in which order – the message keys, not the text. |
-| `config.ts` | Booking URL, included weeks, image paths. **Contains the open TODOs.** |
+| `config.ts` | Booking URL, included weeks, image paths, the company facts for structured data, and `localeUrl()`. **Contains the open TODOs.** |
+| `llms.ts` | Builds the page's llms.txt from its messages. Served by `app/llms.txt` and `app/[locale]/llms.txt`. |
 | `BookCallCta.tsx` | The one conversion action. Forwards `utm_*` to the booking and reports `booking_click`. |
 | `booked/page.tsx` | Where Cal.com sends people after booking. `noindex`. |
 | `BookingConfirmed.tsx` | Reports `booking_confirmed` once per session on that page. |
@@ -107,6 +108,31 @@ The CRM case is the one Felix built but did not manage. It carries an *Implement
 managed, one we built", so the page claims no more involvement than there was. The value section's
 evidence line names "two of the clients below" for the same reason.
 
+## Search and AI
+
+The page is written for search engines and AI assistants around one summary of the service – kept
+verbatim, apart from punctuation, as `seo.summary` in the messages:
+
+- **Title and description** (`meta`) lead with the audience and "idea or prototype to production".
+  The German title says "Projektmanagement", which is what German searchers type; the page keeps
+  the name "Project Management". The descriptions stay under 160 characters.
+- **Canonical and hreflang.** Every page lives under its locale – the address without one only
+  redirects – so the canonical, `og:url` and structured data all use `localeUrl()`, and each
+  language names the other, with English as `x-default`.
+- **Structured data** (`StructuredData` in `page.tsx`): the company as a `ProfessionalService`
+  (address from the imprint), the `Service` with its audience, area and the "What's included" rows
+  as an offer catalog, the `WebPage`, and the FAQ. No prices, because none are published.
+- **llms.txt** – `/llms.txt` in English, `/de/llms.txt` in German, following llmstxt.org. `llms.ts`
+  builds it from the page's own messages, so it changes when the page does. The `seo` group holds
+  the little the page doesn't say itself: the summary, the audience, and where the work happens.
+- **`app/sitemap.ts`** lists the service pages only – this one, /services and /about, in both
+  languages – by decision. The product pages are still found through links.
+- **`app/robots.ts`** allows everything but `/api/`, AI crawlers included. Pages that shouldn't be
+  in search (`booked`) say so with `noindex`; blocking them in robots.txt would hide that.
+
+The H1 stays the headline. Swapping it with the paragraph under it was considered and dropped: the
+visible headline should be the heading for screen readers, and the gain for search is small.
+
 ## Before it goes public
 
 1. **Cal.com redirect.** In the event's settings, set *Redirect on booking* to
@@ -114,7 +140,9 @@ evidence line names "two of the clients below" for the same reason.
    counted. Leave *forward parameters* off: it would put the booker's name and email into a URL
    that analytics records.
 2. **OG image.** `config.ts` → `ogImage` is the site-wide one.
-3. **Google Analytics.** In GA4 → Admin → Events, mark `booking_confirmed` (and, if useful,
+3. **Search Console.** Submit `https://zentru.systems/sitemap.xml`, and check the page in Google's
+   Rich Results Test.
+4. **Google Analytics.** In GA4 → Admin → Events, mark `booking_confirmed` (and, if useful,
    `booking_click`) as key events. Conversion rate by device and by traffic source then comes
    from GA's standard reports.
 

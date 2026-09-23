@@ -33,4 +33,22 @@ export const projectBootstrap = {
 	ogImage: "/opengraph-image.png",
 
 	email: "service@zentru.systems",
+	linkedIn: "https://www.linkedin.com/company/zentru-systems",
+	/** For the structured data. From the imprint (next/common/impressum.tsx) – keep the two in step */
+	company: {
+		legalName: "Zentru Systems e.U.",
+		streetAddress: "Laurenzgasse 13/11",
+		postalCode: "1050",
+		locality: "Wien",
+		country: "AT",
+	},
 } as const;
+
+/**
+ * A page's address in one language. Every page lives under its locale (next-intl's default
+ * `localePrefix: "always"`); the address without one only redirects, so it is never the one to give
+ * a search engine.
+ */
+export function localeUrl(locale: string, path: string = projectBootstrap.path) {
+	return `${projectBootstrap.siteUrl}/${locale}${path}`;
+}

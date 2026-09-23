@@ -16,7 +16,7 @@ import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import BookCallCta from "./BookCallCta";
-import { projectBootstrap } from "./config";
+import { localeUrl, projectBootstrap } from "./config";
 import {
 	caseKeys,
 	faqKeys,
@@ -45,10 +45,11 @@ const includedWeeks = { weeks: `${projectBootstrap.includedWeeks}` };
 
 export async function generateMetadata(): Promise<Metadata> {
 	const t = await getTranslations("Fields.projectBootstrap.meta");
+	const locale = await getLocale();
 
 	const title = t("title");
 	const description = t("description");
-	const url = `${projectBootstrap.siteUrl}${projectBootstrap.path}`;
+	const url = localeUrl(locale);
 	const images = { url: `${projectBootstrap.siteUrl}${projectBootstrap.ogImage}` };
 
 	return {
@@ -56,13 +57,20 @@ export async function generateMetadata(): Promise<Metadata> {
 		description,
 		keywords: [
 			"project management",
-			"software project consulting",
-			"system architecture",
 			"AI startups",
 			"software startups",
+			"prototype to production",
+			"requirements",
+			"system architecture",
+			"project timeline",
 		],
 		robots: { index: true, follow: true },
-		openGraph: { title, description, type: "website", url, images },
+		// Each language is its own page, and says which the other one is
+		alternates: {
+			canonical: url,
+			languages: { en: localeUrl("en"), de: localeUrl("de"), "x-default": localeUrl("en") },
+		},
+		openGraph: { title, description, type: "website", url, siteName: "Zentru Systems", images },
 		twitter: { card: "summary_large_image", title, description, images },
 	};
 }
@@ -104,31 +112,68 @@ async function getFaqItems(): Promise<FaqItem[]> {
 	}));
 }
 
-/** Who provides the service, and the questions it answers – schema.org, for search results */
+/**
+ * Who provides the service, what it is and includes, and the questions it answers – schema.org, for
+ * search results and for AI tools reading the page. The text comes from the messages (`seo` holds
+ * what the page itself doesn't say), so nothing here can claim more than the page does.
+ */
 async function StructuredData() {
 	const t = await getTranslations("Fields.projectBootstrap");
-	const url = `${projectBootstrap.siteUrl}${projectBootstrap.path}`;
+	const locale = await getLocale();
+	const url = localeUrl(locale);
 	const faq = await getFaqItems();
+	const { company } = projectBootstrap;
+
+	const organization = `${projectBootstrap.siteUrl}/#organization`;
+	const service = `${url}#service`;
 
 	const data = {
 		"@context": "https://schema.org",
 		"@graph": [
 			{
 				"@type": "ProfessionalService",
-				"@id": `${url}#service`,
+				"@id": organization,
 				name: "Zentru Systems",
-				url,
+				legalName: company.legalName,
+				url: projectBootstrap.siteUrl,
 				email: projectBootstrap.email,
-				description: t("meta.description"),
+				address: {
+					"@type": "PostalAddress",
+					streetAddress: company.streetAddress,
+					postalCode: company.postalCode,
+					addressLocality: company.locality,
+					addressCountry: company.country,
+				},
+				sameAs: [projectBootstrap.linkedIn],
+				knowsLanguage: ["en", "de"],
+			},
+			{
+				"@type": "Service",
+				"@id": service,
+				name: t("name"),
+				description: `${t("seo.summary")} ${t("seo.area")}`.replace(/\s+/g, " "),
+				provider: { "@id": organization },
+				audience: { "@type": "BusinessAudience", audienceType: t("seo.audience") },
+				// In person in Austria, remote anywhere – the detail is in the description
+				areaServed: [{ "@type": "Country", name: "Austria" }, { "@type": "Place", name: "Worldwide" }],
 				// No prices: none are published, so none are claimed here either
-				makesOffer: packageKeys.map(key => ({
-					"@type": "Offer",
-					itemOffered: {
-						"@type": "Service",
-						name: t(`packages.${key}.name`),
-						description: t(`packages.${key}.summary`),
-					},
-				})),
+				hasOfferCatalog: {
+					"@type": "OfferCatalog",
+					name: t("packages.title"),
+					itemListElement: packageRows.map(row => ({
+						"@type": "Offer",
+						itemOffered: { "@type": "Service", name: t(`packages.rows.${row.key}`) },
+					})),
+				},
+			},
+			{
+				"@type": "WebPage",
+				"@id": url,
+				url,
+				name: t("meta.title"),
+				description: t("meta.description"),
+				inLanguage: locale,
+				about: { "@id": service },
 			},
 			{
 				"@type": "FAQPage",

@@ -581,17 +581,32 @@ export default {
 			"name": "Project Management",
 			"subline": "On budget, on time, fewer meetings",
 			"meta": {
-				"title": "Project Management — software projects on budget and on time",
+				"title": "Project Management for AI and Software Startups | Zentru Systems",
 				// Search results cut this off at ~160 characters
-				"description": "Zentru Systems manages software projects for AI and software startups with the right tools, on budget and on time, without having 10 meetings a week, so they are free to handle the important parts.",
+				"description": "We get AI and software startups from idea or prototype to production: requirements, architecture, timeline and execution, with one weekly update.",
+			},
+			// Not shown on the page: llms.txt and the structured data
+			"seo": {
+				"summary": `We help AI and software startups get their ideas and prototypes to production, time- and
+					cost-efficiently, by extracting requirements, architecture and timeline, then managing execution and team
+					decisions end to end – with one weekly decision and progress update and everything else handled, so they can
+					focus on the important parts.`,
+				"audience": "AI and software startups",
+				"area": `In person in Vienna and across Austria, remote everywhere else. We know the DACH region and the EU
+					best, and work with clients anywhere.`,
+				"links": "Links",
+				"page": "The full page",
+				"otherLanguage": "Deutsche Version",
+				"email": "Email",
 			},
 			"hero": {
 				// <audience> is left out on a phone, where the headline right below already says it
 				"eyebrow": "Project Management<audience> · for AI and software startups</audience>",
 				"headline": "We manage software projects for AI and software startups, on budget and on time.",
-				"sub": `From an idea or an AI-built prototype to a finished product: we manage it with the right tools, an
-					architecture where every part fits and one weekly check-in instead of ten meetings, so you are free for
-					the important parts. Explained in plain text throughout.`,
+				"sub": `We get your idea or prototype to production, time- and cost-efficiently: we work out the requirements,
+					the architecture and the timeline, then manage execution and team decisions end to end. You get one weekly
+					decision and progress update, everything else is handled, so you can focus on the important parts.
+					Explained in plain text throughout.`,
 				"note": "Free and without obligation. You get a short assessment of your project.",
 			},
 			// The one conversion action on the page – the same words wherever it appears

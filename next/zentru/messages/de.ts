@@ -483,15 +483,30 @@ export default {
 			"name": "Project Management",
 			"subline": "Im Budget, im Zeitplan, weniger Meetings",
 			"meta": {
-				"title": "Project Management — Softwareprojekte im Budget und im Zeitplan",
-				"description": "Zentru Systems managt Softwareprojekte für KI- und Software-Startups mit den richtigen Tools, im Budget und im Zeitplan, ohne 10 Meetings pro Woche, damit sie sich um das Wesentliche kümmern können.",
+				"title": "Projektmanagement für KI- und Software-Startups | Zentru Systems",
+				"description": "Wir bringen KI- und Software-Startups von der Idee oder dem Prototyp in Produktion: Anforderungen, Architektur, Zeitplan und Umsetzung, ein Update pro Woche.",
+			},
+			// Nicht auf der Seite zu sehen: llms.txt und die strukturierten Daten
+			"seo": {
+				"summary": `Wir helfen KI- und Software-Startups, ihre Ideen und Prototypen zeit- und kosteneffizient in
+					Produktion zu bringen: Wir arbeiten Anforderungen, Architektur und Zeitplan heraus und managen danach
+					Umsetzung und Teamentscheidungen von Anfang bis Ende – mit einem wöchentlichen Update zu Entscheidungen und
+					Fortschritt, um alles andere kümmern wir uns. So können sie sich auf das Wesentliche konzentrieren.`,
+				"audience": "KI- und Software-Startups",
+				"area": `Vor Ort in Wien und in ganz Österreich, überall sonst remote. Den DACH-Raum und die EU kennen wir am
+					besten – wir arbeiten aber mit Kunden überall.`,
+				"links": "Links",
+				"page": "Die ganze Seite",
+				"otherLanguage": "English version",
+				"email": "E-Mail",
 			},
 			"hero": {
 				"eyebrow": "Project Management<audience> · für KI- und Software-Startups</audience>",
 				"headline": "Wir managen Softwareprojekte für KI- und Software-Startups – im Budget und im Zeitplan.",
-				"sub": `Von der Idee oder dem KI-gebauten Prototyp zum fertigen Produkt: Wir managen es mit den richtigen
-					Tools, einer Architektur, in der alles zusammenpasst, und einem wöchentlichen Termin statt zehn Meetings –
-					damit Sie frei sind für das Wesentliche. Alles wird verständlich erklärt.`,
+				"sub": `Wir bringen Ihre Idee oder Ihren Prototyp zeit- und kosteneffizient in Produktion: Wir arbeiten
+					Anforderungen, Architektur und Zeitplan heraus und managen danach Umsetzung und Teamentscheidungen von Anfang
+					bis Ende. Sie bekommen ein wöchentliches Update zu Entscheidungen und Fortschritt, um alles andere kümmern
+					wir uns – damit Sie sich auf das Wesentliche konzentrieren können. Alles wird verständlich erklärt.`,
 				"note": "Kostenlos und unverbindlich. Sie erhalten eine kurze Einschätzung Ihres Projekts.",
 			},
 			"cta": {
