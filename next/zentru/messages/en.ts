@@ -864,6 +864,10 @@ export default {
 	},
 	// always there, nav, footer general translations
 	"Always": {
+		// The description of any page that doesn't set its own – search results cut off around 160 characters
+		"meta": {
+			"description": "Zentru Systems helps AI and software startups get ideas and prototypes to production as a fractional CTO, and builds software products like SpeedSwitch.",
+		},
 		// Nav
 		"products": "Products",
 		"services": "Services",

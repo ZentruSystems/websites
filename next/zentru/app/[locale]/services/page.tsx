@@ -1,5 +1,14 @@
+import { alternatesFor, localeOf, LocaleParams } from "@/lib/seo";
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+	const locale = await localeOf(params);
+	const t = await getTranslations({ locale, namespace: "Always" });
+
+	return { title: t("services"), alternates: alternatesFor("/services", locale) };
+}
 
 export default async function Page() {
 	const tFields = await getTranslations("Fields");

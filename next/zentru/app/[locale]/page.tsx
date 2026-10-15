@@ -1,16 +1,38 @@
 import { defaultHtml } from "@/lib/localization";
+import { alternatesFor, JsonLd, localeOf, LocaleParams, organizationId, organizationNodes, siteUrl } from "@/lib/seo";
 import SocialLinks from "common/components/socialLinks/SocialLinks";
 import VerticalDivider from "common/components/verticalDivider/VerticalDivider";
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import DynamicQuote from "../DynamicQuote";
 import SideBoard from "../SideBoard";
 
-export default async function Page() {
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+	return { alternates: alternatesFor("", await localeOf(params)) };
+}
+
+export default async function Page({ params }: LocaleParams) {
 	const t = await getTranslations();
 	const tMain = await getTranslations("Main");
+	const locale = await localeOf(params);
 
 	return <main>
+			{/* The site, and who is behind it – the other pages' structured data points back to these ids */}
+			<JsonLd data={{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "WebSite",
+						"@id": `${siteUrl}/#website`,
+						url: siteUrl,
+						name: "Zentru Systems",
+						inLanguage: locale,
+						publisher: { "@id": organizationId },
+					},
+					...organizationNodes(t("Always.meta.description")),
+				],
+			}} />
 			<section className="Head bg-l5 hGrid">
 				<div className="vCenter vBigPad ph-vPad s1 e7 ph-e5 vFill vSpaceing">
 					<h2 className="light noMargin" style={{letterSpacing: "-2.5%"}}>{tMain("because1") ?? "Because I don’t like how Companies treat their Customers."}</h2>

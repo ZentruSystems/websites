@@ -12,6 +12,7 @@ import ScrollFocus from "@/app/blocks/ScrollFocus";
 import Steps from "@/app/blocks/Steps";
 import ScrollDepth from "@/app/ScrollDepth";
 import { defaultHtml } from "@/lib/localization";
+import { alternatesFor, localeOf, LocaleParams } from "@/lib/seo";
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -43,8 +44,9 @@ import {
 /** The weeks of included consulting the copy quotes – a plain `{weeks}` argument takes a string */
 const includedWeeks = { weeks: `${projectBootstrap.includedWeeks}` };
 
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("Fields.projectBootstrap.meta");
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+	const locale = await localeOf(params);
+	const t = await getTranslations({ locale, namespace: "Fields.projectBootstrap.meta" });
 
 	const title = t("title");
 	const description = t("description");
@@ -62,6 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			"finance",
 		],
 		robots: { index: true, follow: true },
+		alternates: alternatesFor(projectBootstrap.path, locale),
 		openGraph: { title, description, type: "website", url, images },
 		twitter: { card: "summary_large_image", title, description, images },
 	};

@@ -1,5 +1,6 @@
 import Section from "@/app/Section";
 import { defaultHtml } from "@/lib/localization";
+import { alternatesFor, localeOf, LocaleParams } from "@/lib/seo";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
@@ -31,8 +32,9 @@ const productValues = {
 	windows: speedSwitch.minWindows,
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("Products.speedswitch");
+export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
+	const locale = await localeOf(params);
+	const t = await getTranslations({ locale, namespace: "Products.speedswitch" });
 
 	const title = t("meta.title");
 	const description = t("hero.sub");
@@ -49,6 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			"pen tablet",
 		],
 		robots: { index: true, follow: true },
+		alternates: alternatesFor(speedSwitch.path, locale),
 		openGraph: { title, description, type: "website", url, images },
 		twitter: { card: "summary_large_image", title, description, images },
 	};

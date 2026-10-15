@@ -1,4 +1,5 @@
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import FixFavicon from "common/theming/FixFavicon";
@@ -45,6 +46,8 @@ export function InternationalizationLayout({ children, locale }: LayoutProps<"/"
 }
 
 export const metadata: Metadata = {
+	// Resolves the relative canonical and hreflang paths each page sets (lib/seo.tsx)
+	metadataBase: new URL(siteUrl),
 	title: "Zentru Systems",
 	keywords: [
 		"Apps",

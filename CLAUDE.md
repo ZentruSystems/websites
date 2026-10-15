@@ -31,8 +31,10 @@ Next.js 16.2.12 App Router, React 19, TypeScript, `next-intl` v4. No Tailwind in
 next/zentru/
   app/
     layout.tsx              root layout: fonts, GoogleAnalytics (G-31E6P1N02L), Vercel Analytics
+    robots.ts  sitemap.ts   generated robots.txt and sitemap.xml – a new page goes in sitemap.ts by hand
     [locale]/
-      layout.tsx            imports the three CSS files, renders <Nav> + footer, wraps in .navPad
+      layout.tsx            imports the three CSS files, renders <Nav> + footer, wraps in .navPad;
+                            404s any segment that isn't a locale, and sets the localized default description
       nav/Nav.tsx           fixed nav — top on desktop, BOTTOM on phone (see §4.3)
       products/
         page.tsx            the overview: one <…Section> per product, in display order
@@ -45,6 +47,7 @@ next/zentru/
   models/                   Mongoose schemas
   i18n/routing.ts           locales ['en','de'], default 'en'
   lib/localization.tsx      `defaultHtml` — the tag map for t.rich()
+  lib/seo.tsx               canonical + hreflang (`alternatesFor`), `localeOf`, `JsonLd`, the Organization node
   lib/mongodb.ts            connects at module load (see §7.3)
   global.ts                 makes en.ts the type source for every message key
   public/img/<product>/     media, with a README per product folder
@@ -265,6 +268,12 @@ sandbox (§3).
   a section without a clip leaves a gap.
 - Measuring "overlap" between a fixed bar and the nav as `bar.bottom - nav.top`. That is
   meaningless when the nav is at the top; use a real rectangle intersection.
+- Reading the locale with `getLocale()` in `generateMetadata`. The root layout calls
+  `setRequestLocale("en")` on every request and `getLocale()` returns whatever was set first, so
+  German pages intermittently got English metadata. Use `localeOf(params)` from `lib/seo.tsx`.
+- Paths with a dot in the first segment (`/robots.txt`, `/x.php`) skip the proxy and land in
+  `[locale]` with that as the locale. Before the guard in `[locale]/layout.tsx` they rendered the
+  English home page with a 200. Keep the guard; a real `robots.ts`/`sitemap.ts` route wins over it.
 - Believing a test that asserts old behaviour. When a check fails after someone else's
   change, first work out whether the expectation is stale — several in this repo were, and
   "fixing" the code to satisfy them would have been wrong.
