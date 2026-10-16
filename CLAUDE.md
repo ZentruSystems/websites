@@ -34,7 +34,7 @@ next/zentru/
     robots.ts  sitemap.ts   generated robots.txt and sitemap.xml – a new page goes in sitemap.ts by hand
     [locale]/
       layout.tsx            imports the three CSS files, renders <Nav> + footer, wraps in .navPad;
-                            404s any segment that isn't a locale, and sets the localized default description
+                            404s any segment that isn't a locale
       nav/Nav.tsx           fixed nav — top on desktop, BOTTOM on phone (see §4.3)
       products/
         page.tsx            the overview: one <…Section> per product, in display order

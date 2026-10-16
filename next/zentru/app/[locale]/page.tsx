@@ -30,7 +30,7 @@ export default async function Page({ params }: LocaleParams) {
 						inLanguage: locale,
 						publisher: { "@id": organizationId },
 					},
-					...organizationNodes(t("Always.meta.description")),
+					...organizationNodes(),
 				],
 			}} />
 			<section className="Head bg-l5 hGrid">

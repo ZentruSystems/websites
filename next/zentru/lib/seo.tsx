@@ -51,7 +51,7 @@ export const founderId = `${siteUrl}/#founder`;
  * phone number are left out on purpose: structured data can surface them in search panels, and the
  * registered seat is a residential address.
  */
-export function organizationNodes(description: string) {
+export function organizationNodes() {
 	return [
 		{
 			"@type": "Organization",
@@ -61,7 +61,6 @@ export function organizationNodes(description: string) {
 			url: siteUrl,
 			logo: `${siteUrl}/faviconDark/android-chrome-512x512.png`,
 			email: "service@zentru.systems",
-			description,
 			founder: { "@id": founderId },
 			address: { "@type": "PostalAddress", addressLocality: "Vienna", addressCountry: "AT" },
 			sameAs: ["https://www.linkedin.com/company/zentru-systems"],

@@ -767,9 +767,6 @@ export default {
 	},
 	// always there, nav, footer general translations
 	"Always": {
-		"meta": {
-			"description": "Zentru Systems hilft KI- und Software-Startups als Fractional CTO, Ideen und Prototypen in Produktion zu bringen, und baut Softwareprodukte wie SpeedSwitch.",
-		},
 		// Nav
 		"products": "Produkte",
 		"services": "Leistungen",
