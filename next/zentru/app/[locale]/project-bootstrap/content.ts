@@ -9,6 +9,8 @@
 export type PackageKey = "setup" | "management";
 
 export const proofKeys = ["forecasting", "marketData", "documents", "jobs"] as const;
+/** The `serviceType`s in the page's structured data – `meta.serviceTypes` in the message files */
+export const serviceTypeKeys = ["fractionalCto", "advisor", "team", "rescue"] as const;
 
 export const problemKeys = ["tools", "outsourcing", "plan"] as const;
 

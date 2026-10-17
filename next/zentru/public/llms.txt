@@ -1,0 +1,41 @@
+# Zentru Systems: fractional CTO and technical advisor
+
+> Felix, who runs Zentru Systems in Vienna, Austria, works as a fractional CTO and technical advisor. He helps AI and software startups and small finance businesses get their ideas and prototypes to production, time and cost efficient: he works out the requirements, the architecture and the timeline, then manages execution and team decisions end to end. Clients get one weekly decision and progress update; everything else is handled, so they can focus on the important parts.
+
+The service is called Project Bootstrap.
+
+- [Project Bootstrap](https://zentru.systems/en/project-bootstrap): the service, how it works, the two packages, case studies and questions
+- [Project Bootstrap, German](https://zentru.systems/de/project-bootstrap): the same page in German
+
+## What the service covers
+
+- **Fractional CTO:** one person between the business and its technology. Felix takes a project from an idea or an AI-built prototype to a working setup: the right tools, a system architecture where every part fits, a timeline and budget to steer by, and support with hiring.
+- **Technical advisor:** tech and hiring decisions explained in business terms, before budget is committed to them. Clients can also manage the project themselves and use Felix as a consultant only.
+- **Someone to manage your developers:** with the Management upgrade, Felix runs the project day to day: issues, tasks, requirements, hires and meetings, with issue handling and cost control. The client gets one weekly check-in and status reports instead of many meetings. He solves about 95% of the issues that come up without the client having to do anything.
+- **Rescuing a stuck app or project:** an assessment of where the project or prototype stands and what is missing, then a plan. On a finance forecasting system, when the forecasting engine put the budget and the timeline at risk, Felix stepped in and built it himself.
+
+## How it works
+
+1. A free strategy call, without obligation: the project, what it should achieve and where it is stuck. The client gets a short assessment.
+2. Assessment and plan: the current state and the solutions, then the timeline and the architecture.
+3. Setup: the agreed tools are set up and connected, the team is onboarded and the tasks are created. The setup usually takes one to two weeks.
+4. Optional and ongoing: Management, with one weekly check-in.
+
+No technical knowledge is needed on the client's side. The tools a client already uses are kept and built around.
+
+## Pricing
+
+- Setup: a fixed price for up to three weeks, with tech and hiring consulting included for those weeks.
+- Management afterwards: billed monthly or by the hour.
+- Prices are not published. The strategy call is free.
+
+## Results
+
+- **A finance forecasting system.** An AI prototype, a first pilot client and a development team already hired in India, but no plan that turned the idea into a system they could build. Felix set up the project management tools, planned the idea into a system, and created, delegated and managed the work with the team; when the forecasting engine put the budget and the timeline at risk, he built it himself. The client was freed up to run parallel projects and win new clients.
+- **Job extraction from email.** Job orders arrived by email and were moved into the job system by hand: slow and error-prone. Felix built a system that extracts jobs from incoming email into Google Sheets and a custom job system. More jobs are taken on, with errors practically at zero.
+
+## Contact
+
+- [Book a free strategy call](https://cal.com/zentrusystems/project-bootstrap)
+- Email: service@zentru.systems
+- [This file in German](https://zentru.systems/de/llms.txt)

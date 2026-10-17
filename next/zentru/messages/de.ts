@@ -483,8 +483,15 @@ export default {
 			"name": "Project Bootstrap",
 			"subline": "Tools, Pläne und Beratung",
 			"meta": {
-				"title": "Project Bootstrap — Ihr Softwareprojekt richtig starten",
-				"description": "Zentru Systems hilft kleinen Finanzunternehmen, Softwareprojekte richtig zu starten: passende Tools, eine solide Architektur und Entscheidungen, die sie verstehen.",
+				"title": "Fractional CTO & technischer Berater — Project Bootstrap",
+				"description": "Fractional CTO und technischer Berater: Ich führe Ihre Entwickler, rette festgefahrene Apps und bringe Ihren Prototyp in Produktion – ein Update pro Woche.",
+				"keywords": "Fractional CTO, technischer Berater, CTO as a Service, Entwicklerteam führen, Entwickler managen, App retten, Softwareprojekt retten, Prototyp in Produktion",
+				"serviceTypes": {
+					"fractionalCto": "Fractional CTO",
+					"advisor": "Technische Beratung",
+					"team": "Führung von Entwicklerteams",
+					"rescue": "Rettung von Apps und Softwareprojekten",
+				},
 			},
 			"hero": {
 				"eyebrow": "Project Bootstrap<audience> · für kleine Finanzunternehmen</audience>",

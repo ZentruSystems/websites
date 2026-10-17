@@ -12,7 +12,7 @@ import ScrollFocus from "@/app/blocks/ScrollFocus";
 import Steps from "@/app/blocks/Steps";
 import ScrollDepth from "@/app/ScrollDepth";
 import { defaultHtml } from "@/lib/localization";
-import { alternatesFor, localeOf, LocaleParams } from "@/lib/seo";
+import { alternatesFor, localeOf, LocaleParams, organizationId, organizationNodes } from "@/lib/seo";
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
@@ -28,6 +28,7 @@ import {
 	packageRows,
 	problemKeys,
 	proofKeys,
+	serviceTypeKeys,
 	stageKeys,
 	stepKeys,
 } from "./content";
@@ -50,22 +51,17 @@ export async function generateMetadata({ params }: LocaleParams): Promise<Metada
 
 	const title = t("title");
 	const description = t("description");
-	const url = `${projectBootstrap.siteUrl}${projectBootstrap.path}`;
+	// The page in this language, the same address as its canonical – the bare path only redirects
+	const url = `${projectBootstrap.siteUrl}/${locale}${projectBootstrap.path}`;
 	const images = { url: `${projectBootstrap.siteUrl}${projectBootstrap.ogImage}` };
 
 	return {
 		title,
 		description,
-		keywords: [
-			"project setup",
-			"software project consulting",
-			"system architecture",
-			"small business",
-			"finance",
-		],
+		keywords: t("keywords").split(",").map(keyword => keyword.trim()),
 		robots: { index: true, follow: true },
 		alternates: alternatesFor(projectBootstrap.path, locale),
-		openGraph: { title, description, type: "website", url, images },
+		openGraph: { title, description, type: "website", locale, url, images },
 		twitter: { card: "summary_large_image", title, description, images },
 	};
 }
@@ -116,6 +112,18 @@ async function StructuredData() {
 	const data = {
 		"@context": "https://schema.org",
 		"@graph": [
+			// What the service is, in the terms people search for it by
+			{
+				"@type": "Service",
+				"@id": `${url}#offer`,
+				name: t("meta.title"),
+				description: t("meta.description"),
+				url,
+				serviceType: serviceTypeKeys.map(key => t(`meta.serviceTypes.${key}`)),
+				provider: { "@id": organizationId },
+			},
+			// So the provider resolves within this page's own data
+			...organizationNodes(),
 			{
 				"@type": "ProfessionalService",
 				"@id": `${url}#service`,

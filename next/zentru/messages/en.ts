@@ -580,10 +580,23 @@ export default {
 			// The card on /fields
 			"name": "Project Bootstrap",
 			"subline": "Tools, plans and consulting",
+			// Never rendered on the page – titles, descriptions and structured data only. Written for the
+			// searches "fractional CTO", "technical advisor", "someone to manage my developers" and "rescue my
+			// app". The description names no audience: the page says small finance businesses, and a snippet
+			// that contradicts the page gets rewritten by the search engine.
 			"meta": {
-				"title": "Project Bootstrap — start your software project right",
-				// Kept under ~160 characters, which is where search results cut it off
-				"description": "Zentru Systems helps small finance businesses start software projects right: the right tools, a sound architecture, and tech and hiring decisions they understand.",
+				// Kept under ~60 characters, and the description under ~160 – where search results cut them off
+				"title": "Fractional CTO & Technical Advisor — Project Bootstrap",
+				"description": "Fractional CTO and technical advisor: I manage your developers, rescue stuck apps and get your prototype to production, with one weekly update.",
+				// Comma separated
+				"keywords": "fractional CTO, technical advisor, manage my developers, development team management, rescue my app, app rescue, software project rescue, prototype to production, CTO as a service",
+				// The kinds of service this is, for the page's structured data
+				"serviceTypes": {
+					"fractionalCto": "Fractional CTO",
+					"advisor": "Technical advisor",
+					"team": "Development team management",
+					"rescue": "App and software project rescue",
+				},
 			},
 			"hero": {
 				// <audience> is left out on a phone, where the headline right below already says it

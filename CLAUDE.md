@@ -51,6 +51,7 @@ next/zentru/
   lib/mongodb.ts            connects at module load (see §7.3)
   global.ts                 makes en.ts the type source for every message key
   public/img/<product>/     media, with a README per product folder
+  public/llms.txt, public/de/llms.txt   the service, for AI assistants – kept in step with project-bootstrap
 docs/HANDOFF-speedswitch.md the SpeedSwitch page in depth — read it before touching that page
 ```
 

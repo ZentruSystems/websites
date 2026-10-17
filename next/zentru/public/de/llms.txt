@@ -1,0 +1,41 @@
+# Zentru Systems: Fractional CTO und technischer Berater
+
+> Felix, der Zentru Systems in Wien betreibt, arbeitet als Fractional CTO und technischer Berater. Er hilft KI- und Software-Startups und kleinen Finanzunternehmen, ihre Ideen und Prototypen zeit- und kosteneffizient in Produktion zu bringen: Er erarbeitet Anforderungen, Architektur und Zeitplan und führt dann Umsetzung und Teamentscheidungen von Anfang bis Ende. Kunden bekommen ein wöchentliches Entscheidungs- und Fortschrittsupdate; alles andere wird erledigt, damit sie sich auf das Wesentliche konzentrieren können.
+
+Die Leistung heißt Project Bootstrap.
+
+- [Project Bootstrap](https://zentru.systems/de/project-bootstrap): die Leistung, der Ablauf, die zwei Pakete, Fallbeispiele und Fragen
+- [Project Bootstrap, Englisch](https://zentru.systems/en/project-bootstrap): dieselbe Seite auf Englisch
+
+## Was die Leistung umfasst
+
+- **Fractional CTO:** eine Person zwischen dem Geschäft und seiner Technik. Felix bringt ein Projekt von der Idee oder dem KI-gebauten Prototyp zu einem funktionierenden Setup: die richtigen Tools, eine Systemarchitektur, in der alles zusammenpasst, ein Zeitplan und ein Budget zum Steuern, und Unterstützung bei Einstellungen.
+- **Technischer Berater:** Technik- und Personalentscheidungen, in der Sprache des Geschäfts erklärt, bevor Budget dafür freigegeben wird. Kunden können das Projekt auch selbst leiten und Felix nur als Berater nutzen.
+- **Jemand, der die Entwickler führt:** Mit dem Management-Upgrade leitet Felix das Projekt im Tagesgeschäft: Probleme, Aufgaben, Anforderungen, Einstellungen und Meetings, mit Problembehandlung und Kostenkontrolle. Der Kunde bekommt einen wöchentlichen Termin und Statusberichte statt vieler Meetings. Etwa 95 % der auftretenden Probleme löst er, ohne dass der Kunde etwas tun muss.
+- **Rettung einer festgefahrenen App oder eines Projekts:** eine Einschätzung, wo das Projekt oder der Prototyp steht und was fehlt, dann ein Plan. Bei einem System für Finanzprognosen ist Felix eingesprungen, als die Prognose-Engine Budget und Zeitplan gefährdet hat, und hat sie selbst gebaut.
+
+## So funktioniert es
+
+1. Ein kostenloses, unverbindliches Strategiegespräch: das Projekt, was es erreichen soll und wo es hakt. Der Kunde erhält eine kurze Einschätzung.
+2. Einschätzung und Plan: der aktuelle Stand und die Lösungen, dann der Zeitplan und die Architektur.
+3. Setup: Die vereinbarten Tools werden eingerichtet und verbunden, das Team wird eingeschult und die Aufgaben werden angelegt. Das Setup dauert meist ein bis zwei Wochen.
+4. Optional und laufend: Management, mit einem wöchentlichen Termin.
+
+Technisches Wissen ist auf Kundenseite nicht nötig. Die Tools, die ein Kunde bereits nutzt, bleiben und werden eingebunden.
+
+## Preise
+
+- Setup: ein Festpreis für bis zu drei Wochen, Technik- und Personalberatung für diese Wochen inklusive.
+- Management danach: monatlich oder nach Stunden abgerechnet.
+- Preise werden nicht veröffentlicht. Das Strategiegespräch ist kostenlos.
+
+## Ergebnisse
+
+- **Ein System für Finanzprognosen.** Ein KI-Prototyp, ein erster Pilotkunde und ein bereits aufgebautes Entwicklungsteam in Indien, aber kein Plan, der aus der Idee ein System machte, das sich bauen lässt. Felix hat die Projektmanagement-Tools aufgesetzt, die Idee zu einem System geplant und die Arbeit mit dem Team erstellt, verteilt und gemanagt; als die Prognose-Engine Budget und Zeitplan gefährdet hat, hat er sie selbst gebaut. Der Kunde hatte wieder Luft für parallele Projekte und neue Kunden.
+- **Auftragsextraktion aus E-Mails.** Aufträge kamen per E-Mail und wurden von Hand ins Auftragssystem übertragen: langsam und fehleranfällig. Felix hat ein System gebaut, das Aufträge aus eingehenden E-Mails in Google Sheets und ein eigenes Auftragssystem überträgt. Es werden mehr Aufträge angenommen, mit Fehlern praktisch auf null.
+
+## Kontakt
+
+- [Kostenloses Strategiegespräch buchen](https://cal.com/zentrusystems/project-bootstrap)
+- E-Mail: service@zentru.systems
+- [Diese Datei auf Englisch](https://zentru.systems/llms.txt)

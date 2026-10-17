@@ -97,6 +97,19 @@ testimonials, because none were supplied.
    `booking_click`) as key events. Conversion rate by device and by traffic source then comes
    from GA's standard reports.
 
+## Search
+
+Written for the searches "fractional CTO", "technical advisor", "someone to manage my developers"
+and "rescue my app" – **in metadata only**; nothing visible on the page targets them.
+
+- Title, description, keywords and the structured data's `serviceType`s are
+  `Fields.projectBootstrap.meta` in both message files. None of it is rendered on the page.
+- The structured data adds a `Service` node with those `serviceType`s, provided by the site-wide
+  Organization from `lib/seo.tsx`. The `FAQPage` mirrors the visible FAQ and must stay identical to it.
+- `public/llms.txt` and `public/de/llms.txt` describe this service for AI assistants, in the third
+  person and only from what the page says. **Update them when the page's facts change** – the
+  setup length, the included weeks, the pricing model, the case studies.
+
 ## Tracking
 
 Events go through `lib/analytics.ts`: to Google Analytics only with consent (`lib/consent.ts`),
