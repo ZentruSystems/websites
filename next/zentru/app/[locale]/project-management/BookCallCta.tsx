@@ -31,18 +31,20 @@ function withCampaign(url: string, search: string): string {
  * Every placement renders this, so the words, the look and the destination are the same
  * everywhere – only `placement` differs, and it is what the click is reported with.
  */
-export default function BookCallCta({ placement, large = false }: {
+export default function BookCallCta({ placement, large = false, bookingUrl = projectBootstrap.bookingUrl }: {
 	/** Where on the page this sits – reported with `booking_click` */
 	placement: string,
 	/** For the final band, where it is the only thing left to do */
 	large?: boolean,
+	/** Another page's booking event, for a page that books its own kind of call */
+	bookingUrl?: string,
 }) {
 	const t = useTranslations("Fields.projectBootstrap.cta");
-	const [href, setHref] = useState<string>(projectBootstrap.bookingUrl);
+	const [href, setHref] = useState<string>(bookingUrl);
 
 	useEffect(() => {
-		setHref(withCampaign(projectBootstrap.bookingUrl, window.location.search));
-	}, []);
+		setHref(withCampaign(bookingUrl, window.location.search));
+	}, [bookingUrl]);
 
 	return <a
 		className={`buttonAccent buttonPrimary hover ${style.cta} ${large ? style.ctaLarge : ""}`}

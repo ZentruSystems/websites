@@ -1,3 +1,4 @@
+import { buildLlmsTxtSection } from "@/app/[locale]/design-agencies/llms";
 import { buildLlmsTxt } from "@/app/[locale]/project-management/llms";
 import { routing } from "@/i18n/routing";
 import { hasLocale } from "next-intl";
@@ -14,7 +15,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ loc
 	const { locale } = await params;
 	if (!hasLocale(routing.locales, locale)) return new Response(null, { status: 404 });
 
-	return new Response(await buildLlmsTxt(locale), {
+	return new Response(await buildLlmsTxt(locale) + await buildLlmsTxtSection(locale), {
 		headers: { "Content-Type": "text/plain; charset=utf-8" },
 	});
 }

@@ -778,6 +778,277 @@ export default {
 				"back": "Zurück zu Project Management",
 			},
 		},
+		// /design-agencies – formell ("Sie") wie /project-management. Was beide Seiten wortgleich sagen, steht nur dort.
+		"designAgencies": {
+			"name": "Development integrated Design",
+			"subline": "Entwicklung für Designagenturen",
+			"meta": {
+				"title": "Entwicklung für Designagenturen | Zentru Systems",
+				"description": "Wir helfen Designagenturen, Entwicklungsleistungen für mehr Umsatz aufzusetzen und zu managen – mit einem Prozess, der dem Design folgt.",
+			},
+			// Nicht auf der Seite zu sehen: llms.txt und die strukturierten Daten
+			"seo": {
+				"summary": `Wir helfen Designagenturen, ihre Entwicklungsleistungen für mehr Umsatz aufzusetzen und zu managen –
+					mit designfreundlichen Systemen und Tools und nur einem wöchentlichen Update zu Entscheidungen und
+					Fortschritt, um alles andere kümmern wir uns. So können sie sich aufs Designen konzentrieren.`,
+				"audience": "Designagenturen",
+				"llmsTxt": "Dieser Service als llms.txt",
+			},
+			"hero": {
+				"eyebrow": "Development integrated Design<audience> · für Designagenturen</audience>",
+				"headline": "Wir helfen Designagenturen, ihre Entwicklungsleistungen aufzusetzen und zu managen.",
+				"sub": `Für mehr Umsatz, mit den Kunden, für die Sie bereits gestalten. Unsere Systeme und Tools sind
+					designfreundlich: Der Prozess folgt Ihrem Designprozess, statt gegen ihn zu arbeiten. Sie bekommen ein
+					wöchentliches Update zu Entscheidungen und Fortschritt, um alles andere kümmern wir uns – damit Sie sich
+					aufs Designen konzentrieren können.`,
+				"note": "Kostenlos und unverbindlich. Sie erhalten eine kurze Einschätzung, wie Entwicklung zu Ihrer Agentur passt.",
+			},
+			"proof": {
+				"label": "Aktuelle Projekte",
+				"items": {
+					"finance": {
+						"title": "UI/UX für Finanzprognosen",
+						"text": "Konzipiert, gestaltet und umgesetzt, mit Animationen, Farben und gestalterischen Akzenten",
+					},
+					"integrations": {
+						"title": "CRM-Integrationen",
+						"text": "Outreach und PersistIQ, gebaut und getestet",
+					},
+					"funnel": {
+						"title": "Funnel-Visualisierung",
+						"text": "Das Herzstück einer CRM-Plattform, mit Mehrwert für jeden ihrer Kunden",
+					},
+				},
+			},
+			"problem": {
+				"title": "Ein übergebenes Design ist übergebener Umsatz.",
+				"intro": `Ihre Kunden brauchen ihre Designs umgesetzt. Ist Entwicklung nicht Teil Ihres Angebots, geht dieser
+					Teil des Projekts woanders hin – und sie selbst anzubieten braucht einen Prozess, Tools und Leute, die
+					erst einmal da sein müssen.`,
+				"items": {
+					"handoff": {
+						"title": "Umsatz, der bei der Übergabe endet",
+						"text": "Das Design ist fertig, die Umsetzung geht an jemand anderen, und der Umsatz mit ihr.",
+					},
+					"process": {
+						"title": "Ein Prozess, der gegen das Design arbeitet",
+						"text": `Entwicklung nach eigenen Regeln, nicht nach denen des Designs: Iterationen und
+							Designentscheidungen passen nicht hinein und gehen zwischen beiden verloren.`,
+					},
+					"time": {
+						"title": "Entwickler führen statt gestalten",
+						"text": "Ein Entwicklungsteam selbst zu führen kostet jede Woche Stunden, die ins Design gehören.",
+					},
+				},
+			},
+			"outcomes": {
+				"title": "Mehr Umsatz, ein Prozess, der passt, und Zeit fürs Design.",
+				"managementTag": "Mit Management",
+				"items": {
+					"revenue": {
+						"title": "Entwicklungsumsatz mit Kunden, die Sie schon haben",
+						"text": `Die Projekte Ihrer Kunden enden nicht beim Design: Sie bieten die Umsetzung mit an, und der
+							Umsatz bleibt bei Ihnen.`,
+					},
+					"process": {
+						"title": "Ein Prozess, der dem Design folgt",
+						"text": `Design hat seinen eigenen Prozess. Unserer folgt ihm, statt gegen ihn zu arbeiten, von der
+							ersten Idee bis zur fertigen Umsetzung.`,
+					},
+					"noTeam": {
+						"title": "Starten ohne Entwicklungsteam",
+						"text": `Wenn Sie möchten, setzen wir Ihre ersten oder kleineren Projekte selbst um – so können Sie
+							Entwicklung anbieten, bevor Sie Entwickler haben.`,
+					},
+					"time": {
+						"title": "Ihre Woche zurück",
+						"text": `Wir übernehmen das Tagesgeschäft der Entwicklung. Ein wöchentliches Update zu Entscheidungen
+							und Fortschritt, um alles andere kümmern wir uns, damit Ihre Stunden ins Design gehen.`,
+					},
+				},
+				"evidence": `Ein Beispiel von weiter unten: Die Funnel-Visualisierung, die wir für eine CRM-Plattform gebaut
+					haben, bringt jedem ihrer Kunden Mehrwert, was die Kundenbindung der Plattform verbessert hat.`,
+			},
+			"solution": {
+				"title": "Eine Person zwischen Ihrem Design und seiner Umsetzung.",
+				"intro": `<p>Wir setzen die Entwicklungsleistungen Ihrer Agentur auf – Struktur, Prozess, Tools und Beratung –,
+					rund um die Art, wie Sie gestalten. Wenn Sie möchten, managen wir die Entwicklung auch für Sie und setzen
+					Ihre ersten oder kleineren Projekte selbst um. Und wir übersetzen zwischen Design und Entwicklung, damit
+					aus einem Missverständnis keine Wochen Nacharbeit werden.</p>
+					<p>Unsere Expertise verbindet praktische Erfahrung in der Softwareentwicklung mit einer akademischen
+					Ausbildung – unsere Arbeit stützt sich auf Praxis wie Theorie.</p>`,
+				"ctaLine": "Ins Gespräch kommen, Einschätzung bekommen, Entwicklung anbieten.",
+				"stagesTitle": "Wie Ihre Entwicklungsleistung zusammenkommt",
+				"ongoing": "Optional, laufend",
+				"stages": {
+					"assess": {
+						"title": "Einschätzen",
+						"text": "Wo Ihre Agentur steht, wie Sie gestalten, und was die Entwicklung braucht, um hineinzupassen.",
+					},
+					"architecture": {
+						"title": "Strukturieren",
+						"text": "Eine Struktur für Ihre Entwicklungsleistung, gebaut rund um Ihren Designprozess.",
+					},
+					"tools": {
+						"title": "Tools",
+						"text": "Designfreundliche Tools auswählen, einrichten und verbinden, ausgehend von denen, die Sie nutzen.",
+					},
+					"onboarding": {
+						"title": "Onboarding",
+						"text": "Sie und Ihr Team lernen jedes Tool kennen, das für Sie neu ist.",
+					},
+					"manage": {
+						"title": "Managen",
+						"text": "Wenn Sie möchten: Entwicklung, Probleme, Aufgaben und Einstellungen, laufend betreut.",
+					},
+				},
+			},
+			"cases": {
+				"title": "Ergebnisse aus echten Projekten",
+				"intro": "Eines haben wir konzipiert, gestaltet und umgesetzt, eines umgesetzt.",
+				"designTag": "Design und Umsetzung",
+				"previous": "Zurück",
+				"next": "Weiter",
+				"items": {
+					"finance": {
+						"title": "Eine Oberfläche der nächsten Generation für Finanzprognosen",
+						"challenge": `Eine Plattform für Finanzprognosen brauchte eine Oberfläche, die mithält: eine UI/UX, wie es
+							sie in Finanztools noch nicht gab.`,
+						"work": `Ein Erlebnis der nächsten Generation für Finanztools konzipiert, gestaltet und umgesetzt, mit
+							durchdachten Animationen, Farben und gestalterischen Akzenten.`,
+						"result": "Der Kunde hatte wieder Luft für parallele Projekte und neue Kunden.",
+						"mediaAlt": "Die Oberfläche für Finanzprognosen",
+					},
+				},
+			},
+			"process": {
+				"title": "So funktioniert es",
+				"steps": {
+					"call": {
+						"title": "Strategiegespräch buchen",
+						"text": "Wir sprechen über Ihre Agentur, Ihre Kunden und wie Sie gestalten.",
+					},
+					"plan": {
+						"title": "Einschätzung und Plan erhalten",
+						"text": "Wir ermitteln, wo die Entwicklung hineinpasst, und erstellen Struktur und Prozess rund um Ihren Designprozess.",
+					},
+					"setup": {
+						"title": "Ihre Entwicklungsleistung wird aufgesetzt",
+						"text": "Wir richten die Tools ein, verbinden sie, schulen Ihr Team und legen den Prozess an. Zum Festpreis, Beratung inklusive.",
+					},
+					"options": {
+						"title": "Wenn Sie möchten: Management und Umsetzung",
+						"text": `Wir managen die Entwicklung mit einem wöchentlichen Update zu Entscheidungen und Fortschritt und
+							setzen Ihre ersten oder kleineren Projekte um. Management können Sie jederzeit dazunehmen.`,
+					},
+				},
+			},
+			"packages": {
+				"title": "Was enthalten ist",
+				"intro": `Das Setup ist das Angebot: Ihre Entwicklungsleistung, zum Festpreis aufgesetzt, Beratung inklusive.
+					Management können Sie jederzeit dazunehmen. Die Umsetzung Ihrer ersten oder kleineren Projekte wird
+					gesondert abgerechnet, weil sie vom Projekt Ihres Kunden abhängt.`,
+				"caption": "Was die Pakete enthalten",
+				"setup": {
+					"tag": "Standard",
+					"name": "Setup",
+					"summary": "Ihre Entwicklungsleistung, aufgesetzt rund um Ihren Designprozess.",
+					"fit": "Für Agenturen, die die Entwicklung selbst führen, mit der richtigen Struktur und den richtigen Tools.",
+					"price": "Festpreis, Beratung inklusive",
+				},
+				"management": {
+					"tag": "Upgrade",
+					"name": "Setup + Management",
+					"summary": "Ihre Entwicklungsleistung, aufgesetzt und gemanagt.",
+					"fit": "Mit einem wöchentlichen Update zu Entscheidungen und Fortschritt, um alles andere kümmern wir uns.",
+					"price": "Setup zum Festpreis, danach monatlich oder stundenweise",
+				},
+				"rows": {
+					"assessment": "Einschätzungsbericht",
+					"architecture": "Struktur für Ihre Entwicklungsleistung",
+					"process": "Ein Entwicklungsprozess, der Ihrem Designprozess folgt",
+					"tools": "Designfreundliche Tools, eingerichtet und verbunden",
+					"onboarding": "Onboarding für Sie und Ihr Team",
+					"consulting": "Technik- und Personalberatung",
+					"translation": "Eine Ansprechperson, die zwischen Design und Entwicklung übersetzt",
+					"dayToDay": "Management der Entwicklung im Tagesgeschäft",
+					"meetings": "Ein wöchentliches Update zu Entscheidungen und Fortschritt",
+					"reports": "Statusberichte",
+					"issues": "Problembehandlung und Kostenkontrolle",
+				},
+			},
+			"faq": {
+				"title": "Fragen",
+				"items": {
+					"designProcess": {
+						"question": "Ändert das, wie wir gestalten?",
+						"answer": `Nein. Design hat seinen eigenen Prozess, und unsere Systeme und Tools folgen ihm, statt gegen
+							ihn zu arbeiten. Die Entwicklung passt sich an die Art an, wie Sie bereits arbeiten.`,
+					},
+					"implementation": {
+						"question": "Setzen Sie die Projekte selbst um?",
+						"answer": `Wenn Sie möchten, Ihre ersten oder kleineren. Die Umsetzung wird gesondert abgerechnet, weil
+							sie vom Projekt Ihres Kunden abhängt.`,
+					},
+					"management": {
+						"question": "Müssen wir das Management abgeben?",
+						"answer": `Nein. Das Setup ist das Angebot, und Sie können die Entwicklung selbst führen. Wenn wir sie
+							managen sollen, können Sie das jederzeit dazunehmen.`,
+					},
+					"developers": {
+						"question": "Brauchen wir eigene Entwickler?",
+						"answer": "Nicht für den Anfang. Wir können Ihre ersten oder kleineren Projekte umsetzen, während Ihre Entwicklungsleistung wächst.",
+					},
+					"revenue": {
+						"question": "Wie bringt das mehr Umsatz?",
+						"answer": `Die Projekte Ihrer Kunden enden nicht beim Design. Mit Entwicklung im Angebot setzen Sie um,
+							was Sie gestalten, für die Kunden, die Sie schon haben, statt diesen Teil des Projekts abzugeben.`,
+					},
+					"software": {
+						"question": "Funktioniert das mit unseren bestehenden Tools?",
+						"answer": "Ja. Wir beginnen mit den Tools, die Sie bereits nutzen, und bauen darauf auf.",
+					},
+					"knowledge": {
+						"question": "Brauchen wir technisches Wissen?",
+						"answer": "Nein. Alles wird so erklärt, dass die richtige Information auch richtig verstanden wird.",
+					},
+					"involvement": {
+						"question": "Wie viel Zeit kostet uns das?",
+						"answer": `So viel Sie möchten. Mit Management genügt es, einmal pro Woche mit uns zu sprechen – ein
+							Update zu Entscheidungen und Fortschritt –, den Rest erledigen wir.`,
+					},
+					"pricing": {
+						"question": "Wie wird der Service abgerechnet?",
+						"answer": `Das Setup ist ein Festpreis, ohne zeitliche Begrenzung, Beratung inklusive. Das Management,
+							falls Sie es dazunehmen, wird monatlich oder nach Stunden abgerechnet, je nachdem, was besser passt.
+							Die Umsetzung wird gesondert abgerechnet, weil sie vom Projekt Ihres Kunden abhängt.`,
+					},
+					"call": {
+						"question": "Was passiert im Gespräch?",
+						"answer": `Wir lernen Ihre Agentur, Ihre Kunden und Ihre Art zu gestalten kennen, und ob und wie wir am
+							besten helfen können. Wenn wir zusammenarbeiten, legen wir sofort los.`,
+					},
+				},
+			},
+			"finalCta": {
+				"title": "Finden Sie heraus, wie Entwicklung in Ihre Agentur passt.",
+				"intro": "Im kostenlosen Strategiegespräch bekommen Sie:",
+				"items": {
+					"assessment": "Eine kurze Einschätzung, wo Ihre Agentur steht",
+					"recommendations": "Praktische Empfehlungen zu Prozess, Tools und Struktur",
+					"nextSteps": "Klare nächste Schritte, ob Sie mit uns arbeiten oder nicht",
+				},
+				"note": "Für Designagenturen, die Entwicklung anbieten wollen. Kostenlos und unverbindlich.",
+			},
+			"booked": {
+				"prepare": `<ul>
+					<li>Ein paar Sätze zu Ihrer Agentur und wie Sie gestalten</li>
+					<li>Die Art von Projekten, die Ihre Kunden mitbringen</li>
+					<li>Die Tools und Leute, die Sie bereits haben</li>
+				</ul>`,
+				"back": "Zurück zu Development integrated Design",
+			},
+		},
 		"evar": {
 			"subline": "Spiele, weltraum Spiele",
 		},

@@ -568,6 +568,11 @@
 	grid-template-columns: 1fr 1fr;
 }
 
+.hGrid3 {
+	grid-auto-flow: column;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
 .il-grid {
 	display: inline-grid;
 }

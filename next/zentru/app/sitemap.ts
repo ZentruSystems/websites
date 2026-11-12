@@ -10,7 +10,7 @@ import { MetadataRoute } from "next";
  * No `lastModified`, `priority` or `changeFrequency`: Google ignores the last two, and a date that
  * isn't the page's real one is worse than none.
  */
-const pages = ["/project-management", "/services", "/about"];
+const pages = ["/project-management", "/design-agencies", "/services", "/about"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	return pages.flatMap(path => {

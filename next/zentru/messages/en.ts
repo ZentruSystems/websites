@@ -877,6 +877,290 @@ export default {
 				"back": "Back to Project Management",
 			},
 		},
+		// /design-agencies – the same single job as /project-management: a booked strategy call. What both pages
+		// say word for word (the button, the case labels, the CRM case, the table labels, the service area) is
+		// read from projectBootstrap rather than repeated here.
+		"designAgencies": {
+			// The tile on /services
+			"name": "Development integrated Design",
+			"subline": "Development services for design agencies",
+			"meta": {
+				"title": "Development Services for Design Agencies | Zentru Systems",
+				// Search results cut this off at ~160 characters
+				"description": "We help design agencies set up and manage development services for more revenue, with a process that follows design and one weekly update.",
+			},
+			// Not shown on the page: llms.txt and the structured data
+			"seo": {
+				"summary": `We help design agencies set up and manage their development services for more revenue, using
+					design-friendly systems and tools – requiring only one weekly decision and progress update, with
+					everything else handled. So they can focus on designing.`,
+				"audience": "Design agencies",
+				// The link to this page's llms.txt, from the site's own
+				"llmsTxt": "This service as llms.txt",
+			},
+			"hero": {
+				// <audience> is left out on a phone, where the headline right below already says it
+				"eyebrow": "Development integrated Design<audience> · for design agencies</audience>",
+				"headline": "We help design agencies set up and manage their development services.",
+				"sub": `For more revenue, from the clients you already design for. Our systems and tools are design
+					friendly: the process follows your design process instead of working against it. You get one weekly
+					decision and progress update, everything else is handled, so you can focus on designing.`,
+				"note": "Free and without obligation. You get a short assessment of how development fits your agency.",
+			},
+			"proof": {
+				"label": "Recent work",
+				"items": {
+					"finance": {
+						"title": "Finance forecasting UI/UX",
+						"text": "Ideated, designed and implemented, with animations, colors and design cues",
+					},
+					"integrations": {
+						"title": "CRM integrations",
+						"text": "Outreach and PersistIQ, built and tested",
+					},
+					"funnel": {
+						"title": "Funnel visualization",
+						"text": "The core of a CRM platform, of value to every one of its customers",
+					},
+				},
+			},
+			"problem": {
+				"title": "A design handed off is revenue handed off.",
+				"intro": `Your clients need their designs built. When development isn't part of your offer, that part of
+					the project goes elsewhere – and offering it yourself takes a process, tools and people that have to be
+					in place first.`,
+				"items": {
+					"handoff": {
+						"title": "Revenue that ends at the handoff",
+						"text": "The design is done, the build goes to someone else, and the revenue goes with it.",
+					},
+					"process": {
+						"title": "A process that works against design",
+						"text": `Development run on its own terms, not design's: iterations and design decisions don't fit in,
+							and get lost between the two.`,
+					},
+					"time": {
+						"title": "Developers to run, instead of designing",
+						"text": "Running developers yourself takes hours every week – hours that belong in design.",
+					},
+				},
+			},
+			"outcomes": {
+				"title": "More revenue, a process that fits, and your time for design.",
+				// On the outcome only Management delivers
+				"managementTag": "With Management",
+				"items": {
+					"revenue": {
+						"title": "Development revenue from clients you already have",
+						"text": `Your clients' projects don't end at the design: you offer the build too, and the revenue stays
+							with you.`,
+					},
+					"process": {
+						"title": "A process that follows design",
+						"text": `Design has its own process. Ours follows it instead of working against it, from the first
+							idea to the finished build.`,
+					},
+					"noTeam": {
+						"title": "Start without a development team",
+						"text": `If you want, we implement your first or smaller projects ourselves, so you can offer
+							development before you have developers.`,
+					},
+					"time": {
+						"title": "Your week back",
+						"text": `We run the development day-to-day. One weekly decision and progress update, everything else
+							handled, so your hours go into design.`,
+					},
+				},
+				"evidence": `One example from below: the funnel visualization we built for a CRM platform brings value to every
+					one of its customers, which increased the platform's customer retention.`,
+			},
+			"solution": {
+				"title": "One person between your design and its development.",
+				"intro": `<p>We set up your agency's development services – the structure, the process, the tools and the
+					consulting – around the way you design. If you want, we also manage the development for you, and implement
+					your first or smaller projects ourselves. And we translate between design and development, so a
+					misunderstanding doesn't turn into weeks of rework.</p>
+					<p>Our expertise combines hands-on experience in software development with an academic education, so
+					our work rests on both practice and theory.</p>`,
+				"ctaLine": "Get on a call, get your assessment, and start offering development.",
+				"stagesTitle": "How your development service comes together",
+				// Under the last stage, which is both
+				"ongoing": "Optional, ongoing",
+				"stages": {
+					"assess": {
+						"title": "Assess",
+						"text": "Where your agency stands, how you design, and what development needs to fit in.",
+					},
+					"architecture": {
+						"title": "Structure",
+						"text": "One structure for your development service, built around your design process.",
+					},
+					"tools": {
+						"title": "Tools",
+						"text": "Select, set up and connect design-friendly tools, starting from the ones you use.",
+					},
+					"onboarding": {
+						"title": "Onboarding",
+						"text": "You and your team learn every tool that is new to you.",
+					},
+					"manage": {
+						"title": "Manage",
+						"text": "If you want: development, issues, tasks and hires, handled continuously.",
+					},
+				},
+			},
+			"cases": {
+				"title": "Results from real projects",
+				"intro": "One we ideated, designed and built, one we built.",
+				// On the finance case – the CRM case keeps Project Management's "Implementation"
+				"designTag": "Design and implementation",
+				// The carousel's buttons
+				"previous": "Previous",
+				"next": "Next",
+				"items": {
+					"finance": {
+						"title": "A next-generation interface for finance forecasting",
+						"challenge": `A finance forecasting platform needed an interface to match: a UI/UX not seen in finance
+							tools before.`,
+						"work": `Ideated, designed and implemented a next-generation experience for finance tools, with
+							thoughtful animations, colors and design cues.`,
+						"result": "The client was freed up to run parallel projects and win new clients.",
+						// Describes every image and video in the case's carousel
+						"mediaAlt": "The finance forecasting interface",
+					},
+				},
+			},
+			"process": {
+				"title": "How it works",
+				"steps": {
+					"call": {
+						"title": "Book a strategy call",
+						"text": "We talk about your agency, your clients and how you design.",
+					},
+					"plan": {
+						"title": "Get an assessment and a plan",
+						"text": "We work out where development fits in, then create the structure and the process around your design process.",
+					},
+					"setup": {
+						"title": "Your development service gets set up",
+						"text": "We set up and connect the tools, onboard your team and create the process. At a fixed price, consulting included.",
+					},
+					"options": {
+						"title": "If you want: management and implementation",
+						"text": `We manage the development with one weekly decision and progress update, and implement your first
+							or smaller projects. Management can be added at any time.`,
+					},
+				},
+			},
+			"packages": {
+				"title": "What's included",
+				"intro": `The Setup is the offer: your development service, set up at a fixed price, with consulting included.
+					Management can be added at any time. Implementing your first or smaller projects is billed separately,
+					because it depends on your client's project.`,
+				"caption": "What each package includes",
+				"setup": {
+					"tag": "The default",
+					"name": "Setup",
+					"summary": "Your development service, set up around your design process.",
+					"fit": "For agencies that run development themselves, with the right structure and tools.",
+					"price": "Fixed price, consulting included",
+				},
+				"management": {
+					"tag": "Upgrade",
+					"name": "Setup + Management",
+					"summary": "Your development service, set up and managed.",
+					"fit": "With one weekly decision and progress update, everything else handled.",
+					"price": "Setup at a fixed price, then monthly or hourly",
+				},
+				"rows": {
+					"assessment": "Assessment report",
+					"architecture": "Structure for your development service",
+					"process": "A development process that follows your design process",
+					"tools": "Design-friendly tools, set up and connected",
+					"onboarding": "Onboarding for you and your team",
+					"consulting": "Tech and hiring consulting",
+					"translation": "One contact who translates between design and development",
+					"dayToDay": "Day-to-day development management",
+					"meetings": "One weekly decision and progress update",
+					"reports": "Status reports",
+					"issues": "Issue handling and cost control",
+				},
+			},
+			// Plain strings: they also go into the page's structured data
+			"faq": {
+				"title": "Questions",
+				"items": {
+					"designProcess": {
+						"question": "Will this change how we design?",
+						"answer": `No. Design has its own process, and our systems and tools follow it instead of working
+							against it. Development fits around the way you already work.`,
+					},
+					"implementation": {
+						"question": "Do you build the projects yourselves?",
+						"answer": `If you want, your first or smaller ones. Implementation is billed separately, because it
+							depends on your client's project.`,
+					},
+					"management": {
+						"question": "Do we have to hand over the management?",
+						"answer": `No. The Setup is the offer, and you can run development yourselves. If you want us to manage
+							it, you can add that at any time.`,
+					},
+					"developers": {
+						"question": "Do we need our own developers?",
+						"answer": "Not to start. We can implement your first or smaller projects while your development service grows.",
+					},
+					"revenue": {
+						"question": "How does this bring in more revenue?",
+						"answer": `Your clients' projects don't end at the design. With development in your offer, you build
+							what you design, for the clients you already have, instead of handing that part of the project to
+							someone else.`,
+					},
+					"software": {
+						"question": "Will this work with our existing tools?",
+						"answer": "Yes. We start from the tools you already use and build around them.",
+					},
+					"knowledge": {
+						"question": "Do we need technical knowledge?",
+						"answer": "No. We explain everything in plain language. If you do have technical knowledge, all the better.",
+					},
+					"involvement": {
+						"question": "How much of our time does it take?",
+						"answer": `As much as you want. With Management, you talk to us only once a week – one decision and
+							progress update – and we do the rest.`,
+					},
+					"pricing": {
+						"question": "How is the service priced?",
+						"answer": `The Setup is a fixed price, with no time limit and consulting included. Management, if you
+							add it, is billed monthly or by the hour, whichever fits better. Implementation is billed separately,
+							because it depends on your client's project.`,
+					},
+					"call": {
+						"question": "What happens during the call?",
+						"answer": `We learn about your agency, your clients and how you design, and whether and how we can help
+							best. If we work together, we start right away.`,
+					},
+				},
+			},
+			"finalCta": {
+				"title": "Find out how development fits into your agency.",
+				"intro": "In a free strategy call you get:",
+				"items": {
+					"assessment": "A brief assessment of where your agency stands",
+					"recommendations": "Practical recommendations on process, tools and structure",
+					"nextSteps": "Clear next steps, whether you work with us or not",
+				},
+				"note": "For design agencies that want to offer development. Free, no obligation.",
+			},
+			// The page the booking tool sends people back to. Its other lines are Project Management's.
+			"booked": {
+				"prepare": `<ul>
+					<li>A few sentences about your agency and how you design</li>
+					<li>The kind of projects your clients bring you</li>
+					<li>The tools and people you already have</li>
+				</ul>`,
+				"back": "Back to Development integrated Design",
+			},
+		},
 		"evar": {
 			"subline": "Games, space games",
 		},

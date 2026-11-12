@@ -1,0 +1,16 @@
+/*
+ * Three tiles side by side leave a long name too little room for one line. Lines then need a
+ * height of their own: the site's line-height is 1em of the body text, which at a heading's size
+ * stacks wrapped lines on top of each other.
+ */
+.tileTitle {
+	line-height: 1.15;
+	text-align: center;
+	padding-inline: var(--smallPad);
+}
+
+/* The line under it, for the same reason */
+.tileText {
+	text-align: center;
+	padding-inline: var(--smallPad);
+}

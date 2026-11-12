@@ -476,6 +476,78 @@
 	font-weight: 400;
 }
 
+/* A case's media: one slide in view, the rest a swipe or a button away */
+
+.carousel {
+	position: relative;
+	margin-bottom: var(--paddingUnit);
+}
+
+.carouselTrack {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	overscroll-behavior-x: contain;
+	scrollbar-width: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-radius: var(--borderRadius);
+}
+
+.carouselTrack::-webkit-scrollbar {
+	display: none;
+}
+
+/* Two classes: base.css spaces every `li` but the last, and one class alone would lose to it */
+.carouselTrack .carouselSlide {
+	position: relative;
+	flex: 0 0 100%;
+	aspect-ratio: 16 / 10;
+	margin: 0;
+	scroll-snap-align: start;
+	background-color: var(--l5);
+}
+
+.carouselSlide img,
+.carouselSlide video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.carouselButtons {
+	position: absolute;
+	right: var(--smallPad);
+	bottom: var(--smallPad);
+	display: flex;
+	gap: 6px;
+}
+
+.carouselButton {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 1px solid var(--l3);
+	border-radius: 50%;
+	background-color: rgb(from var(--backgroundColor) r g b / 0.8);
+	color: var(--foregroundColor);
+	font-size: 18px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.carouselButton:hover {
+	border-color: var(--l1);
+}
+
+.carouselButton:focus-visible,
+.carouselTrack:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
 /* Packages */
 
 .packageCards {
