@@ -17,7 +17,7 @@ This one only notes what is different.
 |---|---|
 | `page.tsx` | The sections, the metadata and the structured data. |
 | `content.ts` | Which items exist, in which order. |
-| `config.ts` | Booking URL, booked path and the finance case's media. **Contains the open TODOs.** |
+| `config.ts` | Booking URL, booked path and the finance case's media. **Contains an open TODO.** |
 | `llms.ts` | `buildLlmsTxt(locale)` – the page as an llms.txt, built from its messages. |
 | `booked/page.tsx` | Where Cal.com sends someone after booking. `noindex`. |
 | `../../design-agencies/llms.txt/route.ts`, `llms.txt/route.ts` | `/design-agencies/llms.txt` (English) and `/de/design-agencies/llms.txt`. |
@@ -63,9 +63,9 @@ playback, and all a reduced-motion visitor sees until they press play.
 
 ## Before it goes public
 
-1. **The Cal.com link** (`config.ts`, `bookingUrl`): a separate event on the same account. Until
-   then the button writes an email. In the event's settings, "Redirect on booking" must point to
-   `https://zentru.systems/design-agencies/booked`.
+1. **The Cal.com event's redirect.** The page books `cal.com/zentrusystems/design-development`
+   (`config.ts`, `bookingUrl`). In that event's settings, "Redirect on booking" must point to
+   `https://zentru.systems/design-agencies/booked`, or no booking is counted as completed.
 2. **The finance case's images and videos** – see "The carousel".
 3. **The finance case's result** (`cases.items.finance.result`) is the project's own result for
    now: the client was freed up to run parallel projects and win new clients.

@@ -13,14 +13,12 @@ export const designAgencies = {
 	// The page title is translated: messages/{en,de}.ts, Fields.designAgencies.meta.title
 
 	/**
-	 * TODO: the Cal.com event for this page – a separate event on the same account. Until then the
-	 * button writes an email, which `BookCallCta` already handles.
-	 *
-	 * In the event's settings, "Redirect on booking" must point to `siteUrl + bookedPath` – the page
-	 * there is what counts a booking as completed. Leave "forward parameters" off: it would put the
-	 * visitor's name and email into a URL that analytics records.
+	 * This page's own Cal.com event, on the same account as Project Management's. In the event's
+	 * settings, "Redirect on booking" must point to `siteUrl + bookedPath` – the page there is what
+	 * counts a booking as completed. Leave "forward parameters" off: it would put the visitor's name
+	 * and email into a URL that analytics records.
 	 */
-	bookingUrl: "mailto:service@zentru.systems",
+	bookingUrl: "https://cal.com/zentrusystems/design-development",
 	bookedPath: "/design-agencies/booked",
 
 	/**
