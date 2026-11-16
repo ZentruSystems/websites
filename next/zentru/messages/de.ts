@@ -479,11 +479,10 @@ export default {
 			},
 			"reference": {
 				"headline": "Referenz: Tape Player",
-				"text": `<p>Tape Player macht Ihren Mac zum Kassettendeck: Was gerade läuft – Apple Music, Spotify, ein
-					Browser-Tab – erscheint auf bewegten Spulen, mit VU-Metern und einem Spektrum, gemessen am tatsächlichen
-					Audio, und läuft auf Wunsch durch das Band selbst. Tape Player FX bringt das als Stereo-Bandemulation
-					ins Studio.</p>
-					<p>Eine Bandemulation, die der Seele treu bleibt – nicht nur im Klang, sondern auch in Bedienung und
+				"text": `<p>Ein Kassettendeck für Ihren Mac, das spielt, was gerade läuft, von Apple Music und Spotify bis
+					zum Browser-Tab. Bewegte Spulen, dazu VU-Meter und ein Spektrum, gemessen am tatsächlichen Audio. Wenn Sie
+					wollen, läuft der Klang auch durch das Band. Tape Player FX bringt dieses Band ins Studio.</p>
+					<p>Eine Bandemulation, die der Seele treu bleibt, nicht nur im Klang, sondern auch in Bedienung und
 					Rauschen. Gebaut für den Gebrauch und die Musikproduktion.</p>`,
 				"images": {
 					"player": "Tape Player: ein Kassettendeck-Fenster, das Autumn Leaves spielt, mit Spulen, VU-Metern und Spektrumanalyse",

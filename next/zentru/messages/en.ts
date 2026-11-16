@@ -576,10 +576,9 @@ export default {
 			},
 			"reference": {
 				"headline": "Reference: Tape Player",
-				"text": `<p>Tape Player turns your Mac into a cassette deck: whatever is playing – Apple Music, Spotify, a
-					browser tab – runs on moving reels, with VU meters and a spectrum measured from the actual audio, and if
-					you like through the tape itself. Tape Player FX brings it into the studio as a stereo tape
-					emulation.</p>
+				"text": `<p>A cassette deck for your Mac, playing whatever is on, from Apple Music and Spotify to a browser
+					tab. Moving reels, plus VU meters and a spectrum measured from the actual audio. If you want, the sound
+					runs through the tape too. Tape Player FX brings that tape into the studio.</p>
 					<p>True to the soul tape emulation, not only in sound, but also interaction and noise. Built for use and
 					music production.</p>`,
 				"images": {
