@@ -1014,6 +1014,8 @@ export default {
 				"intro": "One we ideated, designed and built, one we built.",
 				// On the finance case – the CRM case keeps Project Management's "Implementation"
 				"designTag": "Design and implementation",
+				// The CRM case's image – the case's words are Project Management's, its picture is this page's
+				"crmMediaAlt": "The platform's funnel visualization, from 258 contacted prospects down to 2 opportunities",
 				// The carousel's buttons
 				"previous": "Previous",
 				"next": "Next",

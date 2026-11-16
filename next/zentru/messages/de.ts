@@ -907,6 +907,7 @@ export default {
 				"title": "Ergebnisse aus echten Projekten",
 				"intro": "Eines haben wir konzipiert, gestaltet und umgesetzt, eines umgesetzt.",
 				"designTag": "Design und Umsetzung",
+				"crmMediaAlt": "Die Funnel-Visualisierung der Plattform, von 258 kontaktierten Interessenten bis zu 2 Verkaufschancen",
 				"previous": "Zurück",
 				"next": "Weiter",
 				"items": {

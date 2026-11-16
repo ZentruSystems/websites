@@ -43,6 +43,10 @@ which `CaseStudies` renders when a case has `media`. To fill it:
    `.mp4`, `.webm` and `.mov` play as video; anything else shows as an image.
 3. `cases.items.finance.mediaAlt` in both message files describes every slide.
 
+An image can also have a dark-mode version (`darkSrc`); the browser picks between the two by the
+colour scheme. The CRM case's funnel (`crmMedia`) uses one – how it was made is in
+`public/img/design-agencies/README.md`.
+
 Videos are muted and looping, load nothing until shown (`preload="none"`), and play only while in
 view. With reduced motion they don't autoplay and show controls instead. With an empty list the
 case simply has no carousel. A poster is worth giving every video: it is what shows before

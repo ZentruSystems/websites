@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useEffect, useRef } from "react";
 import style from "./blocks.module.css";
 
@@ -11,9 +11,27 @@ export type MediaItem = {
 	alt: string,
 	/** For a video: the frame shown before it plays, and all a reduced-motion visitor sees until they press play */
 	poster?: string,
+	/** For an image: the version drawn for dark mode – a screenshot of a light UI would glare otherwise */
+	darkSrc?: string,
 };
 
 const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src);
+
+const sizes = "(max-width: 730px) 90vw, 560px";
+
+/**
+ * An image with a dark-mode version. The browser picks between them by the colour scheme, the same
+ * media query the theme's tokens follow – no script, so nothing flashes from one to the other.
+ */
+function ThemedImage({ src, darkSrc, alt }: { src: string, darkSrc: string, alt: string }) {
+	const { props: { srcSet: dark } } = getImageProps({ src: darkSrc, alt, fill: true, sizes });
+	const { props: { srcSet: light, ...rest } } = getImageProps({ src, alt, fill: true, sizes });
+
+	return <picture>
+		<source media="(prefers-color-scheme: dark)" srcSet={dark} sizes={sizes} />
+		<img {...rest} srcSet={light} alt={alt} />
+	</picture>;
+}
 
 /**
  * Images and videos in a strip, one in view at a time.
@@ -103,7 +121,9 @@ export default function MediaCarousel({ items, label, previousLabel, nextLabel }
 			>
 				{isVideo(item.src)
 					? <video src={item.src} poster={item.poster} aria-label={item.alt} muted loop playsInline preload="none" />
-					: <Image src={item.src} alt={item.alt} fill sizes="(max-width: 730px) 90vw, 560px" />}
+					: item.darkSrc
+						? <ThemedImage src={item.src} darkSrc={item.darkSrc} alt={item.alt} />
+						: <Image src={item.src} alt={item.alt} fill sizes={sizes} />}
 			</li>)}
 		</ul>
 		{several && <div className={style.carouselButtons}>

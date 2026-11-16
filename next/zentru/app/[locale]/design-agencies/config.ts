@@ -28,4 +28,12 @@ export const designAgencies = {
 	 * TODO: empty until the images and videos arrive – the case then shows no carousel at all.
 	 */
 	caseMedia: [] as readonly Omit<MediaItem, "alt">[],
+
+	/**
+	 * The CRM case's funnel, from the platform itself. The dark version is derived from the light one –
+	 * public/img/design-agencies/README.md says how. Described by `cases.crmMediaAlt`.
+	 */
+	crmMedia: [
+		{ src: "/img/design-agencies/crm-funnel.png", darkSrc: "/img/design-agencies/crm-funnel-dark.png" },
+	] as readonly Omit<MediaItem, "alt">[],
 } as const;

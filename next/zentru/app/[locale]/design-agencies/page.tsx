@@ -327,6 +327,7 @@ async function CasesSection() {
 			work: tShared("items.crm.work"),
 			result: tShared("items.crm.result"),
 			tag: { label: tShared("implementationTag") },
+			media: designAgencies.crmMedia.map(item => ({ ...item, alt: t("crmMediaAlt") })),
 		},
 	};
 
