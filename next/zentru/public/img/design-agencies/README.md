@@ -6,7 +6,8 @@ Referenced from `app/[locale]/design-agencies/config.ts` and shown in the case s
 |---|---|---|
 | `crm-funnel.png` | The CRM case | A screenshot of the platform's funnel visualization, on a transparent background and padded to the carousel's 16:10. |
 | `crm-funnel-dark.png` | The CRM case, in dark mode | Derived from the light one, not a second screenshot. See below. |
-| `finance-forecast.png` | The finance case | A screenshot of the forecasting interface. Its own UI is dark, so it is shown as is in both themes. Widened from 10:7 to 16:10 by repeating its outermost columns – the plain background, and the blue band that runs off the right edge – so the carousel shows all of it uncropped. |
+| `finance-forecast-light.png` | The finance case | The forecasting interface in its light theme, as supplied – unedited. 1440 × 1008; `config.ts` gives that size, so the carousel's frame takes its 10:7 and nothing is cropped. |
+| `finance-forecast-dark.png` | The finance case, in dark mode | The same view in the interface's dark theme, as supplied – unedited. |
 
 ## How the dark version was made
 

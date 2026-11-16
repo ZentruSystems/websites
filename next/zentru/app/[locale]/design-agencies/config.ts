@@ -23,9 +23,16 @@ export const designAgencies = {
 	 * video is listed with its poster, e.g. `{ src: "/img/design-agencies/forecast.mp4", poster:
 	 * "/img/design-agencies/forecast.jpg" }`, and a second slide brings the carousel's buttons. Every
 	 * slide is described by `cases.items.finance.mediaAlt` in the messages, plus its place in the row.
+	 * The size makes the frame the screenshots' own 10:7, so they are shown whole – further slides
+	 * should match it, or they are cropped to fit.
 	 */
 	caseMedia: [
-		{ src: "/img/design-agencies/finance-forecast.png" },
+		{
+			src: "/img/design-agencies/finance-forecast-light.png",
+			darkSrc: "/img/design-agencies/finance-forecast-dark.png",
+			width: 1440,
+			height: 1008,
+		},
 	] as readonly Omit<MediaItem, "alt">[],
 
 	/**

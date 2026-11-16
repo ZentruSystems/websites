@@ -44,8 +44,11 @@ which `CaseStudies` renders when a case has `media`. To add to it:
 3. `cases.items.finance.mediaAlt` in both message files describes every slide.
 
 An image can also have a dark-mode version (`darkSrc`); the browser picks between the two by the
-colour scheme. The CRM case's funnel (`crmMedia`) uses one – how it was made is in
-`public/img/design-agencies/README.md`.
+colour scheme. Both cases use one: the finance screenshots are the interface's own light and dark
+themes, the CRM funnel's dark version is derived – `public/img/design-agencies/README.md` says how.
+
+The frame is 16:10 unless the first slide gives its `width` and `height`; then it takes that
+slide's proportions, so the image is shown whole. Slides after it are fitted to the same frame.
 
 Videos are muted and looping, load nothing until shown (`preload="none"`), and play only while in
 view. With reduced motion they don't autoplay and show controls instead. With an empty list the

@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { getImageProps } from "next/image";
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import style from "./blocks.module.css";
 
 export type MediaItem = {
@@ -13,6 +13,9 @@ export type MediaItem = {
 	poster?: string,
 	/** For an image: the version drawn for dark mode – a screenshot of a light UI would glare otherwise */
 	darkSrc?: string,
+	/** The file's size in pixels. The first slide's sets the carousel's proportions, so it is shown uncropped; without it, 16:10 */
+	width?: number,
+	height?: number,
 };
 
 const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src);
@@ -109,10 +112,13 @@ export default function MediaCarousel({ items, label, previousLabel, nextLabel }
 
 	if (items.length == 0) return null;
 	const several = items.length > 1;
+	// Every slide shares one frame, so the strip doesn't change height as it moves
+	const { width, height } = items[0];
+	const ratio = width && height ? { "--ratio": `${width} / ${height}` } as CSSProperties : undefined;
 
 	return <div className={style.carousel} role="region" aria-roledescription="carousel" aria-label={label}>
 		{/* Focusable when it scrolls, so the arrow keys can move it */}
-		<ul ref={trackRef} className={style.carouselTrack} tabIndex={several ? 0 : undefined}>
+		<ul ref={trackRef} className={style.carouselTrack} style={ratio} tabIndex={several ? 0 : undefined}>
 			{items.map((item, index) => <li
 				key={item.src}
 				className={style.carouselSlide}

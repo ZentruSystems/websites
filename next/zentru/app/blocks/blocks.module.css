@@ -503,7 +503,7 @@
 .carouselTrack .carouselSlide {
 	position: relative;
 	flex: 0 0 100%;
-	aspect-ratio: 16 / 10;
+	aspect-ratio: var(--ratio, 16 / 10);
 	margin: 0;
 	scroll-snap-align: start;
 	background-color: var(--l5);
