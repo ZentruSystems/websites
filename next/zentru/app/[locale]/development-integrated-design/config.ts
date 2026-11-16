@@ -6,7 +6,7 @@ import { MediaItem } from "@/app/blocks/MediaCarousel";
  * page's config instead, so the two can't drift apart.
  */
 export const designAgencies = {
-	path: "/design-agencies",
+	path: "/development-integrated-design",
 	// The page title is translated: messages/{en,de}.ts, Fields.designAgencies.meta.title
 
 	/**
@@ -15,21 +15,21 @@ export const designAgencies = {
 	 * counts a booking as completed. Leave "forward parameters" off: it would put the visitor's name
 	 * and email into a URL that analytics records.
 	 */
-	bookingUrl: "https://cal.com/zentrusystems/design-development",
-	bookedPath: "/design-agencies/booked",
+	bookingUrl: "https://cal.com/zentrusystems/development-integrated-design",
+	bookedPath: "/development-integrated-design/booked",
 
 	/**
-	 * The finance case's carousel, in the order shown. Files go in /public/img/design-agencies/; a
-	 * video is listed with its poster, e.g. `{ src: "/img/design-agencies/forecast.mp4", poster:
-	 * "/img/design-agencies/forecast.jpg" }`, and a second slide brings the carousel's buttons. Every
+	 * The finance case's carousel, in the order shown. Files go in /public/img/development-integrated-design/; a
+	 * video is listed with its poster, e.g. `{ src: "/img/development-integrated-design/forecast.mp4", poster:
+	 * "/img/development-integrated-design/forecast.jpg" }`, and a second slide brings the carousel's buttons. Every
 	 * slide is described by `cases.items.finance.mediaAlt` in the messages, plus its place in the row.
 	 * The size makes the frame the screenshots' own 10:7, so they are shown whole – further slides
 	 * should match it, or they are cropped to fit.
 	 */
 	caseMedia: [
 		{
-			src: "/img/design-agencies/finance-forecast-light.png",
-			darkSrc: "/img/design-agencies/finance-forecast-dark.png",
+			src: "/img/development-integrated-design/finance-forecast-light.png",
+			darkSrc: "/img/development-integrated-design/finance-forecast-dark.png",
 			width: 1440,
 			height: 1008,
 		},
@@ -37,9 +37,9 @@ export const designAgencies = {
 
 	/**
 	 * The CRM case's funnel, from the platform itself. The dark version is derived from the light one –
-	 * public/img/design-agencies/README.md says how. Described by `cases.crmMediaAlt`.
+	 * public/img/development-integrated-design/README.md says how. Described by `cases.crmMediaAlt`.
 	 */
 	crmMedia: [
-		{ src: "/img/design-agencies/crm-funnel.png", darkSrc: "/img/design-agencies/crm-funnel-dark.png" },
+		{ src: "/img/development-integrated-design/crm-funnel.png", darkSrc: "/img/development-integrated-design/crm-funnel-dark.png" },
 	] as readonly Omit<MediaItem, "alt">[],
 } as const;

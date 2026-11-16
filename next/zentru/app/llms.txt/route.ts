@@ -1,4 +1,4 @@
-import { buildLlmsTxtSection } from "@/app/[locale]/design-agencies/llms";
+import { buildLlmsTxtSection } from "@/app/[locale]/development-integrated-design/llms";
 import { buildLlmsTxt } from "@/app/[locale]/project-management/llms";
 
 /**

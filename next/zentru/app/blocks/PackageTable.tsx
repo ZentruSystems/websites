@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import style from "./blocks.module.css";
 
 export type PackageColumn = {
@@ -13,7 +14,13 @@ export type PackageColumn = {
 };
 
 /** `included` has one entry per package, in the order of `packages` */
-export type PackageRow = { key: string, label: string, included: boolean[] };
+export type PackageRow = {
+	key: string,
+	label: string,
+	included: boolean[],
+	/** A heading drawn across the table before this row, saying what the rows from here on are about */
+	section?: string,
+};
 
 /**
  * The packages side by side: a card each saying who it is for, then what each one includes. A single
@@ -55,14 +62,19 @@ export default function PackageTable(props: {
 				</tr>
 			</thead>
 			<tbody>
-				{props.rows.map(row => <tr key={row.key}>
-					<th scope="row">{row.label}</th>
-					{props.packages.map((pkg, index) => <td key={pkg.key}>
-						{row.included[index]
-							? <span className={style.check} role="img" aria-label={props.includedLabel} />
-							: <span className={style.dash} role="img" aria-label={props.notIncludedLabel} />}
-					</td>)}
-				</tr>)}
+				{props.rows.map(row => <Fragment key={row.key}>
+					{row.section && <tr className={style.packageSection}>
+						<th scope="colgroup" colSpan={props.packages.length + 1}>{row.section}</th>
+					</tr>}
+					<tr>
+						<th scope="row">{row.label}</th>
+						{props.packages.map((pkg, index) => <td key={pkg.key}>
+							{row.included[index]
+								? <span className={style.check} role="img" aria-label={props.includedLabel} />
+								: <span className={style.dash} role="img" aria-label={props.notIncludedLabel} />}
+						</td>)}
+					</tr>
+				</Fragment>)}
 			</tbody>
 			<tfoot>
 				<tr>

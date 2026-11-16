@@ -1,7 +1,7 @@
-import { buildLlmsTxt } from "@/app/[locale]/design-agencies/llms";
+import { buildLlmsTxt } from "@/app/[locale]/development-integrated-design/llms";
 
 /**
- * /design-agencies/llms.txt – the English one, beside the address the page is linked by. A static
+ * /development-integrated-design/llms.txt – the English one, beside the address the page is linked by. A static
  * segment, so it wins over `[locale]`; the dot keeps next-intl's proxy from redirecting it to a locale.
  */
 export const dynamic = "force-static";

@@ -1,6 +1,6 @@
 # Development integrated Design images
 
-Referenced from `app/[locale]/design-agencies/config.ts` and shown in the case studies' carousel.
+Referenced from `app/[locale]/development-integrated-design/config.ts` and shown in the case studies' carousel.
 
 | File | Where | Notes |
 |---|---|---|

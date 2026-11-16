@@ -1,8 +1,8 @@
-import { buildLlmsTxt } from "@/app/[locale]/design-agencies/llms";
+import { buildLlmsTxt } from "@/app/[locale]/development-integrated-design/llms";
 import { routing } from "@/i18n/routing";
 import { hasLocale } from "next-intl";
 
-/** /de/design-agencies/llms.txt, next to the German page. The English one is the same as /design-agencies/llms.txt. */
+/** /de/development-integrated-design/llms.txt, next to the German page. The English one is the same as /development-integrated-design/llms.txt. */
 export const dynamic = "force-static";
 export const dynamicParams = false;
 

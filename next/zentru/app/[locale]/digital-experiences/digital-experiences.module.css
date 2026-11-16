@@ -1,0 +1,32 @@
+/*
+ * The reference's images in one row at equal height: each takes a share of the width in proportion
+ * to its own shape (`--aspect`, width over height), so a tall window and two wide ones line up
+ * along the top and bottom without cropping either.
+ */
+.references {
+	display: flex;
+	gap: var(--grid-gap);
+	margin-top: var(--paddingUnit);
+}
+
+.references > * {
+	flex: var(--aspect) 1 0;
+	min-width: 0;
+}
+
+.references img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Too narrow for a row: one under the other, each at full width */
+@media screen and (max-width: 730px) {
+	.references {
+		flex-direction: column;
+	}
+
+	.references > * {
+		flex: none;
+	}
+}

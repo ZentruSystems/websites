@@ -1,11 +1,11 @@
-# Development integrated Design – /design-agencies
+# Development integrated Design – /development-integrated-design
 
 The service for design agencies: we set up their development services – structure, process, tools,
 consulting – around the way they design, so they can sell development without running it.
 
 - **The Setup is the offer:** a fixed price, no time limit, consulting included.
 - **Management is optional**, and can be added at any time: monthly or hourly.
-- **Implementation is optional too:** first or smaller projects, if the agency wants. It is billed
+- **Implementation is optional too:** smaller projects, if the agency wants. It is billed
   separately because it depends on their client's project, so it is not a row in the package table.
 
 Built like `/project-management` – read its README for the blocks, the movement and the tracking.
@@ -20,7 +20,7 @@ This one only notes what is different.
 | `config.ts` | Booking URL, booked path, and both cases' media. |
 | `llms.ts` | `buildLlmsTxt(locale)` – the page as an llms.txt, built from its messages. |
 | `booked/page.tsx` | Where Cal.com sends someone after booking. `noindex`. |
-| `../../design-agencies/llms.txt/route.ts`, `llms.txt/route.ts` | `/design-agencies/llms.txt` (English) and `/de/design-agencies/llms.txt`. |
+| `../../development-integrated-design/llms.txt/route.ts`, `llms.txt/route.ts` | `/development-integrated-design/llms.txt` (English) and `/de/development-integrated-design/llms.txt`. |
 
 ## Shared with Project Management
 
@@ -37,15 +37,15 @@ and `localeUrl()` – all from `../project-management/`.
 The finance case shows its images and videos in a carousel (`app/blocks/MediaCarousel.tsx`),
 which `CaseStudies` renders when a case has `media`. To add to it:
 
-1. Put the files in `public/img/design-agencies/`.
+1. Put the files in `public/img/development-integrated-design/`.
 2. List them in `config.ts`, `caseMedia`, in the order they should appear:
-   `{ src: "/img/design-agencies/forecast.mp4", poster: "/img/design-agencies/forecast.jpg" }`.
+   `{ src: "/img/development-integrated-design/forecast.mp4", poster: "/img/development-integrated-design/forecast.jpg" }`.
    `.mp4`, `.webm` and `.mov` play as video; anything else shows as an image.
 3. `cases.items.finance.mediaAlt` in both message files describes every slide.
 
 An image can also have a dark-mode version (`darkSrc`); the browser picks between the two by the
 colour scheme. Both cases use one: the finance screenshots are the interface's own light and dark
-themes, the CRM funnel's dark version is derived – `public/img/design-agencies/README.md` says how.
+themes, the CRM funnel's dark version is derived – `public/img/development-integrated-design/README.md` says how.
 
 The frame is 16:10 unless the first slide gives its `width` and `height`; then it takes that
 slide's proportions, so the image is shown whole. Slides after it are fitted to the same frame.
@@ -70,7 +70,9 @@ playback, and all a reduced-motion visitor sees until they press play.
 
 ## Before it goes public
 
-1. **The Cal.com event's redirect.** The page books `cal.com/zentrusystems/design-development`
-   (`config.ts`, `bookingUrl`). In that event's settings, "Redirect on booking" must point to
-   `https://zentru.systems/design-agencies/booked`, or no booking is counted as completed.
+1. **The Cal.com event's redirect.** The page books
+   `cal.com/zentrusystems/development-integrated-design` (`config.ts`, `bookingUrl`). In that
+   event's settings, "Redirect on booking" must point to
+   `https://zentru.systems/development-integrated-design/booked`, or no booking is counted as
+   completed.
 2. The OG image is the site-wide one, as on Project Management.

@@ -14,7 +14,7 @@ import { designAgencies } from "../config";
  * what counts a booking as completed. Kept out of search results: it only makes sense right after
  * booking. The words are Project Management's, apart from what to prepare and the way back.
  */
-export async function generateMetadata({ params }: PageProps<"/[locale]/design-agencies/booked">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/[locale]/development-integrated-design/booked">): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale: locale as Locale, namespace: "Fields.projectBootstrap.booked" });
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/design-a
 	};
 }
 
-export default async function BookedPage({ params }: PageProps<"/[locale]/design-agencies/booked">) {
+export default async function BookedPage({ params }: PageProps<"/[locale]/development-integrated-design/booked">) {
 	const { locale } = await params;
 	setRequestLocale(locale as Locale);
 	const t = await getTranslations("Fields.designAgencies.booked");

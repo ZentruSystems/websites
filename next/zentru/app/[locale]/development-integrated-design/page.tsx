@@ -21,6 +21,7 @@ import { localeUrl, projectBootstrap } from "../project-management/config";
 import { designAgencies } from "./config";
 import {
 	caseKeys,
+	developmentRowsStart,
 	faqKeys,
 	finalCtaKeys,
 	managementOutcomeKeys,
@@ -49,7 +50,7 @@ const Cta = (props: { placement: string, large?: boolean }) =>
 
 // The locale comes from the route, not `getLocale()`: in metadata that can still be the root
 // layout's English on a German page
-export async function generateMetadata({ params }: PageProps<"/[locale]/design-agencies">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/[locale]/development-integrated-design">): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale: locale as Locale, namespace: "Fields.designAgencies.meta" });
 
@@ -79,13 +80,13 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/design-a
 	};
 }
 
-export default async function DesignAgenciesPage({ params }: PageProps<"/[locale]/design-agencies">) {
+export default async function DesignAgenciesPage({ params }: PageProps<"/[locale]/development-integrated-design">) {
 	const { locale } = await params;
 	setRequestLocale(locale as Locale);
 
 	// The root layout sets no `lang`; the tables' hyphenation, and screen readers, need one
 	return <main lang={locale}>
-		<ScrollDepth page="design-agencies" />
+		<ScrollDepth page="development-integrated-design" />
 		<PointerLift />
 		<StructuredData locale={locale as Locale} />
 		{/* Tinted and plain alternate from here down; the hero and proof bar share one band */}
@@ -331,7 +332,7 @@ async function CasesSection() {
 		},
 	};
 
-	return <Band tinted title={t("title")} intro={<p>{t("intro")}</p>}>
+	return <Band tinted title={t("title")}>
 		<CaseStudies
 			labels={{
 				challenge: tShared("labels.challenge"),
@@ -387,6 +388,7 @@ async function PackagesSection() {
 				key: row.key,
 				label: t(`rows.${row.key}`),
 				included: packageKeys.map(pkg => (row.in as readonly string[]).includes(pkg)),
+				section: row.key == developmentRowsStart ? t("developmentRows") : undefined,
 			}))}
 		/>
 	</Band>;

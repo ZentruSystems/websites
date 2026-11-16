@@ -8,7 +8,7 @@
 
 export type PackageKey = "setup" | "management";
 
-export const proofKeys = ["finance", "integrations", "funnel"] as const;
+export const proofKeys = ["finance", "funnel"] as const;
 
 export const problemKeys = ["handoff", "process", "time"] as const;
 
@@ -45,6 +45,12 @@ export const packageRows = [
 	{ key: "reports", in: ["management"] },
 	{ key: "issues", in: ["management"] },
 ] as const satisfies readonly { key: string, in: readonly PackageKey[] }[];
+
+/**
+ * Where the rows only Management covers begin. A heading there says they are about running the
+ * development, so nobody reads them as part of the setup.
+ */
+export const developmentRowsStart: (typeof packageRows)[number]["key"] = "dayToDay";
 
 export const faqKeys = [
 	"designProcess",

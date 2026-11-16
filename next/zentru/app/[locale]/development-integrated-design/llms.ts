@@ -2,12 +2,12 @@ import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { localeUrl, projectBootstrap } from "../project-management/config";
 import { designAgencies } from "./config";
-import { caseKeys, faqKeys, packageKeys, packageRows, stepKeys } from "./content";
+import { caseKeys, developmentRowsStart, faqKeys, packageKeys, packageRows, stepKeys } from "./content";
 
 /** Template literals carry their line breaks and indentation; in plain text they are single spaces */
 const clean = (text: string) => text.replace(/\s+/g, " ").trim();
 
-/** Where this page's llms.txt is: next to the page, `/design-agencies/llms.txt` for English */
+/** Where this page's llms.txt is: next to the page, `/development-integrated-design/llms.txt` for English */
 export function llmsTxtUrl(locale: Locale) {
 	const prefix = locale == "en" ? "" : `/${locale}`;
 	return `${projectBootstrap.siteUrl}${prefix}${designAgencies.path}/llms.txt`;
@@ -54,6 +54,7 @@ export async function buildLlmsTxt(locale: Locale): Promise<string> {
 	};
 
 	const otherLanguage = llmsTxtUrl(locale == "de" ? "en" : "de");
+	const developmentFrom = packageRows.findIndex(row => row.key == developmentRowsStart);
 
 	const lines = [
 		`# Zentru Systems – ${t("name")}`,
@@ -74,9 +75,14 @@ export async function buildLlmsTxt(locale: Locale): Promise<string> {
 			"",
 			`${t(`packages.${pkg}.summary`)} ${t(`packages.${pkg}.fit`)} ${tShared("packages.priceLabel")}: ${t(`packages.${pkg}.price`)}.`,
 			"",
+			// The rows about running the development sit under their heading, as on the page
 			...packageRows
-				.filter(row => (row.in as readonly string[]).includes(pkg))
-				.map(row => `- ${t(`packages.rows.${row.key}`)}`),
+				.map((row, index) => ({ row, nested: index >= developmentFrom }))
+				.filter(({ row }) => (row.in as readonly string[]).includes(pkg))
+				.flatMap(({ row, nested }) => [
+					...(row.key == developmentRowsStart ? [`- ${t("packages.developmentRows")}:`] : []),
+					`${nested ? "  " : ""}- ${t(`packages.rows.${row.key}`)}`,
+				]),
 			"",
 		]),
 		`## ${t("process.title")}`,
@@ -84,8 +90,6 @@ export async function buildLlmsTxt(locale: Locale): Promise<string> {
 		...stepKeys.map(key => `- ${t(`process.steps.${key}.title`)}: ${clean(t(`process.steps.${key}.text`))}`),
 		"",
 		`## ${t("cases.title")}`,
-		"",
-		clean(t("cases.intro")),
 		"",
 		...caseKeys.map(key => `- ${cases[key]}`),
 		"",

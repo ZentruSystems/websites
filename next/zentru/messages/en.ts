@@ -574,6 +574,20 @@ export default {
 						Video scores for film, animation and advertising
 					</p>`,
 			},
+			"reference": {
+				"headline": "Reference: Tape Player",
+				"text": `<p>Tape Player turns your Mac into a cassette deck: whatever is playing – Apple Music, Spotify, a
+					browser tab – runs on moving reels, with VU meters and a spectrum measured from the actual audio, and if
+					you like through the tape itself. Tape Player FX brings it into the studio as a stereo tape
+					emulation.</p>
+					<p>True to the soul tape emulation, not only in sound, but also interaction and noise. Built for use and
+					music production.</p>`,
+				"images": {
+					"player": "Tape Player: a cassette deck window playing Autumn Leaves, with reels, VU meters and a spectrum analyser",
+					"fx": "Tape Player FX in its dark skin: a cassette, tape types, and the character and master controls",
+					"fxPlatinum": "Tape Player FX in its light Platinum skin",
+				},
+			},
 		},
 		// /project-management – the page has one job: a booked strategy call
 		"projectBootstrap": {
@@ -877,9 +891,9 @@ export default {
 				"back": "Back to Project Management",
 			},
 		},
-		// /design-agencies – the same single job as /project-management: a booked strategy call. What both pages
-		// say word for word (the button, the case labels, the CRM case, the table labels, the service area) is
-		// read from projectBootstrap rather than repeated here.
+		// /development-integrated-design – the same single job as /project-management: a booked strategy call.
+		// What both pages say word for word (the button, the case labels, the CRM case, the table labels, the
+		// service area) is read from projectBootstrap rather than repeated here.
 		"designAgencies": {
 			// The tile on /services
 			"name": "Development integrated Design",
@@ -914,10 +928,6 @@ export default {
 						"title": "Finance forecasting UI/UX",
 						"text": "Ideated, designed and implemented, with animations, colors and design cues",
 					},
-					"integrations": {
-						"title": "CRM integrations",
-						"text": "Outreach and PersistIQ, built and tested",
-					},
 					"funnel": {
 						"title": "Funnel visualization",
 						"text": "The core of a CRM platform, of value to every one of its customers",
@@ -936,12 +946,11 @@ export default {
 					},
 					"process": {
 						"title": "A process that works against design",
-						"text": `Development run on its own terms, not design's: iterations and design decisions don't fit in,
-							and get lost between the two.`,
+						"text": "Development runs on its own terms and processes.",
 					},
 					"time": {
-						"title": "Developers to run, instead of designing",
-						"text": "Running developers yourself takes hours every week – hours that belong in design.",
+						"title": "Design, don't code",
+						"text": "Coming up with great designs is hard enough, spreading yourself thin between code and design won't help.",
 					},
 				},
 			},
@@ -957,13 +966,13 @@ export default {
 					},
 					"process": {
 						"title": "A process that follows design",
-						"text": `Design has its own process. Ours follows it instead of working against it, from the first
-							idea to the finished build.`,
+						"text": `Design has its own process. Ours follows it instead of working against it, so the translation
+							from design to outcome is much better.`,
 					},
 					"noTeam": {
 						"title": "Start without a development team",
-						"text": `If you want, we implement your first or smaller projects ourselves, so you can offer
-							development before you have developers.`,
+						"text": `If you want, we implement your smaller projects ourselves, so you can offer development
+							before you have developers.`,
 					},
 					"time": {
 						"title": "Your week back",
@@ -978,7 +987,7 @@ export default {
 				"title": "One person between your design and its development.",
 				"intro": `<p>We set up your agency's development services – the structure, the process, the tools and the
 					consulting – around the way you design. If you want, we also manage the development for you, and implement
-					your first or smaller projects ourselves. And we translate between design and development, so a
+					your smaller projects ourselves. And we translate between design and development, so a
 					misunderstanding doesn't turn into weeks of rework.</p>
 					<p>Our expertise combines hands-on experience in software development with an academic education, so
 					our work rests on both practice and theory.</p>`,
@@ -1011,7 +1020,6 @@ export default {
 			},
 			"cases": {
 				"title": "Results from real projects",
-				"intro": "One we ideated, designed and built, one we built.",
 				// On the finance case – the CRM case keeps Project Management's "Implementation"
 				"designTag": "Design and implementation",
 				// The CRM case's image – the case's words are Project Management's, its picture is this page's
@@ -1041,25 +1049,27 @@ export default {
 					},
 					"plan": {
 						"title": "Get an assessment and a plan",
-						"text": "We work out where development fits in, then create the structure and the process around your design process.",
+						"text": "We work out how and where development fits in with your design process.",
 					},
 					"setup": {
 						"title": "Your development service gets set up",
-						"text": "We set up and connect the tools, onboard your team and create the process. At a fixed price, consulting included.",
+						"text": "We set up and connect the tools, onboard your team and integrate the process in yours. At a fixed price, consulting included.",
 					},
 					"options": {
 						"title": "If you want: management and implementation",
-						"text": `We manage the development with one weekly decision and progress update, and implement your first
-							or smaller projects. Management can be added at any time.`,
+						"text": `We manage the development with one weekly decision and progress update, and implement your
+							smaller projects. Management can be added at any time.`,
 					},
 				},
 			},
 			"packages": {
 				"title": "What's included",
 				"intro": `The Setup is the offer: your development service, set up at a fixed price, with consulting included.
-					Management can be added at any time. Implementing your first or smaller projects is billed separately,
+					Management can be added at any time. Implementing your smaller projects is billed separately,
 					because it depends on your client's project.`,
 				"caption": "What each package includes",
+				// Over the rows only Management covers – they are about the development, not the setup
+				"developmentRows": "Managing the development itself",
 				"setup": {
 					"tag": "The default",
 					"name": "Setup",
@@ -1099,7 +1109,7 @@ export default {
 					},
 					"implementation": {
 						"question": "Do you build the projects yourselves?",
-						"answer": `If you want, your first or smaller ones. Implementation is billed separately, because it
+						"answer": `If you want, your smaller ones. Implementation is billed separately, because it
 							depends on your client's project.`,
 					},
 					"management": {
@@ -1109,7 +1119,7 @@ export default {
 					},
 					"developers": {
 						"question": "Do we need our own developers?",
-						"answer": "Not to start. We can implement your first or smaller projects while your development service grows.",
+						"answer": "Not to start. We can implement your smaller projects while your development service grows.",
 					},
 					"revenue": {
 						"question": "How does this bring in more revenue?",

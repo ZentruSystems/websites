@@ -640,6 +640,16 @@
 	vertical-align: top;
 }
 
+/* A heading across the table where the rows start to be about something else – set like the case labels */
+.packageTable .packageSection th {
+	padding-top: var(--paddingUnit);
+	font-family: var(--monoFont);
+	font-size: 0.7em;
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	color: var(--l1);
+}
+
 /* FAQ */
 
 .faqItem {

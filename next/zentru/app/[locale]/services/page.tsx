@@ -23,7 +23,7 @@ export default async function Page() {
 			</div>
 			<div className="vPad il-grid" style={{ gridAutoRows: "1fr 1fr 1fr" }}>
 				<div />
-				<Link href="/design-agencies" className="vCenter hCenter"><h1 className={`light ${style.tileTitle}`}>{tFields("designAgencies.name")}</h1></Link>
+				<Link href="/development-integrated-design" className="vCenter hCenter"><h1 className={`light ${style.tileTitle}`}>{tFields("designAgencies.name")}</h1></Link>
 				<div className="hCenter vBottom">
 					<p className={style.tileText}>{tFields("designAgencies.subline")}</p>
 				</div>

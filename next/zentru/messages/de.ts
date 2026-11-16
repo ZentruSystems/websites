@@ -477,6 +477,20 @@ export default {
 						Musik für Film, Animation und Werbung
 					</p>`,
 			},
+			"reference": {
+				"headline": "Referenz: Tape Player",
+				"text": `<p>Tape Player macht Ihren Mac zum Kassettendeck: Was gerade läuft – Apple Music, Spotify, ein
+					Browser-Tab – erscheint auf bewegten Spulen, mit VU-Metern und einem Spektrum, gemessen am tatsächlichen
+					Audio, und läuft auf Wunsch durch das Band selbst. Tape Player FX bringt das als Stereo-Bandemulation
+					ins Studio.</p>
+					<p>Eine Bandemulation, die der Seele treu bleibt – nicht nur im Klang, sondern auch in Bedienung und
+					Rauschen. Gebaut für den Gebrauch und die Musikproduktion.</p>`,
+				"images": {
+					"player": "Tape Player: ein Kassettendeck-Fenster, das Autumn Leaves spielt, mit Spulen, VU-Metern und Spektrumanalyse",
+					"fx": "Tape Player FX im dunklen Design: eine Kassette, Bandtypen und die Regler für Charakter und Master",
+					"fxPlatinum": "Tape Player FX im hellen Platinum-Design",
+				},
+			},
 		},
 		// /project-management – formell ("Sie") wie die anderen Felder, nicht "du" wie die Produktseiten
 		"projectBootstrap": {
@@ -778,7 +792,7 @@ export default {
 				"back": "Zurück zu Project Management",
 			},
 		},
-		// /design-agencies – formell ("Sie") wie /project-management. Was beide Seiten wortgleich sagen, steht nur dort.
+		// /development-integrated-design – formell ("Sie") wie /project-management. Was beide Seiten wortgleich sagen, steht nur dort.
 		"designAgencies": {
 			"name": "Development integrated Design",
 			"subline": "Entwicklung für Designagenturen",
@@ -810,10 +824,6 @@ export default {
 						"title": "UI/UX für Finanzprognosen",
 						"text": "Konzipiert, gestaltet und umgesetzt, mit Animationen, Farben und gestalterischen Akzenten",
 					},
-					"integrations": {
-						"title": "CRM-Integrationen",
-						"text": "Outreach und PersistIQ, gebaut und getestet",
-					},
 					"funnel": {
 						"title": "Funnel-Visualisierung",
 						"text": "Das Herzstück einer CRM-Plattform, mit Mehrwert für jeden ihrer Kunden",
@@ -832,12 +842,11 @@ export default {
 					},
 					"process": {
 						"title": "Ein Prozess, der gegen das Design arbeitet",
-						"text": `Entwicklung nach eigenen Regeln, nicht nach denen des Designs: Iterationen und
-							Designentscheidungen passen nicht hinein und gehen zwischen beiden verloren.`,
+						"text": "Entwicklung folgt eigenen Regeln und Prozessen.",
 					},
 					"time": {
-						"title": "Entwickler führen statt gestalten",
-						"text": "Ein Entwicklungsteam selbst zu führen kostet jede Woche Stunden, die ins Design gehören.",
+						"title": "Gestalten statt programmieren",
+						"text": "Großartige Designs zu entwickeln ist schwer genug – sich zwischen Code und Design aufzureiben, hilft dabei nicht.",
 					},
 				},
 			},
@@ -852,12 +861,12 @@ export default {
 					},
 					"process": {
 						"title": "Ein Prozess, der dem Design folgt",
-						"text": `Design hat seinen eigenen Prozess. Unserer folgt ihm, statt gegen ihn zu arbeiten, von der
-							ersten Idee bis zur fertigen Umsetzung.`,
+						"text": `Design hat seinen eigenen Prozess. Unserer folgt ihm, statt gegen ihn zu arbeiten – so gelingt
+							die Übersetzung vom Design ins Ergebnis viel besser.`,
 					},
 					"noTeam": {
 						"title": "Starten ohne Entwicklungsteam",
-						"text": `Wenn Sie möchten, setzen wir Ihre ersten oder kleineren Projekte selbst um – so können Sie
+						"text": `Wenn Sie möchten, setzen wir Ihre kleineren Projekte selbst um – so können Sie
 							Entwicklung anbieten, bevor Sie Entwickler haben.`,
 					},
 					"time": {
@@ -873,7 +882,7 @@ export default {
 				"title": "Eine Person zwischen Ihrem Design und seiner Umsetzung.",
 				"intro": `<p>Wir setzen die Entwicklungsleistungen Ihrer Agentur auf – Struktur, Prozess, Tools und Beratung –,
 					rund um die Art, wie Sie gestalten. Wenn Sie möchten, managen wir die Entwicklung auch für Sie und setzen
-					Ihre ersten oder kleineren Projekte selbst um. Und wir übersetzen zwischen Design und Entwicklung, damit
+					Ihre kleineren Projekte selbst um. Und wir übersetzen zwischen Design und Entwicklung, damit
 					aus einem Missverständnis keine Wochen Nacharbeit werden.</p>
 					<p>Unsere Expertise verbindet praktische Erfahrung in der Softwareentwicklung mit einer akademischen
 					Ausbildung – unsere Arbeit stützt sich auf Praxis wie Theorie.</p>`,
@@ -905,7 +914,6 @@ export default {
 			},
 			"cases": {
 				"title": "Ergebnisse aus echten Projekten",
-				"intro": "Eines haben wir konzipiert, gestaltet und umgesetzt, eines umgesetzt.",
 				"designTag": "Design und Umsetzung",
 				"crmMediaAlt": "Die Funnel-Visualisierung der Plattform, von 258 kontaktierten Interessenten bis zu 2 Verkaufschancen",
 				"previous": "Zurück",
@@ -931,25 +939,26 @@ export default {
 					},
 					"plan": {
 						"title": "Einschätzung und Plan erhalten",
-						"text": "Wir ermitteln, wo die Entwicklung hineinpasst, und erstellen Struktur und Prozess rund um Ihren Designprozess.",
+						"text": "Wir ermitteln, wie und wo die Entwicklung in Ihren Designprozess passt.",
 					},
 					"setup": {
 						"title": "Ihre Entwicklungsleistung wird aufgesetzt",
-						"text": "Wir richten die Tools ein, verbinden sie, schulen Ihr Team und legen den Prozess an. Zum Festpreis, Beratung inklusive.",
+						"text": "Wir richten die Tools ein, verbinden sie, schulen Ihr Team und integrieren den Prozess in Ihren. Zum Festpreis, Beratung inklusive.",
 					},
 					"options": {
 						"title": "Wenn Sie möchten: Management und Umsetzung",
 						"text": `Wir managen die Entwicklung mit einem wöchentlichen Update zu Entscheidungen und Fortschritt und
-							setzen Ihre ersten oder kleineren Projekte um. Management können Sie jederzeit dazunehmen.`,
+							setzen Ihre kleineren Projekte um. Management können Sie jederzeit dazunehmen.`,
 					},
 				},
 			},
 			"packages": {
 				"title": "Was enthalten ist",
 				"intro": `Das Setup ist das Angebot: Ihre Entwicklungsleistung, zum Festpreis aufgesetzt, Beratung inklusive.
-					Management können Sie jederzeit dazunehmen. Die Umsetzung Ihrer ersten oder kleineren Projekte wird
+					Management können Sie jederzeit dazunehmen. Die Umsetzung Ihrer kleineren Projekte wird
 					gesondert abgerechnet, weil sie vom Projekt Ihres Kunden abhängt.`,
 				"caption": "Was die Pakete enthalten",
+				"developmentRows": "Management der Entwicklung selbst",
 				"setup": {
 					"tag": "Standard",
 					"name": "Setup",
@@ -988,7 +997,7 @@ export default {
 					},
 					"implementation": {
 						"question": "Setzen Sie die Projekte selbst um?",
-						"answer": `Wenn Sie möchten, Ihre ersten oder kleineren. Die Umsetzung wird gesondert abgerechnet, weil
+						"answer": `Wenn Sie möchten, Ihre kleineren. Die Umsetzung wird gesondert abgerechnet, weil
 							sie vom Projekt Ihres Kunden abhängt.`,
 					},
 					"management": {
@@ -998,7 +1007,7 @@ export default {
 					},
 					"developers": {
 						"question": "Brauchen wir eigene Entwickler?",
-						"answer": "Nicht für den Anfang. Wir können Ihre ersten oder kleineren Projekte umsetzen, während Ihre Entwicklungsleistung wächst.",
+						"answer": "Nicht für den Anfang. Wir können Ihre kleineren Projekte umsetzen, während Ihre Entwicklungsleistung wächst.",
 					},
 					"revenue": {
 						"question": "Wie bringt das mehr Umsatz?",
