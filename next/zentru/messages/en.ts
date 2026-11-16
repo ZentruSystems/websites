@@ -1026,7 +1026,8 @@ export default {
 							tools before.`,
 						"work": `Ideated, designed and implemented a next-generation experience for finance tools, with
 							thoughtful animations, colors and design cues.`,
-						"result": "The client was freed up to run parallel projects and win new clients.",
+						"result": `Using design and their bespoke process as their USP, the client could increase price without
+							losing retention and highest satisfaction.`,
 						// Describes every image and video in the case's carousel
 						"mediaAlt": "The finance forecasting interface",
 					},

@@ -49,7 +49,7 @@ export async function buildLlmsTxt(locale: Locale): Promise<string> {
 		.filter(Boolean);
 
 	const cases = {
-		finance: `${t("cases.items.finance.title")} (${t("cases.designTag")}): ${clean(t("cases.items.finance.work"))}`,
+		finance: `${t("cases.items.finance.title")} (${t("cases.designTag")}): ${clean(t("cases.items.finance.result"))}`,
 		crm: `${tShared("cases.items.crm.title")} (${tShared("cases.implementationTag")}): ${clean(tShared("cases.items.crm.result"))}`,
 	};
 

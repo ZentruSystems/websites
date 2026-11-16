@@ -70,6 +70,4 @@ playback, and all a reduced-motion visitor sees until they press play.
 1. **The Cal.com event's redirect.** The page books `cal.com/zentrusystems/design-development`
    (`config.ts`, `bookingUrl`). In that event's settings, "Redirect on booking" must point to
    `https://zentru.systems/design-agencies/booked`, or no booking is counted as completed.
-2. **The finance case's result** (`cases.items.finance.result`) is the project's own result for
-   now: the client was freed up to run parallel projects and win new clients.
-3. The OG image is the site-wide one, as on Project Management.
+2. The OG image is the site-wide one, as on Project Management.
