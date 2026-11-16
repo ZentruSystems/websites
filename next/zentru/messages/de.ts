@@ -917,8 +917,7 @@ export default {
 							sie in Finanztools noch nicht gab.`,
 						"work": `Ein Erlebnis der nächsten Generation für Finanztools konzipiert, gestaltet und umgesetzt, mit
 							durchdachten Animationen, Farben und gestalterischen Akzenten.`,
-						"result": `Mit Design und seinem maßgeschneiderten Prozess als USP konnte der Kunde die Preise erhöhen,
-							ohne an Kundenbindung oder an höchster Zufriedenheit zu verlieren.`,
+						"result": "Durch dieses Design und den speziellen Prozess konnte der Kunde seine Preise erhöhen und dabei die Zufriedenheit steigern.",
 						"mediaAlt": "Die Oberfläche für Finanzprognosen",
 					},
 				},

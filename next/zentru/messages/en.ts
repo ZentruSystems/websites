@@ -1026,8 +1026,7 @@ export default {
 							tools before.`,
 						"work": `Ideated, designed and implemented a next-generation experience for finance tools, with
 							thoughtful animations, colors and design cues.`,
-						"result": `Using design and their bespoke process as their USP, the client could increase price without
-							losing retention and highest satisfaction.`,
+						"result": "Through this design and the bespoke process, the client could increase prices while raising satisfaction.",
 						// Describes every image and video in the case's carousel
 						"mediaAlt": "The finance forecasting interface",
 					},
